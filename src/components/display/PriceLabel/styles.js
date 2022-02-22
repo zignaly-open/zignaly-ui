@@ -7,11 +7,17 @@ export const Value = styled.span`
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
-  color: #F3F4F6;
+  
+  ${({ theme }) => `
+    color: ${theme.priceLabel.valueTextColor};
+  `}
 `;
 
 export const Token = styled.span`
-  color: #706F82;
+  ${({ theme }) => `
+    color: ${theme.priceLabel.tokenTextColor};
+  `}
+  
   font-weight: 600;
   font-size: 12px;
   line-height: 16px;

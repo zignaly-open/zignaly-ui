@@ -43,6 +43,11 @@ const dark = {
         borderBottomColor: '#222249'
       }
     }
+  },
+
+  priceLabel: {
+    valueTextColor: '#F3F4F6',
+    tokenTextColor: '#706F82'
   }
 };
 

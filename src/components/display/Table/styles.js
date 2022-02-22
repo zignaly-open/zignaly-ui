@@ -37,6 +37,7 @@ export const Table = styled.table`
         text-align: center;
         color: ${theme.table.tbody.textColor};
         padding: 12px 22px;
+        white-space: nowrap;
       }
     }
     

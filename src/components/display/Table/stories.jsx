@@ -1,23 +1,27 @@
 // Dependencies
 import React from 'react';
+import { format, compareAsc } from 'date-fns';
 
 // Assets
 import OptionsDotsIcon from '@assets/icons/option-dots-icon.svg';
 import CheckIcon from '@assets/icons/check-icon.svg';
+import CloseIcon from '@assets/icons/close-icon.svg';
 
 // Component
 import Table from './';
 import PriceLabel from '@components/display/PriceLabel';
 import PercentageIndicator from '@components/display/PercentageIndicator';
 import ConnectionStateLabel from '@components/display/ConnectionStateLabel';
+import TableButton from '@components/inputs/TableButton';
+import IconButton from '@components/inputs/IconButton';
+import { ButtonGroup } from '@components/styled';
 
 // Types
 import { connectionStateTypesId } from '@components/display/ConnectionStateLabel/types';
+import { buttonVariantsId } from '@types/buttons';
 
 // Utils
 import { shortenHex } from '@utils/web3';
-import IconButton from '@components/inputs/IconButton';
-import { buttonVariantsId } from '@types/buttons';
 
 export default {
   title: 'Display/Table',
@@ -122,6 +126,157 @@ Investors.args = {
         <IconButton
           icon={OptionsDotsIcon}
         />
+      )
+    }
+  ]
+};
+
+export const ExchangeOrders = Template.bind({});
+ExchangeOrders.args = {
+  columns: [
+    {
+      Header: 'Date',
+      accessor: 'date'
+    },
+    {
+      Header: 'Ordeer ID',
+      accessor: 'orderId'
+    },
+    {
+      Header: 'Pair',
+      accessor: 'pair'
+    },
+    {
+      Header: 'Amount',
+      accessor: 'amount'
+    },
+    {
+      Header: 'Status',
+      accessor: 'status'
+    },
+    {
+      Header: 'Entry Price',
+      accessor: 'entryPrice'
+    },
+    {
+      Header: 'Side',
+      accessor: 'side'
+    },
+    {
+      Header: 'Type',
+      accessor: 'type'
+    },
+    {
+      Header: (
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <IconButton
+            variant={buttonVariantsId.PLACEHOLDER}
+            icon={OptionsDotsIcon}
+          />
+        </div>
+      ),
+      accessor: 'action',
+      disableSortBy: true
+    }
+  ],
+  data: [
+    {
+      date: format(new Date(), 'p PP'),
+      orderId: '138495028471',
+      pair: 'XML/USDT',
+      amount: 25,
+      status: 'Open',
+      entryPrice: '110.20',
+      side: 'Buy',
+      type: 'Limit',
+      action: (
+        <ButtonGroup>
+          <TableButton
+            icon={CloseIcon}
+            caption={'Close'}
+          />
+        </ButtonGroup>
+      )
+    }
+  ]
+};
+
+export const Contracts = Template.bind({});
+Contracts.args = {
+  columns: [
+    {
+      Header: 'Date',
+      accessor: 'date'
+    },
+    {
+      Header: 'Order ID',
+      accessor: 'positionId'
+    },
+    {
+      Header: 'Pair',
+      accessor: 'pair'
+    },
+    {
+      Header: 'Amount',
+      accessor: 'amount'
+    },
+    {
+      Header: 'Side',
+      accessor: 'side'
+    },
+    {
+      Header: 'Entry Price',
+      accessor: 'entryPrice'
+    },
+    {
+      Header: 'Market Price',
+      accessor: 'marketPrice'
+    },
+    {
+      Header: 'Margin',
+      accessor: 'margin'
+    },
+    {
+      Header: (
+        <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+          <IconButton
+            variant={buttonVariantsId.PLACEHOLDER}
+            icon={OptionsDotsIcon}
+          />
+        </div>
+      ),
+      accessor: 'action',
+      disableSortBy: true
+    }
+  ],
+  data: [
+    {
+      date: (
+        <>
+          <div>
+            {format(new Date(), 'p')}
+          </div>
+          <div>
+            {format(new Date(), 'PP')}
+          </div>
+        </>
+      ),
+      positionId: (
+        <div style={{ color: '#706F82' }}>mhAtXCp3BoaWgE5G8JJFD</div>
+      ),
+      pair: 'XML/USDT',
+      amount: 25,
+      side: 'Both',
+      entryPrice: '110.20',
+      marketPrice: '114.20',
+      margin: 'Cross',
+      action: (
+        <ButtonGroup>
+          <TableButton
+            icon={CloseIcon}
+            caption={'Close'}
+          />
+        </ButtonGroup>
       )
     }
   ]
