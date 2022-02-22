@@ -4,7 +4,7 @@ import { BigNumber, utils } from 'ethers';
 import NumberFormat from 'react-number-format';
 
 // Styles
-import * as styled from './index.styles';
+import * as styled from './styles';
 
 // Assets
 import ZigCoinIcon from '@assets/images/zignaly-coin.svg';

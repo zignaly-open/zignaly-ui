@@ -2,7 +2,7 @@
 import React from 'react';
 
 // Styled Components
-import * as styled from './index.styles';
+import * as styled from './styles';
 
 function TableButton({ caption, icon = null }) {
   return (

@@ -6,7 +6,7 @@ import { useTable, useSortBy } from 'react-table';
 import ArrowBottomIcon from '@assets/icons/arrow-bottom-icon.svg';
 
 // Styles
-import * as styled from './index.styles';
+import * as styled from './styles';
 
 function Table({
   columns = [],
