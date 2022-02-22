@@ -50,7 +50,11 @@
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.16.4",
+    "@emotion/react": "^11.8.1",
+    "@emotion/styled": "^11.8.1",
     "@metamask/jazzicon": "^2.0.0",
+    "@mui/icons-material": "^5.4.2",
+    "@mui/material": "^5.4.3",
     "@storybook/theming": "^6.4.19",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",

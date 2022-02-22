@@ -22,6 +22,27 @@ const dark = {
       [connectionStateTypesId.SOFT_DISCONNECT]: '#F7CF00',
       [connectionStateTypesId.SUSPENDED]: '#E50B5A'
     }
+  },
+
+  table: {
+    backgroundColor: '#131225',
+
+    thead: {
+      borderColor: '#222249',
+      backgroundColor: '#222249',
+
+      th: {
+        textColor: '#F3F4F6'
+      }
+    },
+
+    tbody: {
+      textColor: '#F3F4F6',
+
+      th: {
+        borderBottomColor: '#222249'
+      }
+    }
   }
 };
 

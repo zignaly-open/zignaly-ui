@@ -26,8 +26,9 @@ function Table({
   const firstPageRows = rows.slice(0, 20);
 
   return (
-    <styled.Layout {...getTableProps()}>
-      <thead>
+    <styled.Layout>
+      <styled.Table {...getTableProps()}>
+        <thead>
         {headerGroups.map((headerGroup, index) => (
           <tr
             key={`--table-head-${index.toString()}`}
@@ -42,8 +43,8 @@ function Table({
             ))}
           </tr>
         ))}
-      </thead>
-      <tbody {...getTableBodyProps()}>
+        </thead>
+        <tbody {...getTableBodyProps()}>
         {firstPageRows.map((row, i) => {
           prepareRow(row);
           return (
@@ -58,7 +59,8 @@ function Table({
             </tr>
           );
         })}
-      </tbody>
+        </tbody>
+      </styled.Table>
     </styled.Layout>
   );
 }

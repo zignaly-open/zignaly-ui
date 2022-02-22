@@ -3,19 +3,21 @@ import React from 'react';
 
 // Assets
 import OptionsDotsIcon from '@assets/icons/option-dots-icon.svg';
-import EditPenIcon from '@assets/icons/edit-pen-icon.svg';
-import CloseIcon from '@assets/icons/close-icon.svg';
+import CheckIcon from '@assets/icons/check-icon.svg';
 
 // Component
 import Table from './';
-import TableButton from '@components/inputs/TableButton';
-import { ButtonGroup } from '@components/styled';
-import { shortenHex } from '@utils/web3';
 import PriceLabel from '@components/display/PriceLabel';
 import PercentageIndicator from '@components/display/PercentageIndicator';
-
 import ConnectionStateLabel from '@components/display/ConnectionStateLabel';
+
+// Types
 import { connectionStateTypesId } from '@components/display/ConnectionStateLabel/types';
+
+// Utils
+import { shortenHex } from '@utils/web3';
+import IconButton from '@components/inputs/IconButton';
+import { buttonVariantsId } from '@types/buttons';
 
 export default {
   title: 'Display/Table',
@@ -26,8 +28,8 @@ const Template = (args) => (
   <Table {...args} />
 );
 
-export const Basic = Template.bind({});
-Basic.args = {
+export const Investors = Template.bind({});
+Investors.args = {
   columns: [
     {
       Header: 'User ID',
@@ -67,9 +69,10 @@ Basic.args = {
     },
     {
       Header: (
-        <div style={{ textAlign: 'right' }}>
-          <img src={OptionsDotsIcon} />
-        </div>
+        <IconButton
+          variant={buttonVariantsId.PLACEHOLDER}
+          icon={OptionsDotsIcon}
+        />
       ),
       accessor: 'action',
       disableSortBy: true
@@ -77,21 +80,21 @@ Basic.args = {
   ],
   data: [
     {
-      userId: shortenHex('0xc3B2CFa1684dd33e8Ea8F657122f42b288d32852'),
+      userId: shortenHex('5f886d29da8e9666b1684c9a'),
       email: 'tec**@zig**.com',
       investment: (
         <PriceLabel
           token={'USDT'}
-          value={'5000'}
+          value={'1250'}
         />
       ),
       pyd: (
         <PriceLabel
           token={'USDT'}
-          value={'145'}
+          value={'37.5'}
           bottomElement={(
             <PercentageIndicator
-              value={10}
+              value={3}
             />
           )}
         />
@@ -99,41 +102,26 @@ Basic.args = {
       pydTotal: (
         <PriceLabel
           token={'USDT'}
-          value={'1500'}
+          value={'145'}
         />
       ),
       totalFeesPaid: (
         <PriceLabel
           token={'USDT'}
-          value={'1250'}
+          value={'218'}
         />
       ),
-      successFee: (
-        <PriceLabel
-          token={'USDT'}
-          value={'1250'}
-        />
-      ),
-      feesInZig: (
-        <PriceLabel
-          token={'USDT'}
-          value={'1250'}
-        />
-      ),
+      successFee: '10%',
+      feesInZig: <img src={CheckIcon} />,
       status: (
-        <ConnectionStateLabel stateId={connectionStateTypesId.CONNECTED} />
+        <ConnectionStateLabel
+          stateId={connectionStateTypesId.CONNECTED}
+        />
       ),
       action: (
-        <ButtonGroup>
-          <TableButton
-            icon={EditPenIcon}
-            caption={'Edit'}
-          />
-          <TableButton
-            icon={CloseIcon}
-            caption={'Remove'}
-          />
-        </ButtonGroup>
+        <IconButton
+          icon={OptionsDotsIcon}
+        />
       )
     }
   ]

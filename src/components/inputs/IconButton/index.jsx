@@ -5,28 +5,22 @@ import React from 'react';
 import * as styled from './styles';
 
 // Types
+import { buttonVariantsId } from '@types/buttons';
 import { sizeTypesId } from '@types/sizes';
 
-function TableButton({
-  caption,
-  variant = null,
-  size = sizeTypesId.SMALL,
+function IconButton({
+  variant = buttonVariantsId.PRIMARY,
   icon = null,
   onClick = () => {}
 }) {
   return (
     <styled.Layout
-      onClick={onClick}
       variant={variant}
-      size={size}>
-      {icon && (
-        <styled.Icon src={icon} />
-      )}
-      <styled.Caption>
-        {caption}
-      </styled.Caption>
+      size={sizeTypesId.MEDIUM}
+      onClick={onClick}>
+      <styled.Icon src={icon} />
     </styled.Layout>
   );
 }
 
-export default TableButton;
+export default IconButton;

@@ -2,69 +2,73 @@
 import styled from 'styled-components';
 import { styledIf } from '@utils/styled';
 
-export const Layout = styled.table`
-  border-spacing: 0;
+export const Layout = styled.div`
+  width: 100%;
   border-radius: 16px;
-  background: #131225;
+  overflow: auto;
+`;
+
+export const Table = styled.table`
+  border-spacing: 0;
   overflow: hidden;
   width: 100%;
-  
   font-family: 'Poppings', sans-serif;
+
+  ${({ theme }) => (`
+    background: ${theme.table.backgroundColor};
+    
+    thead {
+      border: 1px solid ${theme.table.thead.borderColor};
+      background: ${theme.table.thead.backgroundColor};
+      
+      th {
+        color: ${theme.table.thead.th.textColor};
+        padding: 12px 22px;
+      }
+    }
+    
+    tbody {
+      td {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 0px;
+        text-align: center;
+        color: ${theme.table.tbody.textColor};
+        padding: 12px 22px;
+      }
+    }
+    
+    th,
+    td {
+      margin: 0;
+      border: 0;
+      border-bottom: 1px solid ${theme.table.tbody.th.borderBottomColor};
+  
+      :last-child {
+        border-right: 0;
+      }
+    }
+  `)}
 
   thead {
     user-select: none;
-    border: 1px solid #222249;
-    background: #222249;
     
     th {
       font-style: normal;
       font-weight: 500;
       font-size: 13px;
       line-height: 16px;
-      color: #F3F4F6;
-      padding: 16px 8px;
       white-space: nowrap;
-      
-      &:first-child {
-        padding-left: 32px;
-      }
-      
-      &:last-child {
-        padding-right: 32px;
-      }
     }
   }
   
-  tbody {
-    td {
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 20px;
-      letter-spacing: 0px;
-      text-align: center;
-      color: #F3F4F6;
-      padding: 18px 16px;
-    }
-  }
-
   tr {
     :last-child {
       td {
         border-bottom: 0;
       }
-    }
-  }
-
-  th,
-  td {
-    margin: 0;
-    border: 0;
-    padding: 0 22px;
-    border-bottom: 1px solid #222249;
-
-    :last-child {
-      border-right: 0;
     }
   }
 `;
