@@ -2,13 +2,13 @@
 import React from 'react';
 
 // Components
-import ConnectionStateLabel from './';
-import { connectionStateTypesId } from '@components/display/ConnectionStateLabel/types';
+import ConnectionStateLabel from './index';
+import { connectionStateTypesId } from '@components/display/Table/components/ConnectionStateLabel/types';
 
 // Types
 
 export default {
-  title: 'Display/ConnectionStateLabel',
+  title: 'Display/Table/ConnectionStateLabel',
   component: ConnectionStateLabel,
   argTypes: {
     size: {

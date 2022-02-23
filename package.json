@@ -43,7 +43,8 @@
     "eslint-plugin-react": "^7.27.0",
     "eslint-plugin-storybook": "^0.5.1",
     "jest": "^27.3.1",
-    "puppeteer": "^11.0.0",
+    "jest-svg-transformer": "^1.0.0",
+    "jest-transform-stub": "^2.0.0",
     "storybook-addon-styled-component-theme": "^2.0.0",
     "storybook-dark-mode": "^1.0.8",
     "storybook-figma": "^0.1.2"
@@ -77,6 +78,7 @@
     ],
     "testEnvironment": "jsdom",
     "moduleNameMapper": {
+      "^.+\\.svg$": "jest-svg-transformer",
       "^@root(.*)$": "<rootDir>/src$1",
       "^@assets(.*)$": "<rootDir>/src/assets$1",
       "^@hooks(.*)$": "<rootDir>/src/hooks$1",

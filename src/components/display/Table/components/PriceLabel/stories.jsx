@@ -2,10 +2,10 @@
 import React from 'react';
 
 // Components
-import PriceLabel from './';
+import PriceLabel from './index';
 
 export default {
-  title: 'Display/PriceLabel',
+  title: 'Display/Table/PriceLabel',
   component: PriceLabel,
   argTypes: {
     value: {

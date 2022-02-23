@@ -9,19 +9,20 @@ import CloseIcon from '@assets/icons/close-icon.svg';
 
 // Component
 import Table from './';
-import PriceLabel from '@components/display/PriceLabel';
-import PercentageIndicator from '@components/display/PercentageIndicator';
-import ConnectionStateLabel from '@components/display/ConnectionStateLabel';
-import TableButton from '@components/inputs/TableButton';
+import PriceLabel from '@components/display/Table/components/PriceLabel';
+import PercentageIndicator from '@components/display/Table/components/PercentageIndicator';
+import ConnectionStateLabel from '@components/display/Table/components/ConnectionStateLabel';
+import TableButton from '@components/display/Table/components/TableButton';
 import IconButton from '@components/inputs/IconButton';
 import { ButtonGroup } from '@components/styled';
 
 // Types
-import { connectionStateTypesId } from '@components/display/ConnectionStateLabel/types';
+import { connectionStateTypesId } from '@components/display/Table/components/ConnectionStateLabel/types';
 import { buttonVariantsId } from '@types/buttons';
 
 // Utils
 import { shortenHex } from '@utils/web3';
+import DateLabel from '@components/display/Table/components/DateLabel';
 
 export default {
   title: 'Display/Table',
@@ -181,7 +182,9 @@ ExchangeOrders.args = {
   ],
   data: [
     {
-      date: format(new Date(), 'p PP'),
+      date: (
+        <DateLabel date={new Date()} />
+      ),
       orderId: '138495028471',
       pair: 'XML/USDT',
       amount: 25,
@@ -252,14 +255,7 @@ Contracts.args = {
   data: [
     {
       date: (
-        <>
-          <div>
-            {format(new Date(), 'p')}
-          </div>
-          <div>
-            {format(new Date(), 'PP')}
-          </div>
-        </>
+        <DateLabel date={new Date()} />
       ),
       positionId: (
         <div style={{ color: '#706F82' }}>mhAtXCp3BoaWgE5G8JJFD</div>

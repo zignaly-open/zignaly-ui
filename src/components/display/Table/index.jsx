@@ -9,7 +9,7 @@ import ArrowBottomIcon from '@assets/icons/arrow-bottom-icon.svg';
 import * as styled from './styles';
 
 // Components
-import Row from './Row';
+import Row from './components/Row';
 
 function Table({
   columns = [],

@@ -1,4 +1,4 @@
-import { connectionStateTypesId } from '@components/display/ConnectionStateLabel/types';
+import { connectionStateTypesId } from '@components/display/Table/components/ConnectionStateLabel/types';
 
 const dark = {
   name: 'dark',
@@ -48,6 +48,10 @@ const dark = {
   priceLabel: {
     valueTextColor: '#F3F4F6',
     tokenTextColor: '#706F82'
+  },
+
+  dateLabel: {
+    textColor: '#F3F4F6'
   }
 };
 

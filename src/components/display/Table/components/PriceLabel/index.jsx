@@ -19,8 +19,8 @@ const PriceLabel = ({
           thousandSeparator={true}
         />
       ) : value}
+      <styled.Token>{token}</styled.Token>
     </styled.Value>
-    <styled.Token>{token}</styled.Token>
     {bottomElement && bottomElement}
   </styled.Layout>
 );
