@@ -12,11 +12,13 @@ const PriceLabel = ({
 }) => (
   <styled.Layout>
     <styled.Value>
-      <NumberFormat
-        value={value}
-        displayType={'text'}
-        thousandSeparator={true}
-      />
+      {(typeof value === 'number' || typeof value === 'bigint') ? (
+        <NumberFormat
+          value={value}
+          displayType={'text'}
+          thousandSeparator={true}
+        />
+      ) : value}
     </styled.Value>
     <styled.Token>{token}</styled.Token>
     {bottomElement && bottomElement}

@@ -1,6 +1,6 @@
 // Dependencies
 import React from 'react';
-import { format, compareAsc } from 'date-fns';
+import { format } from 'date-fns';
 
 // Assets
 import OptionsDotsIcon from '@assets/icons/option-dots-icon.svg';
@@ -139,7 +139,7 @@ ExchangeOrders.args = {
       accessor: 'date'
     },
     {
-      Header: 'Ordeer ID',
+      Header: 'Order ID',
       accessor: 'orderId'
     },
     {

@@ -6,6 +6,25 @@ export const Layout = styled.div`
   width: 100%;
   border-radius: 16px;
   overflow: auto;
+
+  &::-webkit-scrollbar {
+    width: 2px;
+    height: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    border: 2px solid transparent;
+    background-clip: content-box;
+    background: #131225;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #2f2f66;
+    
+    &:hover {
+      background: #363670;
+    }
+  }
 `;
 
 export const Table = styled.table`

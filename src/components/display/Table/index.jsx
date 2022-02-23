@@ -8,6 +8,9 @@ import ArrowBottomIcon from '@assets/icons/arrow-bottom-icon.svg';
 // Styles
 import * as styled from './styles';
 
+// Components
+import Row from './Row';
+
 function Table({
   columns = [],
   data = []
@@ -45,20 +48,17 @@ function Table({
         ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-        {firstPageRows.map((row, i) => {
-          prepareRow(row);
-          return (
-            <tr key={`--table-row-${i.toString()}`} {...row.getRowProps()}>
-              {row.cells.map((cell, index) => (
-                <td
-                  key={`--table-row-cell-${index.toString()}`}
-                  {...cell.getCellProps()}>
-                  {cell.render('Cell')}
-                </td>
-              ))}
-            </tr>
-          );
-        })}
+          {firstPageRows.map((row, i) => {
+            prepareRow(row);
+
+            return (
+              <Row
+                key={`--table-row-${i.toString()}`}
+                row={row}
+                {...row.getRowProps()}
+              />
+            );
+          })}
         </tbody>
       </styled.Table>
     </styled.Layout>
