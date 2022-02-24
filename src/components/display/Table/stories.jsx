@@ -34,6 +34,14 @@ const Template = (args) => (
 );
 
 export const Investors = Template.bind({});
+
+Investors.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/SfGI4q5RrXQe2BhNmg56cb/Service-Dashboard?node-id=474%3A21194'
+  }
+};
+
 Investors.args = {
   columns: [
     {

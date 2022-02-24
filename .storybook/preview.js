@@ -2,6 +2,9 @@
 import { addDecorator } from "@storybook/react";
 import { themes as sbThemes } from '@storybook/theming';
 
+// Figma Addon
+import 'storybook-addon-designs/register'
+
 // Theme Provider
 import { ThemeProvider } from "styled-components";
 import { withThemesProvider } from "storybook-addon-styled-component-theme";
