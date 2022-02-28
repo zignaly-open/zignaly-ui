@@ -9,7 +9,7 @@ import { connectionStateName, connectionStateTypesId } from './types';
 
 const ConnectionStateLabel = ({
   stateId = connectionStateTypesId.CONNECTED
-}) => (
+}: { stateId: connectionStateTypesId }) => (
   <styled.Layout stateId={stateId}>
     {connectionStateName[stateId]}
   </styled.Layout>

@@ -1,6 +1,5 @@
 // Dependencies
 import React from 'react';
-import PropTypes from 'prop-types';
 
 // Styles
 import * as styled from './styles';
@@ -16,15 +15,25 @@ const componentByVariants = {
   number: 'span'
 };
 
-function Typography({
+export interface TypographyProps {
+  variant?: keyof typeof componentByVariants;
+  size?: string;
+  style?: any;
+  weight?: string;
+  component?: any;
+  className?: string;
+  children: React.ReactNode;
+}
+
+const Typography = ({
   children,
   variant = 'body',
   size = 'medium',
-  style = null,
-  weight = null,
-  component = null,
-  className = ''
-}) {
+  style,
+  weight,
+  component,
+  className
+}: TypographyProps) => {
   return (
     <styled.Layout
       weight={weight}
@@ -35,18 +44,5 @@ function Typography({
     </styled.Layout>
   );
 }
-
-Typography.propTypes = {
-  variant: PropTypes.oneOf([
-    'h1',
-    'h2',
-    'h3',
-    'h4',
-    'h5',
-    'h6',
-    'body',
-    'number'
-  ])
-};
 
 export default Typography;

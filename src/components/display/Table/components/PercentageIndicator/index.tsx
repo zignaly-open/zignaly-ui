@@ -10,7 +10,7 @@ import ArrowChartDownIcon from '@assets/icons/arrow-chart-down-icon.svg';
 import * as styled from './styles';
 
 //  Utils
-import { isPositive } from '@utils/numbers';
+import { isPositive } from 'utils/numbers';
 
 const PercentageIndicator = ({
   value = 0

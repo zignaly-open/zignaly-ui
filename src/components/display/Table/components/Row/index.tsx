@@ -7,10 +7,10 @@ import ExpandedArrowIcon from '@assets/icons/arrow-expansion-icon.svg';
 // Styled Components
 import * as styled from './styles';
 
-function Row({
+const Row = ({
   row = null,
   ...props
-}) {
+}) => {
   return (
     <>
       <tr {...props}>

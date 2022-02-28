@@ -1,6 +1,6 @@
 // Dependencies
-import styled from 'styled-components';
-import { styledIf } from '@utils/styled';
+import styled from "styled-components";
+import { styledIf } from "utils/styled";
 
 export const Layout = styled.div`
   width: 100%;
@@ -20,7 +20,7 @@ export const Layout = styled.div`
 
   &::-webkit-scrollbar-thumb {
     background-color: #2f2f66;
-    
+
     &:hover {
       background: #363670;
     }
@@ -31,9 +31,9 @@ export const Table = styled.table`
   border-spacing: 0;
   overflow: hidden;
   width: 100%;
-  font-family: 'Poppings', sans-serif;
+  font-family: "Poppings", sans-serif;
 
-  ${({ theme }) => (`
+  ${({ theme }) => `
     background: ${theme.table.backgroundColor};
     
     thead {
@@ -70,11 +70,11 @@ export const Table = styled.table`
         border-right: 0;
       }
     }
-  `)}
+  `}
 
   thead {
     user-select: none;
-    
+
     th {
       font-style: normal;
       font-weight: 500;
@@ -83,7 +83,7 @@ export const Table = styled.table`
       white-space: nowrap;
     }
   }
-  
+
   tr {
     :last-child {
       td {
@@ -93,15 +93,19 @@ export const Table = styled.table`
   }
 `;
 
-export const SortIcon = styled.img`
+export const SortIcon = styled.img<{ isSortedDesc: boolean }>`
   margin-left: 6px;
   transition: all 0.1s linear;
-  
-  ${props => (`
-     ${styledIf(props.isSortedDesc, `
+
+  ${(props) => `
+     ${styledIf(
+       props.isSortedDesc,
+       `
       transform: rotate(180deg);
-    `, `
+    `,
+       `
       transform: rotate(0deg);
-    `)}
-  `)}
+    `
+     )}
+  `}
 `;

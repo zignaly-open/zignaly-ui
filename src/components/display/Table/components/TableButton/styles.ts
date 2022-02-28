@@ -1,10 +1,10 @@
 // Dependencies
-import styled from 'styled-components';
-import { Button } from '@components/styled';
+import styled from "styled-components";
+import { Button } from "components/styled";
 
-export const Layout = styled(Button)`
+export const Layout = styled(Button)<React.ComponentProps<typeof Button>>`
   background: rgba(12, 13, 33, 0.8);
-  border: 1px dashed #4A4958;
+  border: 1px dashed #4a4958;
   border-radius: 4px;
   color: #fff;
 

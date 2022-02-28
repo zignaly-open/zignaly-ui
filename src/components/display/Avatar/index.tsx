@@ -3,16 +3,16 @@ import React, { useEffect, useRef } from 'react';
 import Jazzicon from '@metamask/jazzicon';
 
 // Types
-import { sizeTypesId } from '@types/sizes';
+import { sizeTypesId } from 'types/sizes';
 
 // Styles
 import * as styled from './styles';
 
-function Avatar({
+const Avatar = ({
   size = sizeTypesId.MEDIUM,
   hash = '',
   image = null
-}) {
+}) => {
   // Refs
   const jazzIconRef = useRef(null);
 
@@ -24,7 +24,7 @@ function Avatar({
   }, [image, hash, size]);
 
   return (
-    <styled.Layout className={[size]} data-testid="avatar-view">
+    <styled.Layout className={size} data-testid="avatar-view">
       {image ? (
         <styled.Image
           src={image}

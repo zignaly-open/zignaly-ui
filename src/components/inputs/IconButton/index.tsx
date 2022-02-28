@@ -5,14 +5,18 @@ import React from 'react';
 import * as styled from './styles';
 
 // Types
-import { buttonVariantsId } from '@types/buttons';
-import { sizeTypesId } from '@types/sizes';
+import { buttonVariantsId } from 'types/buttons';
+import { sizeTypesId } from 'types/sizes';
 
-function IconButton({
+type IconButtonProps = {
+  variant: buttonVariantsId, icon: string, onClick: React.MouseEventHandler<HTMLButtonElement>
+}
+
+const IconButton = ({
   variant = buttonVariantsId.PRIMARY,
-  icon = null,
-  onClick = () => {}
-}) {
+  icon,
+  onClick
+}: IconButtonProps) => {
   return (
     <styled.Layout
       variant={variant}

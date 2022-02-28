@@ -1,8 +1,8 @@
 // Dependencies
-import styled from 'styled-components';
-import { Button } from '@components/styled';
-import { styledIf } from '@utils/styled';
-import { buttonVariantsId } from '@types/buttons';
+import styled from "styled-components";
+import { Button } from "components/styled";
+import { styledIf } from "utils/styled";
+import { buttonVariantsId } from "types/buttons";
 
 export const Layout = styled(Button)`
   display: flex;
@@ -17,12 +17,15 @@ export const Layout = styled(Button)`
 
   border: none;
 
-  ${props => `
-    ${styledIf(props.variant !== buttonVariantsId.PLACEHOLDER, `
+  ${(props) => `
+    ${styledIf(
+      props.variant !== buttonVariantsId.PLACEHOLDER,
+      `
       &:hover {
         background: rgba(255, 255, 255, 0.06);
       } 
-    `)}
+    `
+    )}
   `}
 `;
 

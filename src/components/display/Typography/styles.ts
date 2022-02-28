@@ -1,11 +1,11 @@
 // Dependencies
-import styled from 'styled-components';
-import { styledIf } from '@utils/styled';
+import styled from "styled-components";
+import { styledIf } from "utils/styled";
 
-export const Layout = styled.h1`
-  font-family: 'Poppins', sans-serif;
+export const Layout = styled.h1<{ weight: string }>`
+  font-family: "Poppins", sans-serif;
   margin: 0;
-  
+
   &.h1 {
     &.medium {
       font-weight: 600;
@@ -13,7 +13,7 @@ export const Layout = styled.h1`
       line-height: 60px;
       letter-spacing: 1px;
     }
-    
+
     &.small {
       font-weight: bold;
       font-size: 28px;
@@ -34,7 +34,7 @@ export const Layout = styled.h1`
       font-weight: 300;
       letter-spacing: 0.66px;
     }
-    
+
     &.small {
       font-weight: bold;
       font-size: 24px;
@@ -55,7 +55,7 @@ export const Layout = styled.h1`
       font-weight: 400;
       letter-spacing: 0.33px;
     }
-    
+
     &.small {
       font-weight: bold;
       font-size: 20px;
@@ -133,7 +133,7 @@ export const Layout = styled.h1`
       text-transform: uppercase;
     }
   }
-  
+
   &.body {
     &.medium {
       font-size: 16px;
@@ -153,13 +153,16 @@ export const Layout = styled.h1`
       line-height: 16px;
     }
   }
-  
-  ${props => `
+
+  ${(props) => `
     color: inherit;
        
-    ${styledIf(props.weight, `
+    ${styledIf(
+      props.weight,
+      `
       font-weight: ${props.weight} !important;
-    `)}
+    `
+    )}
   `}
 
   &.style-number {

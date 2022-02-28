@@ -5,15 +5,24 @@ import React from 'react';
 import * as styled from './styles';
 
 // Types
-import { sizeTypesId } from '@types/sizes';
+import { sizeTypesId } from 'types/sizes';
+import { buttonVariantsId } from 'types/buttons';
 
-function TableButton({
+interface TableButtonProps {
+  caption: string;
+  variant?: buttonVariantsId;
+  size?: sizeTypesId;
+  icon?: any;
+  onClick?: React.MouseEventHandler<HTMLInputElement>
+}
+
+const TableButton = ({
   caption,
-  variant = null,
+  variant,
   size = sizeTypesId.SMALL,
-  icon = null,
-  onClick = () => {}
-}) {
+  icon,
+  onClick = () => { }
+}: TableButtonProps) => {
   return (
     <styled.Layout
       onClick={onClick}

@@ -7,18 +7,18 @@ import NumberFormat from 'react-number-format';
 import * as styled from './styles';
 
 // Assets
-import ZigCoinIcon from '@assets/images/zignaly-coin.svg';
+import ZigCoinIcon from 'assets/images/zignaly-coin.svg';
 
 // Components
-import Typography from '@components/display/Typhography';
+import Typography from 'components/display/Typography';
 
 // Utils
-import { rankTypes, rankTypesId } from '@types/ranks';
+import { rankTypes, rankTypesId } from 'types/ranks';
 
-function ZigWalletIndicator({
+const ZigWalletIndicator = ({
   zigs = 0,
   rankId = rankTypesId.DOLPHIN
-}) {
+}: { zigs: number; rankId: rankTypesId }) => {
   const renderZigsCoins = useMemo(() => (
     <NumberFormat
       value={utils.formatUnits(BigNumber.from(zigs === '' ? '0' : String(zigs)))}

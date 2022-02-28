@@ -1,16 +1,16 @@
 // Dependencies
-import styled from 'styled-components';
-import { sizeTypesId } from '@types/sizes';
+import styled from "styled-components";
+import { sizeTypesId } from "types/sizes";
 
 export const sizes = {
   [sizeTypesId.SMALL]: 32,
   [sizeTypesId.MEDIUM]: 42,
-  [sizeTypesId.LARGE]: 64
+  [sizeTypesId.LARGE]: 64,
 };
 
 export const Layout = styled.div`
   overflow: hidden;
-  
+
   &.${sizeTypesId.SMALL} {
     width: ${sizes[sizeTypesId.SMALL]}px;
     height: ${sizes[sizeTypesId.SMALL]}px;

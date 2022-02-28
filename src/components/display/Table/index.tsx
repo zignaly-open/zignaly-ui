@@ -1,6 +1,6 @@
 // Dependencies
 import React from 'react';
-import { useTable, useSortBy } from 'react-table';
+import { useTable, useSortBy, TableOptions } from 'react-table';
 
 // Assets
 import ArrowBottomIcon from '@assets/icons/arrow-bottom-icon.svg';
@@ -11,10 +11,10 @@ import * as styled from './styles';
 // Components
 import Row from './components/Row';
 
-function Table({
+const Table = ({
   columns = [],
   data = []
-}) {
+}: { columns: TableOptions<Object>['columns'], data: Object[] }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -32,20 +32,20 @@ function Table({
     <styled.Layout>
       <styled.Table {...getTableProps()}>
         <thead>
-        {headerGroups.map((headerGroup, index) => (
-          <tr
-            key={`--table-head-${index.toString()}`}
-            {...headerGroup.getHeaderGroupProps()}>
-            {headerGroup.headers.map((column, index) => (
-              <th key={`--table-head-row-${index.toString()}`} {...column.getHeaderProps(column.getSortByToggleProps())}>
-                {column.render('Header')}
-                {column.isSorted && (
-                  <styled.SortIcon isSortedDesc={column.isSortedDesc} src={ArrowBottomIcon} />
-                )}
-              </th>
-            ))}
-          </tr>
-        ))}
+          {headerGroups.map((headerGroup, index) => (
+            <tr
+              key={`--table-head-${index.toString()}`}
+              {...headerGroup.getHeaderGroupProps()}>
+              {headerGroup.headers.map((column, index) => (
+                <th key={`--table-head-row-${index.toString()}`} {...column.getHeaderProps(column.getSortByToggleProps())}>
+                  {column.render('Header')}
+                  {column.isSorted && (
+                    <styled.SortIcon isSortedDesc={column.isSortedDesc} src={ArrowBottomIcon} />
+                  )}
+                </th>
+              ))}
+            </tr>
+          ))}
         </thead>
         <tbody {...getTableBodyProps()}>
           {firstPageRows.map((row, i) => {
