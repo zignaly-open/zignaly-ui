@@ -8,7 +8,7 @@ import * as styled from './styles';
 import { sizeTypesId } from 'types/sizes';
 import { buttonVariantsId } from 'types/buttons';
 
-interface TableButtonProps {
+export interface TableButtonProps {
   caption: string;
   variant?: buttonVariantsId;
   size?: sizeTypesId;

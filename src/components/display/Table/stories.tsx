@@ -1,37 +1,37 @@
 // Dependencies
 import React from 'react';
 import { format } from 'date-fns';
+import { Story } from "@storybook/react/types-6-0";
 
 // Assets
-import OptionsDotsIcon from '@assets/icons/option-dots-icon.svg';
-import CheckIcon from '@assets/icons/check-icon.svg';
-import CloseIcon from '@assets/icons/close-icon.svg';
+import OptionsDotsIcon from 'assets/icons/option-dots-icon.svg';
+import CheckIcon from 'assets/icons/check-icon.svg';
+import CloseIcon from 'assets/icons/close-icon.svg';
 
 // Component
 import Table from './';
-import PriceLabel from '@components/display/Table/components/PriceLabel';
-import PercentageIndicator from '@components/display/Table/components/PercentageIndicator';
-import ConnectionStateLabel from '@components/display/Table/components/ConnectionStateLabel';
-import TableButton from '@components/display/Table/components/TableButton';
-import IconButton from '@components/inputs/IconButton';
-import { ButtonGroup } from '@components/styled';
+import PriceLabel from 'components/display/Table/components/PriceLabel';
+import PercentageIndicator from 'components/display/Table/components/PercentageIndicator';
+import ConnectionStateLabel from 'components/display/Table/components/ConnectionStateLabel';
+import TableButton from 'components/display/Table/components/TableButton';
+import IconButton from 'components/inputs/IconButton';
+import { ButtonGroup } from 'components/styled';
 
 // Types
-import { connectionStateTypesId } from '@components/display/Table/components/ConnectionStateLabel/types';
-import { buttonVariantsId } from '@types/buttons';
+import { connectionStateTypesId } from 'components/display/Table/components/ConnectionStateLabel/types';
+import { buttonVariantsId } from 'types/buttons';
 
 // Utils
-import { shortenHex } from '@utils/web3';
-import DateLabel from '@components/display/Table/components/DateLabel';
+import { shortenHex } from 'utils/web3';
+import DateLabel from 'components/display/Table/components/DateLabel';
 
 export default {
   title: 'Display/Table',
   component: Table
 };
 
-const Template = (args) => (
-  <Table {...args} />
-);
+const Template: Story<React.ComponentProps<typeof Table>> = (args) => <Table {...args} />
+
 
 export const Investors = Template.bind({});
 Investors.args = {

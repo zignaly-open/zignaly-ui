@@ -1,6 +1,6 @@
 // Dependencies
 import React from 'react';
-import { useTable, useSortBy, TableOptions } from 'react-table';
+import { useTable, useSortBy, Column } from 'react-table';
 
 // Assets
 import ArrowBottomIcon from '@assets/icons/arrow-bottom-icon.svg';
@@ -14,7 +14,7 @@ import Row from './components/Row';
 const Table = ({
   columns = [],
   data = []
-}: { columns: TableOptions<Object>['columns'], data: Object[] }) => {
+}: { columns: Column<any>[], data: Object[] }) => {
   const {
     getTableProps,
     getTableBodyProps,
@@ -34,10 +34,14 @@ const Table = ({
         <thead>
           {headerGroups.map((headerGroup, index) => (
             <tr
+              {...headerGroup.getHeaderGroupProps()}
               key={`--table-head-${index.toString()}`}
-              {...headerGroup.getHeaderGroupProps()}>
+            >
               {headerGroup.headers.map((column, index) => (
-                <th key={`--table-head-row-${index.toString()}`} {...column.getHeaderProps(column.getSortByToggleProps())}>
+                <th
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
+                  key={`--table-head-row-${index.toString()}`}
+                >
                   {column.render('Header')}
                   {column.isSorted && (
                     <styled.SortIcon isSortedDesc={column.isSortedDesc} src={ArrowBottomIcon} />
@@ -53,9 +57,9 @@ const Table = ({
 
             return (
               <Row
-                key={`--table-row-${i.toString()}`}
                 row={row}
                 {...row.getRowProps()}
+                key={`--table-row-${i.toString()}`}
               />
             );
           })}

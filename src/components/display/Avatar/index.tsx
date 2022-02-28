@@ -1,5 +1,6 @@
 // Dependencies
 import React, { useEffect, useRef } from 'react';
+// @ts-ignore
 import Jazzicon from '@metamask/jazzicon';
 
 // Types
@@ -10,15 +11,17 @@ import * as styled from './styles';
 
 const Avatar = ({
   size = sizeTypesId.MEDIUM,
-  hash = '',
-  image = null
-}) => {
+  hash,
+  image
+}: { size: sizeTypesId, hash?: string, image?: string }) => {
   // Refs
   const jazzIconRef = useRef(null);
 
   useEffect(() => {
     if (!image && (jazzIconRef.current && hash)) {
+      // @ts-ignore
       jazzIconRef.current.innerHTML = '';
+      // @ts-ignore
       jazzIconRef.current.appendChild(Jazzicon(styled.sizes[size], parseInt(hash.slice(2, 10), 16)));
     }
   }, [image, hash, size]);

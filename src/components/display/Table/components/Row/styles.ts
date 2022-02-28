@@ -4,7 +4,7 @@ import { styledIf } from "utils/styled";
 
 export const Expandable = styled.div``;
 
-export const ExpandableIcon = styled.img<{ isSortedDesc: boolean }>`
+export const ExpandableIcon = styled.img<{ isSortedDesc?: boolean }>`
   width: 12px;
   height: 12px;
 

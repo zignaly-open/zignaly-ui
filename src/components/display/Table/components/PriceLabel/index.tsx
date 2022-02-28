@@ -9,7 +9,7 @@ const PriceLabel = ({
   value = 0,
   token = 'USDT',
   bottomElement = null
-}) => (
+}: { value: number | string; token: string; bottomElement?: React.ReactNode }) => (
   <styled.Layout>
     <styled.Value>
       {(typeof value === 'number' || typeof value === 'bigint') ? (

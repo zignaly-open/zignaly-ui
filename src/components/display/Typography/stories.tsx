@@ -1,4 +1,5 @@
 import React from 'react';
+import { Story } from "@storybook/react/types-6-0";
 
 import Typography from './';
 
@@ -42,11 +43,7 @@ export default {
   }
 };
 
-const Template = (args) => (
-  <Typography {...args}>
-    {args.text}
-  </Typography>
-);
+const Template: Story<React.ComponentProps<typeof Typography>> = (args) => <Typography {...args} />
 
 export const H1 = Template.bind({});
 H1.args = {

@@ -9,7 +9,7 @@ import { buttonVariantsId } from 'types/buttons';
 import { sizeTypesId } from 'types/sizes';
 
 type IconButtonProps = {
-  variant: buttonVariantsId, icon: string, onClick: React.MouseEventHandler<HTMLButtonElement>
+  variant?: buttonVariantsId, icon: string, onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 const IconButton = ({

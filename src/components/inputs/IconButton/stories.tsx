@@ -1,5 +1,6 @@
 // Dependencies
 import React from 'react';
+import { Story } from "@storybook/react/types-6-0";
 
 // Assets
 import OptionDotsIcon from '@assets/icons/option-dots-icon.svg';
@@ -12,9 +13,7 @@ export default {
   component: IconButton
 };
 
-const Template = (args) => (
-  <IconButton {...args} />
-);
+const Template: Story<React.ComponentProps<typeof IconButton>> = (args) => <IconButton {...args} />
 
 export const Basic = Template.bind({});
 Basic.args = {
