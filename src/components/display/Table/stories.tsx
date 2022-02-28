@@ -1,7 +1,7 @@
 // Dependencies
 import React from 'react';
 import { format } from 'date-fns';
-import { Story } from "@storybook/react/types-6-0";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Assets
 import OptionsDotsIcon from 'assets/icons/option-dots-icon.svg';
@@ -28,9 +28,9 @@ import DateLabel from 'components/display/Table/components/DateLabel';
 export default {
   title: 'Display/Table',
   component: Table
-};
+} as ComponentMeta<typeof Table>;
 
-const Template: Story<React.ComponentProps<typeof Table>> = (args) => <Table {...args} />
+const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />
 
 
 export const Investors = Template.bind({});

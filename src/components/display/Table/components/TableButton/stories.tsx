@@ -1,19 +1,19 @@
 // Dependencies
 import React from 'react';
-import { Story } from "@storybook/react/types-6-0";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Assets
 import EditPenIcon from '@assets/icons/edit-pen-icon.svg';
 
 // Component
-import TableButton, { TableButtonProps } from './index';
+import TableButton from './index';
 
 export default {
   title: 'Display/Table/Components/TableButton',
   component: TableButton
-};
+} as ComponentMeta<typeof TableButton>;
 
-const Template: Story<TableButtonProps> = (args) =>
+const Template: ComponentStory<typeof TableButton> = (args) =>
   <TableButton {...args} />
 
 export const Basic = Template.bind({});

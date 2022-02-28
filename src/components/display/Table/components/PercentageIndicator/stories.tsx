@@ -1,5 +1,6 @@
 // Dependencies
 import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Components
 import PercentageIndicator from './index';
@@ -13,9 +14,9 @@ export default {
       default: 50
     }
   }
-};
+} as ComponentMeta<typeof PercentageIndicator>;;
 
-const Template = (args) => <PercentageIndicator {...args} />;
+const Template: ComponentStory<typeof PercentageIndicator> = (args) => <PercentageIndicator {...args} />
 
 export const Positive = Template.bind({});
 Positive.args = {

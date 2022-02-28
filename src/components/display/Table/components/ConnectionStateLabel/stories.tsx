@@ -1,9 +1,10 @@
 // Dependencies
 import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Components
 import ConnectionStateLabel from './index';
-import { connectionStateTypesId } from '@components/display/Table/components/ConnectionStateLabel/types';
+import { connectionStateTypesId } from 'components/display/Table/components/ConnectionStateLabel/types';
 
 // Types
 
@@ -23,9 +24,9 @@ export default {
       ]
     }
   }
-};
+} as ComponentMeta<typeof ConnectionStateLabel>;
 
-const Template = (args) => <ConnectionStateLabel {...args} />;
+const Template: ComponentStory<typeof ConnectionStateLabel> = (args) => <ConnectionStateLabel {...args} />
 
 export const Connected = Template.bind({});
 Connected.args = {

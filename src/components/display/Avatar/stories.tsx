@@ -1,6 +1,6 @@
 // Dependencies
 import React from "react";
-import { Story } from "@storybook/react/types-6-0";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Components
 import Avatar from "./";
@@ -24,9 +24,9 @@ export default {
       control: "text",
     },
   },
-};
+} as ComponentMeta<typeof Avatar>;
 
-const Template: Story<React.ComponentProps<typeof Avatar>> = (args) => <Avatar {...args} />;
+const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
 
 // With Image
 export const Image = Template.bind({});

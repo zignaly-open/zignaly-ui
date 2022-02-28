@@ -1,6 +1,6 @@
 // Dependencies
 import React from 'react';
-import { Story } from "@storybook/react/types-6-0";
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Component
 import ZigWalletIndicator from './';
@@ -27,9 +27,9 @@ export default {
   parameters: {
     jest: ['test.js']
   }
-};
+} as ComponentMeta<typeof ZigWalletIndicator>;;
 
-const Template: Story<React.ComponentProps<typeof ZigWalletIndicator>> = (args) => <ZigWalletIndicator {...args} />
+const Template: ComponentStory<typeof ZigWalletIndicator> = (args) => <ZigWalletIndicator {...args} />
 
 export const Dolphin = Template.bind({});
 Dolphin.args = {};

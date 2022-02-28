@@ -1,5 +1,6 @@
 // Dependencies
 import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 // Components
 import PriceLabel from './index';
@@ -17,9 +18,9 @@ export default {
       default: 'USDT'
     }
   }
-};
+} as ComponentMeta<typeof PriceLabel>;
 
-const Template = (args) => <PriceLabel {...args} />;
+const Template: ComponentStory<typeof PriceLabel> = (args) => <PriceLabel {...args} />
 
 export const USDT = Template.bind({});
 USDT.args = {

@@ -1,5 +1,6 @@
 // Dependencies
 import React from 'react';
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
 import DateLabel from './index';
@@ -13,9 +14,9 @@ export default {
       default: new Date()
     }
   }
-};
+}as ComponentMeta<typeof DateLabel>;
 
-const Template = (args) => <DateLabel {...args} />;
+const Template: ComponentStory<typeof DateLabel> = (args) => <DateLabel {...args} />
 
 export const Basic = Template.bind({});
 Basic.args = {
