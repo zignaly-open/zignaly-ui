@@ -75,6 +75,7 @@ body.args = {
 export const number = Template.bind({});
 number.args = {
   children: 10000000,
+  // @ts-ignore todo: no body2
   variant: "body2",
   style: "number",
 };

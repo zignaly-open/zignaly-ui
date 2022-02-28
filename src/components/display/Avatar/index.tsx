@@ -9,8 +9,6 @@ import { sizeTypesId } from "types/sizes";
 // Styles
 import * as styled from "./styles";
 
-const a = aaaa();
-
 const Avatar = ({
   size = sizeTypesId.MEDIUM,
   hash,
