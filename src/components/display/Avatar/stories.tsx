@@ -1,6 +1,6 @@
 // Dependencies
 import React from "react";
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
 import Avatar from "./";

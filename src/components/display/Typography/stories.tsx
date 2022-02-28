@@ -1,95 +1,80 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Typography from './';
+import Typography from "./";
 
 export default {
-  title: 'Display/Typography',
+  title: "Display/Typography",
   component: Typography,
   argTypes: {
     variant: {
-      control: 'select',
-      options: [
-        'h1',
-        'h2',
-        'h3',
-        'h4',
-        'h5',
-        'h6',
-        'body1'
-      ]
+      control: "select",
+      options: ["h1", "h2", "h3", "h4", "h5", "h6", "body1"],
     },
     weight: {
-      control: 'text'
+      control: "text",
     },
     size: {
-      control: 'select',
-      options: [
-        'medium',
-        'small',
-        'x-small'
-      ]
+      control: "select",
+      options: ["medium", "small", "x-small"],
     },
     style: {
-      control: 'select',
-      options: [
-        'text',
-        'number'
-      ]
-    }
+      control: "select",
+      options: ["text", "number"],
+    },
   },
   parameters: {
-    jest: ['test.js']
-  }
-} as ComponentMeta<typeof Typography>;;
+    jest: ["test.js"],
+  },
+} as ComponentMeta<typeof Typography>;
 
-const Template: ComponentStory<typeof Typography> = (args) => <Typography {...args} />
+const Template: ComponentStory<typeof Typography> = (args) => <Typography {...args} />;
 
 export const H1 = Template.bind({});
 H1.args = {
-  children: 'Example Title',
-  variant: 'h1'
+  children: "Example Title",
+  variant: "h1",
 };
 
 export const H2 = Template.bind({});
 H2.args = {
-  children: 'Example Title',
-  variant: 'h2'
+  children: "Example Title",
+  variant: "h2",
 };
 
 export const H3 = Template.bind({});
 H3.args = {
-  children: 'Example Title',
-  variant: 'h3'
+  children: "Example Title",
+  variant: "h3",
 };
 
 export const H4 = Template.bind({});
 H4.args = {
-  children: 'Example Title',
-  variant: 'h4'
+  children: "Example Title",
+  variant: "h4",
 };
 
 export const H5 = Template.bind({});
 H5.args = {
-  children: 'Example Title',
-  variant: 'h5'
+  children: "Example Title",
+  variant: "h5",
 };
 
 export const H6 = Template.bind({});
 H6.args = {
-  children: 'Example Title',
-  variant: 'h6'
+  children: "Example Title",
+  variant: "h6",
 };
 
 export const body = Template.bind({});
 body.args = {
-  children: 'Example body text',
-  variant: 'body'
+  children: "Example body text",
+  variant: "body",
 };
 
 export const number = Template.bind({});
 number.args = {
   children: 10000000,
-  variant: 'body2',
-  style: 'number'
+  variant: "body2",
+  style: "number",
 };

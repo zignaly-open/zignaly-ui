@@ -36,21 +36,21 @@ export const Button = styled.button<{ size: sizeTypesId; variant: buttonVariants
       props.size === sizeTypesId.SMALL,
       `
       padding: 8px 18px;
-    `
+    `,
     )}
   
     ${styledIf(
       props.variant === buttonVariantsId.PRIMARY,
       `
       background-color: red;
-    `
+    `,
     )}  
     
     ${styledIf(
       props.variant !== buttonVariantsId.PLACEHOLDER,
       `
       cursor: pointer;
-    `
+    `,
     )}
   `};
 `;

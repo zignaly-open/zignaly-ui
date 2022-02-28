@@ -1,26 +1,20 @@
 // Dependencies
-import React from 'react';
+import React from "react";
 
 // Assets
-import ExpandedArrowIcon from '@assets/icons/arrow-expansion-icon.svg';
+import ExpandedArrowIcon from "@assets/icons/arrow-expansion-icon.svg";
 
 // Styled Components
-import * as styled from './styles';
-import { Row as _Row } from 'react-table';
+import * as styled from "./styles";
+import { Row as _Row } from "react-table";
 
-const Row = ({
-  row,
-  ...props
-}: { row: _Row<Object> }) => {
+const Row = ({ row, ...props }: { row: _Row<Object> }) => {
   return (
     <>
       <tr {...props}>
         {row.cells.map((cell, index) => (
-          <td
-            {...cell.getCellProps()}
-            key={`--table-row-cell-${index.toString()}`}
-          >
-            {cell.render('Cell')}
+          <td {...cell.getCellProps()} key={`--table-row-cell-${index.toString()}`}>
+            {cell.render("Cell")}
           </td>
         ))}
 
@@ -33,6 +27,6 @@ const Row = ({
       </tr>
     </>
   );
-}
+};
 
 export default Row;

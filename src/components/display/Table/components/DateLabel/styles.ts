@@ -1,5 +1,5 @@
 // Dependencies
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Layout = styled.div``;
 
@@ -10,7 +10,7 @@ export const Value = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   ${({ theme }) => `
     color: ${theme.dateLabel.textColor};
   `}

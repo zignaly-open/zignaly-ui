@@ -105,7 +105,7 @@ export const SortIcon = styled.img<{ isSortedDesc?: boolean }>`
     `,
        `
       transform: rotate(0deg);
-    `
+    `,
      )}
   `}
 `;

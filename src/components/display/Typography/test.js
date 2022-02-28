@@ -70,7 +70,7 @@ describe("components/display/Typography", () => {
     const { container } = render(
       <Typography variant={"body"} component={"code"}>
         Example Test
-      </Typography>
+      </Typography>,
     );
 
     const tag = container.querySelector("code");

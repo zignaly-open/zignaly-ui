@@ -1,18 +1,18 @@
 // Dependencies
-import React from 'react';
+import React from "react";
 
 // Styles
-import * as styled from './styles';
+import * as styled from "./styles";
 
 const componentByVariants = {
-  h1: 'h1',
-  h2: 'h2',
-  h3: 'h3',
-  h4: 'h4',
-  h5: 'h5',
-  h6: 'h6',
-  body: 'span',
-  number: 'span'
+  h1: "h1",
+  h2: "h2",
+  h3: "h3",
+  h4: "h4",
+  h5: "h5",
+  h6: "h6",
+  body: "span",
+  number: "span",
 };
 
 export interface TypographyProps {
@@ -27,12 +27,12 @@ export interface TypographyProps {
 
 const Typography = ({
   children,
-  variant = 'body',
-  size = 'medium',
+  variant = "body",
+  size = "medium",
   style,
   weight,
   component,
-  className
+  className,
 }: TypographyProps) => {
   return (
     <styled.Layout
@@ -43,6 +43,6 @@ const Typography = ({
       {children}
     </styled.Layout>
   );
-}
+};
 
 export default Typography;

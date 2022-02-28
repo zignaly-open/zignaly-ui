@@ -1,5 +1,5 @@
 // Dependencies
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Layout = styled.div`
   display: inline-flex;
@@ -28,28 +28,28 @@ export const Level = styled.div`
   justify-content: center;
   font-size: 13px;
 
-  ${({ theme }) => (`
+  ${({ theme }) => `
     color: ${theme.zigWalletIndicator.levelTextColor}
-  `)}
+  `}
 `;
 
 export const Token = styled.span`
   text-transform: uppercase;
   padding-left: 4px;
   line-height: 23px;
-  
-  ${({ theme }) => (`
+
+  ${({ theme }) => `
     color: ${theme.zigWalletIndicator.tokenTextColor}
-  `)}
+  `}
 `;
 
 export const Value = styled.div`
   display: flex;
   text-transform: uppercase;
 
-  ${({ theme }) => (`
+  ${({ theme }) => `
     color: ${theme.zigWalletIndicator.valueTextColor}
-  `)}
+  `}
 `;
 
 export const Data = styled.div`

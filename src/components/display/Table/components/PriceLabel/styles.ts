@@ -1,5 +1,5 @@
 // Dependencies
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Layout = styled.div``;
 
@@ -10,7 +10,7 @@ export const Value = styled.span`
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   ${({ theme }) => `
     color: ${theme.priceLabel.valueTextColor};
   `}
@@ -20,7 +20,7 @@ export const Token = styled.span`
   ${({ theme }) => `
     color: ${theme.priceLabel.tokenTextColor};
   `}
-  
+
   font-weight: 600;
   font-size: 12px;
   line-height: 16px;

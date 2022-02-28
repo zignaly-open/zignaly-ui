@@ -24,7 +24,7 @@ export const Layout = styled(Button)`
       &:hover {
         background: rgba(255, 255, 255, 0.06);
       } 
-    `
+    `,
     )}
   `}
 `;

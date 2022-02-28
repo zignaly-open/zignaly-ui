@@ -1,35 +1,34 @@
 // Dependencies
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Component
-import ZigWalletIndicator from './';
+import ZigWalletIndicator from "./";
 
 // Types
-import { rankTypesId } from 'types/ranks';
+import { rankTypesId } from "types/ranks";
 
 export default {
-  title: 'Display/ZigWalletIndicator',
+  title: "Display/ZigWalletIndicator",
   component: ZigWalletIndicator,
   argTypes: {
     zigs: {
-      control: 'text'
+      control: "text",
     },
     rankId: {
-      control: 'select',
+      control: "select",
       default: rankTypesId.WHALE,
-      options: [
-        rankTypesId.WHALE,
-        rankTypesId.DOLPHIN
-      ]
-    }
+      options: [rankTypesId.WHALE, rankTypesId.DOLPHIN],
+    },
   },
   parameters: {
-    jest: ['test.js']
-  }
-} as ComponentMeta<typeof ZigWalletIndicator>;;
+    jest: ["test.js"],
+  },
+} as ComponentMeta<typeof ZigWalletIndicator>;
 
-const Template: ComponentStory<typeof ZigWalletIndicator> = (args) => <ZigWalletIndicator {...args} />
+const Template: ComponentStory<typeof ZigWalletIndicator> = (args) => (
+  <ZigWalletIndicator {...args} />
+);
 
 export const Dolphin = Template.bind({});
 Dolphin.args = {};

@@ -161,7 +161,7 @@ export const Layout = styled.h1<{ weight: string }>`
       props.weight,
       `
       font-weight: ${props.weight} !important;
-    `
+    `,
     )}
   `}
 

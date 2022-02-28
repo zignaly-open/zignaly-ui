@@ -1,21 +1,21 @@
 // Dependencies
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import React from "react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Assets
-import OptionDotsIcon from '@assets/icons/option-dots-icon.svg';
+import OptionDotsIcon from "@assets/icons/option-dots-icon.svg";
 
 // Component
-import IconButton from './';
+import IconButton from "./";
 
 export default {
-  title: 'Inputs/IconButton',
-  component: IconButton
+  title: "Inputs/IconButton",
+  component: IconButton,
 } as ComponentMeta<typeof IconButton>;
 
-const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...args} />
+const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...args} />;
 
 export const Basic = Template.bind({});
 Basic.args = {
-  icon: OptionDotsIcon
+  icon: OptionDotsIcon,
 };

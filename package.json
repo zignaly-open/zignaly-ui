@@ -10,9 +10,9 @@
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "test": "jest -u",
     "build": "tsc",
-    "prepare": "npm run build",
-    "lint": "eslint src --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier src/**/*.* --write --config ./.prettierrc"
+    "prepare": "husky install",
+    "lint": "eslint --fix src --ext .js,.jsx,.ts,.tsx",
+    "format": "prettier --write src --config ./.prettierrc"
   },
   "repository": {
     "type": "git",
@@ -28,11 +28,6 @@
   "files": [
     "lib /**/*"
   ],
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run format"
-    }
-  },
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/plugin-syntax-jsx": "^7.16.0",
@@ -62,10 +57,11 @@
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-storybook": "^0.5.7",
-    "husky": "^7.0.4",
+    "husky": "^4.3.8",
     "jest": "^27.3.1",
     "jest-svg-transformer": "^1.0.0",
     "jest-transform-stub": "^2.0.0",
+    "lint-staged": "12.3.4",
     "prettier": "^2.5.1",
     "storybook-addon-styled-component-theme": "^2.0.0",
     "storybook-dark-mode": "^1.0.9",
@@ -110,5 +106,16 @@
       "^@utils(.*)$": "<rootDir>/src/utils$1",
       "^@types(.*)$": "<rootDir>/src/types$1"
     }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "npm run lint",
+      "npm run format"
+    ]
   }
 }
