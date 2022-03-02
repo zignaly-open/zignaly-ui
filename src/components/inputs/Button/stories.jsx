@@ -32,3 +32,9 @@ PrimaryAndLarge.args = {
   variant: buttonVariantsId.PRIMARY,
   size: sizeTypesId.LARGE
 };
+
+export const SecondaryAndSmall = Template.bind({});
+SecondaryAndSmall.args = {
+  variant: buttonVariantsId.SECONDARY,
+  size: sizeTypesId.SMALL
+};

@@ -29,6 +29,7 @@ export const Layout = styled.button`
   border: none;
   cursor: pointer;
   position: relative;
+  user-select: none;
 
   transition: all 0.2s linear;
   
@@ -112,8 +113,45 @@ export const Layout = styled.button`
         color: #F3F4F6;
       }
     `)}
+    
+    ${styledIf(isSecondaryButton(props.variant), `
+      background: rgba(12, 13, 33, 0.8);
+      border: 1px dashed #4A4958;
+      
+      &[disabled] {
+        opacity: 0.33;
+      } 
+      
+      &:hover {
+        background: #0D1133;
+      }
+
+      &:enabled:before {
+        border-radius: inherit;
+        background: linear-gradient(289.8deg, rgba(20, 156, 173, 0.48) 0%, rgba(69, 64, 193, 0.48) 100%);
+        content: '';    
+        display: block;
+        height: 100%;
+        position: absolute;
+        top: 0; left: 0;
+        opacity: 0;
+        width: 100%;
+        z-index: 1;
+        transition: all 100ms linear;
+      }
+      
+      &:enabled:active {
+        border: 2px solid;
+        border-image-source: linear-gradient(289.8deg, #149CAD 0%, #4540C1 100%);
+
+        &:before {
+          opacity: 1;
+        }
+      }
+            
+      ${Caption} {
+        color: #F3F4F6;
+      }
+    `)}
   `)}
-
-
-
 `;
