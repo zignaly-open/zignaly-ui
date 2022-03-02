@@ -1,8 +1,8 @@
 // Dependencies
-import styled from 'styled-components';
-import { styledIf } from '@utils/styled';
-import { buttonVariantsId } from '@types/buttons';
-import { sizeTypesId } from '@types/sizes';
+import styled from "styled-components";
+import { styledIf } from "@utils/styled";
+import { buttonVariantsId } from "@types/buttons";
+import { sizeTypesId } from "@types/sizes";
 
 const isPrimaryButton = (variant) => variant === buttonVariantsId.PRIMARY;
 
@@ -32,13 +32,15 @@ export const Layout = styled.button`
   user-select: none;
 
   transition: all 0.2s linear;
-  
+
   &[disabled] {
     cursor: default;
   }
-  
-  ${props => (`
-    ${styledIf(isSmallButton(props.size), `
+
+  ${(props) => `
+    ${styledIf(
+      isSmallButton(props.size),
+      `
       padding: 8px 14px;
       height: 32px;
       min-width: 88px;
@@ -51,9 +53,12 @@ export const Layout = styled.button`
         letter-spacing: 0px;
         text-align: center;
       }
-    `)}
+    `,
+    )}
     
-    ${styledIf(isMediumButton(props.size), `
+    ${styledIf(
+      isMediumButton(props.size),
+      `
       padding: 12px 14px;
       min-width: 88px;
       height: 40px;
@@ -66,9 +71,12 @@ export const Layout = styled.button`
         letter-spacing: 0px;
         text-align: center;
       }
-    `)}
+    `,
+    )}
     
-    ${styledIf(isLargeButton(props.size), `
+    ${styledIf(
+      isLargeButton(props.size),
+      `
       padding: 20px 14px;
       min-width: 140px;
       height: 72px;
@@ -80,9 +88,12 @@ export const Layout = styled.button`
         line-height: 32px;
         letter-spacing: 0.33px;
       }
-    `)}
+    `,
+    )}
   
-    ${styledIf(isPrimaryButton(props.variant), `
+    ${styledIf(
+      isPrimaryButton(props.variant),
+      `
       background: linear-gradient(289.8deg, #149CAD 0%, #4540C1 100%);
       
       &[disabled] {
@@ -112,9 +123,12 @@ export const Layout = styled.button`
       ${Caption} {
         color: #F3F4F6;
       }
-    `)}
+    `,
+    )}
     
-    ${styledIf(isSecondaryButton(props.variant), `
+    ${styledIf(
+      isSecondaryButton(props.variant),
+      `
       background: rgba(12, 13, 33, 0.8);
       border: 1px dashed #4A4958;
       
@@ -152,6 +166,7 @@ export const Layout = styled.button`
       ${Caption} {
         color: #F3F4F6;
       }
-    `)}
-  `)}
+    `,
+    )}
+  `}
 `;
