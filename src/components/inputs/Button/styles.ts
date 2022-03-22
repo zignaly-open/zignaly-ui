@@ -108,7 +108,6 @@ export const Layout = styled.button<LayoutProps>`
       `
       ${Container} {
         padding: 8px 12px;
-        height: 32px;
         min-width: 88px;      
       }
             
