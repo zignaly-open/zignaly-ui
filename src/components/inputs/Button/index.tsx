@@ -25,6 +25,7 @@ type ButtonProps = {
   leftElement?: ReactElement<any> | String | null;
   rightElement?: ReactElement<any> | String | null;
   disabled?: boolean;
+  onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
 
 function Button({
@@ -35,6 +36,7 @@ function Button({
   leftElement = null,
   rightElement = null,
   disabled = false,
+  onClick = () => {},
 }: ButtonProps): ReactElement {
   /**
    * @function renderLeftElement
@@ -96,6 +98,7 @@ function Button({
       disabled={disabled}
       variant={variant}
       size={size}
+      onClick={onClick}
     >
       <styled.Container>
         {leftElement && <styled.LeftElement>{renderLeftElement}</styled.LeftElement>}
