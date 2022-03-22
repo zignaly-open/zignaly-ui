@@ -10,8 +10,6 @@ export enum LoaderTypes {
   FALLING_LINES = "falling_lines",
   GRID = "grid",
   OVAL = "oval",
-  RINGS = "rings",
-  ROTATION_LINES = "rotation_lines",
   TAILSPIN = "tailspin",
   THREE_DOTS = "three_dots",
 }
@@ -23,8 +21,6 @@ const componentsByType = {
   [LoaderTypes.FALLING_LINES]: LoaderSource.FallingLines,
   [LoaderTypes.GRID]: LoaderSource.Grid,
   [LoaderTypes.OVAL]: LoaderSource.Oval,
-  [LoaderTypes.RINGS]: LoaderSource.Rings,
-  [LoaderTypes.ROTATION_LINES]: LoaderSource.RotatingLines,
   [LoaderTypes.TAILSPIN]: LoaderSource.TailSpin,
   [LoaderTypes.THREE_DOTS]: LoaderSource.ThreeDots,
 };
