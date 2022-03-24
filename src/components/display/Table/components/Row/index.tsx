@@ -2,7 +2,7 @@
 import React from "react";
 
 // Assets
-import ExpandedArrowIcon from "@assets/icons/arrow-expansion-icon.svg";
+import ExpandedArrowIcon from "assets/icons/arrow-expansion-icon.svg";
 
 // Styled Components
 import * as styled from "./styles";

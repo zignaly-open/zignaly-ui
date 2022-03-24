@@ -3,7 +3,7 @@ import React from "react";
 import { useTable, useSortBy, Column } from "react-table";
 
 // Assets
-import ArrowBottomIcon from "@assets/icons/arrow-bottom-icon.svg";
+import ArrowBottomIcon from "assets/icons/arrow-bottom-icon.svg";
 
 // Styles
 import * as styled from "./styles";
@@ -12,6 +12,7 @@ import * as styled from "./styles";
 import Row from "./components/Row";
 
 const Table = ({ columns = [], data = [] }: { columns: Column<any>[]; data: Object[] }) => {
+  console.log('a')
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable(
     {
       columns,

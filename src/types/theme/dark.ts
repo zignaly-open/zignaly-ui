@@ -1,4 +1,4 @@
-import { connectionStateTypesId } from "@components/display/Table/components/ConnectionStateLabel/types";
+import { connectionStateTypesId } from "components/display/Table/components/ConnectionStateLabel/types";
 
 const dark = {
   name: "dark",

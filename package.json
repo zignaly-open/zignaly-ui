@@ -9,7 +9,8 @@
     "build:storybook": "build-storybook -c .storybook -o build/",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "test": "jest -u",
-    "build": "tsc",
+    "build": "tsc && npx tsc-alias && npm run copy-files",
+    "copy-files": "cp -R src/assets lib/assets",
     "prepare": "husky install",
     "lint": "eslint --fix src --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write src --config ./.prettierrc"
@@ -57,13 +58,14 @@
     "eslint-plugin-react": "^7.29.2",
     "eslint-plugin-react-hooks": "^4.3.0",
     "eslint-plugin-storybook": "^0.5.7",
-    "husky": "^4.3.8",
+    "husky": "^7.0.0",
     "jest": "^27.3.1",
     "jest-svg-transformer": "^1.0.0",
     "jest-transform-stub": "^2.0.0",
     "lint-staged": "12.3.4",
     "prettier": "^2.5.1",
     "storybook-addon-designs": "^6.2.1",
+    "react-test-renderer": "^17.0.2",
     "storybook-addon-styled-component-theme": "^2.0.0",
     "storybook-dark-mode": "^1.0.9",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
@@ -82,13 +84,15 @@
     "date-fns": "^2.28.0",
     "ethers": "^5.5.2",
     "prop-types": "^15.7.2",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "react-number-format": "^4.9.1",
     "react-spring": "^9.3.0",
     "react-table": "^7.7.0",
-    "react-test-renderer": "^17.0.2",
-    "react-use": "^17.3.1",
+    "react-use": "^17.3.1"
+  },
+  "peerDependencies": {
+    "@types/react": "^16.8.6 || ^17.0.0",
+    "react": "^17.0.0",
+    "react-dom": "^17.0.0",
     "styled-components": "^5.3.3"
   },
   "jest": {
@@ -105,11 +109,6 @@
       "^@components(.*)$": "<rootDir>/src/components$1",
       "^@utils(.*)$": "<rootDir>/src/utils$1",
       "^@types(.*)$": "<rootDir>/src/types$1"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
