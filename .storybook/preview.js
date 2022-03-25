@@ -15,16 +15,16 @@ import { dark, light } from "../src/types/theme";
 import { withTests } from "@storybook/addon-jest";
 import results from "../.jest-test-results.json";
 
+// Theme wrappers
 const withStyledTheme = (storyFn) => {
   const darkMode = useDarkMode();
   const currentTheme = darkMode ? dark : light;
   const muiTheme = useMemo(() => createTheme(currentTheme), [darkMode]);
+
   return (
     <MUIThemeProvider theme={muiTheme}>
-      <ThemeProvider theme={currentTheme}>
-        <GlobalStyles styles={{ body: { color: "text.main" } }} />
-        {storyFn()}
-      </ThemeProvider>
+      <GlobalStyles styles={{ body: { color: muiTheme.palette.text.primary } }} />
+      <ThemeProvider theme={currentTheme}>{storyFn()}</ThemeProvider>
     </MUIThemeProvider>
   );
 };

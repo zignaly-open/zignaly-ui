@@ -1,10 +1,22 @@
-import getMuiTheme from "./mui";
+import mui from "./mui";
 
 const light = {
   name: "light",
 
   // MUI theme
-  ...getMuiTheme("light"),
+  ...mui,
+  palette: {
+    mode: "light",
+    // primary: {
+    //   main: "#00dddd",
+    // },
+    // secondary: {
+    //   main: "#326eb3",
+    // },
+    // text: {
+    //   primary: "#172B4D",
+    // },
+  },
 
   zigWalletIndicator: {
     valueTextColor: "#FFFFFF",
