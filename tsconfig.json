@@ -10,25 +10,12 @@
     "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
     "paths": {
-      "@types/*": [
-        "./src/types/*"
-      ],
-      "@assets/*": [
-        "./src/assets/*"
-      ],
-      "@utils/*": [
-        "./src/utils/*"
-      ],
-      "@hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@components/*": [
-        "./components/*"
-      ],
-      "@mui/styled-engine": [
-        "./node_modules/@mui/styled-engine-sc"
-      ]
-    },
+      "@types/*": ["./src/types/*"],
+      "@assets/*": ["./src/assets/*"],
+      "@utils/*": ["./src/utils/*"],
+      "@hooks/*": ["./src/hooks/*"],
+      "@components/*": ["./components/*"]
+    }
   },
   "include": [
     "src"
