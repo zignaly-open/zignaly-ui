@@ -1,5 +1,10 @@
+import getMuiTheme from "./mui";
+
 const light = {
   name: "light",
+
+  // MUI theme
+  ...getMuiTheme("light"),
 
   zigWalletIndicator: {
     valueTextColor: "#FFFFFF",

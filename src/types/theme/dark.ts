@@ -1,7 +1,11 @@
 import { connectionStateTypesId } from "@components/display/Table/components/ConnectionStateLabel/types";
+import getMuiTheme from "./mui";
 
 const dark = {
   name: "dark",
+
+  // MUI theme
+  ...getMuiTheme("dark"),
 
   zigWalletIndicator: {
     valueTextColor: "#FFFFFF",
