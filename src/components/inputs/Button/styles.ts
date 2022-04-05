@@ -109,7 +109,7 @@ export const Layout = styled.button<LayoutProps>`
       isSmallButton(size),
       `
       ${Container} {
-        padding: 8px 12px;
+        padding: 9px 18px;
         min-width: 88px;      
       }
             
@@ -117,23 +117,24 @@ export const Layout = styled.button<LayoutProps>`
         withElements,
         `
         ${Container} {
-          padding: 8px 16px;
+          padding: 9px 18px;
+          border-radius: 5px; 
         }
       `,
       )}
       
       ${Caption} {
-        font-size: 13px;
+        font-size: 11px;
         font-style: normal;
         font-weight: 500;
-        line-height: 16px;
+        line-height: 12px;
         letter-spacing: 0px;
         text-align: center;
       }
       
       ${LeftElement} {
         img {
-          width: 12px;
+          width: 10px;
         }
       }
       
@@ -141,10 +142,10 @@ export const Layout = styled.button<LayoutProps>`
         onlyIcon,
         `
         ${Container} {
-          padding: 6px 7px;
+          padding: 10px 12px;
         }
         ${CenterIcon} {
-          width: 12px;
+          width: 10px;
         }
     `,
       )}
@@ -155,23 +156,24 @@ export const Layout = styled.button<LayoutProps>`
     isMediumButton(size),
     `     
       ${Container} {
-        padding: 12px 24px;
+        padding: 11px 18px;
         min-width: 88px;
-        height: 40px;  
+        height: 40px; 
+        border-radius: 5px; 
       }
       
       ${Caption} {
-        font-size: 13px;
+        font-size: 11px;
         font-style: normal;
         font-weight: 500;
-        line-height: 16px;
+        line-height: 14px;
         letter-spacing: 0px;
         text-align: center;
       }
       
       ${LeftElement} {
         img {
-          width: 12px;
+          width: 10px;
         }
       }
       
@@ -179,10 +181,10 @@ export const Layout = styled.button<LayoutProps>`
         onlyIcon,
         `
         ${Container} {
-          padding: 10px 11px
+          padding: 13px 16px
         }
         ${CenterIcon} {
-          width: 14px;
+          width: 10px;
         }
     `,
       )}
@@ -193,21 +195,20 @@ export const Layout = styled.button<LayoutProps>`
     isLargeButton(size),
     `     
       ${Container} {
-        padding: 20px 24px;
-        min-width: 140px;
-        height: 72px;
+        padding: 15px 31px;
+        height: 48px;
       }
             
       ${Caption} {
         font-weight: 600;
-        font-size: 18px;
-        line-height: 28px;
-        letter-spacing: 2px;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 1.1px;
       }
       
       ${LeftElement} {
         img {
-          width: 20px;
+          width: 23px;
         }
       }
       
@@ -219,7 +220,8 @@ export const Layout = styled.button<LayoutProps>`
         }
         
         ${CenterIcon} {
-          width: 32px;
+          width: 23px;
+          height: 23px;
         }
       `,
       )}
@@ -246,6 +248,7 @@ export const Layout = styled.button<LayoutProps>`
       ${LeftElement} {
         img {
           width: 26px;
+          height: 26px;
         }
       }
       
@@ -257,6 +260,7 @@ export const Layout = styled.button<LayoutProps>`
         }
         ${CenterIcon} {
           width: 26px;
+          height: 26px
         }
     `,
       )}
