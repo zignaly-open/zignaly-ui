@@ -22,6 +22,172 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
+/// Normal Buttons
+
+export const PrimaryAndNormal = Template.bind({});
+PrimaryAndNormal.args = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.NORMAL,
+};
+
+export const PrimaryAndNormalOnlyIcon = Template.bind({});
+PrimaryAndNormalOnlyIcon.args = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.NORMAL,
+  icon: CloseIcon,
+};
+
+export const PrimaryAndNormalWithLeftIcon = Template.bind({});
+PrimaryAndNormalWithLeftIcon.args = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.NORMAL,
+  leftElement: CloseIcon,
+};
+
+export const PrimaryAndNormalWithRightIcon = Template.bind({});
+PrimaryAndNormalWithRightIcon.args = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.NORMAL,
+  rightElement: CloseIcon,
+};
+
+export const PrimaryAndNormalWithBothIcon = Template.bind({});
+PrimaryAndNormalWithBothIcon.args = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.NORMAL,
+  leftElement: CloseIcon,
+  rightElement: ArrowDown,
+};
+
+export const SecondaryAndNormalDisabled = Template.bind({});
+SecondaryAndNormalDisabled.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.NORMAL,
+  disabled: true,
+};
+
+export const SecondaryAndNormal = Template.bind({});
+SecondaryAndNormal.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.NORMAL,
+};
+
+export const SecondaryAndNormalWithLeftIcon = Template.bind({});
+SecondaryAndNormalWithLeftIcon.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.NORMAL,
+  leftElement: CloseIcon,
+};
+
+export const SecondaryAndNormalWithRightIcon = Template.bind({});
+SecondaryAndNormalWithRightIcon.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.NORMAL,
+  rightElement: CloseIcon,
+};
+
+export const SecondaryAndNormalWithBothIcon = Template.bind({});
+SecondaryAndNormalWithBothIcon.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.NORMAL,
+  leftElement: CloseIcon,
+  rightElement: ArrowDown,
+};
+
+/// XLarge Buttons
+
+export const PrimaryAndXLarge = Template.bind({});
+PrimaryAndXLarge.args = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.XLARGE,
+};
+
+export const PrimaryAndXLargeOnlyIcon = Template.bind({});
+PrimaryAndXLargeOnlyIcon.args = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.XLARGE,
+  icon: CloseIcon,
+};
+
+export const PrimaryAndXLargeDisabled = Template.bind({});
+PrimaryAndXLargeDisabled.args = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.XLARGE,
+  disabled: true,
+};
+
+export const PrimaryAndXLargeWithLeftIcon = Template.bind({});
+PrimaryAndXLargeWithLeftIcon.args = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.XLARGE,
+  leftElement: CloseIcon,
+};
+
+export const PrimaryAndXLargeWithRightIcon = Template.bind({});
+PrimaryAndXLargeWithRightIcon.args = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.XLARGE,
+  rightElement: CloseIcon,
+};
+
+export const PrimaryAndXLargeWithBothIcon = Template.bind({});
+PrimaryAndXLargeWithBothIcon.args = {
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.XLARGE,
+  leftElement: CloseIcon,
+  rightElement: ArrowDown,
+};
+
+export const SecondaryAndXLargeDisabled = Template.bind({});
+SecondaryAndXLargeDisabled.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.XLARGE,
+  disabled: true,
+};
+
+export const SecondaryAndXLarge = Template.bind({});
+SecondaryAndXLarge.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.XLARGE,
+};
+
+export const SecondaryAndXLargeWithLeftIcon = Template.bind({});
+SecondaryAndXLargeWithLeftIcon.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.XLARGE,
+  leftElement: CloseIcon,
+};
+
+export const SecondaryAndXLargeWithRightIcon = Template.bind({});
+SecondaryAndXLargeWithRightIcon.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.XLARGE,
+  rightElement: CloseIcon,
+};
+
+export const SecondaryAndXLargeWithBothIcon = Template.bind({});
+SecondaryAndXLargeWithBothIcon.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.XLARGE,
+  leftElement: CloseIcon,
+  rightElement: ArrowDown,
+};
+
+/// Small Buttons
+
+export const SecondaryAndSmall = Template.bind({});
+SecondaryAndSmall.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.SMALL,
+};
+
+export const SecondaryAndSmallOnlyIcon = Template.bind({});
+SecondaryAndSmallOnlyIcon.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.SMALL,
+  icon: CloseIcon,
+};
+
 export const PrimaryAndSmall = Template.bind({});
 PrimaryAndSmall.args = {
   variant: ButtonVariants.PRIMARY,
@@ -64,44 +230,46 @@ PrimaryAndSmallWithBothIcon.args = {
   rightElement: ArrowDown,
 };
 
-export const PrimaryAndNormal = Template.bind({});
-PrimaryAndNormal.args = {
-  variant: ButtonVariants.PRIMARY,
-  size: ButtonSizes.NORMAL,
-};
+/// Large Buttons
 
-export const PrimaryAndNormalOnlyIcon = Template.bind({});
-PrimaryAndNormalOnlyIcon.args = {
-  variant: ButtonVariants.PRIMARY,
-  size: ButtonSizes.NORMAL,
-  icon: CloseIcon,
-};
-
-export const PrimaryAndNormalDisabled = Template.bind({});
-PrimaryAndNormalDisabled.args = {
-  variant: ButtonVariants.PRIMARY,
-  size: ButtonSizes.SMALL,
+export const SecondaryAndLargeDisabled = Template.bind({});
+SecondaryAndLargeDisabled.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.LARGE,
   disabled: true,
 };
 
-export const PrimaryAndNormalWithLeftIcon = Template.bind({});
-PrimaryAndNormalWithLeftIcon.args = {
-  variant: ButtonVariants.PRIMARY,
-  size: ButtonSizes.NORMAL,
+export const SecondaryAndLarge = Template.bind({});
+SecondaryAndLarge.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.LARGE,
+};
+
+export const SecondaryAndLargeOnlyIcon = Template.bind({});
+SecondaryAndLargeOnlyIcon.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.LARGE,
+  icon: CloseIcon,
+};
+
+export const SecondaryAndLargeWithLeftIcon = Template.bind({});
+SecondaryAndLargeWithLeftIcon.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.LARGE,
   leftElement: CloseIcon,
 };
 
-export const PrimaryAndNormalWithRightIcon = Template.bind({});
-PrimaryAndNormalWithRightIcon.args = {
-  variant: ButtonVariants.PRIMARY,
-  size: ButtonSizes.NORMAL,
+export const SecondaryAndLargeWithRightIcon = Template.bind({});
+SecondaryAndLargeWithRightIcon.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.LARGE,
   rightElement: CloseIcon,
 };
 
-export const PrimaryAndNormalWithBothIcon = Template.bind({});
-PrimaryAndNormalWithBothIcon.args = {
-  variant: ButtonVariants.PRIMARY,
-  size: ButtonSizes.NORMAL,
+export const SecondaryAndLargeWithBothIcon = Template.bind({});
+SecondaryAndLargeWithBothIcon.args = {
+  variant: ButtonVariants.SECONDARY,
+  size: ButtonSizes.LARGE,
   leftElement: CloseIcon,
   rightElement: ArrowDown,
 };
@@ -143,110 +311,6 @@ PrimaryAndLargeWithRightIcon.args = {
 export const PrimaryAndLargeWithBothIcon = Template.bind({});
 PrimaryAndLargeWithBothIcon.args = {
   variant: ButtonVariants.PRIMARY,
-  size: ButtonSizes.LARGE,
-  leftElement: CloseIcon,
-  rightElement: ArrowDown,
-};
-
-export const SecondaryAndSmall = Template.bind({});
-SecondaryAndSmall.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.SMALL,
-};
-
-export const SecondaryAndSmallOnlyIcon = Template.bind({});
-SecondaryAndSmallOnlyIcon.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.SMALL,
-  icon: CloseIcon,
-};
-
-export const SecondaryAndSmallDisabled = Template.bind({});
-SecondaryAndSmallDisabled.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.NORMAL,
-  disabled: true,
-};
-
-export const SecondaryAndNormal = Template.bind({});
-SecondaryAndNormal.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.NORMAL,
-};
-
-export const SecondaryAndNormalOnlyIcon = Template.bind({});
-SecondaryAndNormalOnlyIcon.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.LARGE,
-  icon: CloseIcon,
-};
-
-export const SecondaryAndNormalDisabled = Template.bind({});
-SecondaryAndNormalDisabled.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.LARGE,
-  disabled: true,
-};
-
-export const SecondaryAndLarge = Template.bind({});
-SecondaryAndLarge.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.LARGE,
-};
-
-export const SecondaryAndLargeOnlyIcon = Template.bind({});
-SecondaryAndLargeOnlyIcon.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.LARGE,
-  icon: CloseIcon,
-};
-
-export const SecondaryAndLargeDisabled = Template.bind({});
-SecondaryAndLargeDisabled.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.LARGE,
-  disabled: true,
-};
-
-export const SecondaryAndNormalWithLeftIcon = Template.bind({});
-SecondaryAndNormalWithLeftIcon.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.NORMAL,
-  leftElement: CloseIcon,
-};
-
-export const SecondaryAndNormalWithRightIcon = Template.bind({});
-SecondaryAndNormalWithRightIcon.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.NORMAL,
-  rightElement: CloseIcon,
-};
-
-export const SecondaryAndNormalWithBothIcon = Template.bind({});
-SecondaryAndNormalWithBothIcon.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.NORMAL,
-  leftElement: CloseIcon,
-  rightElement: ArrowDown,
-};
-
-export const SecondaryAndLargeWithLeftIcon = Template.bind({});
-SecondaryAndLargeWithLeftIcon.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.LARGE,
-  leftElement: CloseIcon,
-};
-
-export const SecondaryAndLargeWithRightIcon = Template.bind({});
-SecondaryAndLargeWithRightIcon.args = {
-  variant: ButtonVariants.SECONDARY,
-  size: ButtonSizes.LARGE,
-  rightElement: CloseIcon,
-};
-
-export const SecondaryAndLargeWithBothIcon = Template.bind({});
-SecondaryAndLargeWithBothIcon.args = {
-  variant: ButtonVariants.SECONDARY,
   size: ButtonSizes.LARGE,
   leftElement: CloseIcon,
   rightElement: ArrowDown,

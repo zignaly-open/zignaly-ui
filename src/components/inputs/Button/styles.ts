@@ -15,6 +15,8 @@ const isMediumButton = (size: ButtonSizes) => size === ButtonSizes.NORMAL;
 
 const isLargeButton = (size: ButtonSizes) => size === ButtonSizes.LARGE;
 
+const isXLargeButton = (size: ButtonSizes) => size === ButtonSizes.XLARGE;
+
 export const Caption = styled.div`
   z-index: 2;
   position: relative;
@@ -223,6 +225,43 @@ export const Layout = styled.button<LayoutProps>`
       )}
     `,
   )}
+
+  ${styledIf(
+    isXLargeButton(size),
+    `     
+      ${Container} {
+        padding: 20px 36px;       
+        height: 60px;  
+      }
+      
+      ${Caption} {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 20px;
+        letter-spacing: 1.1px;
+        text-align: center;
+      }
+      
+      ${LeftElement} {
+        img {
+          width: 26px;
+        }
+      }
+      
+      ${styledIf(
+        onlyIcon,
+        `
+        ${Container} {
+          padding: 20px 36px
+        }
+        ${CenterIcon} {
+          width: 26px;
+        }
+    `,
+      )}
+  `,
+  )}
   
   ${styledIf(
     isPrimaryButton(variant),
@@ -321,6 +360,44 @@ export const Layout = styled.button<LayoutProps>`
         
         ${styledIf(
           isLargeButton(size),
+          `
+          ${Caption} {
+            top: 0px;
+            left: -1px;
+            
+            ${styledIf(
+              withElements,
+              `
+              left: -1px;
+            `,
+            )}
+          }
+          
+          ${LeftElement} {
+            left: -1px;
+            padding-right: 10px;
+          }
+          
+          ${RightElement} {
+            left: 1px;
+            padding-right: 0;
+            padding-left: 8px;
+          }
+          
+          ${styledIf(
+            onlyIcon,
+            `            
+            ${CenterIcon} {
+              top: 0px;
+              left: 0px;
+            }
+          `,
+          )}
+        `,
+        )}
+
+        ${styledIf(
+          isXLargeButton(size),
           `
           ${Caption} {
             top: 0px;
