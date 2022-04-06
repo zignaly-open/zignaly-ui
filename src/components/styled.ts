@@ -1,9 +1,6 @@
 // Dependencies
 import styled from "styled-components";
 
-// Utils
-import { styledIf } from "utils/styled";
-
 // Types
 import { buttonVariantsId } from "types/buttons";
 import { sizeTypesId } from "types/sizes";
@@ -30,27 +27,4 @@ export const Button = styled.button<{ size: sizeTypesId; variant: buttonVariants
   &[disabled] {
     cursor: default;
   }
-
-  ${(props) => `
-    ${styledIf(
-      props.size === sizeTypesId.SMALL,
-      `
-      padding: 8px 18px;
-    `,
-    )}
-  
-    ${styledIf(
-      props.variant === buttonVariantsId.PRIMARY,
-      `
-      background-color: red;
-    `,
-    )}  
-    
-    ${styledIf(
-      props.variant !== buttonVariantsId.PLACEHOLDER,
-      `
-      cursor: pointer;
-    `,
-    )}
-  `};
 `;

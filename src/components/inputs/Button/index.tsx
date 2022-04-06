@@ -9,6 +9,7 @@ export enum ButtonVariants {
   PRIMARY = "primary",
   SECONDARY = "secondary",
   GHOST = "ghost",
+  TABLE = "table",
 }
 
 export enum ButtonSizes {
