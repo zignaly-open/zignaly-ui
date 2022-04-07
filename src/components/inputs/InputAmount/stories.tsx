@@ -19,4 +19,6 @@ export default {
 const Template: ComponentStory<typeof InputAmount> = (args) => <InputAmount {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  balance: "804600073000",
+};
