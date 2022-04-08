@@ -4,9 +4,9 @@ import { useTable, useSortBy, Column } from "react-table";
 import { useClickAway } from "react-use";
 
 // Assets
-import ArrowBottomIcon from "@assets/icons/arrow-bottom-icon.svg";
-import OptionsDotsIcon from "../../../assets/icons/option-dots-icon.svg";
-import CloseIcon from "../../../assets/icons/close-icon.svg";
+import ArrowBottomIcon from "assets/icons/arrow-bottom-icon.svg";
+import OptionsDotsIcon from "assets/icons/option-dots-icon.svg";
+import CloseIcon from "assets/icons/close-icon.svg";
 
 // Styles
 import {
@@ -23,8 +23,8 @@ import {
 
 // Components
 import Row from "./components/Row";
-import IconButton from "@components/inputs/IconButton";
-import CheckBox from "@components/inputs/CheckBox";
+import IconButton from "components/inputs/IconButton";
+import CheckBox from "components/inputs/CheckBox";
 
 // Types
 import { buttonVariantsId } from "../../../types/buttons";
