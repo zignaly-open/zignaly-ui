@@ -47,7 +47,7 @@ export const Button = styled.button<{ size: sizeTypesId; variant: buttonVariants
     )}  
     
     ${styledIf(
-      props.variant !== buttonVariantsId.PLACEHOLDER,
+      props.variant !== buttonVariantsId.FLAT,
       `
       cursor: pointer;
     `,

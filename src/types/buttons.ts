@@ -1,5 +1,5 @@
-export const buttonVariantsId = {
-  PRIMARY: "primary",
-  SECONDARY: "secondary",
-  FLAT: "flat",
-};
+export enum buttonVariantsId {
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
+  FLAT = "flat",
+}

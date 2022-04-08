@@ -19,7 +19,7 @@ export const Layout = styled(Button)`
 
   ${(props) => `
     ${styledIf(
-      props.variant !== buttonVariantsId.PLACEHOLDER,
+      props.variant !== buttonVariantsId.FLAT,
       `
       &:hover {
         background: rgba(255, 255, 255, 0.06);

@@ -1,6 +1,7 @@
 const path = require("path");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+// const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -15,7 +16,15 @@ const config = {
     },
     globalObject: "this",
   },
-  plugins: [new CleanWebpackPlugin()],
+  plugins: [
+    // new CleanWebpackPlugin(),
+    new ForkTsCheckerWebpackPlugin({
+      typescript: {
+        // build: true,
+        mode: "write-dts",
+      },
+    }),
+  ],
   module: {
     rules: [
       {
