@@ -19,6 +19,7 @@ import TabPanel from "./components/navigation/Tabs/components/TabPanel";
 import Button from "./components/inputs/Button";
 import TableButton from "./components/display/Table/components/TableButton";
 import IconButton from "./components/inputs/IconButton";
+import Select from "./components/inputs/Selector";
 import { ButtonGroup } from "./components/styled";
 // import { buttonVariantsId } from "./types/buttons";
 
@@ -52,6 +53,7 @@ export {
   ButtonGroup,
   IconButton,
   TableButton,
+  Select,
   // Navigation
   Tabs,
   Tab,

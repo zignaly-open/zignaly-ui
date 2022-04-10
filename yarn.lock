@@ -2600,6 +2600,23 @@
     global "^4.4.0"
     regenerator-runtime "^0.13.7"
 
+"@storybook/addons@^6.4.20":
+  version "6.4.21"
+  resolved "https://registry.npmjs.org/@storybook/addons/-/addons-6.4.21.tgz"
+  integrity sha512-TFLv4FyqP5SBOHEqE6tiW+2++HngkyQ2KRbHICC7khQgRqDkrwvrdKZwzF29igseglhSmftpZrBLXyWbA7q1vg==
+  dependencies:
+    "@storybook/api" "6.4.21"
+    "@storybook/channels" "6.4.21"
+    "@storybook/client-logger" "6.4.21"
+    "@storybook/core-events" "6.4.21"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    "@storybook/router" "6.4.21"
+    "@storybook/theming" "6.4.21"
+    "@types/webpack-env" "^1.16.0"
+    core-js "^3.8.2"
+    global "^4.4.0"
+    regenerator-runtime "^0.13.7"
+
 "@storybook/api@5.3.21":
   version "5.3.21"
   resolved "https://registry.npmjs.org/@storybook/api/-/api-5.3.21.tgz"
@@ -2638,6 +2655,29 @@
     "@storybook/router" "6.4.19"
     "@storybook/semver" "^7.3.2"
     "@storybook/theming" "6.4.19"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    lodash "^4.17.21"
+    memoizerific "^1.11.3"
+    regenerator-runtime "^0.13.7"
+    store2 "^2.12.0"
+    telejson "^5.3.2"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
+"@storybook/api@6.4.21":
+  version "6.4.21"
+  resolved "https://registry.npmjs.org/@storybook/api/-/api-6.4.21.tgz"
+  integrity sha512-AULsLd7ew11IRCpzffyLFGl5cwt9BLMok33DcIlCyvXsiqLm4/OsbgM4sj6QqWVuxcFlWMQJHoRJyeFlULFvZA==
+  dependencies:
+    "@storybook/channels" "6.4.21"
+    "@storybook/client-logger" "6.4.21"
+    "@storybook/core-events" "6.4.21"
+    "@storybook/csf" "0.0.2--canary.87bc651.0"
+    "@storybook/router" "6.4.21"
+    "@storybook/semver" "^7.3.2"
+    "@storybook/theming" "6.4.21"
     core-js "^3.8.2"
     fast-deep-equal "^3.1.3"
     global "^4.4.0"
@@ -2764,6 +2804,15 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
+"@storybook/channels@6.4.21":
+  version "6.4.21"
+  resolved "https://registry.npmjs.org/@storybook/channels/-/channels-6.4.21.tgz"
+  integrity sha512-qgy8z3Hp04Q4p+E/8V9MamYYJLW8z1uv1Z+rvosNkg+eAApPg+Qe08BSj59OAUwPLrr2vpBW7WZ/BYSieW1tUg==
+  dependencies:
+    core-js "^3.8.2"
+    ts-dedent "^2.0.0"
+    util-deprecate "^1.0.2"
+
 "@storybook/client-api@6.4.19":
   version "6.4.19"
   resolved "https://registry.npmjs.org/@storybook/client-api/-/client-api-6.4.19.tgz"
@@ -2801,6 +2850,14 @@
   version "6.4.19"
   resolved "https://registry.npmjs.org/@storybook/client-logger/-/client-logger-6.4.19.tgz"
   integrity sha512-zmg/2wyc9W3uZrvxaW4BfHcr40J0v7AGslqYXk9H+ERLVwIvrR4NhxQFaS6uITjBENyRDxwzfU3Va634WcmdDQ==
+  dependencies:
+    core-js "^3.8.2"
+    global "^4.4.0"
+
+"@storybook/client-logger@6.4.21":
+  version "6.4.21"
+  resolved "https://registry.npmjs.org/@storybook/client-logger/-/client-logger-6.4.21.tgz"
+  integrity sha512-XkVCQ5swyYDVh5U+87DGRBdC5utJBpVW7kU5P14TQKMnSc/yHbMcXWaA89K8WKDa/WGkGbc0bKi4WrUwHFg2FA==
   dependencies:
     core-js "^3.8.2"
     global "^4.4.0"
@@ -2927,6 +2984,13 @@
   version "6.4.19"
   resolved "https://registry.npmjs.org/@storybook/core-events/-/core-events-6.4.19.tgz"
   integrity sha512-KICzUw6XVQUJzFSCXfvhfHAuyhn4Q5J4IZEfuZkcGJS4ODkrO6tmpdYE5Cfr+so95Nfp0ErWiLUuodBsW9/rtA==
+  dependencies:
+    core-js "^3.8.2"
+
+"@storybook/core-events@6.4.21":
+  version "6.4.21"
+  resolved "https://registry.npmjs.org/@storybook/core-events/-/core-events-6.4.21.tgz"
+  integrity sha512-K6b9M1zYvW/Kfb1cnH6JDfmFvTYDMx/ot9zdl9O5SPH9glUwzOXSk8qKu6GmZTiW2YnC2nKbjaN20mfMsCBPGw==
   dependencies:
     core-js "^3.8.2"
 
@@ -3180,6 +3244,23 @@
     react-router-dom "^6.0.0"
     ts-dedent "^2.0.0"
 
+"@storybook/router@6.4.21":
+  version "6.4.21"
+  resolved "https://registry.npmjs.org/@storybook/router/-/router-6.4.21.tgz"
+  integrity sha512-otn3xYc017SNebeA95xLQ7P6elfyu9541QteXbLR5gFvrT+MB/8zMRZrVuD7n1xwpBgazlonzAdODC736Be9jQ==
+  dependencies:
+    "@storybook/client-logger" "6.4.21"
+    core-js "^3.8.2"
+    fast-deep-equal "^3.1.3"
+    global "^4.4.0"
+    history "5.0.0"
+    lodash "^4.17.21"
+    memoizerific "^1.11.3"
+    qs "^6.10.0"
+    react-router "^6.0.0"
+    react-router-dom "^6.0.0"
+    ts-dedent "^2.0.0"
+
 "@storybook/semver@^7.3.2":
   version "7.3.2"
   resolved "https://registry.npmjs.org/@storybook/semver/-/semver-7.3.2.tgz"
@@ -3243,7 +3324,7 @@
     resolve-from "^5.0.0"
     ts-dedent "^1.1.0"
 
-"@storybook/theming@6.4.19", "@storybook/theming@^6.4.19":
+"@storybook/theming@6.4.19":
   version "6.4.19"
   resolved "https://registry.npmjs.org/@storybook/theming/-/theming-6.4.19.tgz"
   integrity sha512-V4pWmTvAxmbHR6B3jA4hPkaxZPyExHvCToy7b76DpUTpuHihijNDMAn85KhOQYIeL9q14zP/aiz899tOHsOidg==
@@ -3252,6 +3333,24 @@
     "@emotion/is-prop-valid" "^0.8.6"
     "@emotion/styled" "^10.0.27"
     "@storybook/client-logger" "6.4.19"
+    core-js "^3.8.2"
+    deep-object-diff "^1.1.0"
+    emotion-theming "^10.0.27"
+    global "^4.4.0"
+    memoizerific "^1.11.3"
+    polished "^4.0.5"
+    resolve-from "^5.0.0"
+    ts-dedent "^2.0.0"
+
+"@storybook/theming@6.4.21", "@storybook/theming@^6.4.20":
+  version "6.4.21"
+  resolved "https://registry.npmjs.org/@storybook/theming/-/theming-6.4.21.tgz"
+  integrity sha512-7pLNwmqbyqCeHXzjsacI69IdJcAZr6zoZA84iGqx+Na32OI8wtIpFczbwuYpVPN2jzgRYp23CgIv1Gz27yk/zw==
+  dependencies:
+    "@emotion/core" "^10.1.1"
+    "@emotion/is-prop-valid" "^0.8.6"
+    "@emotion/styled" "^10.0.27"
+    "@storybook/client-logger" "6.4.21"
     core-js "^3.8.2"
     deep-object-diff "^1.1.0"
     emotion-theming "^10.0.27"
@@ -7275,9 +7374,9 @@ fork-ts-checker-webpack-plugin@^4.1.6:
     worker-rpc "^0.1.0"
 
 fork-ts-checker-webpack-plugin@^6.0.4:
-  version "6.5.0"
-  resolved "https://registry.npmjs.org/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-6.5.0.tgz"
-  integrity sha512-cS178Y+xxtIjEUorcHddKS7yCMlrDPV31mt47blKKRfMd70Kxu5xruAFE2o9sDY6wVC5deuob/u/alD04YYHnw==
+  version "6.5.1"
+  resolved "https://registry.npmjs.org/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-6.5.1.tgz"
+  integrity sha512-x1wumpHOEf4gDROmKTaB6i4/Q6H3LwmjVO7fIX47vBwlZbtPjU33hgoMuD/Q/y6SU8bnuYSoN6ZQOLshGp0T/g==
   dependencies:
     "@babel/code-frame" "^7.8.3"
     "@types/json-schema" "^7.0.5"
@@ -7295,7 +7394,7 @@ fork-ts-checker-webpack-plugin@^6.0.4:
 
 fork-ts-checker-webpack-plugin@^7.2.3:
   version "7.2.3"
-  resolved "https://registry.yarnpkg.com/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-7.2.3.tgz#978dbc0b601556552a5a274a8984ec5dd8de56a3"
+  resolved "https://registry.npmjs.org/fork-ts-checker-webpack-plugin/-/fork-ts-checker-webpack-plugin-7.2.3.tgz"
   integrity sha512-9v308zIFTIFkWJBN/4N1A5oqm/ed9hWG6GH+KYTCBjYCEJOmHoVtDIWpfrJ0eD6cPB7V53HEVoJ6bL2In8QRaw==
   dependencies:
     "@babel/code-frame" "^7.16.7"
@@ -7362,7 +7461,7 @@ fs-extra@^0.30.0:
 
 fs-extra@^10.0.0:
   version "10.0.1"
-  resolved "https://registry.yarnpkg.com/fs-extra/-/fs-extra-10.0.1.tgz#27de43b4320e833f6867cc044bfce29fdf0ef3b8"
+  resolved "https://registry.npmjs.org/fs-extra/-/fs-extra-10.0.1.tgz"
   integrity sha512-NbdoVMZso2Lsrn/QwLXOy6rm0ufY2zEOKCDzJR/0kBsb0E6qed0P3iYK+Ath3BfvXEeu4JhEtXLgILx5psUfag==
   dependencies:
     graceful-fs "^4.2.0"
