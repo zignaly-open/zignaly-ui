@@ -1,7 +1,7 @@
 // Dependencies
 import styled from "styled-components";
 import { styledIf } from "../../../utils/styled";
-import { SelectSizes } from "@components/inputs/Selector/index";
+import { SelectSizes } from "./types";
 
 const isSmallSelect = (size: SelectSizes) => size === SelectSizes.SMALL;
 

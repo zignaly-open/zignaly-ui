@@ -3,16 +3,8 @@ import * as React from "react";
 import { ReactElement } from "react";
 import * as LoaderSource from "react-loader-spinner";
 
-export enum LoaderTypes {
-  AUDIO = "audio",
-  BARS = "bars",
-  CIRCLES = "circles",
-  FALLING_LINES = "falling_lines",
-  GRID = "grid",
-  OVAL = "oval",
-  TAILSPIN = "tailspin",
-  THREE_DOTS = "three_dots",
-}
+// Types
+import { LoaderTypes } from "./types";
 
 const componentsByType = {
   [LoaderTypes.AUDIO]: LoaderSource.Audio,
@@ -58,4 +50,5 @@ function Loader({
   );
 }
 
+export { LoaderTypes };
 export default Loader;

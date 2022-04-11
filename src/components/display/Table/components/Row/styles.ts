@@ -1,6 +1,6 @@
 // Dependencies
 import styled from "styled-components";
-import { styledIf } from "utils/styled";
+import { styledIf } from "../../../../../utils/styled";
 
 export const Expandable = styled.div``;
 
