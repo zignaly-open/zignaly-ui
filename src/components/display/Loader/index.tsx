@@ -33,6 +33,7 @@ type LoaderProps = {
   secondaryColor?: string;
   ariaLabel: string;
   strokeWidth?: string;
+  className?: string;
 };
 
 function Loader({
@@ -43,6 +44,7 @@ function Loader({
   secondaryColor,
   ariaLabel,
   strokeWidth,
+  className,
 }: LoaderProps): ReactElement {
   const ComponentByType = componentsByType[type];
 
@@ -54,6 +56,7 @@ function Loader({
       ariaLabel={ariaLabel}
       secondaryColor={secondaryColor}
       strokeWidth={strokeWidth}
+      wrapperClass={className}
     />
   );
 }
