@@ -1,6 +1,6 @@
 // Dependencies
 import styled from "styled-components";
-import { Button } from "../../../../styled";
+import { Button } from "components/styled";
 
 export const Layout = styled(Button)<React.ComponentProps<typeof Button>>`
   background: rgba(12, 13, 33, 0.8);

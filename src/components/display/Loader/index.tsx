@@ -1,31 +1,9 @@
 // Dependencies
 import * as React from "react";
 import { ReactElement } from "react";
-import * as LoaderSource from "react-loader-spinner";
 
 // Types
-import { LoaderTypes } from "./types";
-
-const componentsByType = {
-  [LoaderTypes.AUDIO]: LoaderSource.Audio,
-  [LoaderTypes.BARS]: LoaderSource.Bars,
-  [LoaderTypes.CIRCLES]: LoaderSource.Circles,
-  [LoaderTypes.FALLING_LINES]: LoaderSource.FallingLines,
-  [LoaderTypes.GRID]: LoaderSource.Grid,
-  [LoaderTypes.OVAL]: LoaderSource.Oval,
-  [LoaderTypes.TAILSPIN]: LoaderSource.TailSpin,
-  [LoaderTypes.THREE_DOTS]: LoaderSource.ThreeDots,
-};
-
-type LoaderProps = {
-  type?: LoaderTypes;
-  width: string;
-  height: string;
-  color: string;
-  secondaryColor?: string;
-  ariaLabel: string;
-  strokeWidth?: string;
-};
+import { LoaderTypes, LoaderProps, componentsByType } from "./types";
 
 function Loader({
   type = LoaderTypes.TAILSPIN,

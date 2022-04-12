@@ -7,7 +7,7 @@ import { useClickAway } from "react-use";
 import * as styled from "./styles";
 
 // Assets
-import CaretDownIcon from "../../../assets/icons/caret-down-icon.svg";
+import CaretDownIcon from "assets/icons/caret-down-icon.svg";
 
 // Types
 import { SelectProps, SelectSizes } from "./types";
