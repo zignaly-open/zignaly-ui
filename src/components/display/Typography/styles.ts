@@ -2,165 +2,144 @@
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
 
-export const Layout = styled.h1<{ weight: string }>`
-  font-family: "Poppins", sans-serif;
+export const Layout = styled.h1<{ color: string }>`
+  font-family: "Avenir", sans-serif;
   margin: 0;
 
   &.h1 {
-    &.medium {
-      font-weight: 600;
-      font-size: 48px;
-      line-height: 60px;
-      letter-spacing: 1px;
-    }
-
-    &.small {
-      font-weight: bold;
-      font-size: 28px;
-      line-height: 40px;
-    }
-
-    &.x-small {
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 28px;
-    }
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 36px;
+    letter-spacing: 1px;
   }
 
   &.h2 {
-    &.medium {
-      font-size: 32px;
-      line-height: 40px;
-      font-weight: 300;
-      letter-spacing: 0.66px;
-    }
-
-    &.small {
-      font-weight: bold;
-      font-size: 24px;
-      line-height: 36px;
-    }
-
-    &.x-small {
-      font-weight: bold;
-      font-size: 16px;
-      line-height: 24px;
-    }
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.66px;
+    font-weight: 500;
   }
 
   &.h3 {
-    &.medium {
-      font-size: 24px;
-      line-height: 32px;
-      font-weight: 400;
-      letter-spacing: 0.33px;
-    }
-
-    &.small {
-      font-weight: bold;
-      font-size: 20px;
-      line-height: 28px;
-    }
-
-    &.x-small {
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 20px;
-    }
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 500;
+    letter-spacing: 0.33px;
   }
 
   &.h4 {
-    &.medium {
-      font-weight: 500;
-      font-size: 16px;
-      line-height: 24px;
-    }
-
-    &.small {
-      font-weight: bold;
-      font-size: 14px;
-      line-height: 20px;
-    }
-
-    &.x-small {
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 16px;
-    }
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 20px;
   }
 
   &.h5 {
-    &.medium {
-      font-weight: 600;
-      font-size: 14px;
-      line-height: 16px;
-    }
-
-    &.small {
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 16px;
-    }
-
-    &.x-small {
-      font-size: 10px;
-      line-height: 12px;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-    }
+    font-weight: 500;
+    font-size: 11px;
+    line-height: 16px;
   }
 
-  &.h6 {
-    &.medium {
-      font-weight: 600;
-      font-size: 11px;
-      line-height: 14px;
-      letter-spacing: 0.66px;
-      text-transform: uppercase;
-    }
-
-    &.small {
-      font-size: 11px;
-      line-height: 14px;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-    }
-
-    &.x-small {
-      font-size: 10px;
-      line-height: 12px;
-      letter-spacing: 0.6px;
-      text-transform: uppercase;
-    }
-  }
-
-  &.body {
-    &.medium {
-      font-size: 16px;
+  &.body1 {
+    &.regular {
+      font-size: 15px;
+      font-weight: 400;
       line-height: 24px;
       letter-spacing: 0.33px;
     }
 
-    &.small {
-      font-size: 14px;
-      line-height: 16px;
+    &.medium {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 24px;
       letter-spacing: 0.33px;
     }
 
-    &.x-small {
-      font-weight: normal;
-      font-size: 12px;
-      line-height: 16px;
+    &.demibold {
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 24px;
+      letter-spacing: 0.33px;
+    }
+
+    &.regularUnderlined {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.33px;
+      text-decoration-line: underline;
+    }
+
+    &.mediumUnderlined {
+      font-size: 15px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.33px;
+      text-decoration-line: underline;
+    }
+
+    &.demiboldUnderlined {
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 24px;
+      letter-spacing: 0.33px;
+      text-decoration-line: underline;
     }
   }
 
-  ${(props) => `
+  &.body2 {
+    &.regular {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.33px;
+    }
+
+    &.medium {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.33px;
+    }
+
+    &.demibold {
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 24px;
+      letter-spacing: 0.33px;
+    }
+
+    &.regularUnderlined {
+      font-size: 13px;
+      font-weight: 400;
+      line-height: 24px;
+      letter-spacing: 0.33px;
+      text-decoration-line: underline;
+    }
+
+    &.mediumUnderlined {
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 24px;
+      letter-spacing: 0.33px;
+      text-decoration-line: underline;
+    }
+
+    &.demiboldUnderlined {
+      font-weight: 600;
+      font-size: 13px;
+      line-height: 24px;
+      letter-spacing: 0.33px;
+      text-decoration-line: underline;
+    }
+  }
+
+  ${(props: any) => `
     color: inherit;
-       
+
     ${styledIf(
-      props.weight,
+      props.color,
       `
-      font-weight: ${props.weight} !important;
+      color: ${props.color} !important;
     `,
     )}
   `}

@@ -1,24 +1,21 @@
 // Dependencies
 import React from "react";
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Assets
-import OptionsDotsIcon from "assets/icons/option-dots-icon.svg";
-import CheckIcon from "assets/icons/check-icon.svg";
-import CloseIcon from "assets/icons/close-icon.svg";
+import OptionsDotsIcon from "../../../assets/icons/option-dots-icon.svg";
+import CheckIcon from "../../../assets/icons/check-icon.svg";
+import CloseIcon from "../../../assets/icons/close-icon.svg";
 
 // Component
 import Table from "./";
-import PriceLabel from "components/display/Table/components/PriceLabel";
-import PercentageIndicator from "components/display/Table/components/PercentageIndicator";
-import ConnectionStateLabel from "components/display/Table/components/ConnectionStateLabel";
-import IconButton from "components/inputs/IconButton";
-import DateLabel from "components/display/Table/components/DateLabel";
-import Button, { ButtonVariants } from "@components/inputs/Button";
+import PriceLabel from "./components/PriceLabel";
+import PercentageIndicator from "./components/PercentageIndicator";
+import ConnectionStateLabel, { ConnectionStateLabelId } from "./components/ConnectionStateLabel";
+import TableButton from "./components/TableButton";
+import IconButton from "../../inputs/IconButton";
+import DateLabel from "./components/DateLabel";
 import { ButtonGroup } from "components/styled";
-
-// Types
-import { connectionStateTypesId } from "components/display/Table/components/ConnectionStateLabel/types";
 
 // Utils
 import { shortenHex } from "utils/web3";
@@ -86,7 +83,7 @@ Investors.args = {
       totalFeesPaid: <PriceLabel token={"USDT"} value={"218"} />,
       successFee: "10%",
       feesInZig: <img src={CheckIcon} />,
-      status: <ConnectionStateLabel stateId={connectionStateTypesId.CONNECTED} />,
+      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
       action: <IconButton icon={OptionsDotsIcon} />,
     },
   ],
@@ -140,12 +137,7 @@ ExchangeOrders.args = {
       type: "Limit",
       action: (
         <ButtonGroup>
-          <Button
-            variant={ButtonVariants.TABLE}
-            leftElement={CloseIcon}
-            caption={"Close"}
-            onClick={() => {}}
-          />
+          <TableButton icon={CloseIcon} caption={"Close"} />
         </ButtonGroup>
       ),
     },
@@ -200,12 +192,7 @@ Contracts.args = {
       margin: "Cross",
       action: (
         <ButtonGroup>
-          <Button
-            variant={ButtonVariants.TABLE}
-            leftElement={CloseIcon}
-            caption={"Close"}
-            onClick={() => {}}
-          />
+          <TableButton icon={CloseIcon} caption={"Close"} />
         </ButtonGroup>
       ),
     },

@@ -1,9 +1,11 @@
 // Dependencies
 import styled from "styled-components";
 
+// Utils
+import { styledIf } from "utils/styled";
+
 // Types
-import { buttonVariantsId } from "types/buttons";
-import { sizeTypesId } from "types/sizes";
+import { ButtonVariants, ButtonSizes } from "./inputs/Button";
 
 export const ButtonGroup = styled.div`
   display: grid;
@@ -14,7 +16,7 @@ export const ButtonGroup = styled.div`
   `}
 `;
 
-export const Button = styled.button<{ size: sizeTypesId; variant: buttonVariantsId }>`
+export const Button = styled.button<{ size: ButtonSizes; variant: ButtonVariants }>`
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -27,4 +29,27 @@ export const Button = styled.button<{ size: sizeTypesId; variant: buttonVariants
   &[disabled] {
     cursor: default;
   }
+
+  ${(props: any) => `
+    ${styledIf(
+      props.size === ButtonSizes.SMALL,
+      `
+      padding: 8px 18px;
+    `,
+    )}
+  
+    ${styledIf(
+      props.variant === ButtonVariants.PRIMARY,
+      `
+      background-color: red;
+    `,
+    )}  
+    
+    ${styledIf(
+      props.variant !== ButtonVariants.GHOST,
+      `
+      cursor: pointer;
+    `,
+    )}
+  `};
 `;

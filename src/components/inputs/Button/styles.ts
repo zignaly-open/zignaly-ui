@@ -1,13 +1,11 @@
 // Dependencies
 import styled from "styled-components";
-import { styledIf } from "../../../utils/styled";
-import { ButtonSizes, ButtonVariants } from "./index";
+import { styledIf } from "utils/styled";
+import { ButtonSizes, ButtonVariants } from "./";
 
 const isPrimaryButton = (variant: ButtonVariants) => variant === ButtonVariants.PRIMARY;
 
 const isSecondaryButton = (variant: ButtonVariants) => variant === ButtonVariants.SECONDARY;
-
-const isTableButton = (variant: ButtonVariants) => variant === ButtonVariants.TABLE;
 
 // const isGhostButton = (variant: ButtonVariants) => variant ===ButtonVariants.GHOST;
 
@@ -95,7 +93,8 @@ export const Layout = styled.button<LayoutProps>`
     cursor: default;
   }
 
-  ${({ size, variant, withElements, onlyIcon }) => `
+  ${({ size, variant, withElements, onlyIcon }: any) => `
+ 
      ${styledIf(
        onlyIcon,
        `
@@ -268,7 +267,6 @@ export const Layout = styled.button<LayoutProps>`
   `,
   )}
   
-    
   ${styledIf(
     isPrimaryButton(variant),
     `
@@ -496,6 +494,7 @@ export const Layout = styled.button<LayoutProps>`
         }
       }
 
+      
       &:enabled:focus:not(:focus-visible) {
         outline: 0;
         box-shadow: none;
@@ -508,111 +507,6 @@ export const Layout = styled.button<LayoutProps>`
       
         ${Container} {
           border: 1px solid white;
-          background: #040618;
-                  
-          &:before {
-            background: linear-gradient(289.8deg, rgba(20, 156, 173, 0.16) 0%, rgba(69, 64, 193, 0.16) 100%);
-            opacity: 1;
-          }
-        }
-        
-        ${Caption} {
-          color: #fff;
-        }
-      }
-            
-      &[disabled] {
-        opacity: 0.33;
-      } 
-
-      &:enabled {
-        ${Container} {
-          &:before {
-            border-radius: inherit;
-            background: linear-gradient(289.8deg, rgba(20, 156, 173, 0.48) 0%, rgba(69, 64, 193, 0.48) 100%);
-            content: '';    
-            display: block;
-            height: 100%;
-            position: absolute;
-            top: 0; left: 0;
-            opacity: 0;
-            width: 100%;
-            z-index: 1;
-            transition: all 50ms linear; 
-          }
-        }
-      }
-      
-      &:enabled:active {
-        padding: 2px;
-        background: linear-gradient(289.8deg, #149CAD 0%, #4540C1 100%);
-        
-        ${Container} {
-          border: none;
-          background: #040618;
-          
-          &:before {
-            opacity: 1;
-          }
-        }
-        
-        ${Caption} {
-          top: 0px;
-          left: 1px;
-        }
-        
-        ${LeftElement} {
-          top: 0px;
-          left: 1px;
-        }
-      }
-            
-      ${Caption} {
-        color: #9CA3AF;
-        letter-spacing: 2px;
-      }
-    `,
-  )}
-  
-  ${styledIf(
-    isTableButton(variant),
-    `
-      ${Caption} {
-        font-weight: 500;
-        font-size: 13px;
-        line-height: 20px;
-        letter-spacing: 0.55px;
-        color: #F3F4F6;
-      }
-    
-      ${Container} {
-        transition: all 0.2s linear;
-        border: 1px dashed #4A4958;
-        background: rgba(12, 13, 33, 0.8);
-             
-        &:enabled:hover {
-          border: 1px dashed #4A4958;
-          background: linear-gradient(289.8deg, rgba(20, 156, 173, 0.16) 0%, rgba(69, 64, 193, 0.16) 100%);
-        
-          ${Caption} {
-            color: #fff;
-            text-shadow: 0px 12px 16px rgba(25, 25, 39, 0.36);
-          }
-        }
-      }
-
-      &:enabled:focus:not(:focus-visible) {
-        outline: 0;
-        box-shadow: none;
-      }
-     
-      
-      &:enabled:focus:focus-visible {
-        background: linear-gradient(289.8deg, #149CAD 0%, #4540C1 100%);
-
-      
-        ${Container} {
-          border: 1px dashed white;
           background: #040618;
                   
           &:before {
