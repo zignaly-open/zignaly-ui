@@ -83,7 +83,7 @@ function Select({
       collapsed={mode === "collapsed" && !isActiveMenu}
     >
       {label && <styled.Label htmlFor={name}>{label}</styled.Label>}
-      <styled.Container mode={mode} onClick={() => setMenuActive(!isActiveMenu)}>
+      <styled.Container onClick={() => setMenuActive(!isActiveMenu)}>
         {mode !== "collapsed" &&
           (selectedItem ? (
             <>
