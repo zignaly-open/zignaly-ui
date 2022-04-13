@@ -1,7 +1,7 @@
 // @ts-nocheck
 // Dependencies
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 // Component
@@ -9,49 +9,27 @@ import ZigWalletIndictator from ".";
 
 describe("components/display/ZigWalletIndictator", () => {
   describe("renders", () => {
-    it("ZigWalletIndictator with small size", () => {
-      const { container } = render(
-        <ZigWalletIndictator size={"small"}>Example Test</ZigWalletIndictator>,
-      );
-
-      const tag = container.querySelector("div");
-      expect(tag).toBeVisible();
-
-      expect(container.firstChild.classList.contains("small")).toBe(true);
-    });
     it("ZigWalletIndictator shows zigs", () => {
       const container = render(<ZigWalletIndictator zigs={9}>Example Test</ZigWalletIndictator>);
 
-      const tag = container.getAllByText("9");
-      expect(tag).toBeVisible();
+      expect(container.getByText("0.000000000000000009")).toBeVisible;
     });
-    it("ZigWalletIndictator with large size", () => {
-      const { container } = render(
-        <ZigWalletIndictator size={"large"}>Example Test</ZigWalletIndictator>,
+    it("ZigWalletIndictator with dolphin rank", () => {
+      const container = render(
+        <ZigWalletIndictator rankId="dolphin">Example Test</ZigWalletIndictator>,
       );
 
-      const tag = container.querySelector("div");
-      expect(tag).toBeVisible();
-
-      expect(container.firstChild.classList.contains("large")).toBe(true);
+      expect(container.getByText("Dolphin")).toBeVisible;
+      expect(container.getAllByRole("img")).toBeVisible;
     });
 
-    it("ZigWalletIndictator with hash", () => {
-      const { container } = render(
-        <ZigWalletIndictator hash="0xmyHash">Example Test</ZigWalletIndictator>,
+    it("ZigWalletIndictator with whale rank", () => {
+      const container = render(
+        <ZigWalletIndictator rankId="whale">Example Test</ZigWalletIndictator>,
       );
 
-      const tag = container.querySelector("div");
-      expect(tag).toBeVisible();
-    });
-
-    it("ZigWalletIndictator with image", () => {
-      render(<ZigWalletIndictator image="image">Example Test</ZigWalletIndictator>);
-
-      const tag = screen.getByRole("img");
-      expect(tag).toBeVisible();
-
-      expect(tag).toHaveAttribute("src", "image");
+      expect(container.getByText("Whale")).toBeVisible;
+      expect(container.getAllByRole("img")).toBeVisible;
     });
   });
 });
