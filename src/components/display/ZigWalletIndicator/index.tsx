@@ -22,7 +22,7 @@ const ZigWalletIndicator = ({
   const renderZigsCoins = useMemo(
     () => (
       <NumberFormat
-        value={utils.formatUnits(zigs.toString())}
+        value={utils.formatUnits((zigs || "0").toString())}
         displayType={"text"}
         thousandSeparator={true}
         renderText={(value) => (
