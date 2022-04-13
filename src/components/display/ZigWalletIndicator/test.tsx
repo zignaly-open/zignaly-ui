@@ -19,7 +19,7 @@ describe("components/display/ZigWalletIndictator", () => {
 
       expect(container.firstChild.classList.contains("small")).toBe(true);
     });
-    it("ZigWalletIndictator with medium size", () => {
+    it("ZigWalletIndictator shows zigs", () => {
       const { container } = render(
         <ZigWalletIndictator zigs={9}>Example Test</ZigWalletIndictator>,
       );
