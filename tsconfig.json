@@ -11,31 +11,36 @@
     "baseUrl": "src",
     "moduleResolution": "node",
     "paths": {
-      "@types/*": [
-        "./src/types/*"
+      "assets/*": [
+        "src/assets/*"
       ],
-      "@assets/*": [
-        "./src/assets/*"
+      "components/*": [
+        "src/components/*"
       ],
-      "@utils/*": [
-        "./src/utils/*"
+      "utils/*": [
+        "src/utils/*"
       ],
-      "@hooks/*": [
-        "./src/hooks/*"
-      ],
-      "@components/*": [
-        "./components/*"
-      ],
-      "@mui/styled-engine": [
-        "./node_modules/@mui/styled-engine-sc"
+      "hooks/*": [
+        "src/hooks/*"
       ]
     },
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2021",
+    "module": "es2021"
   },
   "include": [
-    "src"
+    "src/**/*"
   ],
   "exclude": [
-    "node_modules",
-    "**/__tests__/*"
+    "node_modules"
   ]
 }
