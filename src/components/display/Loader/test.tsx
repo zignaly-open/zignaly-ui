@@ -81,17 +81,5 @@ describe("components/display/Loader", () => {
 
       expect(tag).toHaveAttribute("aria-label", "aria");
     });
-
-    it("with SecondaryColor", () => {
-      const type = LoaderTypes.FALLING_LINES;
-      const container = render(
-        <Loader type={type} color="#FFFFFF">
-          Example Test
-        </Loader>,
-      );
-
-      const tag = container.findAllByRole("svg");
-      expect(tag).toBe("");
-    });
   });
 });

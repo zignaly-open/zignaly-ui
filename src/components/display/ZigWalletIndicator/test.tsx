@@ -20,14 +20,10 @@ describe("components/display/ZigWalletIndictator", () => {
       expect(container.firstChild.classList.contains("small")).toBe(true);
     });
     it("ZigWalletIndictator shows zigs", () => {
-      const { container } = render(
-        <ZigWalletIndictator zigs={9}>Example Test</ZigWalletIndictator>,
-      );
+      const container = render(<ZigWalletIndictator zigs={9}>Example Test</ZigWalletIndictator>);
 
-      const tag = container;
+      const tag = container.getAllByText("9");
       expect(tag).toBeVisible();
-
-      expect(container).toBe("aa");
     });
     it("ZigWalletIndictator with large size", () => {
       const { container } = render(
