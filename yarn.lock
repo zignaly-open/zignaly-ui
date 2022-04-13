@@ -2570,7 +2570,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/api@6.4.21":
+"@storybook/api@6.4.21", "@storybook/api@^6.4.21":
   version "6.4.21"
   resolved "https://registry.yarnpkg.com/@storybook/api/-/api-6.4.21.tgz#efee41ae7bde37f6fe43ee960fef1a261b1b1dd6"
   integrity sha512-AULsLd7ew11IRCpzffyLFGl5cwt9BLMok33DcIlCyvXsiqLm4/OsbgM4sj6QqWVuxcFlWMQJHoRJyeFlULFvZA==
