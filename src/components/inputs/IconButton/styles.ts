@@ -1,7 +1,7 @@
 // Dependencies
 import styled from "styled-components";
 import { Button } from "../../styled";
-import { styledIf } from "../../../utils/styled";
+import { styledIf } from "utils/styled";
 import { IconButtonVariants } from "./types";
 
 export const Layout = styled(Button)`

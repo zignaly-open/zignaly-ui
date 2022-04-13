@@ -7,7 +7,7 @@ import { Layout, Box, Label, Icon } from "./styles";
 // Assets
 import CheckmarkIcon from "assets/icons/checkmark-icon.svg";
 
-// Tytpes
+// Types
 import { CheckBoxProps } from "./types";
 
 function CheckBox({ value, label, disabled = false, onChange = () => {} }: CheckBoxProps) {
