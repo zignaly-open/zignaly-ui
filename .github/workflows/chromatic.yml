@@ -3,8 +3,12 @@
 # Workflow name
 name: 'Chromatic'
 
-# Event for the workflow
-on: push
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    # The branches below must be a subset of the branches above
+    branches: [ develop ]
 
 # List of jobs
 jobs:
