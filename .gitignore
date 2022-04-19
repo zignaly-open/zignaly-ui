@@ -110,3 +110,6 @@ lib
 .vscode
 *.zip
 *.DS_Store
+
+.jest-test-results.json
+lib/

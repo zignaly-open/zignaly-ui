@@ -31,7 +31,7 @@ const Typography = ({
   variant = "body",
   weight = "medium",
   style,
-  color,
+  color = "#F3F4F6",
   underline,
   component,
   className,

@@ -2,8 +2,8 @@
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
 
-export const Layout = styled.h1<{ color: string; underline: boolean }>`
-  font-family: "Avenir Next", "Red Hat Text", sans-serif;
+export const Layout = styled.h1<{ color: string }>`
+  font-family: "Avenir", sans-serif;
   margin: 0;
 
   &.h1 {
@@ -85,13 +85,13 @@ export const Layout = styled.h1<{ color: string; underline: boolean }>`
     }
   }
 
-  ${(props) => `
+  ${(props: any) => `
     color: inherit;
 
     ${styledIf(
       props.color,
       `
-      color: ${props.color} !important;
+      color: ${props.color};
     `,
     )}
     ${styledIf(
