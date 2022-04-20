@@ -67,7 +67,7 @@ function Select({
             <>
               {selectedItem.leftElement && (
                 <styled.LeftElement>
-                  {typeof selectedItem.leftElement === "function" ? (
+                  {typeof selectedItem.leftElement === "object" ? (
                     selectedItem.leftElement
                   ) : (
                     <styled.LeftElementIcon
@@ -96,7 +96,7 @@ function Select({
             <styled.Item key={`--${index.toString()}`} onClick={() => handleClickItem(index + 1)}>
               {leftElement && (
                 <styled.LeftElement>
-                  {typeof leftElement === "function" ? (
+                  {typeof leftElement === "object" ? (
                     leftElement
                   ) : (
                     <styled.LeftElementIcon src={leftElement} alt={caption} />

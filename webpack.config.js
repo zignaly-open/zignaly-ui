@@ -2,6 +2,7 @@ const path = require("path");
 // const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 const isProduction = process.env.NODE_ENV == "production";
 
@@ -23,6 +24,14 @@ const config = {
         // build: true,
         mode: "write-dts",
       },
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: "package.json",
+          to: "package.json",
+        },
+      ],
     }),
   ],
   module: {

@@ -29,7 +29,7 @@ import OptionsDotsIcon from "./assets/icons/option-dots-icon.svg";
 import CheckIcon from "assets/icons/check-icon.svg";
 
 // Themes
-import { dark, light } from "./types/theme";
+// import { dark, light } from "./types/theme";
 
 export {
   /**
@@ -59,8 +59,8 @@ export {
   Tab,
   TabPanel,
   // Theme
-  dark,
-  light,
+  // dark,
+  // light,
   ThemeProvider,
   // Icons
   OptionsDotsIcon,

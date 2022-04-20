@@ -30,7 +30,7 @@ export const Button = styled.button<{ size: ButtonSizes; variant: ButtonVariants
     cursor: default;
   }
 
-  ${(props: any) => `
+  ${(props) => `
     ${styledIf(
       props.size === ButtonSizes.SMALL,
       `
