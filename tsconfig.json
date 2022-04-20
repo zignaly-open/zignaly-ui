@@ -6,6 +6,7 @@
     "outDir": "./lib",
     "strict": true,
     "jsx": "react",
+    "outDir": "./lib",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
@@ -20,7 +21,6 @@
     "src"
   ],
   "exclude": [
-    "node_modules",
-    "**/__tests__/*"
+    "node_modules"
   ],
 }
