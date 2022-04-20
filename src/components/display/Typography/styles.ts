@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { styledIf } from "utils/styled";
 
 export const Layout = styled.h1<{ color: string; underline: boolean; weight: string }>`
-  font-family: "Avenir","Red Hat Text", sans-serif;
+  font-family: "Avenir next","Red Hat Text", sans-serif;
   margin: 0;
   letter-spacing: 0.55px;
 
