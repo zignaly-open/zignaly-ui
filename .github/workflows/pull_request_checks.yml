@@ -2,9 +2,8 @@ name: CI
 
 on: [pull_request]
 
-# List of jobs
 jobs:
-  chromatic-deployment:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout commit
@@ -28,6 +27,6 @@ jobs:
 
       - name: Run linter
         run: npm run lint
-        
+
       - name: Run tsc
         run: tsc
