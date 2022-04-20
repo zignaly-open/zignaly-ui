@@ -6,7 +6,6 @@
     "outDir": "./lib",
     "strict": true,
     "jsx": "react",
-    "outDir": "./lib",
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "baseUrl": "src",
