@@ -1,23 +1,59 @@
 // Dependencies
-import React from "react";
+import React, { useCallback, useRef, useState } from "react";
+import { useClickAway } from "react-use";
 
 // Styled Components
-import * as styled from "./styles";
+import { Layout, ViewPort, Icon, Dropdown, Container } from "./styles";
 
 // Types
-import { IconButtonSizes, IconButtonVariants } from "./types";
+import { DropdownAlignment, IconButtonProps, IconButtonSizes, IconButtonVariants } from "./types";
 
-type IconButtonProps = {
-  variant?: IconButtonVariants;
-  icon: string;
-  onClick?: React.MouseEventHandler<HTMLButtonElement>;
-};
+const IconButton = ({
+  icon,
+  disabled = false,
+  size = IconButtonSizes.NORMAL,
+  variant = IconButtonVariants.PRIMARY,
+  onClick = null,
+  dropDownOptions = {
+    width: "auto",
+    alignment: DropdownAlignment.LEFT,
+  },
+  renderDropDown = null,
+}: IconButtonProps) => {
+  // Ref
+  const layoutRef = useRef(null);
 
-const IconButton = ({ variant = IconButtonVariants.PRIMARY, icon, onClick }: IconButtonProps) => {
+  // Hooks
+  const [isActiveDropdown, setDropdownActive] = useState(false);
+
+  /**
+   * @function handleClickButton:
+   * @description Function in charge of indicating the logic when pressing the button.
+   */
+  const handleClickButton = useCallback(() => {
+    setDropdownActive((current) => !current);
+  }, [onClick]);
+
+  useClickAway(layoutRef, () => {
+    setDropdownActive(false);
+  });
+
   return (
-    <styled.Layout variant={variant} size={IconButtonSizes.MEDIUM} onClick={onClick}>
-      <styled.Icon src={icon} />
-    </styled.Layout>
+    <Layout ref={layoutRef}>
+      <ViewPort
+        size={size}
+        variant={variant}
+        disabled={disabled}
+        isActiveDropdown={isActiveDropdown}
+      >
+        <Container onClick={disabled ? null : renderDropDown ? handleClickButton : onClick}>
+          <Icon src={icon} />
+        </Container>
+      </ViewPort>
+      {renderDropDown && isActiveDropdown && (
+        <Dropdown {...dropDownOptions}>{renderDropDown}</Dropdown>
+      )}
+    </Layout>
   );
 };
 
