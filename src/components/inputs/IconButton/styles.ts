@@ -1,8 +1,7 @@
 // Dependencies
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
-import { IconButtonVariants, IconButtonSizes } from "./";
-import { DropdownAlignment } from "components/inputs/IconButton/types";
+import { IconButtonVariants, IconButtonSizes, DropdownAlignment } from "./";
 
 const isPrimaryButton = (variant: IconButtonVariants) => variant === IconButtonVariants.PRIMARY;
 
@@ -42,14 +41,16 @@ export const Dropdown = styled.div`
   white-space: nowrap;
   color: #fff;
   top: 99%;
+  box-shadow: 0 4px 6px -2px #00000061;
 
   ${({ alignment, width }: any) => `
-    width: ${width};
+    width: ${width ?? "auto"};
   
     ${styledIf(
       alignment === DropdownAlignment.LEFT,
       `
         left: 0;
+        border-radius: 0 4px 4px 4px;
       `,
     )}
     
@@ -57,6 +58,7 @@ export const Dropdown = styled.div`
       alignment === DropdownAlignment.RIGHT,
       `
         right: 0;
+        border-radius: 4px 0px 4px 4px;
       `,
     )}
   `}
@@ -172,45 +174,6 @@ export const ViewPort = styled.button<LayoutProps>`
           border: 1px solid white;
           background: linear-gradient(289.8deg, #149CAD 0%, #4540C1 100%);
         }
-       
-        ${styledIf(
-          isSmallButton(size),
-          `
-          ${Icon} {
-            top: 0px;
-          }
-        `,
-        )}
-        
-        ${styledIf(
-          isMediumButton(size),
-          `
-          ${Icon} {
-            top: 0px;
-            left: 0px;
-          }
-        `,
-        )}
-        
-        ${styledIf(
-          isLargeButton(size),
-          `
-          ${Icon} {
-            top: 0px;
-            left: -1px;
-          }
-        `,
-        )}
-
-        ${styledIf(
-          isXLargeButton(size),
-          `
-          ${Icon} {
-            top: 0px;
-            left: -1px;
-          }
-        `,
-        )}
       }
             
       &[disabled] {
@@ -438,12 +401,13 @@ export const ViewPort = styled.button<LayoutProps>`
     ` 
       background: #12152c;      
       padding: 2px;
+      border-radius: 4px 4px 0 0;
              
       &:enabled:active {
         padding: 2px;
         background: #12152c;
       }
-      
+ 
       ${Container} {
         background: #12152c;
         

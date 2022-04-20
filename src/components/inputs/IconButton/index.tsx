@@ -57,5 +57,5 @@ const IconButton = ({
   );
 };
 
-export { IconButtonVariants, IconButtonSizes };
+export { IconButtonVariants, IconButtonSizes, DropdownAlignment };
 export default IconButton;
