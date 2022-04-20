@@ -8,9 +8,14 @@ export enum ButtonVariants {
 
 export enum ButtonSizes {
   SMALL = "small",
-  NORMAL = "normal",
+  MEDIUM = "medium",
   LARGE = "large",
-  XLARGE = "xlarge",
+  XLARGE = "x-large",
+}
+
+export enum ButtonColors {
+  GREY = "grey",
+  GREEN = "green",
 }
 
 export type ButtonProps = {
@@ -21,5 +26,6 @@ export type ButtonProps = {
   leftElement?: ReactElement<any> | String | null;
   rightElement?: ReactElement<any> | String | null;
   disabled?: boolean;
+  color?: ButtonColors;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
 };
