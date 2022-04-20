@@ -311,7 +311,7 @@ export const ViewPort = styled.button<LayoutProps>`
       ${Container} {
         transition: all 0.2s linear;
         border: 1px solid transparent;
-        background: rgba(12, 13, 33, 0.8);
+        background: transparent;
              
         &:enabled:hover {
           border: 1px dashed #4A4958;
