@@ -1,4 +1,5 @@
 import React from "react";
+import { Theme } from "theme/theme";
 
 export const componentByVariants = {
   h1: "h1",
@@ -7,8 +8,8 @@ export const componentByVariants = {
   h4: "h4",
   h5: "h5",
   h6: "h6",
-  body: "span",
-  number: "span",
+  body1: "span",
+  body2: "span",
 };
 
 export enum weightByType {
@@ -23,7 +24,7 @@ export interface TypographyProps {
   style?: any;
   className?: string;
   component?: any;
-  color?: string;
+  color?: Theme;
   underline?: boolean;
   children: React.ReactNode;
 }

@@ -2,6 +2,19 @@
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
 
+const getWeight = (weight: string) => {
+
+  if(weight === "demibold") {
+    return 600;
+  } else if(weight === "medium") {
+    return 500;
+  } else if(weight === "regular") {
+    return 400;
+  }
+  return 400;
+};
+
+
 export const Layout = styled.h1<{ color: string; underline: boolean; weight: string }>`
   font-family: "Avenir", sans-serif;
   margin: 0;
@@ -57,7 +70,7 @@ export const Layout = styled.h1<{ color: string; underline: boolean; weight: str
     ${styledIf(
       props.color,
       `
-      color: ${props.color};
+      color: ${props.theme[props.color]}    
     `,
     )}
     ${styledIf(
@@ -67,21 +80,9 @@ export const Layout = styled.h1<{ color: string; underline: boolean; weight: str
     `,
     )}
     ${styledIf(
-      props.weight === "demibold",
+      props.weight,
       `
-      font-weight: 600;
-    `,
-    )}
-    ${styledIf(
-      props.weight === "regular",
-      `
-      font-weight: 400;
-    `,
-    )}
-    ${styledIf(
-      props.weight === "medium",
-      `
-      font-weight: 500;
+      font-weight: ${getWeight(props.weight)};
     `,
     )}
   `}
