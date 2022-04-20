@@ -23,7 +23,7 @@ export const Icon = styled.img`
   transition: color 0.2s linear;
 `;
 
-export const Container = styled.div`
+export const Container = styled.div<any>`
   position: relative;
   border-radius: 4px;
   transition: all 0.2s linear;
@@ -70,6 +70,7 @@ export const Dropdown = styled.div`
 interface LayoutProps {
   size: IconButtonSizes;
   variant: IconButtonVariants;
+  isActiveDropdown: boolean;
 }
 
 export const Layout = styled.div`
