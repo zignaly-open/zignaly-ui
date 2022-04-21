@@ -7,13 +7,14 @@ export const componentByVariants = {
   h4: "h4",
   h5: "h5",
   h6: "h6",
-  body: "span",
+  body1: "span",
+  body2: "span",
   number: "span",
 };
 
 export enum weightByType {
   medium = "medium",
-  demibold = "demibold",
+  semiBold = "semiBold",
   regular = "regular",
 }
 

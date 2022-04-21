@@ -13,7 +13,7 @@ export default {
     },
     weight: {
       control: "select",
-      options: ["medium", "regular", "demibold"],
+      options: ["medium", "regular", "semiBold"],
     },
     underline: {
       control: "radio",

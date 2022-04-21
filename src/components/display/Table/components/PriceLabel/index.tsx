@@ -5,23 +5,32 @@ import NumberFormat from "react-number-format";
 // Styled Components
 import * as styled from "./styles";
 
+// Types
+import { PriceLabelProps } from "./types";
+
 const PriceLabel = ({
   value = 0,
-  token = "USDT",
+  coin = "USDT",
+  fiat = false,
   bottomElement = null,
-}: {
-  value: number | string;
-  token: string;
-  bottomElement?: React.ReactNode;
-}) => (
+}: PriceLabelProps) => (
   <styled.Layout>
-    <styled.Value>
+    <styled.Value variant={"h3"}>
+      {fiat && (
+        <styled.Coin variant={"h3"} fiat={fiat}>
+          {coin}
+        </styled.Coin>
+      )}
       {typeof value === "number" || typeof value === "bigint" ? (
         <NumberFormat value={value} displayType={"text"} thousandSeparator={true} />
       ) : (
         value
       )}
-      <styled.Token>{token}</styled.Token>
+      {!fiat && (
+        <styled.Coin variant={"h4"} fiat={fiat}>
+          {coin}
+        </styled.Coin>
+      )}
     </styled.Value>
     {bottomElement && bottomElement}
   </styled.Layout>

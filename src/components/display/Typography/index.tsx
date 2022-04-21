@@ -7,7 +7,7 @@ import { componentByVariants, TypographyProps } from "./types";
 
 const Typography = ({
   children,
-  variant = "body",
+  variant = "body1",
   weight,
   style,
   color = "#F3F4F6",

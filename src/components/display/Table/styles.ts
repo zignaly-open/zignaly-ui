@@ -6,7 +6,7 @@ export const Layout = styled.div``;
 
 export const View = styled.div`
   width: 100%;
-  border-radius: 16px;
+  border-radius: 5px 5px 15px 15px;
   overflow: auto;
 
   &::-webkit-scrollbar {
@@ -35,19 +35,32 @@ export const TableView = styled.table`
   width: 100%;
 
   font-family: "Avenir", sans-serif;
-  background: #131225;
-
+  background: rgba(19, 18, 37, 0.4);
   thead {
-    border: 1px solid #222249;
-    background: #222249;
+    user-select: none;
+    background: #06061a;
+    box-shadow: 0 0 10px #16192b;
+    border-radius: 0 0 5px 5px;
+    position: relative;
+    z-index: 0;
 
     th {
       color: #f3f4f6;
       padding: 4px 22px;
+      letter-spacing: 0.55px;
+      font-style: normal;
       font-weight: 500;
       font-size: 13px;
-      line-height: 20px;
-      letter-spacing: 0.55px;
+      line-height: 16px;
+      white-space: nowrap;
+      border-bottom: 0;
+      background: transparent;
+      &:first-child {
+        border-radius: 0 0 0 5px;
+      }
+      &:last-child {
+        border-radius: 0 0 5px 0;
+      }
     }
   }
 
@@ -57,11 +70,12 @@ export const TableView = styled.table`
       font-style: normal;
       font-weight: 600;
       line-height: 20px;
-      letter-spacing: 0px;
+      letter-spacing: 0;
       text-align: center;
       color: #f3f4f6;
       padding: 12px 22px;
       white-space: nowrap;
+      background: transparent;
 
       &.action {
         display: flex;
@@ -76,25 +90,15 @@ export const TableView = styled.table`
     margin: 0;
     border: 0;
     border-bottom: 1px solid #222249;
+    background: transparent;
 
     :last-child {
       border-right: 0;
     }
   }
 
-  thead {
-    user-select: none;
-
-    th {
-      font-style: normal;
-      font-weight: 500;
-      font-size: 13px;
-      line-height: 16px;
-      white-space: nowrap;
-    }
-  }
-
   tr {
+    background: transparent;
     :last-child {
       td {
         border-bottom: 0;

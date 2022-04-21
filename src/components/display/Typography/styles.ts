@@ -67,7 +67,7 @@ export const Layout = styled.h1<{ color: string; underline: boolean; weight: str
     `,
     )}
     ${styledIf(
-      props.weight === "demibold",
+      props.weight === "semiBold",
       `
       font-weight: 600;
     `,
