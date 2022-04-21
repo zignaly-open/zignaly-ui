@@ -9,7 +9,6 @@ const Typography = ({
   children,
   variant = "body1",
   weight,
-  style,
   color = "neutral000",
   underline,
   component,
@@ -21,7 +20,7 @@ const Typography = ({
       color={color}
       underline={underline}
       weight={weight}
-      className={[variant, style && `style-${style}`, className]}
+      className={[variant, className]}
       as={component ?? componentByVariants[variant]}
     >
       {children}

@@ -10,7 +10,7 @@ export default {
   argTypes: {
     variant: {
       control: "select",
-      options: ["h1", "h2", "h3", "h4", "h5", "body1", "body2"],
+      options: ["h1", "h2", "h3", "h4", "h5", "bigNumber", "body1", "body2"],
     },
     weight: {
       control: "select",
@@ -24,14 +24,13 @@ export default {
       control: "radio",
       options: [true, false],
     },
-    style: {
-      control: "select",
-      options: ["text", "number"],
-    },
     className: {
       table: {
         disable: true,
       },
+    },
+    color:{
+      control: "text",
     },
     component: {
       table: {
