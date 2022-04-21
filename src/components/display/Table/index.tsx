@@ -19,6 +19,7 @@ import {
   OptionTitle,
   OptionList,
   OptionItem,
+  ThView,
 } from "./styles";
 
 // Components
@@ -82,15 +83,20 @@ const Table = ({ columns = [], data = [] }: { columns: Column<any>[]; data: Obje
             {headerGroups.map((headerGroup: any, index: number) => (
               <tr {...headerGroup.getHeaderGroupProps()} key={`--table-head-${index.toString()}`}>
                 {headerGroup.headers.map((column: any, index: number) => (
-                  <th
+                  <ThView
                     {...column.getHeaderProps(column.getSortByToggleProps())}
                     key={`--table-head-row-${index.toString()}`}
+                    isSorted={column.isSorted}
                   >
                     {column.render("Header")}
-                    {column.isSorted && (
-                      <SortIcon isSortedDesc={column.isSortedDesc} src={ArrowBottomIcon} />
+                    {index < headerGroup.headers.length - 1 && (
+                      <SortIcon
+                        isSorted={column.isSorted}
+                        isSortedDesc={column.isSortedDesc}
+                        src={ArrowBottomIcon}
+                      />
                     )}
-                  </th>
+                  </ThView>
                 ))}
               </tr>
             ))}

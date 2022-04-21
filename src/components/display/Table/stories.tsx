@@ -5,7 +5,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 // Assets
 import OptionsDotsIcon from "../../../assets/icons/option-dots-icon.svg";
 import CheckIcon from "../../../assets/icons/check-icon.svg";
-import CloseIcon from "../../../assets/icons/close-icon.svg";
 
 // Component
 import Table from "./";
@@ -13,10 +12,8 @@ import Typography from "components/display/Typography";
 import PriceLabel from "./components/PriceLabel";
 import PercentageIndicator from "./components/PercentageIndicator";
 import ConnectionStateLabel, { ConnectionStateLabelId } from "./components/ConnectionStateLabel";
-import TableButton from "./components/TableButton";
 import IconButton from "../../inputs/IconButton";
 import DateLabel from "./components/DateLabel";
-import { ButtonGroup } from "components/styled";
 
 // Utils
 import { shortenHex } from "utils/web3";
@@ -29,6 +26,7 @@ export default {
 const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
 
 export const MyCoins = Template.bind({});
+//TODO: I have been seeing that I am modifying the cells of the body not the cells of the header
 MyCoins.args = {
   columns: [
     {
@@ -67,6 +65,30 @@ MyCoins.args = {
     },
   ],
   data: [
+    {
+      coin: shortenHex("5f886d29da8e9666b1684c9a"),
+      totalBalance: <PriceLabel coin={"ETH"} value={"32.20435"} />,
+      availableBalance: <PriceLabel coin={"ETH"} value={"2.1352"} />,
+      lockedBalance: <PriceLabel coin={"ETH"} value={"30.18389"} />,
+      valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
+      valueInUsd: <PriceLabel coin={"$"} value={"22,000"} fiat />,
+      successFee: "10%",
+      feesInZig: <img src={CheckIcon} />,
+      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
+      action: <IconButton icon={OptionsDotsIcon} />,
+    },
+    {
+      coin: shortenHex("5f886d29da8e9666b1684c9a"),
+      totalBalance: <PriceLabel coin={"ETH"} value={"32.20435"} />,
+      availableBalance: <PriceLabel coin={"ETH"} value={"2.1352"} />,
+      lockedBalance: <PriceLabel coin={"ETH"} value={"30.18389"} />,
+      valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
+      valueInUsd: <PriceLabel coin={"$"} value={"22,000"} fiat />,
+      successFee: "10%",
+      feesInZig: <img src={CheckIcon} />,
+      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
+      action: <IconButton icon={OptionsDotsIcon} />,
+    },
     {
       coin: shortenHex("5f886d29da8e9666b1684c9a"),
       totalBalance: <PriceLabel coin={"ETH"} value={"32.20435"} />,
@@ -191,11 +213,6 @@ ExchangeOrders.args = {
       entryPrice: "110.20",
       side: "Buy",
       type: "Limit",
-      action: (
-        <ButtonGroup>
-          <TableButton icon={CloseIcon} caption={"Close"} />
-        </ButtonGroup>
-      ),
     },
   ],
 };
@@ -246,11 +263,6 @@ Contracts.args = {
       entryPrice: "110.20",
       marketPrice: "114.20",
       margin: "Cross",
-      action: (
-        <ButtonGroup>
-          <TableButton icon={CloseIcon} caption={"Close"} />
-        </ButtonGroup>
-      ),
     },
   ],
 };

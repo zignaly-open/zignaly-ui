@@ -43,25 +43,6 @@ export const TableView = styled.table`
     border-radius: 0 0 5px 5px;
     position: relative;
     z-index: 0;
-
-    th {
-      color: #f3f4f6;
-      padding: 4px 22px;
-      letter-spacing: 0.55px;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 13px;
-      line-height: 16px;
-      white-space: nowrap;
-      border-bottom: 0;
-      background: transparent;
-      &:first-child {
-        border-radius: 0 0 0 5px;
-      }
-      &:last-child {
-        border-radius: 0 0 5px 0;
-      }
-    }
   }
 
   tbody {
@@ -85,13 +66,14 @@ export const TableView = styled.table`
     }
   }
 
-  th,
   td {
     margin: 0;
     border: 0;
-    border-bottom: 1px solid #222249;
+    border-bottom: 1px solid #252339;
     background: transparent;
-
+    img {
+      vertical-align: initial;
+    }
     :last-child {
       border-right: 0;
     }
@@ -107,11 +89,50 @@ export const TableView = styled.table`
   }
 `;
 
-export const SortIcon = styled.img<{ isSortedDesc?: boolean }>`
+export const ThView = styled.th<{ isSorted?: boolean }>`
+  color: #a9a9ba;
+  padding: 4px 22px;
+  white-space: nowrap;
+  background: transparent;
+  margin: 0;
+  border: 1px solid transparent;
+  img {
+    vertical-align: initial;
+  }
+  &:first-child {
+    border-radius: 0 0 0 5px;
+  }
+  &:last-child {
+    border-radius: 0 0 5px 0;
+  }
+  ${(props: any) => `
+     ${styledIf(
+       props.isSorted,
+       `
+        border: 1px solid #35334A;
+        border-radius: 5px;
+    `,
+       `
+        border: 1px solid transparent;
+    `,
+     )}
+  `}
+`;
+
+export const SortIcon = styled.img<{ isSorted?: boolean; isSortedDesc?: boolean }>`
   margin-left: 6px;
-  transition: all 0.1s linear;
 
   ${(props: any) => `
+     ${styledIf(
+       props.isSorted,
+       `
+        transition: all 0.1s linear;
+        visibility: visible;;
+    `,
+       `
+        visibility: hidden;
+    `,
+     )}
      ${styledIf(
        props.isSortedDesc,
        `
