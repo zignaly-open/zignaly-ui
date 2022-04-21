@@ -29,9 +29,6 @@ export default {
         disable: true,
       },
     },
-    color:{
-      control: "text",
-    },
     component: {
       table: {
         disable: true,

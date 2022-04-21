@@ -7,10 +7,9 @@ const getWeight = (weight: string) => {
     return 600;
   } else if (weight === "medium") {
     return 500;
-  } else if (weight === "regular") {
+  } else {
     return 400;
   }
-  return 400;
 };
 
 export const Layout = styled.h1<{ color: string; underline: boolean; weight: string }>`

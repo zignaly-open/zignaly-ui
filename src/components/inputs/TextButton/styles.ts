@@ -60,7 +60,7 @@ export const Layout = styled.button<LayoutProps>`
   position: relative;
   user-select: none;
   background: transparent;
-  ${(props: any) => `
+  ${(props) => `
       
       ${Container} {
         padding: 8px 18px;
