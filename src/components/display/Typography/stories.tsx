@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Typography from "./";
+import { dark } from "../../../theme";
 
 export default {
   title: "Display/Typography",
@@ -14,6 +15,10 @@ export default {
     weight: {
       control: "select",
       options: ["medium", "regular", "demibold"],
+    },
+    color: {
+      options: Object.keys(dark),
+      control: "select",
     },
     underline: {
       control: "radio",

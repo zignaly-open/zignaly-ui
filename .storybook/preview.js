@@ -2,6 +2,10 @@
 import { withDesign } from "storybook-addon-designs";
 import { useDarkMode } from "storybook-dark-mode";
 import { dark, light } from "../src/theme";
+import { addDecorator } from "@storybook/react";
+import { makeDecorator } from "@storybook/addons";
+import { ThemeProvider } from "styled-components";
+
 
 // Testing Results
 import { withTests } from "@storybook/addon-jest";
@@ -38,9 +42,5 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
-  },
-  darkMode: {
-    dark: { ...sbThemes.dark, appBg: "#2d2d2d", appContentBg: "#07071A" },
-    light: { ...sbThemes.normal, appBg: "white" },
   },
 };

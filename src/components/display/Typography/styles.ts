@@ -3,17 +3,15 @@ import styled from "styled-components";
 import { styledIf } from "utils/styled";
 
 const getWeight = (weight: string) => {
-
-  if(weight === "demibold") {
+  if (weight === "demibold") {
     return 600;
-  } else if(weight === "medium") {
+  } else if (weight === "medium") {
     return 500;
-  } else if(weight === "regular") {
+  } else if (weight === "regular") {
     return 400;
   }
   return 400;
 };
-
 
 export const Layout = styled.h1<{ color: string; underline: boolean; weight: string }>`
   font-family: "Avenir", sans-serif;
@@ -64,13 +62,13 @@ export const Layout = styled.h1<{ color: string; underline: boolean; weight: str
     letter-spacing: 0.33px;
   }
 
-  ${(props: any) => `
+  ${(props) => `
     color: inherit;
 
     ${styledIf(
       props.color,
       `
-      color: ${props.theme[props.color]}    
+      color: ${props.theme[props.color]};    
     `,
     )}
     ${styledIf(

@@ -10,11 +10,12 @@ const Typography = ({
   variant = "body1",
   weight,
   style,
-  color,
+  color = "neutral000",
   underline,
   component,
   className,
 }: TypographyProps) => {
+  console.log(color);
   return (
     <styled.Layout
       color={color}

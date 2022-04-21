@@ -1,5 +1,6 @@
 import React from "react";
-import { Theme } from "theme/theme";
+import { dark } from "theme";
+
 
 export const componentByVariants = {
   h1: "h1",
@@ -24,7 +25,7 @@ export interface TypographyProps {
   style?: any;
   className?: string;
   component?: any;
-  color?: Theme;
+  color?: keyof typeof dark;
   underline?: boolean;
   children: React.ReactNode;
 }
