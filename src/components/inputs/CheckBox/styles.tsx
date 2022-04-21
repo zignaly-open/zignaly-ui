@@ -50,11 +50,13 @@ export const Layout = styled.div<LayoutProps>`
       isActive,
       `
       ${Box} {
-        border-color: #5A51F5;
-        box-shadow: 0 0 0 1px #5A51F5;
+        border-color: #706f82;
+        box-shadow: 0 0 0 1px #706f82;
+        color: #7682f7;
       }
       ${Icon} {
         transform: scale(1);
+        color: #7682f7;
       }
     `,
     )}
