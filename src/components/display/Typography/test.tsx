@@ -54,22 +54,40 @@ describe("components/display/Typography", () => {
   });
 
   it("renders the typography with the class body and tag span", () => {
-    const { container } = render(<Typography variant={"body"}>Example Test</Typography>);
+    const { container } = render(<Typography variant={"body1"}>Example Test</Typography>);
 
     const tag = container.querySelector("span");
     expect(tag).toBeVisible();
 
-    expect(container.firstChild.classList.contains("body")).toBe(true);
+    expect(container.firstChild.classList.contains("body1")).toBe(true);
+  });
+
+  it("renders the typography with the class body1 and tag span", () => {
+    const { container } = render(<Typography variant={"body1"}>Example Test</Typography>);
+
+    const tag = container.querySelector("span");
+    expect(tag).toBeVisible();
+
+    expect(container.firstChild.classList.contains("body1")).toBe(true);
+  });
+
+  it("renders the typography with the class body2 and tag span", () => {
+    const { container } = render(<Typography variant={"body2"}>Example Test</Typography>);
+
+    const tag = container.querySelector("span");
+    expect(tag).toBeVisible();
+
+    expect(container.firstChild.classList.contains("body2")).toBe(true);
   });
 
   it("renders the typography with the content in the children.", () => {
-    render(<Typography variant={"body"}>Example Test</Typography>);
+    render(<Typography variant={"body1"}>Example Test</Typography>);
     expect(screen.getByText("Example Test"));
   });
 
   it("renders the typography with a custom component.", () => {
     const { container } = render(
-      <Typography variant={"body"} component={"code"}>
+      <Typography variant={"body1"} component={"code"}>
         Example Test
       </Typography>,
     );
