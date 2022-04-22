@@ -13,7 +13,7 @@ const getWeight = (weight: string) => {
 };
 
 export const Layout = styled.h1<{ color: string; underline: boolean; weight: string }>`
-  font-family: "Avenir next","Red Hat Text", sans-serif;
+  font-family: "Avenir next", "Red Hat Text", sans-serif;
   margin: 0;
   letter-spacing: 0.55px;
 
@@ -46,7 +46,7 @@ export const Layout = styled.h1<{ color: string; underline: boolean; weight: str
     font-size: 11px;
     line-height: 16px;
   }
-  
+
   &.bigNumber {
     font-weight: 500;
     font-size: 26px;
