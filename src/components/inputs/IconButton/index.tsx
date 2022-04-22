@@ -1,9 +1,10 @@
 // Dependencies
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
+import ReactDOM from "react-dom";
 import { useClickAway } from "react-use";
 
 // Styled Components
-import { Layout, ViewPort, Icon, Dropdown, Container } from "./styles";
+import { Layout, ViewPort, Icon, Dropdown, Container, DropdownElement } from "./styles";
 
 // Types
 import { DropdownAlignment, IconButtonProps, IconButtonSizes, IconButtonVariants } from "./types";
@@ -21,6 +22,7 @@ const IconButton = ({
   renderDropDown = null,
 }: IconButtonProps) => {
   // Ref
+  const element = useRef(document.createElement("div"));
   const layoutRef = useRef(null);
 
   // Hooks
@@ -31,8 +33,36 @@ const IconButton = ({
    * @description Function in charge of indicating the logic when pressing the button.
    */
   const handleClickButton = useCallback(() => {
-    setDropdownActive((current) => !current);
-  }, [onClick]);
+    const newActiveState = !isActiveDropdown;
+    const root = window.document.getElementById("root");
+
+    if (root) {
+      if (newActiveState) {
+        const dropdown = document.createElement("div");
+        dropdown.setAttribute("id", "dropdown-layout");
+        root.appendChild(dropdown);
+
+        console.log({ layoutRef });
+
+        if (layoutRef && layoutRef.current) {
+          const { offsetTop, clientHeight, offsetLeft } = layoutRef.current;
+          console.log({ offsetTop, clientHeight, offsetLeft });
+          ReactDOM.render(
+            <Dropdown
+              top={offsetTop + clientHeight}
+              left={offsetLeft}
+              width={dropDownOptions.width}
+              alignment={dropDownOptions.alignment}
+            >
+              {renderDropDown}
+            </Dropdown>,
+            dropdown,
+          );
+        }
+      }
+    }
+    setDropdownActive(newActiveState);
+  }, [isActiveDropdown, dropDownOptions, onClick]);
 
   useClickAway(layoutRef, () => {
     setDropdownActive(false);
@@ -50,9 +80,6 @@ const IconButton = ({
           <Icon src={icon} />
         </Container>
       </ViewPort>
-      {renderDropDown && isActiveDropdown && (
-        <Dropdown {...dropDownOptions}>{renderDropDown}</Dropdown>
-      )}
     </Layout>
   );
 };

@@ -1,34 +1,20 @@
 // Dependencies
-import React, { useRef, useState, useMemo } from "react";
-import { useTable, useSortBy, Column } from "react-table";
-import { useClickAway } from "react-use";
+import React, { useMemo, useState } from "react";
+import { Column, useSortBy, useTable } from "react-table";
 
 // Assets
 import ArrowBottomIcon from "assets/icons/arrow-bottom-icon.svg";
 import OptionsDotsIcon from "assets/icons/option-dots-icon.svg";
-import CloseIcon from "assets/icons/close-icon.svg";
 
 // Styles
-import {
-  Layout,
-  View,
-  TableView,
-  SortIcon,
-  OptionsMenu,
-  OptionHead,
-  OptionTitle,
-  OptionList,
-  OptionItem,
-} from "./styles";
+import { Layout, OptionItem, OptionList, SortIcon, TableView, View } from "./styles";
 
 // Components
 import Row from "./components/Row";
-import IconButton, { IconButtonVariants } from "components/inputs/IconButton";
+import IconButton, { DropdownAlignment, IconButtonVariants } from "components/inputs/IconButton";
 import CheckBox from "components/inputs/CheckBox";
 
 const Table = ({ columns = [], data = [] }: { columns: Column<any>[]; data: Object[] }) => {
-  const menuRef = useRef(null);
-  const [isTableOptionsEnabled, setTableOptionEnabled] = useState(false);
   const [hiddenColumns, setHiddenColumns] = useState([]);
 
   /**
@@ -42,11 +28,40 @@ const Table = ({ columns = [], data = [] }: { columns: Column<any>[]; data: Obje
         Header: (
           <div style={{ display: "flex", justifyContent: "flex-end" }}>
             <IconButton
-              variant={IconButtonVariants.FLAT}
+              variant={IconButtonVariants.GHOST}
               icon={OptionsDotsIcon}
-              onClick={() => {
-                setTableOptionEnabled(true);
+              dropDownOptions={{
+                alignment: DropdownAlignment.RIGHT,
               }}
+              renderDropDown={
+                <OptionList>
+                  {columns.map((column: any, index) => (
+                    <OptionItem key={`--options-container-${index.toString()}`}>
+                      <CheckBox
+                        value={hiddenColumns.find((e) => e === column.accessor) ?? true}
+                        label={(column.Header ?? "").toString()}
+                        onChange={(isActive: boolean) => {
+                          toggleHideColumn(column.accessor, !isActive);
+                          if (!isActive) {
+                            // @ts-ignore
+                            setHiddenColumns((prevState: any[]) => {
+                              return [...prevState, column.accessor];
+                            });
+                          } else {
+                            setHiddenColumns((prevState) =>
+                              prevState.filter((e) => e !== column.accessor),
+                            );
+                          }
+                        }}
+                        disabled={
+                          hiddenColumns.length >= columns.length / 2 &&
+                          !hiddenColumns.find((e) => e === column.accessor)
+                        }
+                      />
+                    </OptionItem>
+                  ))}
+                </OptionList>
+              }
             />
           </div>
         ),
@@ -67,12 +82,6 @@ const Table = ({ columns = [], data = [] }: { columns: Column<any>[]; data: Obje
     );
 
   const firstPageRows = rows.slice(0, 20);
-
-  useClickAway(menuRef, () => {
-    if (isTableOptionsEnabled) {
-      setTableOptionEnabled(false);
-    }
-  });
 
   return (
     <Layout>
@@ -105,37 +114,6 @@ const Table = ({ columns = [], data = [] }: { columns: Column<any>[]; data: Obje
           </tbody>
         </TableView>
       </View>
-      <OptionsMenu ref={menuRef} disabled={!isTableOptionsEnabled}>
-        <OptionHead>
-          <OptionTitle>Options</OptionTitle>
-          <IconButton icon={CloseIcon} onClick={() => setTableOptionEnabled(false)} />
-        </OptionHead>
-        <OptionList>
-          {columns.map((column: any, index) => (
-            <OptionItem key={`--options-container-${index.toString()}`}>
-              <CheckBox
-                value={hiddenColumns.find((e) => e === column.accessor) ?? true}
-                label={(column.Header ?? "").toString()}
-                onChange={(isActive: boolean) => {
-                  toggleHideColumn(column.accessor, !isActive);
-                  if (!isActive) {
-                    // @ts-ignore
-                    setHiddenColumns((prevState: any[]) => {
-                      return [...prevState, column.accessor];
-                    });
-                  } else {
-                    setHiddenColumns((prevState) => prevState.filter((e) => e !== column.accessor));
-                  }
-                }}
-                disabled={
-                  hiddenColumns.length >= columns.length / 2 &&
-                  !hiddenColumns.find((e) => e === column.accessor)
-                }
-              />
-            </OptionItem>
-          ))}
-        </OptionList>
-      </OptionsMenu>
     </Layout>
   );
 };

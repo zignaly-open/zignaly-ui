@@ -35,16 +35,24 @@ export const Container = styled.div<any>`
   align-items: center;
 `;
 
-export const Dropdown = styled.div`
+type DropdownProps = {
+  left: number;
+  top: number;
+  alignment: DropdownAlignment | any;
+  width?: number | string | any;
+};
+
+export const Dropdown = styled.div<DropdownProps>`
   position: absolute;
   background: #12152c;
   white-space: nowrap;
   color: #fff;
-  top: 99%;
   box-shadow: 0 4px 6px -2px #00000061;
 
-  ${({ alignment, width }: any) => `
+  ${({ left, top, alignment, width }: any) => `
     width: ${width ?? "auto"};
+    left: ${left}px;
+    top: ${top}px;
   
     ${styledIf(
       alignment === DropdownAlignment.LEFT,

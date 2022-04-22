@@ -3,14 +3,14 @@ import React, { ReactElement } from "react";
 export type IconButtonProps = {
   variant?: IconButtonVariants;
   icon: string;
-  size: IconButtonSizes;
+  size?: IconButtonSizes;
   disabled?: boolean;
-  dropDownOptions: {
+  dropDownOptions?: {
     width?: string;
     alignment?: String;
   };
-  onClick: React.MouseEventHandler<HTMLButtonElement> | null;
-  renderDropDown: ReactElement<any> | null;
+  onClick?: React.MouseEventHandler<HTMLButtonElement> | null;
+  renderDropDown?: ReactElement<any> | null;
 };
 
 export enum IconButtonSizes {
@@ -24,6 +24,7 @@ export enum IconButtonVariants {
   PRIMARY = "primary",
   SECONDARY = "secondary",
   FLAT = "flat",
+  GHOST = "ghost",
 }
 
 export enum DropdownAlignment {

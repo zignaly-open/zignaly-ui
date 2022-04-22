@@ -1,21 +1,16 @@
 // Dependencies
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 // Assets
-import OptionsDotsIcon from "../../../assets/icons/option-dots-icon.svg";
 import CheckIcon from "../../../assets/icons/check-icon.svg";
-import CloseIcon from "../../../assets/icons/close-icon.svg";
 
 // Component
 import Table from "./";
 import PriceLabel from "./components/PriceLabel";
 import PercentageIndicator from "./components/PercentageIndicator";
 import ConnectionStateLabel, { ConnectionStateLabelId } from "./components/ConnectionStateLabel";
-import TableButton from "./components/TableButton";
-import IconButton from "../../inputs/IconButton";
 import DateLabel from "./components/DateLabel";
-import { ButtonGroup } from "components/styled";
 
 // Utils
 import { shortenHex } from "utils/web3";
@@ -84,7 +79,6 @@ Investors.args = {
       successFee: "10%",
       feesInZig: <img src={CheckIcon} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
-      action: <IconButton icon={OptionsDotsIcon} />,
     },
   ],
 };
@@ -135,11 +129,6 @@ ExchangeOrders.args = {
       entryPrice: "110.20",
       side: "Buy",
       type: "Limit",
-      action: (
-        <ButtonGroup>
-          <TableButton icon={CloseIcon} caption={"Close"} />
-        </ButtonGroup>
-      ),
     },
   ],
 };
@@ -190,11 +179,6 @@ Contracts.args = {
       entryPrice: "110.20",
       marketPrice: "114.20",
       margin: "Cross",
-      action: (
-        <ButtonGroup>
-          <TableButton icon={CloseIcon} caption={"Close"} />
-        </ButtonGroup>
-      ),
     },
   ],
 };

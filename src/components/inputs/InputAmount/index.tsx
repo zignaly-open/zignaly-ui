@@ -84,6 +84,7 @@ function InputAmount({
         const number = BigNumber.from(parseUnits(value === "" ? "0.0" : value, 18));
         setInputValue(value);
         onChange({
+          event: e,
           value: number,
           token: selectedToken,
         });
