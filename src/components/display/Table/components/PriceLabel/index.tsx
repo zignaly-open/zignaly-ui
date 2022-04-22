@@ -12,19 +12,15 @@ const PriceLabel = ({
   value = 0,
   coin = "USDT",
   fiat = false,
+  symbol = "$",
   bottomElement = null,
 }: PriceLabelProps) => (
   <styled.Layout>
     <styled.Value variant={"h3"}>
-      {fiat && (
-        <styled.Coin variant={"h3"} fiat={fiat}>
-          {coin}
-        </styled.Coin>
-      )}
       {typeof value === "number" || typeof value === "bigint" ? (
-        <NumberFormat value={value} displayType={"text"} thousandSeparator={true} />
+        <NumberFormat prefix={symbol} value={value} displayType={"text"} thousandSeparator={true} />
       ) : (
-        value
+        symbol + value
       )}
       {!fiat && (
         <styled.Coin variant={"h4"} fiat={fiat}>

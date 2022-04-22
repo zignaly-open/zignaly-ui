@@ -10,6 +10,7 @@ import CheckIcon from "../../../assets/icons/check-icon.svg";
 import Table from "./";
 import Typography from "components/display/Typography";
 import PriceLabel from "./components/PriceLabel";
+import CoinLabel from "./components/CoinLabel";
 import PercentageIndicator from "./components/PercentageIndicator";
 import ConnectionStateLabel, { ConnectionStateLabelId } from "./components/ConnectionStateLabel";
 import IconButton from "../../inputs/IconButton";
@@ -26,79 +27,59 @@ export default {
 const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
 
 export const MyCoins = Template.bind({});
-//TODO: I have been seeing that I am modifying the cells of the body not the cells of the header
 MyCoins.args = {
   columns: [
     {
-      Header: "Coin",
+      Header: <Typography variant={"body2"}>{"Coin"}</Typography>,
       accessor: "coin",
-      Cell: ({ cell: { value } }) => <Typography variant={"body2"}>{value}</Typography>,
     },
     {
-      Header: "Total Balance",
+      Header: <Typography variant={"body2"}>{"Total Balance"}</Typography>,
       accessor: "totalBalance",
-      Cell: ({ cell: { value } }) => <Typography variant={"body2"}>{value}</Typography>,
     },
     {
-      Header: "Available Balance",
+      Header: <Typography variant={"body2"}>{"Available Balance"}</Typography>,
       accessor: "availableBalance",
-      Cell: ({ cell: { value } }) => <Typography variant={"body2"}>{value}</Typography>,
     },
     {
-      Header: "Locked Balance",
+      Header: <Typography variant={"body2"}>{"Locked Balance"}</Typography>,
       accessor: "lockedBalance",
-      Cell: ({ cell: { value } }) => <Typography variant={"body2"}>{value}</Typography>,
     },
     {
-      Header: "Value in BTC",
+      Header: <Typography variant={"body2"}>{"Value BTC"}</Typography>,
       accessor: "valueInBtc",
-      Cell: ({ cell: { value } }) => <Typography variant={"body2"}>{value}</Typography>,
     },
     {
-      Header: "Value in USD",
+      Header: <Typography variant={"body2"}>{"Value in USD"}</Typography>,
       accessor: "valueInUsd",
-      Cell: ({ cell: { value } }) => <Typography variant={"body2"}>{value}</Typography>,
-    },
-    {
-      Header: "Success Fee",
-      accessor: "successFee",
     },
   ],
   data: [
     {
-      coin: shortenHex("5f886d29da8e9666b1684c9a"),
+      coin: <CoinLabel coin={"ETH"} name={"Ethereum"} />,
       totalBalance: <PriceLabel coin={"ETH"} value={"32.20435"} />,
       availableBalance: <PriceLabel coin={"ETH"} value={"2.1352"} />,
       lockedBalance: <PriceLabel coin={"ETH"} value={"30.18389"} />,
       valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
-      valueInUsd: <PriceLabel coin={"$"} value={"22,000"} fiat />,
-      successFee: "10%",
-      feesInZig: <img src={CheckIcon} />,
-      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
+      valueInUsd: <PriceLabel coin={"USD"} value={"22,000"} fiat />,
       action: <IconButton icon={OptionsDotsIcon} />,
     },
     {
-      coin: shortenHex("5f886d29da8e9666b1684c9a"),
+      coin: <CoinLabel coin={"ETH"} name={"Ethereum"} />,
       totalBalance: <PriceLabel coin={"ETH"} value={"32.20435"} />,
       availableBalance: <PriceLabel coin={"ETH"} value={"2.1352"} />,
       lockedBalance: <PriceLabel coin={"ETH"} value={"30.18389"} />,
       valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
-      valueInUsd: <PriceLabel coin={"$"} value={"22,000"} fiat />,
-      successFee: "10%",
-      feesInZig: <img src={CheckIcon} />,
-      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
+      valueInUsd: <PriceLabel coin={"USD"} value={"22,000"} fiat />,
       action: <IconButton icon={OptionsDotsIcon} />,
     },
     {
-      coin: shortenHex("5f886d29da8e9666b1684c9a"),
+      coin: <CoinLabel coin={"ETH"} name={"Ethereum"} />,
       totalBalance: <PriceLabel coin={"ETH"} value={"32.20435"} />,
       availableBalance: <PriceLabel coin={"ETH"} value={"2.1352"} />,
       lockedBalance: <PriceLabel coin={"ETH"} value={"30.18389"} />,
       valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
-      valueInUsd: <PriceLabel coin={"$"} value={"22,000"} fiat />,
-      successFee: "10%",
-      feesInZig: <img src={CheckIcon} />,
-      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
+      valueInUsd: <PriceLabel coin={"USD"} value={"22,000"} fiat />,
       action: <IconButton icon={OptionsDotsIcon} />,
     },
   ],

@@ -3,80 +3,63 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Components
-import PriceLabel from "./index";
+import CoinLabel from "./index";
 
 export default {
-  title: "Display/Table/Components/PriceLabel",
-  component: PriceLabel,
+  title: "Display/Table/Components/CoinLabel",
+  component: CoinLabel,
   argTypes: {
-    value: {
-      control: "number",
-      default: 50,
+    name: {
+      control: "text",
+      default: "Teather",
     },
     coin: {
       control: "text",
       default: "USDT",
     },
-    fiat: {
-      control: "boolean",
-      default: false,
-    },
-    symbol: {
-      control: "text",
-      default: "$",
-    },
   },
-} as ComponentMeta<typeof PriceLabel>;
+} as ComponentMeta<typeof CoinLabel>;
 
-const Template: ComponentStory<typeof PriceLabel> = (args) => <PriceLabel {...args} />;
+const Template: ComponentStory<typeof CoinLabel> = (args) => <CoinLabel {...args} />;
 
 export const USDT = Template.bind({});
 USDT.args = {
-  value: 50,
+  name: "Teather",
   coin: "USDT",
-  fiat: false,
 };
 
 export const BTC = Template.bind({});
 BTC.args = {
-  value: 50,
+  name: "Bitcoin",
   coin: "BTC",
-  fiat: false,
 };
 
 export const ETH = Template.bind({});
 ETH.args = {
-  value: 50,
+  name: "Ethereum",
   coin: "ETH",
-  fiat: false,
 };
 
 export const ZIG = Template.bind({});
 ZIG.args = {
-  value: 50,
+  name: "Zigcoin",
   coin: "ZIG",
-  fiat: false,
 };
 
 export const BNB = Template.bind({});
 BNB.args = {
-  value: 50,
+  name: "Binance Coin",
   coin: "BNB",
-  fiat: false,
 };
 
 export const USD = Template.bind({});
 USD.args = {
-  value: 50,
+  name: "Dollar",
   coin: "USD",
-  fiat: true,
-  symbol: "$",
 };
 
 export const EUR = Template.bind({});
 EUR.args = {
-  value: 50,
+  name: "Euro",
   coin: "EUR",
-  fiat: true,
-  symbol: "€",
 };
