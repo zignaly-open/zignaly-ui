@@ -43,6 +43,9 @@ export const TableView = styled.table`
     border-radius: 0 0 5px 5px;
     position: relative;
     z-index: 0;
+    th {
+      text-align: right;
+    }
   }
 
   tbody {
@@ -59,9 +62,7 @@ export const TableView = styled.table`
       background: transparent;
 
       &.action {
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
+        text-align: right;
       }
     }
   }

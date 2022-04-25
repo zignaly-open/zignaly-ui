@@ -9,7 +9,7 @@ export const Layout = styled.div``;
 export const Value = styled(Typography)`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   color: #c1c1c8;
 `;
 
@@ -17,6 +17,8 @@ export const Coin = styled(Typography)`
   color: #706f82;
   margin: 0 4px;
   text-transform: uppercase;
+  width: 45px;
+  text-align: left;
   ${(props: any) => `
      ${styledIf(
        props.fiat,

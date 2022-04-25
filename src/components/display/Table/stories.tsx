@@ -62,10 +62,10 @@ MyCoins.args = {
   data: [
     {
       coin: <CoinLabel coin={"ETH"} name={"Ethereum"} />,
-      totalBalance: <PriceLabel coin={"ETH"} value={"32.20435"} />,
-      availableBalance: <PriceLabel coin={"ETH"} value={"2.1352"} />,
-      lockedBalance: <PriceLabel coin={"ETH"} value={"30.18389"} />,
-      valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
+      totalBalance: <PriceLabel coin={"ETH"} value={"32.20435231"} />,
+      availableBalance: <PriceLabel coin={"ETHAS"} value={"2.13521254"} />,
+      lockedBalance: <PriceLabel coin={"ETHA"} value={"30.18389589"} />,
+      valueInBtc: <PriceLabel coin={"BTC"} value={"0.78232496"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"22,000"} fiat />,
       action: <Actions><Button caption={"Deposit"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /><Button caption={"Withdraw"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /></Actions>,
     },
