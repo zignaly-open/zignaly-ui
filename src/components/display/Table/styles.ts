@@ -45,7 +45,7 @@ export const TableView = styled.table`
     position: relative;
     z-index: 0;
     th {
-      text-align: right;
+      text-align: center;
     }
   }
 
@@ -238,5 +238,5 @@ export const Actions = styled.div`
 `;
 
 export const InvestorLabel = styled(Typography)`
-  text-align: right;
+  text-align: center;
 `;
