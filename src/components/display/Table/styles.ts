@@ -226,3 +226,12 @@ export const OptionList = styled.ul`
 export const OptionItem = styled.li`
   padding: 12px 18px;
 `;
+
+export const Actions = styled.div`
+  button {
+    margin-right: 8px;
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+`;

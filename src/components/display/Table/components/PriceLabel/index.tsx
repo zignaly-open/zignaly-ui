@@ -18,9 +18,9 @@ const PriceLabel = ({
   <styled.Layout>
     <styled.Value variant={"h3"}>
       {typeof value === "number" || typeof value === "bigint" ? (
-        <NumberFormat prefix={symbol} value={value} displayType={"text"} thousandSeparator={true} />
+        <NumberFormat prefix={fiat ? symbol : ""} value={value} displayType={"text"} thousandSeparator={true} />
       ) : (
-        symbol + value
+        (fiat ? symbol : "") + value
       )}
       {!fiat && (
         <styled.Coin variant={"h4"} fiat={fiat}>

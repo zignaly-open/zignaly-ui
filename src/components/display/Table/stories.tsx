@@ -14,7 +14,11 @@ import CoinLabel from "./components/CoinLabel";
 import PercentageIndicator from "./components/PercentageIndicator";
 import ConnectionStateLabel, { ConnectionStateLabelId } from "./components/ConnectionStateLabel";
 import IconButton from "../../inputs/IconButton";
+import Button, { ButtonVariants } from "components/inputs/Button";
 import DateLabel from "./components/DateLabel";
+
+// Styles
+import { Actions } from "./styles";
 
 // Utils
 import { shortenHex } from "utils/web3";
@@ -62,7 +66,7 @@ MyCoins.args = {
       lockedBalance: <PriceLabel coin={"ETH"} value={"30.18389"} />,
       valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"22,000"} fiat />,
-      action: <IconButton icon={OptionsDotsIcon} />,
+      action: <Actions><Button caption={"Deposit"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /><Button caption={"Withdraw"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /></Actions>,
     },
     {
       coin: <CoinLabel coin={"ETH"} name={"Ethereum"} />,
@@ -71,7 +75,7 @@ MyCoins.args = {
       lockedBalance: <PriceLabel coin={"ETH"} value={"30.18389"} />,
       valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"22,000"} fiat />,
-      action: <IconButton icon={OptionsDotsIcon} />,
+      action: <Actions><Button caption={"Deposit"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /><Button caption={"Withdraw"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /></Actions>
     },
     {
       coin: <CoinLabel coin={"ETH"} name={"Ethereum"} />,
@@ -80,7 +84,7 @@ MyCoins.args = {
       lockedBalance: <PriceLabel coin={"ETH"} value={"30.18389"} />,
       valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"22,000"} fiat />,
-      action: <IconButton icon={OptionsDotsIcon} />,
+      action: <Actions><Button caption={"Deposit"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /><Button caption={"Withdraw"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /></Actions>
     },
   ],
 };
