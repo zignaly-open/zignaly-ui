@@ -13,13 +13,13 @@ export const Value = styled(Typography)`
   color: #c1c1c8;
 `;
 
-export const Coin = styled(Typography)`
+export const Coin = styled(Typography)<{ fiat: boolean }>`
   color: #706f82;
   margin: 0 4px;
   text-transform: uppercase;
   width: 45px;
   text-align: left;
-  ${(props: any) => `
+  ${(props) => `
      ${styledIf(
        props.fiat,
        `

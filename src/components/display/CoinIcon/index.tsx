@@ -8,7 +8,7 @@ import { sizes, Image, Layout } from "./styles";
 import { CoinSizes, CoinTypeProps } from "./types";
 
 const CoinIcon = ({ size = CoinSizes.MEDIUM, name, coin, className = "" }: CoinTypeProps) => (
-  <Layout className={[size, className]} data-testid="coin-icon-view">
+  <Layout className={[size, className] as any} data-testid="coin-icon-view">
     <Image
       src={`https://res.cloudinary.com/zignaly/image/upload/c_scale,w_${
         sizes[size as CoinSizes]

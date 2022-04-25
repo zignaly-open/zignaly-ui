@@ -5,8 +5,8 @@ export enum CoinSizes {
 }
 
 export type CoinTypeProps = {
-  size: CoinSizes | any;
+  size?: CoinSizes | any;
   name: string;
   coin: string;
-  className: string;
+  className?: string | any;
 };
