@@ -3,7 +3,6 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 // Assets
-import OptionsDotsIcon from "../../../assets/icons/option-dots-icon.svg";
 import CheckIcon from "../../../assets/icons/check-icon.svg";
 
 // Component
@@ -13,12 +12,11 @@ import PriceLabel from "./components/PriceLabel";
 import CoinLabel from "./components/CoinLabel";
 import PercentageIndicator from "./components/PercentageIndicator";
 import ConnectionStateLabel, { ConnectionStateLabelId } from "./components/ConnectionStateLabel";
-import IconButton from "../../inputs/IconButton";
 import Button, { ButtonVariants } from "components/inputs/Button";
 import DateLabel from "./components/DateLabel";
 
 // Styles
-import { Actions } from "./styles";
+import { Actions, InvestorLabel } from "./styles";
 
 // Utils
 import { shortenHex } from "utils/web3";
@@ -94,47 +92,46 @@ export const Investors = Template.bind({});
 Investors.args = {
   columns: [
     {
-      Header: "User ID",
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"User ID"}</Typography>,
       accessor: "userId",
-      Cell: ({ cell: { value } }) => <Typography variant={"body2"}>{value}</Typography>,
     },
     {
-      Header: "Email",
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Email"}</Typography>,
       accessor: "email",
     },
     {
-      Header: "Investment",
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Investment"}</Typography>,
       accessor: "investment",
     },
     {
-      Header: "P & L",
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"P & L"}</Typography>,
       accessor: "pyd",
     },
     {
-      Header: "P & L Total",
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"P & L Total"}</Typography>,
       accessor: "pydTotal",
     },
     {
-      Header: "Total Fees Paid",
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Total Fees Paid"}</Typography>,
       accessor: "totalFeesPaid",
     },
     {
-      Header: "Success Fee",
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Success Fee"}</Typography>,
       accessor: "successFee",
     },
     {
-      Header: "Fees in ZIG",
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Fees in ZIG"}</Typography>,
       accessor: "feesInZig",
     },
     {
-      Header: "Status",
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Status"}</Typography>,
       accessor: "status",
     },
   ],
   data: [
     {
-      userId: shortenHex("5f886d29da8e9666b1684c9a"),
-      email: "tec**@zig**.com",
+      userId: <InvestorLabel color={"neutral100"} variant={"h3"}>{shortenHex("5f886d29da8e9666b1684c9a")}</InvestorLabel>,
+      email: <InvestorLabel color={"neutral100"} variant={"h3"}>{"tec**@zig**.com"}</InvestorLabel>,
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
         <PriceLabel
@@ -145,10 +142,9 @@ Investors.args = {
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
-      successFee: "10%",
+      successFee: <InvestorLabel color={"neutral100"} variant={"h3"}>{"10%"}</InvestorLabel>,
       feesInZig: <img src={CheckIcon} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
-      action: <IconButton icon={OptionsDotsIcon} />,
     },
   ],
 };

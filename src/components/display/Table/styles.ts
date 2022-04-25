@@ -1,6 +1,7 @@
 // Dependencies
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
+import Typography from "../Typography";
 
 export const Layout = styled.div``;
 
@@ -234,4 +235,8 @@ export const Actions = styled.div`
       margin-right: 0;
     }
   }
+`;
+
+export const InvestorLabel = styled(Typography)`
+  text-align: right;
 `;
