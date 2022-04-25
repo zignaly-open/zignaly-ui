@@ -36,8 +36,6 @@ export const Container = styled.div<any>`
 `;
 
 type DropdownProps = {
-  left: number;
-  top: number;
   alignment: DropdownAlignment | any;
   width?: number | string | any;
 };
@@ -48,16 +46,14 @@ export const Dropdown = styled.div<DropdownProps>`
   white-space: nowrap;
   color: #fff;
   box-shadow: 0 4px 6px -2px #00000061;
+  opacity: 0;
 
-  ${({ left, top, alignment, width }: any) => `
+  ${({ alignment, width }: any) => `
     width: ${width ?? "auto"};
-    left: ${left}px;
-    top: ${top}px;
   
     ${styledIf(
       alignment === DropdownAlignment.LEFT,
       `
-        left: 0;
         border-radius: 0 4px 4px 4px;
       `,
     )}
@@ -65,7 +61,6 @@ export const Dropdown = styled.div<DropdownProps>`
     ${styledIf(
       alignment === DropdownAlignment.RIGHT,
       `
-        right: 0;
         border-radius: 4px 0px 4px 4px;
       `,
     )}

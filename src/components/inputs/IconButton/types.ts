@@ -8,6 +8,7 @@ export type IconButtonProps = {
   dropDownOptions?: {
     width?: string;
     alignment?: String;
+    componentOverflowRef?: any;
   };
   onClick?: React.MouseEventHandler<HTMLButtonElement> | null;
   renderDropDown?: ReactElement<any> | null;

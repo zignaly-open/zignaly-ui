@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useMemo, useState } from "react";
+import React, { useRef, useState } from "react";
 import { Column, useSortBy, useTable } from "react-table";
 
 // Assets
@@ -14,68 +14,14 @@ import Row from "./components/Row";
 import IconButton, { DropdownAlignment, IconButtonVariants } from "components/inputs/IconButton";
 import CheckBox from "components/inputs/CheckBox";
 
-const Table = ({ columns = [], data = [] }: { columns: Column<any>[]; data: Object[] }) => {
+const Table = ({ columns = [], data = [] }: { columns: any[]; data: Object[] }) => {
+  const tableRef = useRef(null);
   const [hiddenColumns, setHiddenColumns] = useState([]);
-
-  /**
-   * @var withOptionsMenu
-   * @description Memorize the columns of the table by adding the menu option.
-   */
-  const withOptionsColumns = useMemo(
-    () => [
-      ...columns,
-      {
-        Header: (
-          <div style={{ display: "flex", justifyContent: "flex-end" }}>
-            <IconButton
-              variant={IconButtonVariants.GHOST}
-              icon={OptionsDotsIcon}
-              dropDownOptions={{
-                alignment: DropdownAlignment.RIGHT,
-              }}
-              renderDropDown={
-                <OptionList>
-                  {columns.map((column: any, index) => (
-                    <OptionItem key={`--options-container-${index.toString()}`}>
-                      <CheckBox
-                        value={hiddenColumns.find((e) => e === column.accessor) ?? true}
-                        label={(column.Header ?? "").toString()}
-                        onChange={(isActive: boolean) => {
-                          toggleHideColumn(column.accessor, !isActive);
-                          if (!isActive) {
-                            // @ts-ignore
-                            setHiddenColumns((prevState: any[]) => {
-                              return [...prevState, column.accessor];
-                            });
-                          } else {
-                            setHiddenColumns((prevState) =>
-                              prevState.filter((e) => e !== column.accessor),
-                            );
-                          }
-                        }}
-                        disabled={
-                          hiddenColumns.length >= columns.length / 2 &&
-                          !hiddenColumns.find((e) => e === column.accessor)
-                        }
-                      />
-                    </OptionItem>
-                  ))}
-                </OptionList>
-              }
-            />
-          </div>
-        ),
-        accessor: "action",
-        disableSortBy: true,
-      },
-    ],
-    [columns],
-  );
 
   const { getTableProps, getTableBodyProps, rows, headerGroups, toggleHideColumn, prepareRow } =
     useTable(
       {
-        columns: withOptionsColumns,
+        columns,
         data,
       },
       useSortBy,
@@ -85,7 +31,7 @@ const Table = ({ columns = [], data = [] }: { columns: Column<any>[]; data: Obje
 
   return (
     <Layout>
-      <View>
+      <View ref={tableRef}>
         <TableView {...getTableProps()}>
           <thead>
             {headerGroups.map((headerGroup: any, index: number) => (
@@ -101,6 +47,47 @@ const Table = ({ columns = [], data = [] }: { columns: Column<any>[]; data: Obje
                     )}
                   </th>
                 ))}
+                <th role={"row"}>
+                  <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                    <IconButton
+                      variant={IconButtonVariants.GHOST}
+                      icon={OptionsDotsIcon}
+                      dropDownOptions={{
+                        componentOverflowRef: tableRef,
+                        alignment: DropdownAlignment.RIGHT,
+                      }}
+                      renderDropDown={
+                        <OptionList>
+                          {columns.map((column: any, index) => (
+                            <OptionItem key={`--options-container-${index.toString()}`}>
+                              <CheckBox
+                                value={hiddenColumns.find((e) => e === column.accessor) ?? true}
+                                label={(column.Header ?? "").toString()}
+                                onChange={(isActive: boolean) => {
+                                  toggleHideColumn(column.accessor, !isActive);
+                                  if (!isActive) {
+                                    // @ts-ignore
+                                    setHiddenColumns((prevState: any[]) => {
+                                      return [...prevState, column.accessor];
+                                    });
+                                  } else {
+                                    setHiddenColumns((prevState) =>
+                                      prevState.filter((e) => e !== column.accessor),
+                                    );
+                                  }
+                                }}
+                                disabled={
+                                  hiddenColumns.length >= columns.length / 2 &&
+                                  !hiddenColumns.find((e) => e === column.accessor)
+                                }
+                              />
+                            </OptionItem>
+                          ))}
+                        </OptionList>
+                      }
+                    />
+                  </div>
+                </th>
               </tr>
             ))}
           </thead>

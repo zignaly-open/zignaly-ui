@@ -1,10 +1,10 @@
 // Dependencies
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import ReactDOM from "react-dom";
-import { useClickAway } from "react-use";
+import { useClickAway, useWindowSize } from "react-use";
+import { Portal } from "react-portal";
 
 // Styled Components
-import { Layout, ViewPort, Icon, Dropdown, Container, DropdownElement } from "./styles";
+import { Layout, ViewPort, Icon, Dropdown, Container } from "./styles";
 
 // Types
 import { DropdownAlignment, IconButtonProps, IconButtonSizes, IconButtonVariants } from "./types";
@@ -17,15 +17,17 @@ const IconButton = ({
   onClick = null,
   dropDownOptions = {
     width: "auto",
+    componentOverflowRef: null,
     alignment: DropdownAlignment.LEFT,
   },
   renderDropDown = null,
 }: IconButtonProps) => {
   // Ref
-  const element = useRef(document.createElement("div"));
   const layoutRef = useRef(null);
+  const dropdownRef = useRef(null);
 
   // Hooks
+  const { width } = useWindowSize();
   const [isActiveDropdown, setDropdownActive] = useState(false);
 
   /**
@@ -33,40 +35,54 @@ const IconButton = ({
    * @description Function in charge of indicating the logic when pressing the button.
    */
   const handleClickButton = useCallback(() => {
-    const newActiveState = !isActiveDropdown;
-    const root = window.document.getElementById("root");
+    setDropdownActive((current) => !current);
+  }, []);
 
-    if (root) {
-      if (newActiveState) {
-        const dropdown = document.createElement("div");
-        dropdown.setAttribute("id", "dropdown-layout");
-        root.appendChild(dropdown);
+  useClickAway(layoutRef, (event: Event) => {
+    if (event && event.target && dropdownRef) {
+      const container = dropdownRef.current as unknown as HTMLElement;
 
-        console.log({ layoutRef });
+      if (container && !container.contains(event.target as Node) && isActiveDropdown) {
+        handleClickButton();
+      }
+    }
+  });
 
-        if (layoutRef && layoutRef.current) {
-          const { offsetTop, clientHeight, offsetLeft } = layoutRef.current;
-          console.log({ offsetTop, clientHeight, offsetLeft });
-          ReactDOM.render(
-            <Dropdown
-              top={offsetTop + clientHeight}
-              left={offsetLeft}
-              width={dropDownOptions.width}
-              alignment={dropDownOptions.alignment}
-            >
-              {renderDropDown}
-            </Dropdown>,
-            dropdown,
-          );
+  useEffect(() => {
+    if (layoutRef && layoutRef.current) {
+      if (isActiveDropdown) {
+        const { offsetTop, clientHeight, offsetLeft, clientWidth } = layoutRef.current;
+
+        if (dropdownRef && dropdownRef.current) {
+          const container = dropdownRef.current as HTMLElement;
+
+          const { alignment, componentOverflowRef } = dropDownOptions;
+          container.style.top = `${offsetTop + clientHeight}px`;
+
+          const scrollLeft = componentOverflowRef ? componentOverflowRef.current.scrollLeft : 0;
+
+          if (alignment === DropdownAlignment.RIGHT) {
+            container.style.left = `${
+              offsetLeft - (container.clientWidth - clientWidth) - scrollLeft
+            }px`;
+          } else {
+            container.style.left = `${offsetLeft - scrollLeft}px`;
+          }
+          container.style.opacity = "1";
+        }
+      } else {
+        if (dropdownRef && dropdownRef.current) {
+          setDropdownActive(true);
         }
       }
     }
-    setDropdownActive(newActiveState);
-  }, [isActiveDropdown, dropDownOptions, onClick]);
+  }, [width, isActiveDropdown, dropDownOptions.componentOverflowRef]);
 
-  useClickAway(layoutRef, () => {
-    setDropdownActive(false);
-  });
+  useEffect(() => {
+    if (isActiveDropdown) {
+      setDropdownActive(false);
+    }
+  }, [width]);
 
   return (
     <Layout ref={layoutRef}>
@@ -80,6 +96,17 @@ const IconButton = ({
           <Icon src={icon} />
         </Container>
       </ViewPort>
+      {isActiveDropdown && (
+        <Portal>
+          <Dropdown
+            ref={dropdownRef}
+            width={dropDownOptions.width}
+            alignment={dropDownOptions.alignment}
+          >
+            {renderDropDown}
+          </Dropdown>
+        </Portal>
+      )}
     </Layout>
   );
 };
