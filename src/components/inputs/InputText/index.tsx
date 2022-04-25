@@ -2,17 +2,21 @@
 import React, { useCallback, useState } from "react";
 
 // Styled Components
-import { Layout, InputContainer, InputValue, Side, Label } from "./styles";
+import { Layout, InputContainer, InputValue, Side, Label, RightSideElement } from "./styles";
 import { InputTextProps } from "./types";
 
 import ErrorMessage from "components/display/ErrorMessage";
 
 function InputText(
   {
+    onBlur,
     error = null,
     disabled = false,
     placeholder = "Please enter a value",
-    label = "Withdraw address",
+    label,
+    onChange,
+    rightSideElement,
+    type,
   }: InputTextProps,
   inputRef: React.Ref<any>,
 ) {
@@ -22,6 +26,7 @@ function InputText(
     const value = e.target.value;
 
     setInputValue(value);
+    onChange(e, { value: value });
     return;
   }, []);
   return (
@@ -35,8 +40,12 @@ function InputText(
             placeholder={placeholder}
             value={inputValue}
             disabled={disabled}
-            type={"text"}
+            type={type}
+            onBlur={onBlur}
           />
+        </Side>
+        <Side>
+          <RightSideElement src={rightSideElement} alt= {null} />
         </Side>
       </InputContainer>
 

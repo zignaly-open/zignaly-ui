@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
-import InputText from ".";
+import InputText from "./index";
+import CopyIcon from "assets/icons/copy-icon.svg";
 
 export default {
   title: "Inputs/InputText",
@@ -19,6 +20,10 @@ export default {
     error: {
       type: "string",
       defaultValue: "",
+    },
+    rightSideElement: {
+      options: { true: CopyIcon, false: null },
+      control: { type: "radio" },
     },
     onChange: {
       disabled: true,
