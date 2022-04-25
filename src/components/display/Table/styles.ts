@@ -122,7 +122,7 @@ export const ThView = styled.th<{ isSorted?: boolean }>`
 export const SortIcon = styled.img<{ isSorted?: boolean; isSortedDesc?: boolean }>`
   margin-left: 6px;
 
-  ${(props: any) => `
+  ${(props) => `
      ${styledIf(
        props.isSorted,
        `

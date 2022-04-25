@@ -2,6 +2,7 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 import Typography from "./";
+import { dark } from "../../../theme";
 
 export default {
   title: "Display/Typography",
@@ -9,19 +10,19 @@ export default {
   argTypes: {
     variant: {
       control: "select",
-      options: ["h1", "h2", "h3", "h4", "h5", "body1", "body2"],
+      options: ["h1", "h2", "h3", "h4", "h5", "bigNumber", "body1", "body2"],
     },
     weight: {
       control: "select",
-      options: ["medium", "regular", "semiBold"],
+      options: ["medium", "regular", "demibold"],
+    },
+    color: {
+      options: Object.keys(dark),
+      control: "select",
     },
     underline: {
       control: "radio",
       options: [true, false],
-    },
-    style: {
-      control: "select",
-      options: ["text", "number"],
     },
     className: {
       table: {

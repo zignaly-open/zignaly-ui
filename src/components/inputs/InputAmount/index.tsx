@@ -25,15 +25,20 @@ import ErrorMessage from "components/display/ErrorMessage";
 // Types
 import { InputAmountProps, TokenItem } from "./types";
 
-function InputAmount({
-  onChange,
-  tokens = [],
-  error = null,
-  disabled = false,
-  initialTokenIndex = 0,
-  label = "Amount to Withdraw",
-  value = BigNumber.from(0),
-}: InputAmountProps) {
+function InputAmount(
+  {
+    onChange,
+    onBlur,
+    tokens = [],
+    error = null,
+    disabled = false,
+    initialTokenIndex = 0,
+    label = "Amount to Withdraw",
+    value = BigNumber.from(0),
+    name,
+  }: InputAmountProps,
+  inputRef: React.Ref<any>,
+) {
   // Hooks
   const [inputValue, setInputValue] = useState("");
   const [selectedToken, setSelectedToken] = useState(tokens[initialTokenIndex] ?? null);
@@ -83,10 +88,7 @@ function InputAmount({
       if (decimals <= 18) {
         const number = BigNumber.from(parseUnits(value === "" ? "0.0" : value, 18));
         setInputValue(value);
-        onChange({
-          value: number,
-          token: selectedToken,
-        });
+        onChange(e, { value: number, token: selectedToken });
       }
     },
     [selectedToken],
@@ -130,11 +132,14 @@ function InputAmount({
         <Side>
           {selectedToken && tokens.length < 2 && <TokenImage src={selectedToken.image} />}
           <InputValue
+            ref={inputRef}
             value={inputValue}
             type={"text"}
             placeholder={"0.0"}
             onChange={handleTextChange}
+            onBlur={onBlur}
             disabled={disabled}
+            name={name}
           />
           {selectedToken && tokens && <MaxButton onClick={onClickMaxValue}>Max</MaxButton>}
         </Side>
@@ -170,4 +175,4 @@ function InputAmount({
   );
 }
 
-export default InputAmount;
+export default React.forwardRef(InputAmount);
