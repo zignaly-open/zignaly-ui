@@ -53,45 +53,22 @@ describe("components/display/Typography", () => {
     expect(container.firstChild.classList.contains("h5")).toBe(true);
   });
 
+  it("renders the typography with the class body1 and tag span", () => {
+    const { container } = render(<Typography variant={"body1"}>Example Test</Typography>);
+
+    const tag = container.querySelector("span");
+    expect(tag).toBeVisible();
+
+    expect(container.firstChild.classList.contains("body1")).toBe(true);
+  });
+
   it("renders the typography with the class body and tag span", () => {
-    const { container } = render(<Typography variant={"body"}>Example Test</Typography>);
+    const { container } = render(<Typography variant={"body2"}>Example Test</Typography>);
 
     const tag = container.querySelector("span");
     expect(tag).toBeVisible();
 
-    expect(container.firstChild.classList.contains("body")).toBe(true);
-  });
-  it("renders the typography with the class buttonxl and tag span", () => {
-    const { container } = render(<Typography variant={"buttonxl"}>Example Test</Typography>);
-
-    const tag = container.querySelector("span");
-    expect(tag).toBeVisible();
-
-    expect(container.firstChild.classList.contains("buttonxl")).toBe(true);
-  });
-  it("renders the typography with the class buttonl and tag span", () => {
-    const { container } = render(<Typography variant={"buttonl"}>Example Test</Typography>);
-
-    const tag = container.querySelector("span");
-    expect(tag).toBeVisible();
-
-    expect(container.firstChild.classList.contains("buttonl")).toBe(true);
-  });
-  it("renders the typography with the class buttonm and tag span", () => {
-    const { container } = render(<Typography variant={"buttonm"}>Example Test</Typography>);
-
-    const tag = container.querySelector("span");
-    expect(tag).toBeVisible();
-
-    expect(container.firstChild.classList.contains("buttonm")).toBe(true);
-  });
-  it("renders the typography with the class buttonsm and tag span", () => {
-    const { container } = render(<Typography variant={"buttonsm"}>Example Test</Typography>);
-
-    const tag = container.querySelector("span");
-    expect(tag).toBeVisible();
-
-    expect(container.firstChild.classList.contains("buttonsm")).toBe(true);
+    expect(container.firstChild.classList.contains("body2")).toBe(true);
   });
   it("renders the typography with the class body and tag span when no variant is provided", () => {
     const { container } = render(<Typography>Example Test</Typography>);
@@ -99,16 +76,7 @@ describe("components/display/Typography", () => {
     const tag = container.querySelector("span");
     expect(tag).toBeVisible();
 
-    expect(container.firstChild.classList.contains("body")).toBe(true);
-  });
-
-  it("renders the typography with className provided in style", () => {
-    const { container } = render(<Typography style={"css"}>Example Test</Typography>);
-
-    const tag = container.querySelector("span");
-    expect(tag).toBeVisible();
-
-    expect(container.firstChild.classList.contains("style-css")).toBe(true);
+    expect(container.firstChild.classList.contains("body1")).toBe(true);
   });
 
   it("renders the typography with the content in the children.", () => {
