@@ -4,7 +4,7 @@ import { useTable, useSortBy, Column } from "react-table";
 import { useClickAway } from "react-use";
 
 // Assets
-import ArrowBottomIcon from "assets/icons/arrow-bottom-icon.svg";
+import ArrowBottomWhiteIcon from "assets/icons/arrow-bottom-icon-white.svg";
 import OptionsDotsIcon from "assets/icons/option-dots-icon.svg";
 import CloseIcon from "assets/icons/close-icon.svg";
 
@@ -93,7 +93,7 @@ const Table = ({ columns = [], data = [] }: { columns: Column<any>[]; data: Obje
                       <SortIcon
                         isSorted={column.isSorted}
                         isSortedDesc={column.isSortedDesc}
-                        src={ArrowBottomIcon}
+                        src={ArrowBottomWhiteIcon}
                       />
                     )}
                   </ThView>

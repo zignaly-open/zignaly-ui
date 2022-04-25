@@ -1,6 +1,6 @@
 // Dependencies
 import React from "react";
-import { ComponentStory, ComponentMeta } from "@storybook/react";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 // Assets
 import OptionsDotsIcon from "../../../assets/icons/option-dots-icon.svg";
@@ -22,6 +22,7 @@ import { Actions } from "./styles";
 
 // Utils
 import { shortenHex } from "utils/web3";
+import { weightByType } from "../Typography/types";
 
 export default {
   title: "Display/Table",
@@ -34,27 +35,27 @@ export const MyCoins = Template.bind({});
 MyCoins.args = {
   columns: [
     {
-      Header: <Typography variant={"body2"}>{"Coin"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Coin"}</Typography>,
       accessor: "coin",
     },
     {
-      Header: <Typography variant={"body2"}>{"Total Balance"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Total Balance"}</Typography>,
       accessor: "totalBalance",
     },
     {
-      Header: <Typography variant={"body2"}>{"Available Balance"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Available Balance"}</Typography>,
       accessor: "availableBalance",
     },
     {
-      Header: <Typography variant={"body2"}>{"Locked Balance"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Locked Balance"}</Typography>,
       accessor: "lockedBalance",
     },
     {
-      Header: <Typography variant={"body2"}>{"Value BTC"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Value BTC"}</Typography>,
       accessor: "valueInBtc",
     },
     {
-      Header: <Typography variant={"body2"}>{"Value in USD"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Value in USD"}</Typography>,
       accessor: "valueInUsd",
     },
   ],

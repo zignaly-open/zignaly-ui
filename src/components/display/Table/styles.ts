@@ -95,7 +95,6 @@ export const ThView = styled.th<{ isSorted?: boolean }>`
   white-space: nowrap;
   background: transparent;
   margin: 0;
-  border: 1px solid transparent;
   img {
     vertical-align: initial;
   }
