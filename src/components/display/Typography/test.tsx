@@ -53,13 +53,49 @@ describe("components/display/Typography", () => {
     expect(container.firstChild.classList.contains("h5")).toBe(true);
   });
 
-  it("renders the typography with the class body and tag span", () => {
-    const { container } = render(<Typography variant={"body"}>Example Test</Typography>);
+  it("renders the typography with the class body1 and tag span", () => {
+    const { container } = render(<Typography variant={"body1"}>Example Test</Typography>);
 
     const tag = container.querySelector("span");
     expect(tag).toBeVisible();
 
-    expect(container.firstChild.classList.contains("body")).toBe(true);
+    expect(container.firstChild.classList.contains("body1")).toBe(true);
+  });
+
+  it("renders the typography with the class body and tag span", () => {
+    const { container } = render(<Typography variant={"body2"}>Example Test</Typography>);
+
+    const tag = container.querySelector("span");
+    expect(tag).toBeVisible();
+
+    expect(container.firstChild.classList.contains("body2")).toBe(true);
+  });
+
+  it("renders the typography with the class body and tag span", () => {
+    const { container } = render(<Typography variant={"inputl"}>Example Test</Typography>);
+
+    const tag = container.querySelector("span");
+    expect(tag).toBeVisible();
+
+    expect(container.firstChild.classList.contains("inputl")).toBe(true);
+  });
+
+  it("renders the typography with the class body and tag span", () => {
+    const { container } = render(<Typography variant={"inputm"}>Example Test</Typography>);
+
+    const tag = container.querySelector("span");
+    expect(tag).toBeVisible();
+
+    expect(container.firstChild.classList.contains("inputm")).toBe(true);
+  });
+
+  it("renders the typography with the class body and tag span when no variant is provided", () => {
+    const { container } = render(<Typography>Example Test</Typography>);
+
+    const tag = container.querySelector("span");
+    expect(tag).toBeVisible();
+
+    expect(container.firstChild.classList.contains("body1")).toBe(true);
   });
 
   it("renders the typography with the content in the children.", () => {
