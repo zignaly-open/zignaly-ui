@@ -1,6 +1,6 @@
 // Dependencies
 import * as React from "react";
-import { ReactElement, useState, useRef, useMemo, useCallback } from "react";
+import { ReactElement, useState, useRef, useCallback } from "react";
 import { useClickAway } from "react-use";
 
 // Styled Components
