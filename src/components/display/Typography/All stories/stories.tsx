@@ -3,7 +3,6 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import { TextVariations } from "./storyLists";
 import { Text } from "../stories";
 
-
 export default {
   title: "Display/Typography/Allstories",
   component: TextVariations,
@@ -14,9 +13,7 @@ export default {
 
 const Template: ComponentStory<typeof TextVariations> = (args) => <TextVariations {...args} />;
 
-export const  TextUnion = Template.bind({});
+export const TextUnion = Template.bind({});
 TextUnion.args = {
-  texts: [
-    {...Text.args, variant: "body1"}
-  ]
+  texts: [{ ...Text.args, variant: "body1" }],
 };

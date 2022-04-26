@@ -1,21 +1,24 @@
-import React, { ReactElement } from "react";
+// Dependencies
+import React from "react";
 import Typography from "..";
 
+// Types
+import { componentByVariants } from "../types";
+
 type TextVariationsTypes = {
-   texts: React.ReactNode[],
-}
+  texts: {
+    variant?: keyof typeof componentByVariants;
+  }[];
+};
 
-type TextVariantItem = {
-    variant: string,
-}
-
-export function TextVariations({texts}: TextVariationsTypes) {
-
-    return (
-        <div className="text-variation-list">
-          {texts.map((text: TextVariantItem, index) => (
-            <Typography key={`--${index.toString()}`} variant={text.variant} >Example text</Typography>
-          ))}
-        </div>
-      );
+export function TextVariations({ texts }: TextVariationsTypes) {
+  return (
+    <div className="text-variation-list">
+      {texts.map((text, index: number) => (
+        <Typography key={`--${index.toString()}`} variant={text.variant}>
+          Example Text
+        </Typography>
+      ))}
+    </div>
+  );
 }
