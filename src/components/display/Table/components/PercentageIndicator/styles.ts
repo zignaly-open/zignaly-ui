@@ -8,8 +8,8 @@ export const Value = styled.span<{ isPositive: boolean }>`
   font-size: 12px;
   line-height: 16px;
 
-  ${({ isPositive }) => `
-    color: ${isPositive ? "#26C4C1" : "#CC3993"};
+  ${({ isPositive, theme }) => `
+    color: ${isPositive ? theme["greenGraph"] : theme["redGraphOrError"]};
   `}
 `;
 

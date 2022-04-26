@@ -13,7 +13,7 @@ type LayoutTypeProps = {
 };
 
 export const Layout = styled.div<LayoutTypeProps>`
-  ${({ stateId }: any) => `
-    color: ${connectionStateColor[stateId]};
+  ${({ stateId, theme }: any) => `
+    color: ${connectionStateColor(theme)[stateId]};
   `}
 `;

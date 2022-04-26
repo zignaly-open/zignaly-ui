@@ -14,13 +14,13 @@ export const connectionStateName = {
   [ConnectionStateLabelId.SUSPENDED]: "Suspended",
 };
 
-export const connectionStateColor = {
-  [ConnectionStateLabelId.CONNECTED]: "#26C496",
+export const connectionStateColor = (theme: any) => ({
+  [ConnectionStateLabelId.CONNECTED]: theme["greenGraph"],
   [ConnectionStateLabelId.DISCONNECTED]: "#706F82",
   [ConnectionStateLabelId.HARD_DISCONNECT]: "#CC3993",
   [ConnectionStateLabelId.SOFT_DISCONNECT]: "#F7CF00",
   [ConnectionStateLabelId.SUSPENDED]: "#E50B5A",
-};
+});
 
 export type ConnectionStateLabelProps = {
   stateId: string;
