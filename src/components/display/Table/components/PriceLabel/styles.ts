@@ -4,7 +4,20 @@ import styled from "styled-components";
 import Typography from "components/display/Typography";
 import { styledIf } from "utils/styled";
 
-export const Layout = styled.div``;
+export const Layout = styled.div<{ fiat: boolean }>`
+  ${(props) => `
+     ${styledIf(
+       props.fiat,
+          `
+      margin-right: 19px;
+    `,
+          `
+      margin-right: 0;
+    `,
+  )}
+  `}
+  
+`;
 
 export const Value = styled(Typography)`
   display: flex;
@@ -23,8 +36,7 @@ export const Coin = styled(Typography)<{ fiat: boolean }>`
      ${styledIf(
        props.fiat,
        `
-   
-      color: #C1C1C8;
+       color: #C1C1C8;
        margin: 0;
     `,
        `

@@ -28,7 +28,10 @@ export default {
 } as ComponentMeta<typeof Table>;
 
 const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
-
+/**
+ * All the columns that include PriceLabel need to pass to their column isAlignThRight: true,
+ * so that they are well aligned, it was requested that the design be like this
+ */
 export const MyCoins = Template.bind({});
 MyCoins.args = {
   columns: [
@@ -39,22 +42,32 @@ MyCoins.args = {
     {
       Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Total Balance"}</Typography>,
       accessor: "totalBalance",
+      // @ts-ignore
+      isAlignThRight: true,
     },
     {
       Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Available Balance"}</Typography>,
       accessor: "availableBalance",
+      // @ts-ignore
+      isAlignThRight: true,
     },
     {
       Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Locked Balance"}</Typography>,
       accessor: "lockedBalance",
+      // @ts-ignore
+      isAlignThRight: true,
     },
     {
       Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Value BTC"}</Typography>,
       accessor: "valueInBtc",
+      // @ts-ignore
+      isAlignThRight: true,
     },
     {
       Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Value in USD"}</Typography>,
       accessor: "valueInUsd",
+      // @ts-ignore
+      isAlignThRight: true,
     },
   ],
   data: [
@@ -102,18 +115,26 @@ Investors.args = {
     {
       Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Investment"}</Typography>,
       accessor: "investment",
+      // @ts-ignore
+      isAlignThRight: true,
     },
     {
       Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"P & L"}</Typography>,
       accessor: "pyd",
+      // @ts-ignore
+      isAlignThRight: true,
     },
     {
       Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"P & L Total"}</Typography>,
       accessor: "pydTotal",
+      // @ts-ignore
+      isAlignThRight: true,
     },
     {
       Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Total Fees Paid"}</Typography>,
       accessor: "totalFeesPaid",
+      // @ts-ignore
+      isAlignThRight: true,
     },
     {
       Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Success Fee"}</Typography>,

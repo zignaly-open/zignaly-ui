@@ -87,6 +87,7 @@ const Table = ({ columns = [], data = [] }: { columns: Column<any>[]; data: Obje
                     {...column.getHeaderProps(column.getSortByToggleProps())}
                     key={`--table-head-row-${index.toString()}`}
                     isSorted={column.isSorted}
+                    isAlignRight={column.isAlignThRight}
                   >
                     {column.render("Header")}
                     {index < headerGroup.headers.length - 1 && (

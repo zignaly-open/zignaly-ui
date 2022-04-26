@@ -15,7 +15,7 @@ const PriceLabel = ({
   symbol = "$",
   bottomElement = null,
 }: PriceLabelProps) => (
-  <styled.Layout>
+  <styled.Layout fiat={fiat}>
     <styled.Value variant={"h3"}>
       {typeof value === "number" || typeof value === "bigint" ? (
         <NumberFormat prefix={fiat ? symbol : ""} value={value} displayType={"text"} thousandSeparator={true} />

@@ -44,9 +44,6 @@ export const TableView = styled.table`
     border-radius: 0 0 5px 5px;
     position: relative;
     z-index: 0;
-    th {
-      text-align: center;
-    }
   }
 
   tbody {
@@ -91,7 +88,7 @@ export const TableView = styled.table`
   }
 `;
 
-export const ThView = styled.th<{ isSorted?: boolean }>`
+export const ThView = styled.th<{ isSorted?: boolean, isAlignRight?: boolean }>`
   color: #a9a9ba;
   padding: 4px 22px;
   white-space: nowrap;
@@ -117,6 +114,15 @@ export const ThView = styled.th<{ isSorted?: boolean }>`
         border: 1px solid transparent;
     `,
      )}
+     ${styledIf(
+        props.isAlignRight,
+          `
+        text-align: right;
+    `,
+          `
+        text-align: center;
+    `,
+  )}
   `}
 `;
 
