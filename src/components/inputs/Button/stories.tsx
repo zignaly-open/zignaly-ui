@@ -4,10 +4,21 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Component
 import Button, { ButtonSizes, ButtonVariants } from "./";
-import SvgArrowBottomIcon from "assets/icons/arrow-bottom-icon.svg";
-
 
 // Assets
+import CloseIcon from "assets/icons/close-icon.svg";
+import ArrowDown from "assets/icons/arrow-bottom-icon.svg";
+
+const ICONS = {
+  ArrowDown,
+  CloseIcon,
+};
+type Icons = typeof ICONS;
+
+const renderIcon = (icon: keyof Icons) => {
+  const Icon = ICONS[icon];
+  return Icon ? <Icon /> : null;
+};
 
 export default {
   title: "Inputs/Button",
@@ -28,20 +39,26 @@ export default {
       control: { type: "select" },
     },
     rightElement: {
-      options: { Show: SvgArrowBottomIcon, Hide: null },
-      control: { type: "radio" },
+      control: {
+        type: "select",
+      },
+      options: Object.keys(ICONS),
     },
     disabled: {
       options: [true, false],
       control: { type: "radio" },
     },
     icon: {
-      options: { Show: SvgArrowBottomIcon, Hide: null },
-      control: { type: "radio" },
+      control: {
+        type: "select",
+      },
+      options: Object.keys(ICONS),
     },
     leftElement: {
-      options: { Show: SvgArrowBottomIcon, Hide: null },
-      control: { type: "radio" },
+      control: {
+        type: "select",
+      },
+      options: Object.keys(ICONS),
     },
     caption: {
       control: { type: "text" },
@@ -55,7 +72,18 @@ export default {
   },
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: ComponentStory<typeof Button> = ({ icon, leftElement, rightElement, ...args }) => {
+  // const Icon = ICONS[icon as keyof Icons];
+  return (
+    <Button
+      // icon={<Icon/>}
+      icon={renderIcon(icon as keyof Icons)}
+      leftElement={renderIcon(leftElement as keyof Icons)}
+      rightElement={renderIcon(rightElement as keyof Icons)}
+      {...args}
+    />
+  );
+};
 
 /// Normal Buttons
 export const NormalButton = Template.bind({});
