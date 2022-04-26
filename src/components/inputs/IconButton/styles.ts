@@ -222,7 +222,7 @@ export const ViewPort = styled.button<LayoutProps>`
     `
       ${Container} {
         transition: all 0.2s linear;
-        border: 1px solid #4A4958;
+        border: 1px solid #35334A;
         background: rgba(12, 13, 33, 0.8);
              
         &:enabled:hover {

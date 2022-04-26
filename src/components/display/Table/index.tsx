@@ -1,13 +1,13 @@
 // Dependencies
 import React, { useRef, useState } from "react";
-import { Column, useSortBy, useTable } from "react-table";
+import { useSortBy, useTable } from "react-table";
 
 // Assets
-import ArrowBottomIcon from "assets/icons/arrow-bottom-icon.svg";
+import ArrowBottomWhiteIcon from "assets/icons/arrow-bottom-icon-white.svg";
 import OptionsDotsIcon from "assets/icons/option-dots-icon.svg";
 
 // Styles
-import { Layout, OptionItem, OptionList, SortIcon, TableView, View } from "./styles";
+import { Layout, OptionItem, OptionList, SortIcon, TableView, View, ThView } from "./styles";
 
 // Components
 import Row from "./components/Row";
@@ -37,15 +37,21 @@ const Table = ({ columns = [], data = [] }: { columns: any[]; data: Object[] }) 
             {headerGroups.map((headerGroup: any, index: number) => (
               <tr {...headerGroup.getHeaderGroupProps()} key={`--table-head-${index.toString()}`}>
                 {headerGroup.headers.map((column: any, index: number) => (
-                  <th
+                  <ThView
                     {...column.getHeaderProps(column.getSortByToggleProps())}
                     key={`--table-head-row-${index.toString()}`}
+                    isSorted={column.isSorted}
+                    isAlignRight={column.isAlignThRight}
                   >
                     {column.render("Header")}
-                    {column.isSorted && (
-                      <SortIcon isSortedDesc={column.isSortedDesc} src={ArrowBottomIcon} />
+                    {index < headerGroup.headers.length - 1 && (
+                      <SortIcon
+                        isSorted={column.isSorted}
+                        isSortedDesc={column.isSortedDesc}
+                        src={ArrowBottomWhiteIcon}
+                      />
                     )}
-                  </th>
+                  </ThView>
                 ))}
                 <th role={"row"}>
                   <div style={{ display: "flex", justifyContent: "flex-end" }}>
@@ -58,31 +64,37 @@ const Table = ({ columns = [], data = [] }: { columns: any[]; data: Object[] }) 
                       }}
                       renderDropDown={
                         <OptionList>
-                          {columns.map((column: any, index) => (
-                            <OptionItem key={`--options-container-${index.toString()}`}>
-                              <CheckBox
-                                value={hiddenColumns.find((e) => e === column.accessor) ?? true}
-                                label={(column.Header ?? "").toString()}
-                                onChange={(isActive: boolean) => {
-                                  toggleHideColumn(column.accessor, !isActive);
-                                  if (!isActive) {
-                                    // @ts-ignore
-                                    setHiddenColumns((prevState: any[]) => {
-                                      return [...prevState, column.accessor];
-                                    });
-                                  } else {
-                                    setHiddenColumns((prevState) =>
-                                      prevState.filter((e) => e !== column.accessor),
-                                    );
-                                  }
-                                }}
-                                disabled={
-                                  hiddenColumns.length >= columns.length / 2 &&
-                                  !hiddenColumns.find((e) => e === column.accessor)
-                                }
-                              />
-                            </OptionItem>
-                          ))}
+                          {columns.map((column: any, index) => {
+                            const isDisabled =
+                              hiddenColumns.length >= columns.length - 2 &&
+                              !hiddenColumns.find((e) => e === column.accessor);
+
+                            const isActive =
+                              hiddenColumns.find((e) => e === column.accessor) ?? true;
+
+                            return (
+                              <OptionItem key={`--options-container-${index.toString()}`}>
+                                <CheckBox
+                                  value={isActive}
+                                  label={column.Header ?? ""}
+                                  onChange={(isActive: boolean) => {
+                                    toggleHideColumn(column.accessor, !isActive);
+                                    if (!isActive) {
+                                      // @ts-ignore
+                                      setHiddenColumns((prevState: any[]) => {
+                                        return [...prevState, column.accessor];
+                                      });
+                                    } else {
+                                      setHiddenColumns((prevState) =>
+                                        prevState.filter((e) => e !== column.accessor),
+                                      );
+                                    }
+                                  }}
+                                  disabled={isDisabled}
+                                />
+                              </OptionItem>
+                            );
+                          })}
                         </OptionList>
                       }
                     />
