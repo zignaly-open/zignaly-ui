@@ -4,10 +4,10 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Component
 import Button, { ButtonSizes, ButtonVariants } from "./";
+import SvgArrowBottomIcon from "assets/icons/arrow-bottom-icon.svg";
+
 
 // Assets
-import CloseIcon from "assets/icons/close-icon.svg";
-import ArrowDown from "assets/icons/arrow-bottom-icon.svg";
 
 export default {
   title: "Inputs/Button",
@@ -28,7 +28,7 @@ export default {
       control: { type: "select" },
     },
     rightElement: {
-      options: { Show: ArrowDown, Hide: null },
+      options: { Show: SvgArrowBottomIcon, Hide: null },
       control: { type: "radio" },
     },
     disabled: {
@@ -36,11 +36,11 @@ export default {
       control: { type: "radio" },
     },
     icon: {
-      options: { Show: CloseIcon, Hide: null },
+      options: { Show: SvgArrowBottomIcon, Hide: null },
       control: { type: "radio" },
     },
     leftElement: {
-      options: { Show: CloseIcon, Hide: null },
+      options: { Show: SvgArrowBottomIcon, Hide: null },
       control: { type: "radio" },
     },
     caption: {
@@ -62,5 +62,4 @@ export const NormalButton = Template.bind({});
 NormalButton.args = {
   variant: ButtonVariants.PRIMARY,
   size: ButtonSizes.NORMAL,
-  leftElement: CloseIcon,
 };
