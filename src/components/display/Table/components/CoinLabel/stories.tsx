@@ -40,12 +40,6 @@ ETH.args = {
   coin: "ETH",
 };
 
-export const ZIG = Template.bind({});
-ZIG.args = {
-  name: "Zigcoin",
-  coin: "ZIG",
-};
-
 export const BNB = Template.bind({});
 BNB.args = {
   name: "Binance Coin",
