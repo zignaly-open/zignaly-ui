@@ -51,15 +51,3 @@ BNB.args = {
   name: "Binance Coin",
   coin: "BNB",
 };
-
-export const USD = Template.bind({});
-USD.args = {
-  name: "Dollar",
-  coin: "USD",
-};
-
-export const EUR = Template.bind({});
-EUR.args = {
-  name: "Euro",
-  coin: "EUR",
-};
