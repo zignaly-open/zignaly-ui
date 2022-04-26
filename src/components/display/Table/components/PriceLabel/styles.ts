@@ -23,26 +23,16 @@ export const Value = styled(Typography)`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  color: #c1c1c8;
 `;
 
-export const Coin = styled(Typography)<{ fiat: boolean }>`
-  color: #706f82;
+export const Coin = styled(Typography)`
   margin: 0 4px;
   text-transform: uppercase;
   width: 45px;
   text-align: left;
-  ${(props) => `
-     ${styledIf(
-       props.fiat,
-       `
-       color: #C1C1C8;
-       margin: 0;
-    `,
-       `
-      color: #706f82;
-      margin: 0 4px;
-    `,
-     )}
-  `}
+`;
+
+export const BottomElementWrap = styled.div`
+  text-align: right;
+  margin-right: 30px;
 `;

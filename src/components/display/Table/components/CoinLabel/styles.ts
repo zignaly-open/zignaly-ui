@@ -26,11 +26,9 @@ export const Icon = styled(CoinIcon)`
 
 export const Name = styled(Typography)`
   display: flex;
-  color: #89899a;
 `;
 
 export const Coin = styled(Typography)`
   display: flex;
-  color: #c1c1c8;
   text-transform: uppercase;
 `;

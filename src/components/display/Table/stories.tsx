@@ -19,7 +19,6 @@ import DateLabel from "./components/DateLabel";
 import { Actions, InvestorLabel } from "./styles";
 
 // Utils
-import { shortenHex } from "utils/web3";
 import { weightByType } from "../Typography/types";
 
 export default {
@@ -151,7 +150,7 @@ Investors.args = {
   ],
   data: [
     {
-      userId: <InvestorLabel color={"neutral100"} variant={"h3"}>{shortenHex("5f886d29da8e9666b1684c9a")}</InvestorLabel>,
+      userId: <InvestorLabel color={"neutral100"} variant={"h3"}>{"5f886d29da8e9666b1684c9a"}</InvestorLabel>,
       email: <InvestorLabel color={"neutral100"} variant={"h3"}>{"tec**@zig**.com"}</InvestorLabel>,
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
