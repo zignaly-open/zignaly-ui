@@ -10,5 +10,9 @@ module.exports = async ({ config }) => {
       utils: resolve("../src/utils"),
     },
   });
+  config.module.rules.push({
+    test: /\.svg$/,
+    use: ["@svgr/webpack"],
+  });
   return config;
 };

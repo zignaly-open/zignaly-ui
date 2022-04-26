@@ -15,7 +15,8 @@
     "copy-files": "cp -R src/assets lib/assets",
     "lint": "eslint --fix src --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write src --config ./.prettierrc",
-    "chromatic": "npx chromatic --project-token=e5c345734579"
+    "chromatic": "npx chromatic --project-token=e5c345734579",
+    "icons": "svgr --replace-attr-values '#FFF=fill' -d ./src/assets/icons/js ./src/assets/icons/"
   },
   "repository": {
     "type": "git",
@@ -37,6 +38,8 @@
     "@mui/styled-engine-sc": "^5.5.2",
     "@storybook/addons": "^6.4.20",
     "@storybook/theming": "^6.4.20",
+    "@svgr/cli": "^6.2.1",
+    "@svgr/webpack": "^6.2.1",
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
     "date-fns": "^2.28.0",
@@ -96,6 +99,7 @@
     "react-dom": "^17.0.2",
     "storybook-addon-designs": "^6.2.1",
     "storybook-dark-mode": "^1.0.9",
+    "style-loader": "^2.0.0",
     "styled-components": "^5.3.5",
     "ts-jest": "^27.1.4",
     "ts-loader": "^9.2.8",
