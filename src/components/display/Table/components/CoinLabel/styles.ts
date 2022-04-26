@@ -8,7 +8,7 @@ export const Layout = styled.div`
   flex-direction: row;
   display: flex;
   flex: 1;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 `;
 
