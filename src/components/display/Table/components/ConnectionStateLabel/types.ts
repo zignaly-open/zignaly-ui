@@ -15,7 +15,7 @@ export const connectionStateName = {
 };
 
 export const connectionStateColor = {
-  [ConnectionStateLabelId.CONNECTED]: "#26C4C1",
+  [ConnectionStateLabelId.CONNECTED]: "#26C496",
   [ConnectionStateLabelId.DISCONNECTED]: "#706F82",
   [ConnectionStateLabelId.HARD_DISCONNECT]: "#CC3993",
   [ConnectionStateLabelId.SOFT_DISCONNECT]: "#F7CF00",

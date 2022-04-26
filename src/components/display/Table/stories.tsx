@@ -3,7 +3,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 // Assets
-import CheckIcon from "../../../assets/icons/check-icon.svg";
+import CheckIcon from "../../../assets/icons/check-icon-n100.svg";
 
 // Component
 import Table from "./";
@@ -150,8 +150,8 @@ Investors.args = {
   ],
   data: [
     {
-      userId: <InvestorLabel color={"neutral100"} variant={"h3"}>{"5f886d29da8e9666b1684c9a"}</InvestorLabel>,
-      email: <InvestorLabel color={"neutral100"} variant={"h3"}>{"tec**@zig**.com"}</InvestorLabel>,
+      userId: <InvestorLabel color={"neutral100"} variant={"body1"} weight={weightByType.medium}>{"5f886d29da8e9666b1684c9a"}</InvestorLabel>,
+      email: <InvestorLabel color={"neutral100"} variant={"body1"} weight={weightByType.medium}>{"tec**@zig**.com"}</InvestorLabel>,
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
         <PriceLabel
@@ -162,7 +162,7 @@ Investors.args = {
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
-      successFee: <InvestorLabel color={"neutral100"} variant={"h3"}>{"10%"}</InvestorLabel>,
+      successFee: <InvestorLabel color={"neutral100"} variant={"body1"} weight={weightByType.medium}>{"10%"}</InvestorLabel>,
       feesInZig: <img src={CheckIcon} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
     },
