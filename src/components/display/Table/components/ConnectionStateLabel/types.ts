@@ -16,10 +16,10 @@ export const connectionStateName = {
 
 export const connectionStateColor = (theme: any) => ({
   [ConnectionStateLabelId.CONNECTED]: theme["greenGraph"],
-  [ConnectionStateLabelId.DISCONNECTED]: "#706F82",
-  [ConnectionStateLabelId.HARD_DISCONNECT]: "#CC3993",
-  [ConnectionStateLabelId.SOFT_DISCONNECT]: "#F7CF00",
-  [ConnectionStateLabelId.SUSPENDED]: "#E50B5A",
+  [ConnectionStateLabelId.DISCONNECTED]: theme["neutral400"],
+  [ConnectionStateLabelId.HARD_DISCONNECT]: theme["redGraphOrError"],
+  [ConnectionStateLabelId.SOFT_DISCONNECT]: theme["yellow"],
+  [ConnectionStateLabelId.SUSPENDED]: theme["red"],
 });
 
 export type ConnectionStateLabelProps = {
