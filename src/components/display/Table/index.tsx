@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useRef, useState } from "react";
+import React, { useRef, useCallback, useState } from "react";
 import { useSortBy, useTable } from "react-table";
 
 // Assets
@@ -10,14 +10,17 @@ import OptionsDotsIcon from "assets/icons/option-dots-icon.svg";
 import { Layout, OptionItem, OptionList, SortIcon, TableView, View, ThView } from "./styles";
 
 // Components
-import Row from "./components/Row";
 import IconButton, { DropdownAlignment, IconButtonVariants } from "components/inputs/IconButton";
 import CheckBox from "components/inputs/CheckBox";
 
 const Table = ({ columns = [], data = [] }: { columns: any[]; data: Object[] }) => {
+  // Refs
   const tableRef = useRef(null);
+
+  // States
   const [hiddenColumns, setHiddenColumns] = useState([]);
 
+  // Hooks
   const { getTableProps, getTableBodyProps, rows, headerGroups, toggleHideColumn, prepareRow } =
     useTable(
       {
@@ -28,6 +31,24 @@ const Table = ({ columns = [], data = [] }: { columns: any[]; data: Object[] }) 
     );
 
   const firstPageRows = rows.slice(0, 20);
+
+  /**
+   * @function renderActionRow():
+   * @description Inject the action row on "column options" column.
+   */
+  const renderActionRow = useCallback(
+    (row: any, index: number) => {
+      if (data.find((e: any) => e.action)) {
+        return (
+          <td className={"action"} key={`--table-row-cell-${index.toString()}`}>
+            {/*@ts-ignore*/}
+            {data[row.index].action}
+          </td>
+        );
+      }
+    },
+    [data],
+  );
 
   return (
     <Layout>
@@ -107,7 +128,18 @@ const Table = ({ columns = [], data = [] }: { columns: any[]; data: Object[] }) 
             {firstPageRows.map((row: any, index: number) => {
               prepareRow(row);
               return (
-                <Row key={`--firstPageRows-${index.toString()}`} row={row} {...row.getRowProps()} />
+                <tr key={`--firstPageRows-${index.toString()}`} {...row.getRowProps()}>
+                  {row.cells.map((cell: any, index: number) => (
+                    <td
+                      className={cell.column.id === "action" ? "action" : "row-td"}
+                      {...cell.getCellProps()}
+                      key={`--table-row-cell-${index.toString()}`}
+                    >
+                      {cell.render("Cell")}
+                    </td>
+                  ))}
+                  {renderActionRow(row, index)}
+                </tr>
               );
             })}
           </tbody>

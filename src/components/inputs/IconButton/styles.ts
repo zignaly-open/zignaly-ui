@@ -47,6 +47,7 @@ export const Dropdown = styled.div<DropdownProps>`
   color: #fff;
   box-shadow: 0 4px 6px -2px #00000061;
   opacity: 0;
+  z-index: 10;
 
   ${({ alignment, width }: any) => `
     width: ${width ?? "auto"};
