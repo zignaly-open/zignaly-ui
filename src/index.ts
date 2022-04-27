@@ -22,7 +22,7 @@ import TableButton from "./components/display/Table/components/TableButton";
 import { ButtonGroup } from "./components/styled";
 
 // Icons
-import CloseIcon from "./assets/icons/close-icon.svg";
+import CloseIcon from "./assets/icons/close-icon.svg?url";
 
 // Navigation
 import Tabs from "components/navigation/Tabs";
@@ -65,6 +65,6 @@ export {
   TabPanel,
   Tab,
   ThemeProvider,
-  dark, 
+  dark,
   light,
 };

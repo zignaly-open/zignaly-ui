@@ -3,9 +3,9 @@ import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Assets
-import OptionsDotsIcon from "../../../assets/icons/option-dots-icon.svg";
-import CheckIcon from "../../../assets/icons/check-icon.svg";
-import CloseIcon from "../../../assets/icons/close-icon.svg";
+import OptionsDotsIcon from "../../../assets/icons/option-dots-icon.svg?url";
+import CheckIcon from "../../../assets/icons/check-icon.svg?url";
+import CloseIcon from "../../../assets/icons/close-icon.svg?url";
 
 // Component
 import Table from "./";
