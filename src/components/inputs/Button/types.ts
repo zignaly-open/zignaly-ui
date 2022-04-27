@@ -1,21 +1,21 @@
 import { ReactElement } from "react";
 import * as React from "react";
 
-export enum ButtonVariants {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-}
+export const buttonVariants = {
+  primary: "primary",
+  secondary: "secondary",
+};
 
-export enum ButtonSizes {
-  SMALL = "small",
-  NORMAL = "normal",
-  LARGE = "large",
-  XLARGE = "xlarge",
-}
+export const buttonSizes = {
+  small: "small",
+  normal: "normal",
+  large: "large",
+  xlarge: "xlarge",
+};
 
 export type ButtonProps = {
-  variant?: ButtonVariants;
-  size?: ButtonSizes;
+  variant?: keyof typeof buttonVariants;
+  size?: keyof typeof buttonSizes;
   caption?: string | null;
   icon?: ReactElement<any> | String | null;
   leftElement?: ReactElement<any> | String | null;
@@ -23,4 +23,5 @@ export type ButtonProps = {
   disabled?: boolean;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
+  children?: React.ReactNode;
 };

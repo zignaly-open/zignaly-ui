@@ -1,21 +1,21 @@
 // Dependencies
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
-import { ButtonSizes, ButtonVariants } from "./";
+import { buttonVariants, buttonSizes } from "./types";
 
-const isPrimaryButton = (variant: ButtonVariants) => variant === ButtonVariants.PRIMARY;
+const isPrimaryButton = (variant: keyof typeof buttonVariants) => variant === "primary";
 
-const isSecondaryButton = (variant: ButtonVariants) => variant === ButtonVariants.SECONDARY;
+const isSecondaryButton = (variant: keyof typeof buttonVariants) => variant === "secondary";
 
 // const isGhostButton = (variant: ButtonVariants) => variant ===ButtonVariants.GHOST;
 
-const isSmallButton = (size: ButtonSizes) => size === ButtonSizes.SMALL;
+const isSmallButton = (size: keyof typeof buttonSizes) => size === "small";
 
-const isMediumButton = (size: ButtonSizes) => size === ButtonSizes.NORMAL;
+const isMediumButton = (size: keyof typeof buttonSizes) => size === "normal";
 
-const isLargeButton = (size: ButtonSizes) => size === ButtonSizes.LARGE;
+const isLargeButton = (size: keyof typeof buttonSizes) => size === "large";
 
-const isXLargeButton = (size: ButtonSizes) => size === ButtonSizes.XLARGE;
+const isXLargeButton = (size: keyof typeof buttonSizes) => size === "xlarge";
 
 export const Caption = styled.div`
   z-index: 2;
@@ -70,8 +70,8 @@ export const CenterIcon = styled.img<IconProps>`
  * Layout
  */
 interface LayoutProps {
-  size: ButtonSizes;
-  variant: ButtonVariants;
+  size: keyof typeof buttonSizes;
+  variant: keyof typeof buttonVariants;
   withElements: Boolean;
   onlyIcon: Boolean;
 }
