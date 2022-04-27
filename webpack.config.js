@@ -75,6 +75,10 @@ const config = {
     ],
     alias: {
       "styled-components": path.resolve("./node_modules/styled-components"),
+      assets: path.resolve("../src/assets"),
+      components: path.resolve("../src/components"),
+      theme: path.resolve("../src/theme"),
+      utils: path.resolve("../src/utils"),
     },
   },
   // When importing a module whose path matches one of the following, just

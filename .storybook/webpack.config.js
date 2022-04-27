@@ -6,7 +6,7 @@ module.exports = async ({ config }) => {
     alias: {
       assets: resolve("../src/assets"),
       components: resolve("../src/components"),
-      hooks: resolve("../src/hooks"),
+      theme: resolve("../src/theme"),
       utils: resolve("../src/utils"),
     },
   });

@@ -119,21 +119,5 @@
     "@mui/material": ">= 5",
     "react": ">= 16.14",
     "react-dom": ">= 16.14"
-  },
-  "jest": {
-    "rootDir": ".",
-    "setupFilesAfterEnv": [
-      "<rootDir>/jest.setup.js"
-    ],
-    "testEnvironment": "jsdom",
-    "moduleNameMapper": {
-      "^.+\\.svg$": "jest-svg-transformer",
-      "^@root(.*)$": "<rootDir>/src$1",
-      "^@assets(.*)$": "<rootDir>/src/assets$1",
-      "^@hooks(.*)$": "<rootDir>/src/hooks$1",
-      "^@components(.*)$": "<rootDir>/src/components$1",
-      "^@utils(.*)$": "<rootDir>/src/utils$1",
-      "^@types(.*)$": "<rootDir>/src/types$1"
-    }
   }
 }
