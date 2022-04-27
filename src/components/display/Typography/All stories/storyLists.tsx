@@ -6,27 +6,18 @@ import Typography from "..";
 import { componentByVariants, weightByType } from "../types";
 import { Layout, StoryList } from "./styles";
 
+interface TextProps {
+    variant?: keyof typeof componentByVariants,
+    weight?: keyof typeof weightByType,
+    underline?: boolean,
+}
+
 type TextVariationsTypes = {
-  textsRow1: {
-    variant?: keyof typeof componentByVariants;
-    weight?: keyof typeof weightByType;
-  }[];
-  textsRow2?: {
-    variant?: keyof typeof componentByVariants;
-    weight?: keyof typeof weightByType;
-  }[];
-  textsRow3?: {
-    variant?: keyof typeof componentByVariants;
-    weight?: keyof typeof weightByType;
-  }[];
-  textsRow4?: {
-    variant?: keyof typeof componentByVariants;
-    weight?:keyof typeof weightByType;
-  }[];
-  textsRow5?: {
-    variant?: keyof typeof componentByVariants;
-    weight?: keyof typeof weightByType;
-  }[];
+  textsRow1: TextProps[];
+  textsRow2?: TextProps[];
+  textsRow3?: TextProps[];
+  textsRow4?: TextProps[];
+  textsRow5?: TextProps[];
 };
 
 export function TextVariations({
@@ -40,7 +31,7 @@ export function TextVariations({
     <Layout>
       <StoryList>
         {textsRow1.map((text, index: number) => (
-          <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight}>
+          <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight} underline={text.underline}>
             Example Text
           </Typography>
         ))}
@@ -48,7 +39,7 @@ export function TextVariations({
       {textsRow2 && (
         <StoryList>
           {textsRow2.map((text, index: number) => (
-            <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight}>
+            <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight} underline={text.underline}>
               Example Text
             </Typography>
           ))}
@@ -57,7 +48,7 @@ export function TextVariations({
       {textsRow3 && (
         <StoryList>
           {textsRow3.map((text, index: number) => (
-            <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight}>
+            <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight} underline={text.underline}>
               Example Text
             </Typography>
           ))}
@@ -66,7 +57,7 @@ export function TextVariations({
       {textsRow4 && (
         <StoryList>
           {textsRow4.map((text, index: number) => (
-            <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight}>
+            <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight} underline={text.underline}>
               Example Text
             </Typography>
           ))}
@@ -75,7 +66,7 @@ export function TextVariations({
       {textsRow5 && (
         <StoryList>
           {textsRow5.map((text, index: number) => (
-            <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight}>
+            <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight} underline={text.underline}>
               Example Text
             </Typography>
           ))}

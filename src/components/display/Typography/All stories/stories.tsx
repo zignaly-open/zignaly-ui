@@ -11,7 +11,7 @@ export default {
   parameters: {
     jest: ["test.tsx"],
   },
-  decorators: [(story) => <div style={{ padding: "0.5rem" }}>{story()}</div>],
+  decorators: [(story) => <div style={{ padding: "0.2rem" }}>{story()}</div>],
 } as ComponentMeta<typeof TextVariations>;
 
 const Template: ComponentStory<typeof TextVariations> = (args) => <TextVariations {...args} />;
@@ -51,11 +51,13 @@ Body.args = {
     { ...Text.args, variant: "body1", weight: "regular" },
     { ...Text.args, variant: "body1", weight: "demibold" },
     { ...Text.args, variant: "body1", weight: "medium" },
+    { ...Text.args, variant: "body1", weight: "regular", underline: true },
   ],
   textsRow2: [
     { ...Text.args, variant: "body2", weight: "regular" },
     { ...Text.args, variant: "body2", weight: "demibold" },
     { ...Text.args, variant: "body2", weight: "medium" },
+    { ...Text.args, variant: "body2", weight: "regular", underline: true },
   ],
 };
 
@@ -64,14 +66,12 @@ ButtonText.args = {
   textsRow1: [
     { ...Text.args, variant: "buttonxl" },
     { ...Text.args, variant: "buttonl" },
-    { ...Text.args, variant: "buttonm"},
-    { ...Text.args, variant: "buttonsm"},
+    { ...Text.args, variant: "buttonm" },
+    { ...Text.args, variant: "buttonsm" },
   ],
 };
 
-export const BigNumber= Template.bind({});
+export const BigNumber = Template.bind({});
 BigNumber.args = {
-  textsRow1: [
-    { ...Text.args, variant: "bigNumber"},
-  ],
+  textsRow1: [{ ...Text.args, variant: "bigNumber" }],
 };
