@@ -15,8 +15,7 @@
     "copy-files": "cp -R src/assets lib/assets",
     "lint": "eslint --fix src --ext .js,.jsx,.ts,.tsx",
     "format": "prettier --write src --config ./.prettierrc",
-    "chromatic": "npx chromatic --project-token=e5c345734579",
-    "icons": "svgr --replace-attr-values '#FFF=fill' -d ./src/assets/icons/js ./src/assets/icons/"
+    "chromatic": "npx chromatic --project-token=e5c345734579"
   },
   "repository": {
     "type": "git",
