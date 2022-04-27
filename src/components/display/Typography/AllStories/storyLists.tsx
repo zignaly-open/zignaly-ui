@@ -10,6 +10,7 @@ interface TextProps {
     variant?: keyof typeof componentByVariants,
     weight?: keyof typeof weightByType,
     underline?: boolean,
+    caption: string,
 }
 
 type TextVariationsTypes = {
@@ -32,7 +33,7 @@ export function TextVariations({
       <StoryList>
         {textsRow1.map((text, index: number) => (
           <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight} underline={text.underline}>
-            Example Text
+            {text.caption}
           </Typography>
         ))}
       </StoryList>
@@ -40,7 +41,7 @@ export function TextVariations({
         <StoryList>
           {textsRow2.map((text, index: number) => (
             <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight} underline={text.underline}>
-              Example Text
+              {text.caption}
             </Typography>
           ))}
         </StoryList>
@@ -49,7 +50,7 @@ export function TextVariations({
         <StoryList>
           {textsRow3.map((text, index: number) => (
             <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight} underline={text.underline}>
-              Example Text
+              {text.caption}
             </Typography>
           ))}
         </StoryList>
@@ -58,7 +59,7 @@ export function TextVariations({
         <StoryList>
           {textsRow4.map((text, index: number) => (
             <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight} underline={text.underline}>
-              Example Text
+              {text.caption}
             </Typography>
           ))}
         </StoryList>
@@ -67,7 +68,7 @@ export function TextVariations({
         <StoryList>
           {textsRow5.map((text, index: number) => (
             <Typography key={`--${index.toString()}`} variant={text.variant} weight={text.weight} underline={text.underline}>
-              Example Text
+             {text.caption}
             </Typography>
           ))}
         </StoryList>
