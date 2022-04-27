@@ -13,6 +13,9 @@ export const Value = styled.span<{ isPositive: boolean }>`
   `}
 `;
 
-export const Indicator = styled.img`
+export const Indicator = styled.img<{ isPositive: boolean }>`
   margin-right: 6px;
+  ${(props) => `
+    transform: rotateX(${props.isPositive ? "0" : "180"}deg);
+  `}
 `;

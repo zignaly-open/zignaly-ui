@@ -157,7 +157,7 @@ Investors.args = {
         <PriceLabel
           coin={"USDT"}
           value={"37.5"}
-          bottomElement={<PercentageIndicator value={3} />}
+          bottomElement={<PercentageIndicator value={-3} />}
         />
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
