@@ -1,5 +1,3 @@
-import { ChangeEventHandler } from "react";
-
 export enum SelectSizes {
   SMALL = "small",
   NORMAL = "normal",
