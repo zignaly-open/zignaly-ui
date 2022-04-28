@@ -8,6 +8,33 @@ export default {
   title: "Display/Typography/All Stories",
   component: TextVariations,
   subcomponents: { Typography },
+  argTypes: {
+    textsRow1: {
+      table: {
+        disable: true,
+      },
+    },
+    textsRow2: {
+      table: {
+        disable: true,
+      },
+    },
+    textsRow3: {
+      table: {
+        disable: true,
+      },
+    },
+    textsRow4: {
+      table: {
+        disable: true,
+      },
+    },
+    textsRow5: {
+      table: {
+        disable: true,
+      },
+    }
+  },
   parameters: {
     jest: ["test.tsx"],
   },
