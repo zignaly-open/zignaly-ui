@@ -10,14 +10,14 @@ import CloseIcon from "assets/icons/close-icon.svg";
 import ArrowDown from "assets/icons/arrow-bottom-icon.svg";
 
 const ICONS = {
-  ArrowDown,
-  CloseIcon,
+  ArrowDown: <ArrowDown width={13} height={8} color={"black"} />,
+  CloseIcon : <CloseIcon width={13} height={13} color={"black"} />,
 };
 type Icons = typeof ICONS;
 
 const renderIcon = (icon: keyof Icons) => {
   const Icon = ICONS[icon];
-  return Icon ? <Icon width={12} height={12} color={"black"}  /> : null;
+  return Icon ? Icon : null;
 };
 
 export default {
