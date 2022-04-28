@@ -110,7 +110,6 @@ export const Layout = styled.button<LayoutProps>`
       isSmallButton(size),
       `
       ${Container} {
-        padding: 9px 18px;
         min-width: 88px;      
       }
             
@@ -309,6 +308,7 @@ export const Layout = styled.button<LayoutProps>`
     `
       ${Container} {
         background: linear-gradient(289.8deg, #149CAD 0%, #4540C1 100%);
+
       }
       
       &:enabled:focus:not(:focus-visible) {
@@ -522,11 +522,11 @@ export const Layout = styled.button<LayoutProps>`
     `
       ${Container} {
         transition: all 0.2s linear;
-        border: 1px solid #4A4958;
         background: rgba(12, 13, 33, 0.8);
+        outline: 1px solid #4A4958;
              
         &:enabled:hover {
-          border: 1px dashed #4A4958;
+          outline: 1px dashed #4A4958;
           background: linear-gradient(289.8deg, rgba(20, 156, 173, 0.16) 0%, rgba(69, 64, 193, 0.16) 100%);
         
           ${Caption} {
@@ -535,7 +535,6 @@ export const Layout = styled.button<LayoutProps>`
           }
         }
       }
-
       
       &:enabled:focus:not(:focus-visible) {
         outline: 0;
