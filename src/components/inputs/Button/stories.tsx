@@ -6,8 +6,8 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Button, { ButtonSizes, ButtonVariants } from "./";
 
 // Assets
-import CloseIcon from "assets/icons/close-icon.svg?url";
-import ArrowDown from "assets/icons/arrow-bottom-icon.svg?url";
+import CloseIcon from "assets/icons/close-icon.svg";
+import ArrowDown from "assets/icons/arrow-bottom-icon.svg";
 
 const ICONS = {
   ArrowDown,
@@ -17,7 +17,7 @@ type Icons = typeof ICONS;
 
 const renderIcon = (icon: keyof Icons) => {
   const Icon = ICONS[icon];
-  return Icon ? Icon : null;
+  return Icon ? <Icon width={12} height={12} color={"black"}  /> : null;
 };
 
 export default {

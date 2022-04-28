@@ -28,9 +28,7 @@ function Button({
     () =>
       typeof leftElement === "object" ? (
         leftElement
-      ) : (
-        <styled.Icon src={leftElement} alt={caption} />
-      ),
+      ) : null,
     [leftElement],
   );
 
@@ -43,9 +41,7 @@ function Button({
     () =>
       typeof rightElement === "object" ? (
         rightElement
-      ) : (
-        <styled.Icon src={rightElement} alt={caption} />
-      ),
+      ) : null,
     [rightElement],
   );
 
@@ -60,10 +56,8 @@ function Button({
       <styled.Caption>
         {icon ? (
           typeof icon === "object" ? (
-            icon
-          ) : (
-            <styled.CenterIcon src={icon} alt={null} />
-          )
+            <styled.CenterIcon>{icon}</styled.CenterIcon>
+          ) : null
         ) : (
           caption
         )}
