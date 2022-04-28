@@ -1,3 +1,5 @@
+import { ChangeEventHandler } from "react";
+
 export enum SelectSizes {
   SMALL = "small",
   NORMAL = "normal",
@@ -21,4 +23,5 @@ export type SelectProps = {
   value?: OptionItem | null;
   mode?: "default" | "collapsed";
   initialSelectedIndex: number | null;
+  fullWidth?: boolean;
 };
