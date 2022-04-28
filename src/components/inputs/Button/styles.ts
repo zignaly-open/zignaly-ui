@@ -95,7 +95,7 @@ export const Layout = styled.button<LayoutProps>`
     cursor: default;
   }
 
-  ${({ size, variant, withElements, onlyIcon, color }: any) => `
+  ${({ size, variant, withElements, onlyIcon, color }) => `
  
      ${styledIf(
        onlyIcon,

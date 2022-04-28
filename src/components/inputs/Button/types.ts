@@ -28,4 +28,5 @@ export type ButtonProps = {
   disabled?: boolean;
   color?: ButtonColors;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
+  type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
 };
