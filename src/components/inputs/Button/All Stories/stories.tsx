@@ -18,8 +18,8 @@ export default {
 
 const Template: ComponentStory<typeof ButtonVariations> = (args) => <ButtonVariations {...args} />;
 
-export const ButtonIconVariations = Template.bind({});
-ButtonIconVariations.args = {
+export const MediumButtonIconVariation = Template.bind({});
+MediumButtonIconVariation.args = {
   buttonsRow1: [
     { ...NormalButton.args, variant: "primary" },
     { ...NormalButton.args, variant: "primary", rightElement: BTC },
@@ -50,8 +50,8 @@ ButtonSizes.args = {
   ],
 };
 
-export const ButtonDisabled = Template.bind({});
-ButtonDisabled.args = {
+export const MediumButtonDisabled = Template.bind({});
+MediumButtonDisabled.args = {
   buttonsRow1: [
     { ...NormalButton.args, variant: "primary", size: "medium", disabled: false },
     { ...NormalButton.args, variant: "primary", size: "medium", disabled: true },
@@ -62,8 +62,8 @@ ButtonDisabled.args = {
   ],
 };
 
-export const ButtonTextColors = Template.bind({});
-ButtonTextColors.args = {
+export const MediumButtonTextColors = Template.bind({});
+MediumButtonTextColors.args = {
   buttonsRow1: [
     { ...NormalButton.args, variant: "primary", size: "medium", color: "grey" },
     { ...NormalButton.args, variant: "primary", size: "medium", color: "green" },
