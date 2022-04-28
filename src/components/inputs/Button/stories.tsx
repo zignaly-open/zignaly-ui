@@ -20,11 +20,15 @@ export default {
   },
   argTypes: {
     size: {
-      options: ["small", "normal", "large", "xlarge"],
+      options: ["small", "medium", "large", "x-large"],
       control: { type: "select" },
     },
     variant: {
       options: ["primary", "secondary"],
+      control: { type: "select" },
+    },
+    color: {
+      options: ["grey", "green"],
       control: { type: "select" },
     },
     rightElement: {
@@ -60,5 +64,5 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 export const NormalButton = Template.bind({});
 NormalButton.args = {
   variant: "primary",
-  size: "normal",
+  size: "medium",
 };

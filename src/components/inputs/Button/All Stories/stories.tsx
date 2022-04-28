@@ -6,7 +6,6 @@ import { NormalButton } from "../stories";
 import ArrowBottomIcon from "assets/icons/arrow-bottom-icon.svg";
 import BTC from "assets/icons/coins/btc.svg";
 
-
 export default {
   title: "Inputs/Button/All stories",
   component: ButtonVariations,
@@ -23,9 +22,10 @@ export const Heading = Template.bind({});
 Heading.args = {
   buttonsRow1: [
     { ...NormalButton.args, variant: "primary" },
-    { ...NormalButton.args, variant: "primary", rightElement:  BTC },
+    { ...NormalButton.args, variant: "primary", rightElement: BTC },
     { ...NormalButton.args, variant: "primary", leftElement: ArrowBottomIcon },
     { ...NormalButton.args, variant: "primary", leftElement: ArrowBottomIcon, rightElement: BTC },
+    { ...NormalButton.args, variant: "primary", icon: BTC },
   ],
   buttonsRow2: [
     { ...NormalButton.args },

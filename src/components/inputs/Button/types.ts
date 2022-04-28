@@ -8,9 +8,13 @@ export const buttonVariants = {
 
 export const buttonSizes = {
   small: "small",
-  normal: "normal",
+  medium: "medium",
   large: "large",
   xlarge: "xlarge",
+};
+export const buttonColors = {
+  grey: "grey",
+  green: "green",
 };
 
 export type ButtonProps = {
@@ -21,6 +25,7 @@ export type ButtonProps = {
   leftElement?: ReactElement<any> | String | null;
   rightElement?: ReactElement<any> | String | null;
   disabled?: boolean;
+  color?: keyof typeof buttonColors;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
   children?: React.ReactNode;

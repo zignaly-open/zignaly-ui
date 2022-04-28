@@ -10,9 +10,10 @@ import { ButtonProps } from "./types";
 
 function Button({
   variant = "primary",
-  size = "normal",
+  size = "medium",
   caption = "Button",
   icon = null,
+  color = "grey",
   leftElement = null,
   rightElement = null,
   disabled = false,
@@ -79,6 +80,7 @@ function Button({
       disabled={disabled}
       variant={variant}
       size={size}
+      color={color}
       onClick={onClick}
       type={type}
     >

@@ -1,7 +1,7 @@
 // Dependencies
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
-import { buttonVariants, buttonSizes } from "./types";
+import { buttonVariants, buttonSizes, buttonColors } from "./types";
 
 const isPrimaryButton = (variant: keyof typeof buttonVariants) => variant === "primary";
 
@@ -11,11 +11,15 @@ const isSecondaryButton = (variant: keyof typeof buttonVariants) => variant === 
 
 const isSmallButton = (size: keyof typeof buttonSizes) => size === "small";
 
-const isMediumButton = (size: keyof typeof buttonSizes) => size === "normal";
+const isMediumButton = (size: keyof typeof buttonSizes) => size === "medium";
 
 const isLargeButton = (size: keyof typeof buttonSizes) => size === "large";
 
 const isXLargeButton = (size: keyof typeof buttonSizes) => size === "xlarge";
+
+const isGreyColor = (color: keyof typeof buttonColors) => color === "grey";
+
+const isGreenColor = (color: keyof typeof buttonColors) => color === "green";
 
 export const Caption = styled.div`
   z-index: 2;
@@ -25,7 +29,7 @@ export const Caption = styled.div`
 
 export const Container = styled.div`
   position: relative;
-  border-radius: 4px;
+  border-radius: 5px;
   transition: all 0.2s linear;
   outline: none;
 
@@ -38,7 +42,6 @@ export const Container = styled.div`
 export const LeftElement = styled.div`
   z-index: 3;
   position: relative;
-  padding-right: 10px;
 
   display: flex;
   flex-direction: row;
@@ -48,7 +51,6 @@ export const LeftElement = styled.div`
 
 export const RightElement = styled(LeftElement)`
   padding-right: 0;
-  padding-left: 10px;
 `;
 
 /**
@@ -70,14 +72,15 @@ export const CenterIcon = styled.img<IconProps>`
  * Layout
  */
 interface LayoutProps {
-  size: keyof typeof buttonSizes;
   variant: keyof typeof buttonVariants;
+  size: keyof typeof buttonSizes;
+  color: keyof typeof buttonColors;
   withElements: Boolean;
   onlyIcon: Boolean;
 }
 
 export const Layout = styled.button<LayoutProps>`
-  border-radius: 4px;
+  border-radius: 5px;
   border: none;
   cursor: pointer;
   padding: 2px;
@@ -93,7 +96,7 @@ export const Layout = styled.button<LayoutProps>`
     cursor: default;
   }
 
-  ${({ size, variant, withElements, onlyIcon }) => `
+  ${({ size, variant, withElements, onlyIcon, color }) => `
  
      ${styledIf(
        onlyIcon,
@@ -126,7 +129,7 @@ export const Layout = styled.button<LayoutProps>`
       ${Caption} {
         font-size: 11px;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 12px;
         letter-spacing: 0px;
         text-align: center;
@@ -135,6 +138,14 @@ export const Layout = styled.button<LayoutProps>`
       ${LeftElement} {
         img {
           width: 10px;
+          margin-right: 8px;
+        }
+      }
+
+      ${RightElement} {
+        img {
+          margin-left: 8px;
+          margin-right: 0;
         }
       }
       
@@ -158,14 +169,14 @@ export const Layout = styled.button<LayoutProps>`
       ${Container} {
         padding: 11px 18px;
         min-width: 88px;
-        height: 40px; 
+        height: 36px; 
         border-radius: 5px; 
       }
       
       ${Caption} {
         font-size: 11px;
         font-style: normal;
-        font-weight: 500;
+        font-weight: 600;
         line-height: 14px;
         letter-spacing: 0px;
         text-align: center;
@@ -174,6 +185,15 @@ export const Layout = styled.button<LayoutProps>`
       ${LeftElement} {
         img {
           width: 10px;
+          margin-right: 10px;
+        }
+      }
+
+      ${RightElement} {
+        img {
+          margin-left: 10px;
+          margin-right: 0;
+
         }
       }
       
@@ -208,7 +228,17 @@ export const Layout = styled.button<LayoutProps>`
       
       ${LeftElement} {
         img {
-          width: 23px;
+          width: 13px;
+          margin-right: 14px;
+
+        }
+      }
+
+      ${RightElement} {
+        img {
+          margin-left: 14px;
+          margin-right: 0;
+
         }
       }
       
@@ -249,6 +279,15 @@ export const Layout = styled.button<LayoutProps>`
         img {
           width: 26px;
           height: 26px;
+          margin-right: 18px;
+
+        }
+      }
+
+      ${RightElement} {
+        img {
+          margin-left: 18px;
+          margin-right: 0;
         }
       }
       
@@ -303,13 +342,11 @@ export const Layout = styled.button<LayoutProps>`
           
           ${LeftElement} {
             left: -1px;
-            padding-right: 10px;
           }
           
           ${RightElement} {
             left: 1px;
             padding-right: 0;
-            padding-left: 8px;
           }
           
           ${styledIf(
@@ -341,13 +378,11 @@ export const Layout = styled.button<LayoutProps>`
           
           ${LeftElement} {
             left: -1px;
-            padding-right: 10px;
           }
           
           ${RightElement} {
             left: 1px;
             padding-right: 0;
-            padding-left: 8px;
           }
           
           ${styledIf(
@@ -379,13 +414,11 @@ export const Layout = styled.button<LayoutProps>`
           
           ${LeftElement} {
             left: -1px;
-            padding-right: 10px;
           }
           
           ${RightElement} {
             left: 1px;
             padding-right: 0;
-            padding-left: 8px;
           }
           
           ${styledIf(
@@ -417,13 +450,11 @@ export const Layout = styled.button<LayoutProps>`
           
           ${LeftElement} {
             left: -1px;
-            padding-right: 10px;
           }
           
           ${RightElement} {
             left: 1px;
             padding-right: 0;
-            padding-left: 8px;
           }
           
           ${styledIf(
@@ -468,10 +499,23 @@ export const Layout = styled.button<LayoutProps>`
           }
         }
       }
-            
-      ${Caption} {
-        color: #F3F4F6;
-      }
+      ${styledIf(
+        isGreyColor(color),
+        `            
+        ${Caption} {
+          color: #E1E9F0;
+        }
+      `,
+      )}  
+
+      ${styledIf(
+        isGreenColor(color),
+        `            
+        ${Caption} {
+          color: #26c4c1;
+        }
+      `,
+      )}  
     `,
   )}
     
@@ -514,10 +558,23 @@ export const Layout = styled.button<LayoutProps>`
             opacity: 1;
           }
         }
-        
+        ${styledIf(
+          isGreyColor(color),
+          `            
         ${Caption} {
-          color: #fff;
+          color: #89899a;
         }
+      `,
+        )} 
+
+      ${styledIf(
+        isGreenColor(color),
+        `            
+        ${Caption} {
+          color: #26c4c1;
+        }
+      `,
+      )}
       }
             
       &[disabled] {
@@ -566,10 +623,25 @@ export const Layout = styled.button<LayoutProps>`
         }
       }
             
-      ${Caption} {
-        color: #9CA3AF;
-        letter-spacing: 2px;
-      }
+      ${styledIf(
+        isGreyColor(color),
+        `            
+        ${Caption} {
+          color: #9CA3AF;
+          letter-spacing: 2px;
+        }
+      `,
+      )} 
+
+      ${styledIf(
+        isGreenColor(color),
+        `            
+        ${Caption} {
+          color: #26c4c1;
+          letter-spacing: 2px;
+        }
+      `,
+      )}
     `,
   )}
   `}
