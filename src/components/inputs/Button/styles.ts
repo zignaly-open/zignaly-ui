@@ -7,8 +7,6 @@ const isPrimaryButton = (variant: keyof typeof buttonVariants) => variant === "p
 
 const isSecondaryButton = (variant: keyof typeof buttonVariants) => variant === "secondary";
 
-// const isGhostButton = (variant: ButtonVariants) => variant ===ButtonVariants.GHOST;
-
 const isSmallButton = (size: keyof typeof buttonSizes) => size === "small";
 
 const isMediumButton = (size: keyof typeof buttonSizes) => size === "medium";

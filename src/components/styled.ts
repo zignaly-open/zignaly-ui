@@ -47,13 +47,5 @@ export const Button = styled.button<{
       background-color: red;
     `,
     )}  
-    
-    ${styledIf(
-      // @ts-ignore fixme
-      props.variant !== ButtonVariants.GHOST,
-      `
-      cursor: pointer;
-    `,
-    )}
   `};
 `;
