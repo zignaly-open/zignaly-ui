@@ -25,14 +25,12 @@ ButtonIconVariations.args = {
     { ...NormalButton.args, variant: "primary", rightElement: BTC },
     { ...NormalButton.args, variant: "primary", leftElement: ArrowBottomIcon },
     { ...NormalButton.args, variant: "primary", leftElement: ArrowBottomIcon, rightElement: BTC },
-    { ...NormalButton.args, variant: "primary", icon: BTC },
   ],
   buttonsRow2: [
     { ...NormalButton.args, variant: "secondary" },
     { ...NormalButton.args, variant: "secondary", rightElement: BTC },
     { ...NormalButton.args, variant: "secondary", leftElement: ArrowBottomIcon },
     { ...NormalButton.args, variant: "secondary", leftElement: ArrowBottomIcon, rightElement: BTC },
-    { ...NormalButton.args, variant: "secondary", icon: BTC },
   ],
 };
 

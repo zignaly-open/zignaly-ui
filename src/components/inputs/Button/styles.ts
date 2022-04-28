@@ -129,7 +129,7 @@ export const Layout = styled.button<LayoutProps>`
         font-style: normal;
         font-weight: 600;
         line-height: 12px;
-        letter-spacing: 0px;
+        letter-spacing: 1.1px;
         text-align: center;
       }
       
@@ -176,7 +176,7 @@ export const Layout = styled.button<LayoutProps>`
         font-style: normal;
         font-weight: 600;
         line-height: 14px;
-        letter-spacing: 0px;
+        letter-spacing: 1.1px;
         text-align: center;
       }
       
@@ -626,7 +626,6 @@ export const Layout = styled.button<LayoutProps>`
         `            
         ${Caption} {
           color: #9CA3AF;
-          letter-spacing: 2px;
         }
       `,
       )} 
@@ -636,7 +635,6 @@ export const Layout = styled.button<LayoutProps>`
         `            
         ${Caption} {
           color: #26c4c1;
-          letter-spacing: 2px;
         }
       `,
       )}
