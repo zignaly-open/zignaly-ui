@@ -1,7 +1,7 @@
 // Dependencies
 import React, { ReactElement } from "react";
 import Button from "..";
-import { buttonSizes, buttonVariants } from "../types";
+import { buttonSizes, buttonVariants, buttonColors } from "../types";
 import { Layout, StoryList } from "./styles";
 
 // Types
@@ -14,6 +14,7 @@ interface ButtonProps {
   leftElement?: ReactElement<any> | String | null;
   rightElement?: ReactElement<any> | String | null;
   disabled?: boolean;
+  color?: keyof typeof buttonColors;
 }
 
 type ButtonVariationsTypes = {
@@ -45,6 +46,7 @@ export function ButtonVariations({
             rightElement={button.rightElement}
             disabled={button.disabled}
             onClick={() => {}}
+            color={button.color}
           ></Button>
         ))}
       </StoryList>
@@ -61,6 +63,7 @@ export function ButtonVariations({
               rightElement={button.rightElement}
               disabled={button.disabled}
               onClick={() => {}}
+              color={button.color}
             >
               Example button
             </Button>
@@ -80,6 +83,7 @@ export function ButtonVariations({
               rightElement={button.rightElement}
               disabled={button.disabled}
               onClick={() => {}}
+              color={button.color}
             >
               Example button
             </Button>
@@ -99,6 +103,7 @@ export function ButtonVariations({
               rightElement={button.rightElement}
               disabled={button.disabled}
               onClick={() => {}}
+              color={button.color}
             >
               Example button
             </Button>
@@ -118,6 +123,7 @@ export function ButtonVariations({
               rightElement={button.rightElement}
               disabled={button.disabled}
               onClick={() => {}}
+              color={button.color}
             >
               Example button
             </Button>

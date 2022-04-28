@@ -18,8 +18,8 @@ export default {
 
 const Template: ComponentStory<typeof ButtonVariations> = (args) => <ButtonVariations {...args} />;
 
-export const Heading = Template.bind({});
-Heading.args = {
+export const ButtonIconVariations = Template.bind({});
+ButtonIconVariations.args = {
   buttonsRow1: [
     { ...NormalButton.args, variant: "primary" },
     { ...NormalButton.args, variant: "primary", rightElement: BTC },
@@ -28,28 +28,50 @@ Heading.args = {
     { ...NormalButton.args, variant: "primary", icon: BTC },
   ],
   buttonsRow2: [
-    { ...NormalButton.args },
-    { ...NormalButton.args, variant: "primary" },
-    { ...NormalButton.args, variant: "primary" },
-  ],
-  buttonsRow3: [
-    { ...NormalButton.args, variant: "primary" },
-    { ...NormalButton.args, variant: "primary" },
-    { ...NormalButton.args, variant: "primary" },
+    { ...NormalButton.args, variant: "secondary" },
+    { ...NormalButton.args, variant: "secondary", rightElement: BTC },
+    { ...NormalButton.args, variant: "secondary", leftElement: ArrowBottomIcon },
+    { ...NormalButton.args, variant: "secondary", leftElement: ArrowBottomIcon, rightElement: BTC },
+    { ...NormalButton.args, variant: "secondary", icon: BTC },
   ],
 };
 
-export const Body = Template.bind({});
-Body.args = {
+export const ButtonSizes = Template.bind({});
+ButtonSizes.args = {
   buttonsRow1: [
-    { ...NormalButton.args, variant: "primary" },
-    { ...NormalButton.args, variant: "primary" },
-    { ...NormalButton.args, variant: "primary" },
+    { ...NormalButton.args, variant: "primary", size: "small" },
+    { ...NormalButton.args, variant: "primary", size: "medium" },
+    { ...NormalButton.args, variant: "primary", size: "large" },
+    { ...NormalButton.args, variant: "primary", size: "xlarge" },
   ],
   buttonsRow2: [
-    { ...NormalButton.args, variant: "primary" },
-    { ...NormalButton.args, variant: "primary" },
-    { ...NormalButton.args, variant: "primary" },
-    { ...NormalButton.args, variant: "primary" },
+    { ...NormalButton.args, variant: "secondary", size: "small" },
+    { ...NormalButton.args, variant: "secondary", size: "medium" },
+    { ...NormalButton.args, variant: "secondary", size: "large" },
+    { ...NormalButton.args, variant: "secondary", size: "xlarge" },
+  ],
+};
+
+export const ButtonDisabled = Template.bind({});
+ButtonDisabled.args = {
+  buttonsRow1: [
+    { ...NormalButton.args, variant: "primary", size: "medium", disabled: false },
+    { ...NormalButton.args, variant: "primary", size: "medium", disabled: true },
+  ],
+  buttonsRow2: [
+    { ...NormalButton.args, variant: "secondary", size: "medium", disabled: false },
+    { ...NormalButton.args, variant: "secondary", size: "medium", disabled: true },
+  ],
+};
+
+export const ButtonTextColors = Template.bind({});
+ButtonTextColors.args = {
+  buttonsRow1: [
+    { ...NormalButton.args, variant: "primary", size: "medium", color: "grey" },
+    { ...NormalButton.args, variant: "primary", size: "medium", color: "green" },
+  ],
+  buttonsRow2: [
+    { ...NormalButton.args, variant: "secondary", size: "medium", color: "grey" },
+    { ...NormalButton.args, variant: "secondary", size: "medium", color: "green" },
   ],
 };
