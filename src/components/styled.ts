@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { styledIf } from "utils/styled";
 
 // Types
-import { buttonVariants, buttonSizes } from "./inputs/Button/types";
+import { ButtonVariants, ButtonSizes } from "./inputs/Button";
 
 export const ButtonGroup = styled.div`
   display: grid;
@@ -16,10 +16,7 @@ export const ButtonGroup = styled.div`
   `}
 `;
 
-export const Button = styled.button<{
-  size: keyof typeof buttonSizes;
-  variant: keyof typeof buttonVariants;
-}>`
+export const Button = styled.button<{ size: ButtonSizes; variant: ButtonVariants }>`
   /* Auto layout */
   display: flex;
   flex-direction: row;
@@ -35,17 +32,25 @@ export const Button = styled.button<{
 
   ${(props) => `
     ${styledIf(
-      props.size === "small",
+      props.size === ButtonSizes.SMALL,
       `
       padding: 8px 18px;
     `,
     )}
   
     ${styledIf(
-      props.variant === "primary",
+      props.variant === ButtonVariants.PRIMARY,
       `
       background-color: red;
     `,
     )}  
+    
+    ${styledIf(
+      // @ts-ignore fixme
+      props.variant !== ButtonVariants.GHOST,
+      `
+      cursor: pointer;
+    `,
+    )}
   `};
 `;

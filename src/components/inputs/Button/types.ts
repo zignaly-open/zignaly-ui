@@ -1,32 +1,32 @@
 import { ReactElement } from "react";
 import * as React from "react";
 
-export const buttonVariants = {
-  primary: "primary",
-  secondary: "secondary",
-};
+export enum ButtonVariants {
+  PRIMARY = "primary",
+  SECONDARY = "secondary",
+}
 
-export const buttonSizes = {
-  small: "small",
-  medium: "medium",
-  large: "large",
-  xlarge: "xlarge",
-};
-export const buttonColors = {
-  grey: "grey",
-  green: "green",
-};
+export enum ButtonSizes {
+  SMALL = "small",
+  MEDIUM = "medium",
+  LARGE = "large",
+  XLARGE = "x-large",
+}
+
+export enum ButtonColors {
+  GREY = "grey",
+  GREEN = "green",
+}
 
 export type ButtonProps = {
-  variant?: keyof typeof buttonVariants;
-  size?: keyof typeof buttonSizes;
+  variant?: ButtonVariants;
+  size?: ButtonSizes;
   caption?: string | null;
   icon?: ReactElement<any> | String | null;
   leftElement?: ReactElement<any> | String | null;
   rightElement?: ReactElement<any> | String | null;
   disabled?: boolean;
-  color?: keyof typeof buttonColors;
+  color?: ButtonColors;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
-  children?: React.ReactNode;
 };

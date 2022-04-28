@@ -1,23 +1,24 @@
 // Dependencies
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
-import { buttonVariants, buttonSizes, buttonColors } from "./types";
+import { ButtonSizes, ButtonVariants } from "./";
+import { ButtonColors } from "./types";
 
-const isPrimaryButton = (variant: keyof typeof buttonVariants) => variant === "primary";
+const isPrimaryButton = (variant: ButtonVariants) => variant === ButtonVariants.PRIMARY;
 
-const isSecondaryButton = (variant: keyof typeof buttonVariants) => variant === "secondary";
+const isSecondaryButton = (variant: ButtonVariants) => variant === ButtonVariants.SECONDARY;
 
-const isSmallButton = (size: keyof typeof buttonSizes) => size === "small";
+const isSmallButton = (size: ButtonSizes) => size === ButtonSizes.SMALL;
 
-const isMediumButton = (size: keyof typeof buttonSizes) => size === "medium";
+const isMediumButton = (size: ButtonSizes) => size === ButtonSizes.MEDIUM;
 
-const isLargeButton = (size: keyof typeof buttonSizes) => size === "large";
+const isLargeButton = (size: ButtonSizes) => size === ButtonSizes.LARGE;
 
-const isXLargeButton = (size: keyof typeof buttonSizes) => size === "xlarge";
+const isXLargeButton = (size: ButtonSizes) => size === ButtonSizes.XLARGE;
 
-const isGreyColor = (color: keyof typeof buttonColors) => color === "grey";
+const isGreyColor = (color: ButtonColors) => color === ButtonColors.GREY;
 
-const isGreenColor = (color: keyof typeof buttonColors) => color === "green";
+const isGreenColor = (color: ButtonColors) => color === ButtonColors.GREEN;
 
 export const Caption = styled.div`
   z-index: 2;
@@ -70,9 +71,9 @@ export const CenterIcon = styled.img<IconProps>`
  * Layout
  */
 interface LayoutProps {
-  variant: keyof typeof buttonVariants;
-  size: keyof typeof buttonSizes;
-  color: keyof typeof buttonColors;
+  size: ButtonSizes;
+  variant: ButtonVariants;
+  color: ButtonColors;
   withElements: Boolean;
   onlyIcon: Boolean;
 }
@@ -110,6 +111,7 @@ export const Layout = styled.button<LayoutProps>`
       isSmallButton(size),
       `
       ${Container} {
+        padding: 9px 18px;
         min-width: 88px;      
       }
             
@@ -128,7 +130,7 @@ export const Layout = styled.button<LayoutProps>`
         font-style: normal;
         font-weight: 600;
         line-height: 12px;
-        letter-spacing: 1.1px;
+        letter-spacing: 0px;
         text-align: center;
       }
       
@@ -175,7 +177,7 @@ export const Layout = styled.button<LayoutProps>`
         font-style: normal;
         font-weight: 600;
         line-height: 14px;
-        letter-spacing: 1.1px;
+        letter-spacing: 0px;
         text-align: center;
       }
       
@@ -308,7 +310,6 @@ export const Layout = styled.button<LayoutProps>`
     `
       ${Container} {
         background: linear-gradient(289.8deg, #149CAD 0%, #4540C1 100%);
-
       }
       
       &:enabled:focus:not(:focus-visible) {
@@ -522,11 +523,11 @@ export const Layout = styled.button<LayoutProps>`
     `
       ${Container} {
         transition: all 0.2s linear;
+        border: 1px solid #4A4958;
         background: rgba(12, 13, 33, 0.8);
-        outline: 1px solid #4A4958;
              
         &:enabled:hover {
-          outline: 1px dashed #4A4958;
+          border: 1px dashed #4A4958;
           background: linear-gradient(289.8deg, rgba(20, 156, 173, 0.16) 0%, rgba(69, 64, 193, 0.16) 100%);
         
           ${Caption} {
@@ -535,6 +536,7 @@ export const Layout = styled.button<LayoutProps>`
           }
         }
       }
+
       
       &:enabled:focus:not(:focus-visible) {
         outline: 0;
@@ -625,6 +627,7 @@ export const Layout = styled.button<LayoutProps>`
         `            
         ${Caption} {
           color: #9CA3AF;
+          letter-spacing: 2px;
         }
       `,
       )} 
@@ -634,6 +637,7 @@ export const Layout = styled.button<LayoutProps>`
         `            
         ${Caption} {
           color: #26c4c1;
+          letter-spacing: 2px;
         }
       `,
       )}

@@ -6,14 +6,14 @@ import { ReactElement, useMemo } from "react";
 import * as styled from "./styles";
 
 // Types
-import { ButtonProps } from "./types";
+import { ButtonVariants, ButtonSizes, ButtonProps, ButtonColors } from "./types";
 
 function Button({
-  variant = "primary",
-  size = "medium",
+  variant = ButtonVariants.PRIMARY,
+  size = ButtonSizes.MEDIUM,
   caption = "Button",
   icon = null,
-  color = "grey",
+  color = ButtonColors.GREY,
   leftElement = null,
   rightElement = null,
   disabled = false,
@@ -93,4 +93,5 @@ function Button({
   );
 }
 
+export { ButtonVariants, ButtonSizes };
 export default Button;

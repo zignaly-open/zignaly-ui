@@ -3,7 +3,7 @@ import * as React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Component
-import Button from "./";
+import Button, { ButtonSizes, ButtonVariants } from "./";
 
 // Assets
 import CloseIcon from "assets/icons/close-icon.svg";
@@ -61,8 +61,10 @@ export default {
 
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
+/// Normal Buttons
 export const NormalButton = Template.bind({});
 NormalButton.args = {
-  variant: "primary",
-  size: "medium",
+  variant: ButtonVariants.PRIMARY,
+  size: ButtonSizes.MEDIUM,
+  leftElement: CloseIcon,
 };
