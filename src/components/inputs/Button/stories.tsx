@@ -17,7 +17,7 @@ type Icons = typeof ICONS;
 
 const renderIcon = (icon: keyof Icons) => {
   const Icon = ICONS[icon];
-  return Icon ? <Icon /> : null;
+  return Icon ? Icon : null;
 };
 
 export default {
