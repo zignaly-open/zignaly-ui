@@ -3,7 +3,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 // Assets
-import CheckIcon from "../../../assets/icons/check-icon.svg";
+import CheckIcon from "../../../assets/icons/check-icon.svg?url";
 
 // Component
 import Table from "./";
@@ -12,14 +12,11 @@ import PriceLabel from "./components/PriceLabel";
 import CoinLabel from "./components/CoinLabel";
 import PercentageIndicator from "./components/PercentageIndicator";
 import ConnectionStateLabel, { ConnectionStateLabelId } from "./components/ConnectionStateLabel";
-import Button, { ButtonVariants } from "components/inputs/Button";
+import Button from "components/inputs/Button";
 import DateLabel from "./components/DateLabel";
 
 // Styles
 import { Actions, InvestorLabel } from "./styles";
-
-// Utils
-import { weightByType } from "../Typography/types";
 
 export default {
   title: "Display/Table",
@@ -35,35 +32,35 @@ export const MyCoins = Template.bind({});
 MyCoins.args = {
   columns: [
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Coin"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Coin"}</Typography>,
       accessor: "coin",
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Total Balance"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Total Balance"}</Typography>,
       accessor: "totalBalance",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Available Balance"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Available Balance"}</Typography>,
       accessor: "availableBalance",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Locked Balance"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Locked Balance"}</Typography>,
       accessor: "lockedBalance",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Value BTC"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Value BTC"}</Typography>,
       accessor: "valueInBtc",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Value in USD"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Value in USD"}</Typography>,
       accessor: "valueInUsd",
       // @ts-ignore
       isAlignThRight: true,
@@ -77,7 +74,12 @@ MyCoins.args = {
       lockedBalance: <PriceLabel coin={"ETHA"} value={"30.18389589"} />,
       valueInBtc: <PriceLabel coin={"BTC"} value={"0.78232496"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"3.200"} fiat />,
-      action: <Actions><Button caption={"Deposit"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /><Button caption={"Withdraw"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /></Actions>,
+      action: (
+        <Actions>
+          <Button caption={"Deposit"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
+      ),
     },
     {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
@@ -86,7 +88,12 @@ MyCoins.args = {
       lockedBalance: <PriceLabel coin={"BTC"} value={"30.18389"} />,
       valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"34,000"} fiat />,
-      action: <Actions><Button caption={"Deposit"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /><Button caption={"Withdraw"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /></Actions>
+      action: (
+        <Actions>
+          <Button caption={"Deposit"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
+      ),
     },
     {
       coin: <CoinLabel coin={"BNB"} name={"Bianance Coin"} />,
@@ -95,7 +102,12 @@ MyCoins.args = {
       lockedBalance: <PriceLabel coin={"BNB"} value={"350"} />,
       valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
       valueInUsd: <PriceLabel coin={"EUR"} value={"400"} fiat />,
-      action: <Actions><Button caption={"Deposit"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /><Button caption={"Withdraw"} variant={ButtonVariants.SECONDARY} onClick={() => {}} /></Actions>
+      action: (
+        <Actions>
+          <Button caption={"Deposit"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
+      ),
     },
   ],
 };
@@ -104,54 +116,62 @@ export const Investors = Template.bind({});
 Investors.args = {
   columns: [
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"User ID"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"User ID"}</Typography>,
       accessor: "userId",
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Email"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Email"}</Typography>,
       accessor: "email",
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Investment"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Investment"}</Typography>,
       accessor: "investment",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"P & L"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"P & L"}</Typography>,
       accessor: "pyd",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"P & L Total"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"P & L Total"}</Typography>,
       accessor: "pydTotal",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Total Fees Paid"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Total Fees Paid"}</Typography>,
       accessor: "totalFeesPaid",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Success Fee"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Success Fee"}</Typography>,
       accessor: "successFee",
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Fees in ZIG"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Fees in ZIG"}</Typography>,
       accessor: "feesInZig",
     },
     {
-      Header: <Typography color={"neutral200"} variant={"body2"} weight={weightByType.regular}>{"Status"}</Typography>,
+      Header: <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{"Status"}</Typography>,
       accessor: "status",
     },
   ],
   data: [
     {
-      userId: <InvestorLabel color={"neutral100"} variant={"h3"}>{"5f886d29da8e9666b1684c9a"}</InvestorLabel>,
-      email: <InvestorLabel color={"neutral100"} variant={"h3"}>{"tec**@zig**.com"}</InvestorLabel>,
+      userId: (
+        <InvestorLabel color={"neutral100"} variant={"h3"}>
+          {"5f886d29da8e9666b1684c9a"}
+        </InvestorLabel>
+      ),
+      email: (
+        <InvestorLabel color={"neutral100"} variant={"h3"}>
+          {"tec**@zig**.com"}
+        </InvestorLabel>
+      ),
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
         <PriceLabel
@@ -162,7 +182,11 @@ Investors.args = {
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
-      successFee: <InvestorLabel color={"neutral100"} variant={"h3"}>{"10%"}</InvestorLabel>,
+      successFee: (
+        <InvestorLabel color={"neutral100"} variant={"h3"}>
+          {"10%"}
+        </InvestorLabel>
+      ),
       feesInZig: <img src={CheckIcon} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
     },

@@ -6,9 +6,9 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Select from "./";
 
 // Assets
-import EthereumIcon from "assets/icons/coins/eth.svg";
-import BitcoinIcon from "assets/icons/coins/btc.svg";
-import DogecoinIcon from "assets/icons/coins/doge.svg";
+import EthereumIcon from "assets/icons/coins/eth.svg?url";
+import BitcoinIcon from "assets/icons/coins/btc.svg?url";
+import DogecoinIcon from "assets/icons/coins/doge.svg?url";
 
 const options = [
   {
@@ -34,11 +34,16 @@ export default {
       url: "https://www.figma.com/file/ab8A8un5PEQRHyyJgSIt2J/Forms?node-id=307%3A241",
     },
   },
+  argTypes: {
+    fullWidth: {
+      control: { type: "boolean" },
+    },
+  },
 } as ComponentMeta<typeof Select>;
 
 const Template: ComponentStory<typeof Select> = (args) => {
   const [value, setValue] = React.useState(null);
-  return <Select {...args} value={value} onSelectOption={setValue} />;
+  return <Select {...args} value={value} onChange={setValue} />;
 };
 
 export const Default = Template.bind({});

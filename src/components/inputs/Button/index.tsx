@@ -6,13 +6,14 @@ import { ReactElement, useMemo } from "react";
 import * as styled from "./styles";
 
 // Types
-import { ButtonVariants, ButtonSizes, ButtonProps } from "./types";
+import { ButtonProps } from "./types";
 
 function Button({
-  variant = ButtonVariants.PRIMARY,
-  size = ButtonSizes.NORMAL,
+  variant = "primary",
+  size = "medium",
   caption = "Button",
   icon = null,
+  color = "grey",
   leftElement = null,
   rightElement = null,
   disabled = false,
@@ -26,11 +27,9 @@ function Button({
    */
   const renderLeftElement = useMemo(
     () =>
-      typeof leftElement === "function" ? (
+      typeof leftElement === "object" ? (
         leftElement
-      ) : (
-        <styled.Icon src={leftElement} alt={caption} />
-      ),
+      ) : null,
     [leftElement],
   );
 
@@ -41,11 +40,9 @@ function Button({
    */
   const renderRightElement = useMemo(
     () =>
-      typeof rightElement === "function" ? (
+      typeof rightElement === "object" ? (
         rightElement
-      ) : (
-        <styled.Icon src={rightElement} alt={caption} />
-      ),
+      ) : null,
     [rightElement],
   );
 
@@ -59,11 +56,9 @@ function Button({
     () => (
       <styled.Caption>
         {icon ? (
-          typeof icon === "function" ? (
-            icon
-          ) : (
-            <styled.CenterIcon src={icon} alt={null} />
-          )
+          typeof icon === "object" ? (
+            <styled.CenterIcon>{icon}</styled.CenterIcon>
+          ) : null
         ) : (
           caption
         )}
@@ -79,6 +74,7 @@ function Button({
       disabled={disabled}
       variant={variant}
       size={size}
+      color={color}
       onClick={onClick}
       type={type}
     >
@@ -91,5 +87,4 @@ function Button({
   );
 }
 
-export { ButtonVariants, ButtonSizes };
 export default Button;

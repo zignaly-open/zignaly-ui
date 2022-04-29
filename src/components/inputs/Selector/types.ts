@@ -16,9 +16,10 @@ export type SelectProps = {
   disabled?: boolean;
   className?: string;
   placeholder: string;
-  onSelectOption: any;
+  onChange: any;
   options?: OptionItem[];
   value?: OptionItem | null;
   mode?: "default" | "collapsed";
   initialSelectedIndex: number | null;
+  fullWidth?: boolean;
 };

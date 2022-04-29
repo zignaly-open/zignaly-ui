@@ -17,5 +17,5 @@ const Template: ComponentStory<typeof IconButton> = (args) => <IconButton {...ar
 
 export const Basic = Template.bind({});
 Basic.args = {
-  icon: OptionDotsIcon,
+  icon: <OptionDotsIcon />,
 };
