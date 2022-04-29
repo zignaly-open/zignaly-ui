@@ -10,7 +10,6 @@ interface ButtonProps {
   variant?: keyof typeof buttonVariants;
   size?: keyof typeof buttonSizes;
   caption?: string | null;
-  icon?: ReactElement<any> | String | null;
   leftElement?: ReactElement<any> | String | null;
   rightElement?: ReactElement<any> | String | null;
   disabled?: boolean;
@@ -41,7 +40,6 @@ export function ButtonVariations({
             variant={button.variant}
             size={button.size}
             caption={button.caption}
-            icon={button.icon}
             leftElement={button.leftElement}
             rightElement={button.rightElement}
             disabled={button.disabled}
@@ -58,7 +56,7 @@ export function ButtonVariations({
               variant={button.variant}
               size={button.size}
               caption={button.caption}
-              icon={button.icon}
+
               leftElement={button.leftElement}
               rightElement={button.rightElement}
               disabled={button.disabled}
@@ -78,7 +76,6 @@ export function ButtonVariations({
               variant={button.variant}
               size={button.size}
               caption={button.caption}
-              icon={button.icon}
               leftElement={button.leftElement}
               rightElement={button.rightElement}
               disabled={button.disabled}
@@ -98,7 +95,7 @@ export function ButtonVariations({
               variant={button.variant}
               size={button.size}
               caption={button.caption}
-              icon={button.icon}
+
               leftElement={button.leftElement}
               rightElement={button.rightElement}
               disabled={button.disabled}
@@ -118,7 +115,7 @@ export function ButtonVariations({
               variant={button.variant}
               size={button.size}
               caption={button.caption}
-              icon={button.icon}
+
               leftElement={button.leftElement}
               rightElement={button.rightElement}
               disabled={button.disabled}
