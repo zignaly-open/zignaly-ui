@@ -3,7 +3,7 @@ import * as React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Component
-import Button, { ButtonSizes, ButtonVariants } from "./";
+import Button from "./";
 
 // Assets
 import CloseIcon from "assets/icons/close-icon.svg";
@@ -11,7 +11,7 @@ import ArrowDown from "assets/icons/arrow-bottom-icon.svg";
 
 const ICONS = {
   ArrowDown: <ArrowDown width={13} height={8} color={"black"} />,
-  CloseIcon : <CloseIcon width={13} height={13} color={"black"} />,
+  CloseIcon: <CloseIcon width={13} height={13} color={"black"} />,
 };
 type Icons = typeof ICONS;
 
@@ -31,11 +31,15 @@ export default {
   },
   argTypes: {
     size: {
-      options: ["small", "normal", "large", "xlarge"],
+      options: ["small", "medium", "large", "x-large"],
       control: { type: "select" },
     },
     variant: {
       options: ["primary", "secondary"],
+      control: { type: "select" },
+    },
+    color: {
+      options: ["grey", "green"],
       control: { type: "select" },
     },
     rightElement: {
@@ -85,9 +89,8 @@ const Template: ComponentStory<typeof Button> = ({ icon, leftElement, rightEleme
   );
 };
 
-/// Normal Buttons
 export const NormalButton = Template.bind({});
 NormalButton.args = {
-  variant: ButtonVariants.PRIMARY,
-  size: ButtonSizes.NORMAL,
+  variant: "primary",
+  size: "medium",
 };
