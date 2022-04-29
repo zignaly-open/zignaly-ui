@@ -3,11 +3,10 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 // Assets
-import OptionDotsIcon from "assets/icons/option-dots-icon.svg";
+import OptionDotsIcon from "assets/icons/option-dots-icon.svg?url";
 
 // Component
-import IconButton, { IconButtonSizes, IconButtonVariants } from "./";
-import { DropdownAlignment } from "components/inputs/IconButton/types";
+import IconButton from "./";
 
 export default {
   title: "Inputs/IconButton",
@@ -15,7 +14,7 @@ export default {
 
   argTypes: {
     variant: {
-      options: [IconButtonVariants.PRIMARY, IconButtonVariants.SECONDARY, IconButtonVariants.FLAT],
+      options: ["primary", "secondary", "flat"],
       control: { type: "radio" },
     },
     disabled: {
@@ -23,12 +22,7 @@ export default {
       defaultValue: false,
     },
     size: {
-      options: [
-        IconButtonSizes.SMALL,
-        IconButtonSizes.NORMAL,
-        IconButtonSizes.LARGE,
-        IconButtonSizes.XLARGE,
-      ],
+      options: ["small", "medium", "large", "xlarge"],
       control: { type: "radio" },
     },
   },
@@ -56,7 +50,7 @@ WithDropdownLeft.args = {
   icon: OptionDotsIcon,
   renderDropDown: <div>Render Dropdown Content</div>,
   dropDownOptions: {
-    alignment: DropdownAlignment.LEFT,
+    alignment: "left",
   },
 };
 
@@ -65,7 +59,7 @@ WithDropdownRight.args = {
   icon: OptionDotsIcon,
   renderDropDown: <div>Render Dropdown Content</div>,
   dropDownOptions: {
-    alignment: DropdownAlignment.RIGHT,
+    alignment: "right",
   },
 };
 

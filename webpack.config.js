@@ -23,6 +23,7 @@ const config = {
       typescript: {
         // build: true,
         mode: "write-dts",
+        // tsconfig: __dirname + "/tsconfig.json",
       },
     }),
     new CopyWebpackPlugin({
@@ -52,7 +53,18 @@ const config = {
         },
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        test: /\.svg$/i,
+        type: "asset",
+        resourceQuery: /url/, // *.svg?url
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        resourceQuery: { not: [/url/] },
+        use: ["@svgr/webpack"],
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
       },
     ],
@@ -66,6 +78,10 @@ const config = {
     ],
     alias: {
       "styled-components": path.resolve("./node_modules/styled-components"),
+      assets: path.resolve("../src/assets"),
+      components: path.resolve("../src/components"),
+      theme: path.resolve("../src/theme"),
+      utils: path.resolve("../src/utils"),
     },
   },
   // When importing a module whose path matches one of the following, just

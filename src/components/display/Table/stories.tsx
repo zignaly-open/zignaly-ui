@@ -3,7 +3,7 @@ import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 // Assets
-import CheckIcon from "../../../assets/icons/check-icon.svg";
+import CheckIcon from "../../../assets/icons/check-icon.svg?url";
 
 // Component
 import Table from "./";
@@ -12,10 +12,11 @@ import PriceLabel from "./components/PriceLabel";
 import CoinLabel from "./components/CoinLabel";
 import PercentageIndicator from "./components/PercentageIndicator";
 import ConnectionStateLabel, { ConnectionStateLabelId } from "./components/ConnectionStateLabel";
-import Button, { ButtonVariants } from "components/inputs/Button";
+import Button from "components/inputs/Button";
 import DateLabel from "./components/DateLabel";
-import { Actions, InvestorLabel } from "./styles";
 
+// Styles
+import { Actions, InvestorLabel } from "./styles";
 
 export default {
   title: "Display/Table",
@@ -75,8 +76,8 @@ MyCoins.args = {
       valueInUsd: <PriceLabel coin={"USD"} value={"3.200"} fiat />,
       action: (
         <Actions>
-          <Button caption={"Deposit"} variant={ButtonVariants.SECONDARY} onClick={() => {}} />
-          <Button caption={"Withdraw"} variant={ButtonVariants.SECONDARY} onClick={() => {}} />
+          <Button caption={"Deposit"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} variant={"secondary"} onClick={() => {}} />
         </Actions>
       ),
     },
@@ -89,8 +90,8 @@ MyCoins.args = {
       valueInUsd: <PriceLabel coin={"USD"} value={"34,000"} fiat />,
       action: (
         <Actions>
-          <Button caption={"Deposit"} variant={ButtonVariants.SECONDARY} onClick={() => {}} />
-          <Button caption={"Withdraw"} variant={ButtonVariants.SECONDARY} onClick={() => {}} />
+          <Button caption={"Deposit"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} variant={"secondary"} onClick={() => {}} />
         </Actions>
       ),
     },
@@ -103,8 +104,8 @@ MyCoins.args = {
       valueInUsd: <PriceLabel coin={"EUR"} value={"400"} fiat />,
       action: (
         <Actions>
-          <Button caption={"Deposit"} variant={ButtonVariants.SECONDARY} onClick={() => {}} />
-          <Button caption={"Withdraw"} variant={ButtonVariants.SECONDARY} onClick={() => {}} />
+          <Button caption={"Deposit"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} variant={"secondary"} onClick={() => {}} />
         </Actions>
       ),
     },

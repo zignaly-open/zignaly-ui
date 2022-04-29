@@ -3,14 +3,14 @@ import React, { useRef, useCallback, useState } from "react";
 import { useSortBy, useTable } from "react-table";
 
 // Assets
-import ArrowBottomWhiteIcon from "assets/icons/arrow-bottom-icon-white.svg";
-import OptionsDotsIcon from "assets/icons/option-dots-icon.svg";
+import ArrowBottomWhiteIcon from "assets/icons/arrow-bottom-icon-white.svg?url";
+import OptionsDotsIcon from "assets/icons/option-dots-icon.svg?url";
 
 // Styles
 import { Layout, OptionItem, OptionList, SortIcon, TableView, View, ThView } from "./styles";
 
 // Components
-import IconButton, { DropdownAlignment, IconButtonVariants } from "components/inputs/IconButton";
+import IconButton from "components/inputs/IconButton";
 import CheckBox from "components/inputs/CheckBox";
 
 const Table = ({ columns = [], data = [] }: { columns: any[]; data: Object[] }) => {
@@ -77,11 +77,11 @@ const Table = ({ columns = [], data = [] }: { columns: any[]; data: Object[] }) 
                 <th role={"row"}>
                   <div style={{ display: "flex", justifyContent: "flex-end" }}>
                     <IconButton
-                      variant={IconButtonVariants.GHOST}
+                      variant={"flat"}
                       icon={OptionsDotsIcon}
                       dropDownOptions={{
                         componentOverflowRef: tableRef,
-                        alignment: DropdownAlignment.RIGHT,
+                        alignment: "right",
                       }}
                       renderDropDown={
                         <OptionList>

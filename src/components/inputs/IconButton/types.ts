@@ -1,34 +1,33 @@
 import React, { ReactElement } from "react";
 
+export const buttonVariants = {
+  primary: "primary",
+  secondary: "secondary",
+  flat: "flat",
+};
+
+export const buttonSizes = {
+  small: "small",
+  medium: "medium",
+  large: "large",
+  xlarge: "xlarge",
+};
+
+export const dropdownAlignment = {
+  left: "left",
+  right: "right",
+};
+
 export type IconButtonProps = {
-  variant?: IconButtonVariants;
-  icon: string;
-  size?: IconButtonSizes;
+  icon: string | ReactElement;
+  variant?: keyof typeof buttonVariants;
+  size?: keyof typeof buttonSizes;
   disabled?: boolean;
   dropDownOptions?: {
     width?: string;
-    alignment?: String;
+    alignment?: keyof typeof dropdownAlignment;
     componentOverflowRef?: any;
   };
   onClick?: React.MouseEventHandler<HTMLButtonElement> | null;
   renderDropDown?: ReactElement<any> | null;
 };
-
-export enum IconButtonSizes {
-  SMALL = "small",
-  NORMAL = "normal",
-  LARGE = "large",
-  XLARGE = "xlarge",
-}
-
-export enum IconButtonVariants {
-  PRIMARY = "primary",
-  SECONDARY = "secondary",
-  FLAT = "flat",
-  GHOST = "ghost",
-}
-
-export enum DropdownAlignment {
-  LEFT = "left",
-  RIGHT = "right",
-}

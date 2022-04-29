@@ -5,7 +5,7 @@ import React, { useCallback, useState } from "react";
 import { Layout, Box, Label, Icon } from "./styles";
 
 // Assets
-import CheckmarkIcon from "assets/icons/checkmark-active-icon.svg";
+import CheckmarkIcon from "assets/icons/checkmark-active-icon.svg?url";
 
 // Types
 import { CheckBoxProps } from "./types";

@@ -1,23 +1,25 @@
 // Dependencies
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
-import { IconButtonVariants, IconButtonSizes, DropdownAlignment } from "./";
+import { buttonSizes, buttonVariants, dropdownAlignment } from "./types";
 
-const isPrimaryButton = (variant: IconButtonVariants) => variant === IconButtonVariants.PRIMARY;
+const isPrimaryButton = (variant: keyof typeof buttonVariants) =>
+  variant === buttonVariants.primary;
 
-const isSecondaryButton = (variant: IconButtonVariants) => variant === IconButtonVariants.SECONDARY;
+const isSecondaryButton = (variant: keyof typeof buttonVariants) =>
+  variant === buttonVariants.secondary;
 
-const isFlatButton = (variant: IconButtonVariants) => variant === IconButtonVariants.FLAT;
+const isFlatButton = (variant: keyof typeof buttonVariants) => variant === buttonVariants.flat;
 
-const isSmallButton = (size: IconButtonSizes) => size === IconButtonSizes.SMALL;
+const isSmallButton = (size: keyof typeof buttonSizes) => size === buttonSizes.small;
 
-const isMediumButton = (size: IconButtonSizes) => size === IconButtonSizes.NORMAL;
+const isMediumButton = (size: keyof typeof buttonSizes) => size === buttonSizes.medium;
 
-const isLargeButton = (size: IconButtonSizes) => size === IconButtonSizes.LARGE;
+const isLargeButton = (size: keyof typeof buttonSizes) => size === buttonSizes.large;
 
-const isXLargeButton = (size: IconButtonSizes) => size === IconButtonSizes.XLARGE;
+const isXLargeButton = (size: keyof typeof buttonSizes) => size === buttonSizes.xlarge;
 
-export const Icon = styled.img`
+export const Icon = styled.img<{ src: string }>`
   z-index: 2;
   position: relative;
   transition: color 0.2s linear;
@@ -36,7 +38,7 @@ export const Container = styled.div<any>`
 `;
 
 type DropdownProps = {
-  alignment: DropdownAlignment | any;
+  alignment: keyof typeof dropdownAlignment | any;
   width?: number | string | any;
 };
 
@@ -53,14 +55,14 @@ export const Dropdown = styled.div<DropdownProps>`
     width: ${width ?? "auto"};
   
     ${styledIf(
-      alignment === DropdownAlignment.LEFT,
+      alignment === dropdownAlignment.left,
       `
         border-radius: 0 4px 4px 4px;
       `,
     )}
     
     ${styledIf(
-      alignment === DropdownAlignment.RIGHT,
+      alignment === dropdownAlignment.right,
       `
         border-radius: 4px 0px 4px 4px;
       `,
@@ -72,8 +74,8 @@ export const Dropdown = styled.div<DropdownProps>`
  * Layout
  */
 interface LayoutProps {
-  size: IconButtonSizes;
-  variant: IconButtonVariants;
+  size: keyof typeof buttonSizes;
+  variant: keyof typeof buttonVariants;
   isActiveDropdown: boolean;
 }
 

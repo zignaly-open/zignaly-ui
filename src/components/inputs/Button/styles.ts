@@ -1,24 +1,23 @@
 // Dependencies
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
-import { ButtonSizes, ButtonVariants } from "./";
-import { ButtonColors } from "./types";
+import { buttonVariants, buttonSizes, buttonColors } from "./types";
 
-const isPrimaryButton = (variant: ButtonVariants) => variant === ButtonVariants.PRIMARY;
+const isPrimaryButton = (variant: keyof typeof buttonVariants) => variant === "primary";
 
-const isSecondaryButton = (variant: ButtonVariants) => variant === ButtonVariants.SECONDARY;
+const isSecondaryButton = (variant: keyof typeof buttonVariants) => variant === "secondary";
 
-const isSmallButton = (size: ButtonSizes) => size === ButtonSizes.SMALL;
+const isSmallButton = (size: keyof typeof buttonSizes) => size === "small";
 
-const isMediumButton = (size: ButtonSizes) => size === ButtonSizes.MEDIUM;
+const isMediumButton = (size: keyof typeof buttonSizes) => size === "medium";
 
-const isLargeButton = (size: ButtonSizes) => size === ButtonSizes.LARGE;
+const isLargeButton = (size: keyof typeof buttonSizes) => size === "large";
 
-const isXLargeButton = (size: ButtonSizes) => size === ButtonSizes.XLARGE;
+const isXLargeButton = (size: keyof typeof buttonSizes) => size === "xlarge";
 
-const isGreyColor = (color: ButtonColors) => color === ButtonColors.GREY;
+const isGreyColor = (color: keyof typeof buttonColors) => color === "grey";
 
-const isGreenColor = (color: ButtonColors) => color === ButtonColors.GREEN;
+const isGreenColor = (color: keyof typeof buttonColors) => color === "green";
 
 export const Caption = styled.div`
   z-index: 2;
@@ -55,14 +54,8 @@ export const RightElement = styled(LeftElement)`
 /**
  * Icons
  */
-interface IconProps {
-  src: any;
-  alt: any;
-}
 
-export const Icon = styled.img<IconProps>``;
-
-export const CenterIcon = styled.img<IconProps>`
+export const CenterIcon = styled.div`
   position: relative;
   top: 1px;
 `;
@@ -71,9 +64,9 @@ export const CenterIcon = styled.img<IconProps>`
  * Layout
  */
 interface LayoutProps {
-  size: ButtonSizes;
-  variant: ButtonVariants;
-  color: ButtonColors;
+  variant: keyof typeof buttonVariants;
+  size: keyof typeof buttonSizes;
+  color: keyof typeof buttonColors;
   withElements: Boolean;
   onlyIcon: Boolean;
 }
@@ -111,7 +104,6 @@ export const Layout = styled.button<LayoutProps>`
       isSmallButton(size),
       `
       ${Container} {
-        padding: 9px 18px;
         min-width: 88px;      
       }
             
@@ -130,7 +122,7 @@ export const Layout = styled.button<LayoutProps>`
         font-style: normal;
         font-weight: 600;
         line-height: 12px;
-        letter-spacing: 0px;
+        letter-spacing: 1.1px;
         text-align: center;
       }
       
@@ -154,9 +146,6 @@ export const Layout = styled.button<LayoutProps>`
         ${Container} {
           padding: 10px 12px;
         }
-        ${CenterIcon} {
-          width: 10px;
-        }
     `,
       )}
     `,
@@ -177,7 +166,7 @@ export const Layout = styled.button<LayoutProps>`
         font-style: normal;
         font-weight: 600;
         line-height: 14px;
-        letter-spacing: 0px;
+        letter-spacing: 1.1px;
         text-align: center;
       }
       
@@ -201,9 +190,6 @@ export const Layout = styled.button<LayoutProps>`
         `
         ${Container} {
           padding: 13px 16px
-        }
-        ${CenterIcon} {
-          width: 10px;
         }
     `,
       )}
@@ -246,11 +232,6 @@ export const Layout = styled.button<LayoutProps>`
         `
         ${Container} {
           padding: 18px 20px;
-        }
-        
-        ${CenterIcon} {
-          width: 23px;
-          height: 23px;
         }
       `,
       )}
@@ -296,10 +277,6 @@ export const Layout = styled.button<LayoutProps>`
         ${Container} {
           padding: 20px 36px
         }
-        ${CenterIcon} {
-          width: 26px;
-          height: 26px
-        }
     `,
       )}
   `,
@@ -310,6 +287,7 @@ export const Layout = styled.button<LayoutProps>`
     `
       ${Container} {
         background: linear-gradient(289.8deg, #149CAD 0%, #4540C1 100%);
+
       }
       
       &:enabled:focus:not(:focus-visible) {
@@ -523,11 +501,11 @@ export const Layout = styled.button<LayoutProps>`
     `
       ${Container} {
         transition: all 0.2s linear;
-        border: 1px solid #4A4958;
         background: rgba(12, 13, 33, 0.8);
+        outline: 1px solid #4A4958;
              
         &:enabled:hover {
-          border: 1px dashed #4A4958;
+          outline: 1px dashed #4A4958;
           background: linear-gradient(289.8deg, rgba(20, 156, 173, 0.16) 0%, rgba(69, 64, 193, 0.16) 100%);
         
           ${Caption} {
@@ -536,7 +514,6 @@ export const Layout = styled.button<LayoutProps>`
           }
         }
       }
-
       
       &:enabled:focus:not(:focus-visible) {
         outline: 0;
@@ -627,7 +604,6 @@ export const Layout = styled.button<LayoutProps>`
         `            
         ${Caption} {
           color: #9CA3AF;
-          letter-spacing: 2px;
         }
       `,
       )} 
@@ -637,7 +613,6 @@ export const Layout = styled.button<LayoutProps>`
         `            
         ${Caption} {
           color: #26c4c1;
-          letter-spacing: 2px;
         }
       `,
       )}

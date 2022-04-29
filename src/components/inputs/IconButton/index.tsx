@@ -4,21 +4,21 @@ import { useClickAway, useWindowSize } from "react-use";
 import { Portal } from "react-portal";
 
 // Styled Components
-import { Layout, ViewPort, Icon, Dropdown, Container } from "./styles";
+import { Layout, ViewPort, Dropdown, Icon, Container } from "./styles";
 
 // Types
-import { DropdownAlignment, IconButtonProps, IconButtonSizes, IconButtonVariants } from "./types";
+import { IconButtonProps } from "./types";
 
 const IconButton = ({
   icon,
   disabled = false,
-  size = IconButtonSizes.NORMAL,
-  variant = IconButtonVariants.PRIMARY,
+  size = "medium",
+  variant = "primary",
   onClick = null,
   dropDownOptions = {
     width: "auto",
     componentOverflowRef: null,
-    alignment: DropdownAlignment.LEFT,
+    alignment: "left",
   },
   renderDropDown = null,
 }: IconButtonProps) => {
@@ -61,7 +61,7 @@ const IconButton = ({
 
           const scrollLeft = componentOverflowRef ? componentOverflowRef.current.scrollLeft : 0;
 
-          if (alignment === DropdownAlignment.RIGHT) {
+          if (alignment === "right") {
             container.style.left = `${
               offsetLeft - (container.clientWidth - clientWidth) - scrollLeft
             }px`;
@@ -111,5 +111,4 @@ const IconButton = ({
   );
 };
 
-export { IconButtonVariants, IconButtonSizes, DropdownAlignment };
 export default IconButton;
