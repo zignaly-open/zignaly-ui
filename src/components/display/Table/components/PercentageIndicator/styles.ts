@@ -1,6 +1,9 @@
 // Dependencies
 import styled from "styled-components";
 
+// Components
+import ArrowChartUpIcon from "assets/icons/arrow-chart-up-icon.svg";
+
 export const Layout = styled.div``;
 
 export const Value = styled.span<{ isPositive: boolean }>`
@@ -13,9 +16,10 @@ export const Value = styled.span<{ isPositive: boolean }>`
   `}
 `;
 
-export const Indicator = styled.img<{ isPositive: boolean }>`
+export const Indicator = styled(ArrowChartUpIcon)<{ isPositive: boolean }>`
   margin-right: 6px;
-  ${(props) => `
-    transform: rotateX(${props.isPositive ? "0" : "180"}deg);
+  vertical-align: middle;
+  ${({ isPositive }) => `
+    transform: ${isPositive ? "rotateX(0deg)" : "rotateX(180deg)"};
   `}
 `;
