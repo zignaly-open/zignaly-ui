@@ -4,15 +4,7 @@ import { ReactElement, useMemo } from "react";
 
 // Styled Components
 import * as styled from "./styles";
-
-type ButtonProps = {
-  caption?: String;
-  icon?: ReactElement<any> | String;
-  leftElement?: ReactElement<any> | String;
-  rightElement?: ReactElement<any> | String;
-  underline?: boolean;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
-};
+import { ButtonProps } from "./types";
 
 function TextButton({
   caption = "Button",

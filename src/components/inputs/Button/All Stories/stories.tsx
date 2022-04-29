@@ -7,8 +7,8 @@ import ArrowDown from "assets/icons/arrow-bottom-icon.svg";
 import BTC from "assets/icons/coins/btc.svg";
 
 const icons = {
-  arrowDown: <ArrowDown color={"#E1E9F0"} width={"10px"}/>,
-  btc: <BTC width={"13px"}/>
+  arrowDown: <ArrowDown color={"#E1E9F0"} />,
+  btc: <BTC />
 };
 
 export default {

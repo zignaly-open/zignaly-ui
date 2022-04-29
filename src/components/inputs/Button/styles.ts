@@ -135,6 +135,7 @@ export const Layout = styled.button<LayoutProps>`
       }
 
       ${RightElement} {
+        width: 10px;
           margin-left: 8px;
           margin-right: 0;
       }
@@ -175,6 +176,7 @@ export const Layout = styled.button<LayoutProps>`
       }
 
       ${RightElement} {
+          width: 10px;
           margin-left: 10px;
           margin-right: 0;
       }
@@ -206,11 +208,12 @@ export const Layout = styled.button<LayoutProps>`
       }
       
       ${LeftElement} {
-          width: 13px;
+          width: 23px;
           margin-right: 14px;
       }
 
       ${RightElement} {
+          width: 23px;
           margin-left: 14px;
           margin-right: 0;
       }
@@ -250,6 +253,8 @@ export const Layout = styled.button<LayoutProps>`
       }
 
       ${RightElement} {
+          width: 26px;
+          height: 26px;
           margin-left: 18px;
           margin-right: 0;
       }
