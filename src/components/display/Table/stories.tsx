@@ -2,9 +2,6 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 
-// Assets
-import CheckIcon from "../../../assets/icons/check-icon.svg?url";
-
 // Component
 import Table from "./";
 import Typography from "components/display/Typography";
@@ -16,7 +13,8 @@ import Button from "components/inputs/Button";
 import DateLabel from "./components/DateLabel";
 
 // Styles
-import { Actions, InvestorLabel } from "./styles";
+import { Actions, CheckIconStyled, InvestorLabel } from "./styles";
+import { dark } from "../../../theme";
 
 export default {
   title: "Display/Table",
@@ -169,13 +167,13 @@ Investors.args = {
         <PriceLabel
           coin={"USDT"}
           value={"37.5"}
-          bottomElement={<PercentageIndicator value={-3} />}
+          bottomElement={<PercentageIndicator value={3} theme={dark} />}
         />
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
       successFee: <InvestorLabel color={"neutral100"} variant={"body1"} weight={"medium"}>{"10%"}</InvestorLabel>,
-      feesInZig: <img src={CheckIcon} />,
+      feesInZig: <CheckIconStyled width="16" height="12" />  ,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
     },
   ],

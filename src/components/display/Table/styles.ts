@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { styledIf } from "utils/styled";
 import Typography from "../Typography";
 
+// Assets
+import CheckIcon from "../../../assets/icons/check-icon.svg";
+
 export const Layout = styled.div``;
 
 export const View = styled.div`
@@ -245,4 +248,8 @@ export const Actions = styled.div`
 
 export const InvestorLabel = styled(Typography)`
   text-align: center;
+`;
+
+export const CheckIconStyled = styled(CheckIcon)`
+  vertical-align: middle;
 `;

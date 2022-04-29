@@ -2,7 +2,7 @@
 import styled from "styled-components";
 
 // Components
-import ArrowChartUpIcon from "assets/icons/arrow-chart-up-icon.svg";
+import CaretTriangleIcon from "assets/icons/caret-triangle-icon.svg";
 
 export const Layout = styled.div``;
 
@@ -16,7 +16,7 @@ export const Value = styled.span<{ isPositive: boolean }>`
   `}
 `;
 
-export const Indicator = styled(ArrowChartUpIcon)<{ isPositive: boolean }>`
+export const Indicator = styled(CaretTriangleIcon)<{ isPositive: boolean }>`
   margin-right: 6px;
   vertical-align: middle;
   ${({ isPositive }) => `
