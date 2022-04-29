@@ -104,7 +104,9 @@ export const Layout = styled.button<LayoutProps>`
       isSmallButton(size),
       `
       ${Container} {
-        min-width: 88px;      
+        min-width: 88px; 
+        padding: 9px 18px;
+     
       }
             
       ${styledIf(
