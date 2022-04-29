@@ -129,17 +129,14 @@ export const Layout = styled.button<LayoutProps>`
       }
       
       ${LeftElement} {
-        img {
           width: 10px;
           margin-right: 8px;
-        }
+        
       }
 
       ${RightElement} {
-        img {
           margin-left: 8px;
           margin-right: 0;
-        }
       }
       
       ${styledIf(
@@ -173,18 +170,13 @@ export const Layout = styled.button<LayoutProps>`
       }
       
       ${LeftElement} {
-        img {
           width: 10px;
-          margin-right: 10px;
-        }
+          margin-right: 10px;  
       }
 
       ${RightElement} {
-        img {
           margin-left: 10px;
           margin-right: 0;
-
-        }
       }
       
       ${styledIf(
@@ -214,19 +206,13 @@ export const Layout = styled.button<LayoutProps>`
       }
       
       ${LeftElement} {
-        img {
           width: 13px;
           margin-right: 14px;
-
-        }
       }
 
       ${RightElement} {
-        img {
           margin-left: 14px;
           margin-right: 0;
-
-        }
       }
       
       ${styledIf(
@@ -258,19 +244,14 @@ export const Layout = styled.button<LayoutProps>`
       }
       
       ${LeftElement} {
-        img {
           width: 26px;
           height: 26px;
           margin-right: 18px;
-
-        }
       }
 
       ${RightElement} {
-        img {
           margin-left: 18px;
           margin-right: 0;
-        }
       }
       
       ${styledIf(

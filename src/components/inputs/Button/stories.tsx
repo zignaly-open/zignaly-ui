@@ -12,6 +12,7 @@ import ArrowDown from "assets/icons/arrow-bottom-icon.svg";
 const ICONS = {
   ArrowDown: <ArrowDown width={13} height={8} color={"black"} />,
   CloseIcon: <CloseIcon width={13} height={13} color={"black"} />,
+  NoIcon: null,
 };
 type Icons = typeof ICONS;
 
@@ -31,7 +32,7 @@ export default {
   },
   argTypes: {
     size: {
-      options: ["small", "medium", "large", "x-large"],
+      options: ["small", "medium", "large", "xlarge"],
       control: { type: "select" },
     },
     variant: {
