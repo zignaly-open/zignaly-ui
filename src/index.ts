@@ -12,7 +12,7 @@ import ZigWalletIndicator from "components/display/ZigWalletIndicator";
 import CoinLabel from "components/display/Table/components/CoinLabel";
 
 // Inputs
-import Button from "components/inputs/Button";
+import Button from "./components/inputs/Button";
 import CheckBox from "components/inputs/CheckBox";
 import IconButton from "components/inputs/IconButton";
 import InputAmount from "components/inputs/InputAmount";
@@ -22,6 +22,7 @@ import { ButtonGroup } from "./components/styled";
 
 // Icons
 import CloseIcon from "./assets/icons/close-icon.svg";
+import CopyIcon from "./assets/icons/close-icon.svg";
 
 // Navigation
 import Tabs from "components/navigation/Tabs";
@@ -59,6 +60,7 @@ export {
   ButtonGroup,
   // Icons
   CloseIcon,
+  CopyIcon,
   // Navigation
   Tabs,
   TabPanel,
