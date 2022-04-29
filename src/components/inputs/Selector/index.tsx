@@ -7,7 +7,7 @@ import { useClickAway } from "react-use";
 import * as styled from "./styles";
 
 // Assets
-import CaretDownIcon from "assets/icons/caret-down-icon.svg";
+import CaretDownIcon from "assets/icons/caret-down-icon.svg?url";
 
 // Types
 import { OptionItem, SelectProps, SelectSizes } from "./types";
@@ -21,8 +21,9 @@ function Select({
   options = [],
   disabled = false,
   placeholder = "Button",
-  onSelectOption = () => {},
+  onChange = () => {},
   size = SelectSizes.NORMAL,
+  fullWidth,
 }: SelectProps): ReactElement {
   // Ref
   const selectorRef = useRef(null);
@@ -32,7 +33,7 @@ function Select({
 
   const handleClickItem = useCallback(
     (value: OptionItem) => {
-      onSelectOption(value);
+      onChange(value);
       setMenuActive(false);
     },
     [options],
@@ -50,6 +51,8 @@ function Select({
       disabled={disabled}
       ref={selectorRef}
       collapsed={mode === "collapsed" && !isActiveMenu}
+      fullWidth={fullWidth}
+      name={name}
     >
       {label && <styled.Label htmlFor={name}>{label}</styled.Label>}
       <styled.Container onClick={() => setMenuActive(!isActiveMenu)}>

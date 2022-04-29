@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import React from "react";
 import InputText from "./index";
-import CopyIcon from "assets/icons/copy-icon.svg";
+import CopyIcon from "assets/icons/copy-icon.svg?url";
 
 export default {
   title: "Inputs/InputText",
@@ -14,6 +14,13 @@ export default {
       type: "string",
     },
     disabled: {
+      type: "boolean",
+      defaultValue: false,
+    },
+    defaultValue: {
+      type: "string",
+    },
+    readOnly: {
       type: "boolean",
       defaultValue: false,
     },

@@ -9,6 +9,7 @@ import PercentageIndicator from "components/display/Table/components/PercentageI
 import PriceLabel from "components/display/Table/components/PriceLabel";
 import Typography from "components/display/Typography";
 import ZigWalletIndicator from "components/display/ZigWalletIndicator";
+import CoinLabel from "components/display/Table/components/CoinLabel";
 
 // Inputs
 import Button from "components/inputs/Button";
@@ -20,14 +21,14 @@ import Select from "components/inputs/Selector";
 import { ButtonGroup } from "./components/styled";
 
 // Icons
-import CloseIcon from "./assets/icons/close-icon.svg";
+import CloseIcon from "./assets/icons/close-icon.svg?url";
 
 // Navigation
 import Tabs from "components/navigation/Tabs";
 import TabPanel from "components/navigation/Tabs/components/TabPanel";
 import Tab from "components/navigation/Tabs/components/Tab";
 import ThemeProvider from "utils/ThemeProvider";
-import { dark, light} from "theme";
+import { dark, light } from "theme";
 
 export {
   /**
@@ -47,6 +48,7 @@ export {
   Typography,
   ErrorMessage,
   ZigWalletIndicator,
+  CoinLabel,
   // Inputs
   Button,
   CheckBox,
