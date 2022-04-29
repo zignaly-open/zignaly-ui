@@ -78,10 +78,8 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Button> = ({ icon, leftElement, rightElement, ...args }) => {
-  // const Icon = ICONS[icon as keyof Icons];
   return (
     <Button
-      // icon={<Icon/>}
       icon={renderIcon(icon as keyof Icons)}
       leftElement={renderIcon(leftElement as keyof Icons)}
       rightElement={renderIcon(rightElement as keyof Icons)}
