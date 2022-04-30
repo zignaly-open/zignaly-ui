@@ -1,5 +1,5 @@
 // Dependencies
-import React, { ReactElement, useMemo } from "react";
+import React, { ReactElement } from "react";
 
 // Types
 import { HeaderProps } from "./types";
