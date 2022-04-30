@@ -1,8 +1,11 @@
+import { ReactElement } from "react";
+
 export type HeaderRouteProps = {
   label: string;
   path: string;
-}
+};
 
 export type HeaderProps = {
-  routes: HeaderRouteProps[]
-}
+  leftElements: ReactElement[];
+  rightElements: ReactElement[];
+};

@@ -2,34 +2,22 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import BrandImage from "./";
-import { iconsByType } from "./types";
+import ZigBalance from "./";
 
 export default {
-  title: "Navigation/Header/components/BrandImage",
-  component: BrandImage,
+  title: "Navigation/Header/components/ZigBalance",
+  component: ZigBalance,
   argTypes: {
-    type: {
-      control: {
-        type: "select",
-      },
-      options: Object.keys(iconsByType),
+    balance: {
+      control: "text",
+      defaultValue: "1000000000000000000",
     },
   },
-} as ComponentMeta<typeof BrandImage>;
+} as ComponentMeta<typeof ZigBalance>;
 
-const Template: ComponentStory<typeof BrandImage> = (args) => <BrandImage {...args} />;
+const Template: ComponentStory<typeof ZigBalance> = (args) => <ZigBalance {...args} />;
 
-export const Logotype = Template.bind({});
-Logotype.args = {
-  type: "logotype",
-  width: "140px",
-  height: "68px",
-};
-
-export const Isotype = Template.bind({});
-Isotype.args = {
-  type: "isotype",
-  width: "40px",
-  height: "40px",
+export const Default = Template.bind({});
+Default.args = {
+  balance: "0",
 };

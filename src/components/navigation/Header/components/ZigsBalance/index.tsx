@@ -1,16 +1,42 @@
 // Dependencies
 import React, { useMemo } from "react";
+import NumberFormat from "react-number-format";
 
 // Types
-import { LogoProps, iconsByType } from "./types";
+import { ZigBalanceProps } from "./types";
 
-function BrandImage({ type, width, height }: LogoProps) {
-  const renderImage = useMemo(() => {
-    const Icon = iconsByType[type];
-    return Icon ? <Icon width={width} height={height} /> : null;
-  }, [type, width, height]);
+// Assets
+import WalletIcon from "assets/icons/wallet-icon.svg?url";
 
-  return renderImage;
+// Components
+import { Layout, Icon, Balance } from "./styles";
+
+// Utils
+import { utils } from "ethers";
+
+function ZigBalance({ balance }: ZigBalanceProps) {
+  /**
+   * @var renderZigsCoins
+   * @description Renderize the current balance with format
+   */
+  const renderZigsCoins = useMemo(
+    () => (
+      <NumberFormat
+        value={utils.formatUnits((balance || "0").toString())}
+        displayType={"text"}
+        thousandSeparator={true}
+        renderText={(value) => <Balance>{value} ZIG</Balance>}
+      />
+    ),
+    [balance],
+  );
+
+  return (
+    <Layout>
+      <Icon src={WalletIcon} />
+      {renderZigsCoins}
+    </Layout>
+  );
 }
 
-export default BrandImage;
+export default ZigBalance;

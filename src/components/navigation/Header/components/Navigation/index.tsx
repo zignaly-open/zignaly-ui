@@ -1,32 +1,23 @@
 // Dependencies
-import React, { useMemo } from "react";
+import React from "react";
+import Link from "next/link";
 
 // Types
-import {} from "./types";
+import { NavigationProps, NavItemProp } from "./types";
 
 // Components
-import IconButton from "components/inputs/IconButton";
+import { Layout } from "./styles";
 
-// Assets
-import ThreeDotsIcon from "assets/icons/horizontal-three-dots-icon.svg?url";
-
-function Menu() {
-  /**
-   * @name renderMenuDropDown()
-   * @description Memorize the container of navigation menu
-   */
-  const renderMenuDropDown = useMemo(() => <div>Hola</div>, []);
-
+function Navigation({ routes }: NavigationProps) {
   return (
-    <IconButton
-      variant={"secondary"}
-      icon={ThreeDotsIcon}
-      renderDropDown={renderMenuDropDown}
-      dropDownOptions={{
-        position: "static",
-      }}
-    />
+    <Layout>
+      {routes.map((route: NavItemProp, index: number) => (
+        <Link href={route.path} key={`--route-path-${index.toString()}`}>
+          <a className={route.isActive ? "active" : ""}>{route.label}</a>
+        </Link>
+      ))}
+    </Layout>
   );
 }
 
-export default Menu;
+export default Navigation;

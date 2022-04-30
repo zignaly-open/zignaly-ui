@@ -1,39 +1,67 @@
-import React, { useState } from "react";
+// Dependencies
+import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
+// Components
 import Header from "./";
+import BrandImage from "./components/BrandImage";
+import Navigation from "./components/Navigation";
+import IconButton from "../../inputs/IconButton";
+
+import ThreeDotsIcon from "assets/icons/horizontal-three-dots-icon.svg?url";
+import UserIcon from "assets/icons/user-icon.svg?url";
+import ZigBalance from "./components/ZigsBalance";
 
 export default {
   title: "Navigation/Header",
   component: Header,
 } as ComponentMeta<typeof Header>;
 
-const Template: ComponentStory<typeof Tabs> = (args) => {
-  const [value, setValue] = useState(args.value || 0);
-  return (
-    <>
-      <Tabs
-        {...args}
-        onChange={(_: React.SyntheticEvent, newValue: any) => {
-          setValue(newValue);
-        }}
-        value={value}
-      >
-        {args.tabs.map((t: string, i: number) => (
-          <Tab label={t} key={i} />
-        ))}
-      </Tabs>
-      {args.content.map((c: string, i: number) => (
-        <TabPanel value={args.value} index={i} key={i}>
-          {c}
-        </TabPanel>
-      ))}
-    </>
-  );
-};
+const Template: ComponentStory<typeof Header> = (args) => <Header {...args} />;
 
-export const TabsExample = Template.bind({});
-TabsExample.args = {
-  tabs: ["Tab 1", "Tab 2", "Tab with long title 3", "Another Tab 4"],
-  content: ["Content 1", "Content 2", "Content 3"],
+export const Main = Template.bind({});
+Main.args = {
+  leftElements: [
+    <BrandImage key={"logo"} type={"isotype"} width={"32px"} height={"32px"} />,
+    <Navigation
+      key={"navigation"}
+      routes={[
+        {
+          path: "#",
+          label: "Profit Sharing",
+          isActive: true,
+        },
+        {
+          path: "#",
+          label: "Staking",
+        },
+        {
+          path: "#",
+          label: "ZIGpad",
+        },
+      ]}
+    />,
+    <IconButton
+      key={"menu"}
+      variant={"secondary"}
+      icon={ThreeDotsIcon}
+      renderDropDown={<div>DropDown Container</div>}
+      dropDownOptions={{
+        position: "static",
+      }}
+    />,
+  ],
+  rightElements: [
+    <ZigBalance key={"balance"} balance={0} />,
+    <IconButton
+      key={"user"}
+      variant={"flat"}
+      icon={UserIcon}
+      renderDropDown={<div>DropDown Container</div>}
+      dropDownOptions={{
+        alignment: "right",
+        position: "static",
+      }}
+    />,
+  ],
 };

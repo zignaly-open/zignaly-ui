@@ -2,14 +2,30 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
-import Menu from "./";
+import Navigation from "./";
 
 export default {
-  title: "Navigation/Header/components/Menu",
-  component: Menu,
-} as ComponentMeta<typeof Menu>;
+  title: "Navigation/Header/components/Navigation",
+  component: Navigation,
+} as ComponentMeta<typeof Navigation>;
 
-const Template: ComponentStory<typeof Menu> = (args) => <Menu {...args} />;
+const Template: ComponentStory<typeof Navigation> = (args) => <Navigation {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  routes: [
+    {
+      path: "#",
+      label: "Profit Sharing",
+      isActive: true,
+    },
+    {
+      path: "#",
+      label: "Staking",
+    },
+    {
+      path: "#",
+      label: "ZIGpad",
+    },
+  ],
+};
