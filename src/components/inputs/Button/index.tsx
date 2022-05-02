@@ -27,10 +27,7 @@ function Button({
    * @type {JSX.Element}
    */
   const renderLeftElement = useMemo(
-    () =>
-      typeof leftElement === "object" ? (
-        leftElement
-      ) : null,
+    () => (typeof leftElement === "object" ? leftElement : null),
     [leftElement],
   );
 
@@ -40,16 +37,14 @@ function Button({
    * @type {JSX.Element}
    */
   const renderRightElement = useMemo(
-    () =>
-      typeof rightElement === "object" ? (
-        rightElement
-      ) : null,
+    () => (typeof rightElement === "object" ? rightElement : null),
     [rightElement],
   );
 
   return (
     <styled.Layout
-      withElements={!!leftElement || !!rightElement}
+      isLoading={loading}
+      withElements={!!leftElement && !!rightElement && !!caption}
       disabled={disabled || loading}
       variant={variant}
       size={size}
@@ -58,14 +53,24 @@ function Button({
       type={type}
     >
       <styled.Container>
-        {!loading && leftElement && <styled.LeftElement>{renderLeftElement}</styled.LeftElement>}
-        {!loading && caption}
-        {loading && <styled.ButtonLoader type={LoaderTypes.TAILSPIN} color="black" ariaLabel=""></styled.ButtonLoader>}
-        {!loading && rightElement && <styled.RightElement>{renderRightElement}</styled.RightElement>}
+        <styled.ElementsContainer>
+          {leftElement && <styled.LeftElement>{renderLeftElement}</styled.LeftElement>}
+          {caption && <styled.Caption>{caption}</styled.Caption>}
+          {rightElement && <styled.RightElement>{renderRightElement}</styled.RightElement>}
+        </styled.ElementsContainer>
       </styled.Container>
+
+      {loading && (
+        <styled.LoaderContainer>
+          <styled.ButtonLoader
+            type={LoaderTypes.TAILSPIN}
+            color="#9CA3AF"
+            ariaLabel="Loader"
+          ></styled.ButtonLoader>
+        </styled.LoaderContainer>
+      )}
     </styled.Layout>
   );
 }
 
 export default Button;
-

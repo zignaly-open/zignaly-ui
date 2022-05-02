@@ -57,12 +57,6 @@ export default {
       options: [true, false],
       control: { type: "radio" },
     },
-    icon: {
-      control: {
-        type: "select",
-      },
-      options: Object.keys(ICONS),
-    },
     leftElement: {
       control: {
         type: "select",

@@ -26,6 +26,24 @@ export const Caption = styled.div`
   transition: color 0.2s linear;
 `;
 
+export const ElementsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const LoaderContainer = styled.div`
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Container = styled.div`
   position: relative;
   border-radius: 5px;
@@ -72,7 +90,8 @@ interface LayoutProps {
   variant: keyof typeof buttonVariants;
   size: keyof typeof buttonSizes;
   color: keyof typeof buttonColors;
-  withElements: Boolean;
+  withElements: boolean;
+  isLoading?: boolean;
 }
 
 export const Layout = styled.button<LayoutProps>`
@@ -92,32 +111,35 @@ export const Layout = styled.button<LayoutProps>`
     cursor: default;
   }
 
-  ${({ size, variant, withElements, color }) => `
+  ${({ size, variant, withElements, color, isLoading }) => `
+
+  ${styledIf(
+    isLoading,
+    `
+    ${ElementsContainer}{
+      opacity: 0;
+
+    }
+    `,
+  )}
       
     ${styledIf(
       isSmallButton(size),
       `
       ${Container} {
-        min-width: 88px; 
         padding: 9px 18px;
         height: 30px;
       }
-      
-      ${ButtonLoader} {
-        height: 15px;
-        width: 15px;
-      }
-            
+
       ${styledIf(
-        withElements,
+        isLoading,
         `
-        ${Container} {
-          padding: 9px 18px;
-          border-radius: 5px; 
-        }
-      `,
+        ${ButtonLoader} {
+          height: 15px;
+          width: 15px;
+        }`,
       )}
-      
+
       ${Caption} {
         font-size: 11px;
         font-style: normal;
@@ -184,6 +206,7 @@ export const Layout = styled.button<LayoutProps>`
       ${Container} {
         padding: 15px 31px;
         height: 48px;
+        min-width: 120px;
       }
 
       ${ButtonLoader} {
@@ -373,8 +396,10 @@ export const Layout = styled.button<LayoutProps>`
       }
             
       &[disabled] {
-        opacity: 0.33;
-      } 
+        ${Container}{
+          opacity: 0.33;
+        }
+      }  
 
       &:enabled {
         ${Container} {
@@ -478,7 +503,9 @@ export const Layout = styled.button<LayoutProps>`
       }
             
       &[disabled] {
-        opacity: 0.33;
+        ${Container}{
+          opacity: 0.33;
+        }
       } 
 
       &:enabled {
