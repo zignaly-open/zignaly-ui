@@ -23,6 +23,7 @@ const config = {
       typescript: {
         // build: true,
         mode: "write-dts",
+        // tsconfig: __dirname + "/tsconfig.json",
       },
     }),
     new CopyWebpackPlugin({
@@ -44,13 +45,26 @@ const config = {
           // Ignore errors
           transpileOnly: true,
           configFile: __dirname + "/tsconfig.json",
-          // compilerOptions: {
-          //   declaration: true,
-          // },
+          compilerOptions: {
+            // declaration: true,
+            // https://stackoverflow.com/a/61258647/1494428
+            target: "ES2018",
+          },
         },
       },
       {
-        test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
+        test: /\.svg$/i,
+        type: "asset",
+        resourceQuery: /url/, // *.svg?url
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        resourceQuery: { not: [/url/] },
+        use: ["@svgr/webpack"],
+      },
+      {
+        test: /\.(eot|ttf|woff|woff2|png|jpg|gif)$/i,
         type: "asset",
       },
     ],
@@ -64,10 +78,12 @@ const config = {
     ],
     alias: {
       "styled-components": path.resolve("./node_modules/styled-components"),
+      assets: path.resolve("../src/assets"),
+      components: path.resolve("../src/components"),
+      theme: path.resolve("../src/theme"),
+      utils: path.resolve("../src/utils"),
     },
   },
-  devtool: "source-map",
-
   // When importing a module whose path matches one of the following, just
   // assume a corresponding global variable exists and use that instead.
   // This is important because it allows us to avoid bundling all of our
@@ -78,8 +94,12 @@ const config = {
 module.exports = () => {
   if (isProduction) {
     config.mode = "production";
+    // Separate sourcemap file
+    config.devtool = "source-map";
   } else {
     config.mode = "development";
+    // Better sourcemap for dev
+    config.devtool = "eval";
   }
   return config;
 };

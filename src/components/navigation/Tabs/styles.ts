@@ -16,7 +16,7 @@ export const Tabs = styled(TabsMui)`
     line-height: 20px;
     padding-left: 0;
     padding-right: 0;
-    margin: 0 16px;
+    margin: 0;
     position: relative;
 
     &:before {
@@ -24,6 +24,14 @@ export const Tabs = styled(TabsMui)`
       content: attr(data-text);
       font-weight: bold;
       visibility: hidden;
+    }
+
+    &:not(:first-child) {
+      margin-left: 16px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 16px;
     }
   }
 
