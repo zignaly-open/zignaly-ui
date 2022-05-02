@@ -18,9 +18,11 @@ function TextButton({
   loading = false,
   rel,
   target,
+  className,
 }: ButtonProps): ReactElement {
   return (
     <styled.Layout
+      className={className}
       underline={underline}
       isLoading={loading}
       withElements={!!leftElement || !!rightElement}

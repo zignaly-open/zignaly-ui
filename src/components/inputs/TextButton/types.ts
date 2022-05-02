@@ -11,4 +11,5 @@ export type ButtonProps = {
   target?: string;
   loading?: boolean
   disabled?: boolean
+  className?: string;
 };

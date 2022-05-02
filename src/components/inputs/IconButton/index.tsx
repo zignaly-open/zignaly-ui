@@ -19,6 +19,7 @@ const IconButton = ({
   loading = false,
   dropDownOptions,
   renderDropDown = null,
+  className,
 }: IconButtonProps) => {
   // Ref
   const options = {
@@ -103,7 +104,7 @@ const IconButton = ({
   );
 
   return (
-    <Layout ref={layoutRef}>
+    <Layout ref={layoutRef} className={className}>
       <ViewPort
         size={size}
         variant={variant}

@@ -47,4 +47,5 @@ export type IconButtonProps = {
   loading?: boolean
   onClick?: React.MouseEventHandler<HTMLButtonElement> | null;
   renderDropDown?: ReactElement<any> | null;
+  className?: string;
 };
