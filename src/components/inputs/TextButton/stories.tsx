@@ -48,6 +48,10 @@ export default {
       control: { type: "text" },
       label: "Change Caption",
     },
+    loading: {
+      options: [true, false],
+      control: { type: "radio" },
+    },
     underline: {
       options: [true, false],
       control: { type: "radio" },
@@ -79,4 +83,11 @@ export const LinkButton = Template.bind({});
 LinkButton.args = {
   href: "https://zignaly.com",
   rightElement: <OpenArrow />,
+};
+
+export const LoadingButton = Template.bind({});
+LoadingButton.args = {
+  href: "https://zignaly.com",
+  rightElement: <OpenArrow />,
+  loading: true,
 };

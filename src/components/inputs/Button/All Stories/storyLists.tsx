@@ -12,6 +12,7 @@ interface ButtonProps {
   caption?: string | null;
   leftElement?: ReactElement<any> | String | null;
   rightElement?: ReactElement<any> | String | null;
+  loading?: boolean;
   disabled?: boolean;
   color?: keyof typeof buttonColors;
 }
@@ -40,6 +41,7 @@ export function ButtonVariations({
             variant={button.variant}
             size={button.size}
             caption={button.caption}
+            loading={button.loading}
             leftElement={button.leftElement}
             rightElement={button.rightElement}
             disabled={button.disabled}
@@ -56,7 +58,7 @@ export function ButtonVariations({
               variant={button.variant}
               size={button.size}
               caption={button.caption}
-
+              loading={button.loading}
               leftElement={button.leftElement}
               rightElement={button.rightElement}
               disabled={button.disabled}
@@ -76,6 +78,7 @@ export function ButtonVariations({
               variant={button.variant}
               size={button.size}
               caption={button.caption}
+              loading={button.loading}
               leftElement={button.leftElement}
               rightElement={button.rightElement}
               disabled={button.disabled}
@@ -95,7 +98,7 @@ export function ButtonVariations({
               variant={button.variant}
               size={button.size}
               caption={button.caption}
-
+              loading={button.loading}
               leftElement={button.leftElement}
               rightElement={button.rightElement}
               disabled={button.disabled}
@@ -115,7 +118,7 @@ export function ButtonVariations({
               variant={button.variant}
               size={button.size}
               caption={button.caption}
-
+              loading={button.loading}
               leftElement={button.leftElement}
               rightElement={button.rightElement}
               disabled={button.disabled}

@@ -9,4 +9,6 @@ export type ButtonProps = {
   href?: string;
   rel?: string;
   target?: string;
+  loading?: boolean
+  disabled?: boolean
 };
