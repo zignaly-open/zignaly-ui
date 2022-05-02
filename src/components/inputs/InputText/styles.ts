@@ -15,6 +15,8 @@ export const InputValue = styled.input`
   width: 100%;
   font-family: "Avenir", sans-serif;
 
+  
+
   // Text Area
   resize: none;
 `;
@@ -42,7 +44,7 @@ export const Label = styled.label`
 
 export const InputContainer = styled.div`
   border: 1px solid #35334a;
-  padding: 12px 24px 20px;
+  padding: 12px 24px;
   border-radius: 5px;
   display: flex;
   align-items: center;
