@@ -6,7 +6,7 @@ export const Container = styled.div`
   position: relative;
   transition: all 0.2s linear;
   outline: none;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
@@ -28,7 +28,6 @@ export const RightElement = styled(LeftElement)`
   padding-left: 10px;
 `;
 
-
 export const CenterIcon = styled.div`
   position: relative;
   top: 1px;
@@ -38,8 +37,8 @@ export const CenterIcon = styled.div`
  * Layout
  */
 interface LayoutProps {
-  withElements: Boolean;
-  underline?: Boolean;
+  withElements: boolean;
+  underline?: boolean;
 }
 
 export const Layout = styled.button<LayoutProps>`
