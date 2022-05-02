@@ -63,8 +63,8 @@ export const LoaderContainer = styled.div`
  */
 interface LayoutProps {
   withElements: boolean;
-  underline?: boolean;
   isLoading?: boolean;
+  color?: string;
 }
 
 export const Layout = styled.button<LayoutProps>`
@@ -81,13 +81,7 @@ export const Layout = styled.button<LayoutProps>`
   ${(props) => `
       ${Container} {
         padding: 8px 18px;
-        min-width: 88px;  
-        font-size: 13px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-        letter-spacing: 0.55px;
-        text-align: center;    
+        min-width: 88px;     
       }
 
       ${styledIf(
@@ -108,21 +102,6 @@ export const Layout = styled.button<LayoutProps>`
         }
       `,
       )}
-      ${styledIf(
-        props.underline,
-        `
-      ${Container} { 
-            text-decoration-color: #26C4C1;
-            text-decoration-line: underline;
-         `,
-      )}
-    ${styledIf(
-      !props.underline,
-      `
-      ${Container} { 
-        text-decoration-line: none;
-         `,
-    )}
       
       ${LeftElement} {
         img {

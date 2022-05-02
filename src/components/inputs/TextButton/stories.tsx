@@ -9,6 +9,7 @@ import TextButton from "./";
 import CloseIcon from "assets/icons/close-icon.svg";
 import ArrowDown from "assets/icons/arrow-bottom-icon.svg";
 import OpenArrow from "assets/icons/open-arrow-icon.svg";
+import { dark } from "theme";
 
 const ICONS = {
   ArrowDown: <ArrowDown width={13} height={8} color={"#E1E9F0"} />,
@@ -48,6 +49,10 @@ export default {
       control: { type: "text" },
       label: "Change Caption",
     },
+    disabled: {
+      options: [true, false],
+      control: { type: "radio" },
+    },
     loading: {
       options: [true, false],
       control: { type: "radio" },
@@ -60,6 +65,10 @@ export default {
       table: {
         disable: true,
       },
+    },
+    color: {
+      options: Object.keys(dark),
+      control: "select",
     },
   },
 } as ComponentMeta<typeof TextButton>;

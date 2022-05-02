@@ -14,6 +14,7 @@ const Typography = ({
   component,
   className,
 }: TypographyProps) => {
+  console.log(color);
   return (
     <styled.Layout
       color={color}

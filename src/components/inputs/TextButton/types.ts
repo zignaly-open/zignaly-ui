@@ -1,4 +1,5 @@
 import React, { ReactElement } from "react";
+import { dark } from "theme";
 
 export type ButtonProps = {
   caption?: string;
@@ -9,7 +10,8 @@ export type ButtonProps = {
   href?: string;
   rel?: string;
   target?: string;
-  loading?: boolean
-  disabled?: boolean
+  loading?: boolean;
+  disabled?: boolean;
   className?: string;
+  color?: keyof typeof dark;
 };

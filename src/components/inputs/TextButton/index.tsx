@@ -1,5 +1,6 @@
 // Dependencies
 import { LoaderTypes } from "components/display/Loader";
+import Typography from "components/display/Typography";
 import * as React from "react";
 import { ReactElement } from "react";
 
@@ -19,11 +20,13 @@ function TextButton({
   rel,
   target,
   className,
+  color = "neutral000",
 }: ButtonProps): ReactElement {
+  console.log(color);
   return (
     <styled.Layout
       className={className}
-      underline={underline}
+      color={color}
       isLoading={loading}
       withElements={!!leftElement || !!rightElement}
       onClick={onClick}
@@ -38,7 +41,7 @@ function TextButton({
       <styled.Container>
         <styled.ElementsContainer>
           {leftElement && <styled.LeftElement>{leftElement}</styled.LeftElement>}
-          {caption}
+          <Typography color={color} underline={underline}>{caption}</Typography>
           {rightElement && <styled.RightElement>{rightElement}</styled.RightElement>}
         </styled.ElementsContainer>
       </styled.Container>
