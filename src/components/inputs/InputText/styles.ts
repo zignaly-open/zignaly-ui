@@ -4,16 +4,20 @@ import { styledIf } from "utils/styled";
 
 export const InputValue = styled.input`
   padding-right: 22px;
+  /* padding: 14px 0 22px 22px; */
   background: transparent;
   border: none;
   color: #f3f4f6;
   outline: none;
   font-weight: 400;
   font-size: 15px;
-  line-height: 40px;
+  line-height: 24px;
   letter-spacing: 0.66px;
   width: 100%;
   font-family: "Avenir", sans-serif;
+
+  // Text Area
+  resize: none;
 `;
 
 export const Side = styled.div`
@@ -39,7 +43,7 @@ export const Label = styled.label`
 
 export const InputContainer = styled.div`
   border: 1px solid #35334a;
-  padding: 8px 24px;
+  padding: 12px 24px 20px;
   border-radius: 5px;
   display: flex;
   align-items: center;
