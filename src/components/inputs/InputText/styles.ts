@@ -4,7 +4,6 @@ import { styledIf } from "utils/styled";
 
 export const InputValue = styled.input`
   padding-right: 22px;
-  /* padding: 14px 0 22px 22px; */
   background: transparent;
   border: none;
   color: #f3f4f6;
