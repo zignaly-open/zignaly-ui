@@ -1,16 +1,16 @@
 // Dependencies
 import styled from "styled-components";
 
-// Components
+// Assets
 import CaretTriangleIcon from "assets/icons/caret-triangle-icon.svg";
+
+// Component
+import Typography from "components/display/Typography";
 
 export const Layout = styled.div``;
 
-export const Value = styled.span<{ isPositive: boolean }>`
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 16px;
-
+export const Value = styled(Typography)<{ isPositive: boolean }>`
+  display: inline;
   ${({ isPositive, theme }) => `
     color: ${isPositive ? theme["greenGraph"] : theme["redGraphOrError"]};
   `}

@@ -92,7 +92,6 @@ export const TableView = styled.table`
 `;
 
 export const ThView = styled.th<{ isSorted?: boolean, isAlignRight?: boolean }>`
-  color: #a9a9ba;
   padding: 4px 22px;
   white-space: nowrap;
   background: transparent;

@@ -14,7 +14,7 @@ const PercentageIndicator = ({ value = 0, theme }: PercentageIndicatorProps) => 
   return (
   <styled.Layout>
     <styled.Indicator width="5" height="5" isPositive={isPositiveValue} color={isPositiveValue ? theme["greenGraph"] : theme["redGraphOrError"]} />
-    <styled.Value isPositive={isPositiveValue}>
+    <styled.Value variant="h5" isPositive={isPositiveValue}>
       <NumberFormat
         value={String(value).replaceAll("-", "")}
         displayType={"text"}
