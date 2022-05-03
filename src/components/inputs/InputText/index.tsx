@@ -61,7 +61,7 @@ function InputText(
       </InputContainer>
 
       {/* Show error Messages */}
-      {error && <ErrorMessage text={error} />}
+      {error && <ErrorMessage color="redGraphOrError" text={error} />}
     </Layout>
   );
 }
