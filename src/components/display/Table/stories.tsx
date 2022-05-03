@@ -12,8 +12,11 @@ import Button from "components/inputs/Button";
 import DateLabel from "./components/DateLabel";
 
 // Styles
-import { Actions, CheckIconStyled, InvestorLabel } from "./styles";
+import { Actions, CheckIconStyled } from "./styles";
 import { dark } from "../../../theme";
+
+// Assets
+import CloseIcon from "assets/icons/close-icon.svg";
 
 export default {
   title: "Display/Table",
@@ -98,7 +101,7 @@ MyCoins.args = {
       availableBalance: <PriceLabel coin={"BNB"} value={"2.1352"} />,
       lockedBalance: <PriceLabel coin={"BNB"} value={"350"} />,
       valueInBtc: <PriceLabel coin={"BTC"} value={"0.782324"} />,
-      valueInUsd: <PriceLabel coin={"EUR"} value={"400"} fiat />,
+      valueInUsd: <PriceLabel symbol={"€"} coin={"EUR"} value={"400"} fiat />,
       action: (
         <Actions>
           <Button caption={"Deposit"} variant={"secondary"} size={"small"} onClick={() => {}} />
@@ -159,8 +162,8 @@ Investors.args = {
   ],
   data: [
     {
-      userId: <InvestorLabel color={"neutral100"}>{"5f886d29da8e9666b1684c9a"}</InvestorLabel>,
-      email: <InvestorLabel color={"neutral100"}>{"tec**@zig**.com"}</InvestorLabel>,
+      userId: "5f886d29da8e9666b1684c9a",
+      email: "tec**@zig**.com",
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
         <PriceLabel
@@ -171,7 +174,7 @@ Investors.args = {
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
-      successFee: <InvestorLabel color={"neutral100"}>{"10%"}</InvestorLabel>,
+      successFee: "10%",
       feesInZig: <CheckIconStyled width="16" height="12" />  ,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
     },
@@ -224,6 +227,9 @@ ExchangeOrders.args = {
       entryPrice: "110.20",
       side: "Buy",
       type: "Limit",
+      action: (
+          <Button caption={"Close"} variant={"secondary"} size={"small"} leftElement={<CloseIcon color={"#E1E9F0"} />} onClick={() => {}} />
+      ),
     },
   ],
 };

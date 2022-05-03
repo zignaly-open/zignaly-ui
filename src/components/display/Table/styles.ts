@@ -1,7 +1,6 @@
 // Dependencies
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
-import Typography from "../Typography";
 
 // Assets
 import CheckIcon from "../../../assets/icons/check-icon.svg";
@@ -195,10 +194,6 @@ export const Actions = styled.div`
       margin-right: 0;
     }
   }
-`;
-
-export const InvestorLabel = styled(Typography)`
-  text-align: center;
 `;
 
 export const CheckIconStyled = styled(CheckIcon)`

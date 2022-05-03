@@ -136,7 +136,7 @@ const Table = ({ columns = [], data = [] }: { columns: any[]; data: Object[] }) 
                       {...cell.getCellProps()}
                       key={`--table-row-cell-${index.toString()}`}
                     >
-                        <Typography color={"neutral200"}>{cell.render("Cell")}</Typography>
+                        <Typography color={"neutral100"}>{cell.render("Cell")}</Typography>
                     </td>
                   ))}
                   {renderActionRow(row, index)}
