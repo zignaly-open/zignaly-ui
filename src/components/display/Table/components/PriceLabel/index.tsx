@@ -17,7 +17,7 @@ const PriceLabel = ({
   bottomElement = null,
 }: PriceLabelProps) => (
   <styled.Layout fiat={fiat}>
-    <styled.Value variant={"h3"} color={"neutral100"}>
+    <styled.Value color={"neutral100"}>
       <NumberFormat
         prefix={fiat ? symbol : ""}
         value={value}

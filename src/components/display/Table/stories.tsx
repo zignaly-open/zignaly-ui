@@ -4,7 +4,6 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 
 // Component
 import Table from "./";
-import Typography from "components/display/Typography";
 import PriceLabel from "./components/PriceLabel";
 import CoinLabel from "./components/CoinLabel";
 import PercentageIndicator from "./components/PercentageIndicator";
@@ -160,8 +159,8 @@ Investors.args = {
   ],
   data: [
     {
-      userId: <InvestorLabel color={"neutral100"} variant={"body1"}>{"5f886d29da8e9666b1684c9a"}</InvestorLabel>,
-      email: <InvestorLabel color={"neutral100"} variant={"body1"}>{"tec**@zig**.com"}</InvestorLabel>,
+      userId: <InvestorLabel color={"neutral100"}>{"5f886d29da8e9666b1684c9a"}</InvestorLabel>,
+      email: <InvestorLabel color={"neutral100"}>{"tec**@zig**.com"}</InvestorLabel>,
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
         <PriceLabel
@@ -172,7 +171,7 @@ Investors.args = {
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
-      successFee: <InvestorLabel color={"neutral100"} variant={"body1"}>{"10%"}</InvestorLabel>,
+      successFee: <InvestorLabel color={"neutral100"}>{"10%"}</InvestorLabel>,
       feesInZig: <CheckIconStyled width="16" height="12" />  ,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
     },
