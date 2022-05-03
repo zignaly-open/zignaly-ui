@@ -219,12 +219,38 @@ ExchangeOrders.args = {
   ],
   data: [
     {
-      date: <DateLabel date={new Date(1651567879091)} />,
+      date: <DateLabel date={new Date(1651567879191)} />,
       orderId: "138495028471",
       pair: "XML/USDT",
       amount: 25,
       status: "Open",
       entryPrice: "110.20",
+      side: "Buy",
+      type: "Limit",
+      action: (
+          <Button caption={"Close"} variant={"secondary"} size={"small"} leftElement={<CloseIcon color={"#E1E9F0"} />} onClick={() => {}} />
+      ),
+    },
+    {
+      date: <DateLabel date={new Date(1751567879291)} />,
+      orderId: "248495028471",
+      pair: "XML/USDT",
+      amount: 25,
+      status: "Open",
+      entryPrice: "21077.20",
+      side: "Buy",
+      type: "Limit",
+      action: (
+          <Button caption={"Close"} variant={"secondary"} size={"small"} leftElement={<CloseIcon color={"#E1E9F0"} />} onClick={() => {}} />
+      ),
+    },
+    {
+      date: <DateLabel date={new Date(1851567879091)} />,
+      orderId: "358495028471",
+      pair: "XML/USDT",
+      amount: 25,
+      status: "Open",
+      entryPrice: "3109.60",
       side: "Buy",
       type: "Limit",
       action: (
