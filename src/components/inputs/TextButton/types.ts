@@ -6,4 +6,8 @@ export type ButtonProps = {
   rightElement?: ReactElement<any> | string | null;
   underline?: boolean;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
+  href?: string;
+  rel?: string;
+  target?: string;
+  className?: string;
 };

@@ -1,7 +1,7 @@
 // Dependencies
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
-import { buttonSizes, buttonVariants, dropdownAlignment } from "./types";
+import { buttonSizes, buttonVariants, dropdownAlignment, dropdownPosition } from "./types";
 
 const isPrimaryButton = (variant: keyof typeof buttonVariants) =>
   variant === buttonVariants.primary;
@@ -19,7 +19,7 @@ const isLargeButton = (size: keyof typeof buttonSizes) => size === buttonSizes.l
 
 const isXLargeButton = (size: keyof typeof buttonSizes) => size === buttonSizes.xlarge;
 
-export const Icon = styled.img<{ src: any }>`
+export const Icon = styled.div`
   z-index: 2;
   position: relative;
   transition: color 0.2s linear;
@@ -40,19 +40,43 @@ export const Container = styled.div<any>`
 type DropdownProps = {
   alignment: keyof typeof dropdownAlignment | any;
   width?: number | string | any;
+  position?: keyof typeof dropdownPosition | any;
+  zIndex?: number;
 };
 
 export const Dropdown = styled.div<DropdownProps>`
-  position: absolute;
   background: #12152c;
   white-space: nowrap;
   color: #fff;
   box-shadow: 0 4px 6px -2px #00000061;
   opacity: 0;
-  z-index: 10;
+  position: absolute;
 
-  ${({ alignment, width }: any) => `
+  ${({ alignment, width, position, zIndex }) => `
     width: ${width ?? "auto"};
+    z-index: ${zIndex ?? 10};
+    
+    ${styledIf(
+      position === "static",
+      `
+      top: 100%;
+      opacity: 1;
+      
+      ${styledIf(
+        alignment === "left",
+        `
+        left: 0;
+      `,
+      )}
+      
+      ${styledIf(
+        alignment === "right",
+        `
+        right: 0;
+      `,
+      )}
+    `,
+    )}
   
     ${styledIf(
       alignment === dropdownAlignment.left,

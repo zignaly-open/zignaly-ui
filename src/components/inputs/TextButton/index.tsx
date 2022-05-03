@@ -12,12 +12,23 @@ function TextButton({
   rightElement,
   underline,
   onClick = () => {},
+  href,
+  rel,
+  target,
+  className,
 }: ButtonProps): ReactElement {
   return (
     <styled.Layout
+      className={className}
       underline={underline}
       withElements={!!leftElement || !!rightElement}
       onClick={onClick}
+      {...(href && {
+        href,
+        as: "a" as any,
+        rel: rel ?? "noopener noreferrer",
+        target: target ?? "_blank",
+      })}
     >
       <styled.Container>
         {leftElement && <styled.LeftElement>{leftElement}</styled.LeftElement>}
