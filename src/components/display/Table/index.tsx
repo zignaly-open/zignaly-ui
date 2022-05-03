@@ -65,7 +65,7 @@ const Table = ({ columns = [], data = [] }: { columns: any[]; data: Object[] }) 
                     isSorted={column.isSorted}
                     isAlignRight={column.isAlignThRight}
                   >
-                      <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{column.render("Header")} </Typography>
+                      <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>{column.render("Header")}</Typography>
                     {index < headerGroup.headers.length - 1 && (
                       <SortIcon
                         isSorted={column.isSorted}
@@ -136,7 +136,7 @@ const Table = ({ columns = [], data = [] }: { columns: any[]; data: Object[] }) 
                       {...cell.getCellProps()}
                       key={`--table-row-cell-${index.toString()}`}
                     >
-                      {cell.render("Cell")}
+                        <Typography color={"neutral200"} variant={"body1"}>{cell.render("Cell")}</Typography>
                     </td>
                   ))}
                   {renderActionRow(row, index)}

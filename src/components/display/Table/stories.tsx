@@ -102,8 +102,8 @@ MyCoins.args = {
       valueInUsd: <PriceLabel coin={"EUR"} value={"400"} fiat />,
       action: (
         <Actions>
-          <Button caption={"Deposit"} variant={"secondary"} onClick={() => {}} />
-          <Button caption={"Withdraw"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Deposit"} variant={"secondary"} size={"small"} onClick={() => {}} />
+          <Button caption={"Withdraw"} variant={"secondary"} size={"small"} onClick={() => {}} />
         </Actions>
       ),
     },
@@ -160,8 +160,8 @@ Investors.args = {
   ],
   data: [
     {
-      userId: <InvestorLabel color={"neutral100"} variant={"body1"} weight={"medium"}>{"5f886d29da8e9666b1684c9a"}</InvestorLabel>,
-      email: <InvestorLabel color={"neutral100"} variant={"body1"} weight={"medium"}>{"tec**@zig**.com"}</InvestorLabel>,
+      userId: <InvestorLabel color={"neutral100"} variant={"body1"}>{"5f886d29da8e9666b1684c9a"}</InvestorLabel>,
+      email: <InvestorLabel color={"neutral100"} variant={"body1"}>{"tec**@zig**.com"}</InvestorLabel>,
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
         <PriceLabel
@@ -172,7 +172,7 @@ Investors.args = {
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
-      successFee: <InvestorLabel color={"neutral100"} variant={"body1"} weight={"medium"}>{"10%"}</InvestorLabel>,
+      successFee: <InvestorLabel color={"neutral100"} variant={"body1"}>{"10%"}</InvestorLabel>,
       feesInZig: <CheckIconStyled width="16" height="12" />  ,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
     },
@@ -217,7 +217,7 @@ ExchangeOrders.args = {
   ],
   data: [
     {
-      date: <DateLabel date={new Date()} />,
+      date: <DateLabel date={new Date(1651567879091)} />,
       orderId: "138495028471",
       pair: "XML/USDT",
       amount: 25,
