@@ -75,6 +75,7 @@ export const Layout = styled.button<LayoutProps>`
   position: relative;
   user-select: none;
   background: transparent;
+  text-decoration-line: none;
   &[disabled] {
     cursor: default;
   }

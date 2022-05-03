@@ -45,6 +45,7 @@ export const Label = styled.label`
 export const InputContainer = styled.div`
   border: 1px solid #35334a;
   padding: 12px 24px;
+  min-height: 60px;
   border-radius: 5px;
   display: flex;
   align-items: center;
