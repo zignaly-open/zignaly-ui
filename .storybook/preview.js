@@ -6,6 +6,7 @@ import { addDecorator } from "@storybook/react";
 import { makeDecorator } from "@storybook/addons";
 import { ThemeProvider } from "styled-components";
 import { createGlobalStyle } from "styled-components";
+import { Toaster } from "../src/components/display/Toaster/index";
 
 // Testing Results
 import { withTests } from "@storybook/addon-jest";

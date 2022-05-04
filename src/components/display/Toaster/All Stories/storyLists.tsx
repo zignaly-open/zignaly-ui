@@ -7,6 +7,7 @@ export interface ToasterProps {
   variant?: "success" | "error";
   size?: "large" | "small";
   caption?: string;
+  id: number;
 }
 
 type ToasterVariationsTypes = {
@@ -30,6 +31,7 @@ export function ToasterVariations({
         {toastersRow1.map((toaster, index: number) => (
           <Toaster
             key={`--${index.toString()}`}
+            id={toaster.id}
             variant={toaster.variant}
             size={toaster.size}
             caption={toaster.caption}
@@ -41,6 +43,7 @@ export function ToasterVariations({
           {toastersRow2.map((toaster, index: number) => (
             <Toaster
               key={`--${index.toString()}`}
+              id={toaster.id}
               variant={toaster.variant}
               size={toaster.size}
               caption={toaster.caption}
@@ -53,6 +56,7 @@ export function ToasterVariations({
           {toastersRow3.map((toaster, index: number) => (
             <Toaster
               key={`--${index.toString()}`}
+              id={toaster.id}
               variant={toaster.variant}
               size={toaster.size}
               caption={toaster.caption}
@@ -65,6 +69,7 @@ export function ToasterVariations({
           {toastersRow4.map((toaster, index: number) => (
             <Toaster
               key={`--${index.toString()}`}
+              id={toaster.id}
               variant={toaster.variant}
               size={toaster.size}
               caption={toaster.caption}
@@ -77,6 +82,7 @@ export function ToasterVariations({
           {toastersRow5.map((toaster, index: number) => (
             <Toaster
               key={`--${index.toString()}`}
+              id={toaster.id}
               variant={toaster.variant}
               size={toaster.size}
               caption={toaster.caption}

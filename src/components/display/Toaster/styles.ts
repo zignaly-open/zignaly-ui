@@ -16,6 +16,13 @@ export const IconContainer = styled.div`
   }
 `;
 
+export const Wrapper = styled.div`
+  position: absolute;
+  /* Top right corner */
+  right: 0;
+  top: 0;
+`;
+
 export const ToastContainer = styled.div<{ variant: string; size: string }>`
   display: flex;
   flex-direction: row;

@@ -1,5 +1,7 @@
 // Dependencies
+import { ToasterProps } from "components/display/Toaster/All Stories/storyLists";
 import React, { ReactElement } from "react";
+import { useToast } from "utils/useToast";
 import Button from "..";
 import { buttonSizes, buttonVariants, buttonColors } from "../types";
 import { Layout, StoryList } from "./styles";
@@ -16,6 +18,9 @@ interface ButtonProps {
   disabled?: boolean;
   color?: keyof typeof buttonColors;
 }
+interface ToastProps {
+  toast: ToasterProps;
+}
 
 type ButtonVariationsTypes = {
   buttonsRow1: ButtonProps[];
@@ -24,7 +29,14 @@ type ButtonVariationsTypes = {
   buttonsRow4?: ButtonProps[];
   buttonsRow5?: ButtonProps[];
 };
-
+function someFunction() {
+  const click = () => {
+    const toast = ""
+    console.log(useToast()?.addToast(toast));
+    console.log("hllo");
+  };
+  click();
+}
 export function ButtonVariations({
   buttonsRow1,
   buttonsRow2,
@@ -45,7 +57,7 @@ export function ButtonVariations({
             leftElement={button.leftElement}
             rightElement={button.rightElement}
             disabled={button.disabled}
-            onClick={() => {}}
+            onClick={someFunction()}
             color={button.color}
           ></Button>
         ))}

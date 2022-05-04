@@ -17,7 +17,7 @@ function Button({
   leftElement = null,
   rightElement = null,
   disabled = false,
-  onClick = () => {},
+  onClick,
   type,
 }: ButtonProps): ReactElement {
   /**
@@ -26,10 +26,7 @@ function Button({
    * @type {JSX.Element}
    */
   const renderLeftElement = useMemo(
-    () =>
-      typeof leftElement === "object" ? (
-        leftElement
-      ) : null,
+    () => (typeof leftElement === "object" ? leftElement : null),
     [leftElement],
   );
 
@@ -39,10 +36,7 @@ function Button({
    * @type {JSX.Element}
    */
   const renderRightElement = useMemo(
-    () =>
-      typeof rightElement === "object" ? (
-        rightElement
-      ) : null,
+    () => (typeof rightElement === "object" ? rightElement : null),
     [rightElement],
   );
 

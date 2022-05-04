@@ -33,19 +33,43 @@ const Template: ComponentStory<typeof ToasterVariations> = (args) => (
 export const ToasterWithSuccess = Template.bind({});
 ToasterWithSuccess.args = {
   toastersRow1: [
-    { ...ExampleToaster.args, variant: "success", size: "large", caption: "Transaction Completed" },
+    {
+      ...ExampleToaster.args,
+      variant: "success",
+      size: "large",
+      caption: "Transaction Completed",
+      id: 0,
+    },
   ],
   toastersRow2: [
-    { ...ExampleToaster.args, variant: "success", size: "small", caption: "Transaction Completed" },
+    {
+      ...ExampleToaster.args,
+      variant: "success",
+      size: "small",
+      caption: "Transaction Completed",
+      id: 1,
+    },
   ],
 };
 
 export const ToasterWithError = Template.bind({});
 ToasterWithError.args = {
   toastersRow1: [
-    { ...ExampleToaster.args, variant: "error", size: "large", caption: "Something went wrong" },
+    {
+      ...ExampleToaster.args,
+      variant: "error",
+      size: "large",
+      caption: "Something went wrong",
+      id: 2,
+    },
   ],
   toastersRow2: [
-    { ...ExampleToaster.args, variant: "error", size: "small", caption: "Something went wrong" },
+    {
+      ...ExampleToaster.args,
+      variant: "error",
+      size: "small",
+      caption: "Something went wrong",
+      id: 3,
+    },
   ],
 };

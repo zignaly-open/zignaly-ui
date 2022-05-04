@@ -36,4 +36,20 @@ const Toaster = ({ variant = "error", size = "large", caption = "" }: ToasterPro
   );
 };
 
+export function ToastList({ toasts }: { toasts: ToasterProps[] }) {
+  return (
+    <styled.Wrapper>
+      {toasts.map((toast: ToasterProps) => (
+        <Toaster
+          key={toast.id} 
+          id={toast.id} 
+          variant={toast.variant}
+          size={toast.size}
+          caption={toast.caption}
+        ></Toaster>
+      ))}
+    </styled.Wrapper>
+  );
+}
+
 export default Toaster;
