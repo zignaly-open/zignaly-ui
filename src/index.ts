@@ -40,9 +40,6 @@ import WalletIcon from './assets/icons/wallet-icon.svg';
 import OptionHorizontalDotsIcon from './assets/icons/horizontal-three-dots-icon.svg';
 
 // Navigation
-import Tabs from "./components/navigation/Tabs";
-import TabPanel from "./components/navigation/Tabs/components/TabPanel";
-import Tab from "./components/navigation/Tabs/components/Tab";
 import Header from "./components/navigation/Header";
 import ZigsBalance from "./components/navigation/Header/components/ZigsBalance";
 import BrandImage from "./components/navigation/Header/components/BrandImage";
@@ -79,9 +76,6 @@ export {
   Select,
   ButtonGroup,
   // Navigation
-  Tabs,
-  TabPanel,
-  Tab,
   Header,
   BrandImage,
   ZigsBalance,
