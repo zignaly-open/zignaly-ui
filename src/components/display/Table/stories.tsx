@@ -32,7 +32,7 @@ const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
  * All the columns that include PriceLabel need to pass to their column isAlignThRight: true,
  * so that they are well aligned, it was requested that the design be like this
  * IMPORTANT if there are amounts of money use the sortByPointDecimal function to sort.
- * It is important to use useMemo in the following way to wrap the result of the sort function executed in a variable because otherwise it will not be memorized,
+ * IMPORTANT useMemo must be used and in the following way wrap the result of the sort function executed in a variable because if not it will not be memorized,
  * it will create a new function whenever it is always executed
  */
 export const MyCoins = Template.bind({});
