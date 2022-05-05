@@ -19,19 +19,11 @@ const Toaster = ({ variant = "error", size = "large", caption = "" }: ToasterPro
           <SuccessIcon color={dark["greenGraph"]} />
         </styled.IconContainer>
       )}
-      {size === "large" ? (
-        <styled.Caption>
-          <Typography variant="body1" weight="regular">
-            {caption}
-          </Typography>
-        </styled.Caption>
-      ) : (
-        <styled.Caption>
-          <Typography variant="body2" weight="regular">
-            {caption}
-          </Typography>
-        </styled.Caption>
-      )}
+      <styled.Caption>
+        <Typography variant={size === "large" ? "body1" : "body2"} weight="regular">
+          {caption}
+        </Typography>
+      </styled.Caption>
     </styled.ToastContainer>
   );
 };
