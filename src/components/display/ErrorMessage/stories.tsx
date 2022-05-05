@@ -15,12 +15,4 @@ const Template: ComponentStory<typeof ErrorMessage> = (args) => <ErrorMessage {.
 export const Error = Template.bind({});
 Error.args = {
   text: "Exceeds available balance",
-  color: "redGraphOrError"
 };
-
-export const Success = Template.bind({});
-Success.args = {
-  text: "Success",
-  color: "greenGraph"
-};
-
