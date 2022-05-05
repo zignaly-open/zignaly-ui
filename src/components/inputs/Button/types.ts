@@ -27,7 +27,7 @@ export type ButtonProps = {
   disabled?: boolean;
   loading?: boolean;
   color?: keyof typeof buttonColors;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
   children?: React.ReactNode;
 };
