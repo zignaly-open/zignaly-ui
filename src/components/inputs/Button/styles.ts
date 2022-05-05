@@ -31,6 +31,7 @@ export const ElementsContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 0;
 `;
 
 export const LoaderContainer = styled.div`
@@ -97,8 +98,8 @@ interface LayoutProps {
 export const Layout = styled.button<LayoutProps>`
   border-radius: 5px;
   border: none;
+  padding: 0;
   cursor: pointer;
-  padding: 2px;
   outline: none;
   svg {
     width: 100%;
@@ -133,6 +134,7 @@ export const Layout = styled.button<LayoutProps>`
         padding: 9px 18px;
         height: 30px;
       }
+      
 
       ${styledIf(
         withLeftElement,
@@ -197,7 +199,6 @@ export const Layout = styled.button<LayoutProps>`
         padding: 11px 18px;
         min-width: 88px;
         height: 36px; 
-        border-radius: 5px; 
       }
 
       ${styledIf(
