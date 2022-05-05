@@ -22,7 +22,6 @@ function TextButton({
   className,
   color = "neutral000",
 }: ButtonProps): ReactElement {
-  console.log(color);
   return (
     <styled.Layout
       className={className}

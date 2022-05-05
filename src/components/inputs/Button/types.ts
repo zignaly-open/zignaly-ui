@@ -22,8 +22,8 @@ export type ButtonProps = {
   variant?: keyof typeof buttonVariants;
   size?: keyof typeof buttonSizes;
   caption?: string | null;
-  leftElement?: ReactElement<any> | String | null;
-  rightElement?: ReactElement<any> | String | null;
+  leftElement?: ReactElement | string | null;
+  rightElement?: ReactElement | string | null;
   disabled?: boolean;
   loading?: boolean;
   color?: keyof typeof buttonColors;
