@@ -175,7 +175,7 @@ function InputAmount(
       )}
 
       {/* Show error Messages */}
-      {error && <ErrorMessage color="redGraphOrError" text={error} />}
+      {error && <ErrorMessage text={error} />}
     </Layout>
   );
 }
