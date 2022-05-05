@@ -66,9 +66,7 @@ export const LeftElement = styled.div`
   align-items: center;
 `;
 
-export const RightElement = styled(LeftElement)`
-  padding-right: 0;
-`;
+export const RightElement = styled(LeftElement)``;
 
 /**
  * Icons
@@ -90,6 +88,8 @@ interface LayoutProps {
   variant: keyof typeof buttonVariants;
   size: keyof typeof buttonSizes;
   color: keyof typeof buttonColors;
+  withLeftElement: boolean;
+  withRightElement: boolean;
   withElements: boolean;
   isLoading?: boolean;
 }
@@ -100,7 +100,10 @@ export const Layout = styled.button<LayoutProps>`
   cursor: pointer;
   padding: 2px;
   outline: none;
-
+  svg {
+    width: 100%;
+    height: 100%;
+  }
   position: relative;
   user-select: none;
   background: transparent;
@@ -111,7 +114,7 @@ export const Layout = styled.button<LayoutProps>`
     cursor: default;
   }
 
-  ${({ size, variant, withElements, color, isLoading }) => `
+  ${({ size, variant, withElements, withLeftElement, withRightElement, color, isLoading }) => `
 
   ${styledIf(
     isLoading,
@@ -132,13 +135,36 @@ export const Layout = styled.button<LayoutProps>`
       }
 
       ${styledIf(
-        isLoading,
+        withLeftElement,
         `
-        ${ButtonLoader} {
-          height: 15px;
-          width: 15px;
-        }`,
+        ${Container} {
+          padding: 5px 18px 5px 12px;
+        }
+        `,
       )}
+
+      ${styledIf(
+        withRightElement,
+        `
+        ${Container} {
+          padding: 5px 12px 5px 18px;
+        }
+        `,
+      )}
+
+      ${styledIf(
+        withElements,
+        `
+        ${Container} {
+          padding: 5px 12px;        
+        }
+        `,
+      )}
+
+      ${ButtonLoader} {
+        height: 15px;
+        width: 15px;
+      }
 
       ${Caption} {
         font-size: 11px;
@@ -150,15 +176,16 @@ export const Layout = styled.button<LayoutProps>`
       }
       
       ${LeftElement} {
-          width: 10px;
-          margin-right: 8px;
-        
+          width: 20px;
+          height: 20px;
+          margin-right: 4px;
       }
 
       ${RightElement} {
-        width: 10px;
-          margin-left: 8px;
-          margin-right: 0;
+          width: 20px;
+          height: 20px;
+          margin-left: 4px;
+
       }
     `,
     )}
@@ -172,6 +199,33 @@ export const Layout = styled.button<LayoutProps>`
         height: 36px; 
         border-radius: 5px; 
       }
+
+      ${styledIf(
+        withLeftElement,
+        `
+        ${Container} {
+          padding: 8px 16px 8px 12px;
+        }
+        `,
+      )}
+
+      ${styledIf(
+        withRightElement,
+        `
+        ${Container} {
+          padding: 8px 12px 8px 16px;
+        }
+        `,
+      )}
+
+      ${styledIf(
+        withElements,
+        `
+        ${Container} {
+          padding: 8px 12px;
+        }
+        `,
+      )}
 
       ${ButtonLoader} {
         height: 20px;
@@ -188,13 +242,15 @@ export const Layout = styled.button<LayoutProps>`
       }
       
       ${LeftElement} {
-          width: 10px;
-          margin-right: 10px;  
+          height: 20px;
+          width: 20px;
+          margin-right: 4px;  
       }
 
       ${RightElement} {
-          width: 10px;
-          margin-left: 10px;
+          height: 20px;
+          width: 20px;
+          margin-left: 4px;
           margin-right: 0;
       }
   `,
@@ -208,6 +264,33 @@ export const Layout = styled.button<LayoutProps>`
         height: 48px;
         min-width: 120px;
       }
+
+      ${styledIf(
+        withLeftElement,
+        `
+        ${Container} {
+          padding: 14px 32px 14px 24px;
+        }
+        `,
+      )}
+
+      ${styledIf(
+        withRightElement,
+        `
+        ${Container} {
+          padding: 14px 24px 14px 32px;
+        }
+        `,
+      )}
+
+      ${styledIf(
+        withElements,
+        `
+        ${Container} {
+          padding: 14px 24px;
+        }
+        `,
+      )}
 
       ${ButtonLoader} {
         height: 25px;
@@ -223,6 +306,7 @@ export const Layout = styled.button<LayoutProps>`
       
       ${LeftElement} {
           width: 23px;
+          height: 23px;
           margin-right: 14px;
       }
 
@@ -241,6 +325,33 @@ export const Layout = styled.button<LayoutProps>`
         padding: 20px 36px;
         height: 60px;  
       }
+
+      ${styledIf(
+        withLeftElement,
+        `
+        ${Container} {
+          padding: 18px 36px 18px 28px;
+        }
+        `,
+      )}
+
+      ${styledIf(
+        withRightElement,
+        `
+        ${Container} {
+          padding: 18px 28px 18px 36px;
+        }
+        `,
+      )}
+
+      ${styledIf(
+        withElements,
+        `
+        ${Container} {
+          padding: 18px 28px;
+        }
+        `,
+      )}
 
       ${ButtonLoader} {
         height: 30px;
