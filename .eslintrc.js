@@ -22,6 +22,7 @@ module.exports = {
   parser: "@typescript-eslint/parser",
   plugins: ["react", "@typescript-eslint"],
   rules: {
+    indent: [2, 2],
     "no-tabs": "off",
     "react/prop-types": "off",
     "no-new": "off",

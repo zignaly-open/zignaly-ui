@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useCallback, useMemo, useEffect, useRef, useState } from "react";
+import React, {useCallback, useMemo, useEffect, useRef, useState} from "react";
 import { useClickAway, useWindowSize } from "react-use";
 import { Portal } from "react-portal";
 
