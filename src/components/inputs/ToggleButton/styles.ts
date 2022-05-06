@@ -5,7 +5,6 @@ const ToggleCommonProperties = styled.div`
   transition: opacity 0.25s ease;
   display: flex;
   justify-content: center;
-  items-align: center;
 `;
 
 export const ToggleCircle = styled.div`
@@ -17,7 +16,7 @@ export const ToggleCircle = styled.div`
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background-color: #fafafa;
+  background-color: #FFFFFF;
   box-sizing: border-box;
   transition: all 0.25s ease;
 `;
@@ -76,7 +75,7 @@ export const Toggle = styled.div<{ checked?: boolean }>`
     `
     ${ToggleContainer}
     {
-      background-color: ${props.theme["red"]};
+      background-color: #9CA3AF;
     }
     ${styledIf(
       props.checked,
