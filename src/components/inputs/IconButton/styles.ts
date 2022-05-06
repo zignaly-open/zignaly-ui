@@ -101,6 +101,10 @@ interface LayoutProps {
   size: keyof typeof buttonSizes;
   variant: keyof typeof buttonVariants;
   isActiveDropdown: boolean;
+  colors: {
+    normal: string;
+    active: string;
+  }
 }
 
 export const Layout = styled.div`
@@ -125,7 +129,7 @@ export const ViewPort = styled.button<LayoutProps>`
     cursor: default;
   }
 
-  ${({ size, variant, isActiveDropdown }: any) => `
+  ${({ size, variant, isActiveDropdown, colors }: any) => `
     ${styledIf(
       isSmallButton(size),
       `
@@ -427,6 +431,13 @@ export const ViewPort = styled.button<LayoutProps>`
     `,
   )}  
   
+  ${Icon} {
+    svg {
+      fill: ${colors.normal};
+      stroke: ${colors.normal};
+    }
+  }
+  
   ${styledIf(
     isActiveDropdown,
     ` 
@@ -438,7 +449,14 @@ export const ViewPort = styled.button<LayoutProps>`
         padding: 2px;
         background: #12152c;
       }
- 
+      
+      ${Icon} {
+        svg {
+          fill: ${colors.active};
+          stroke: ${colors.active};
+        }
+      }
+       
       ${Container} {
         background: #12152c;
         
@@ -446,7 +464,7 @@ export const ViewPort = styled.button<LayoutProps>`
           opacity: 0 !important;
         }
       }
-    `,
+    `
   )}
   `}
 `;

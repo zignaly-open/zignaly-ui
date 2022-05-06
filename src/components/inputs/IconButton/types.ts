@@ -46,4 +46,8 @@ export type IconButtonProps = {
   onClick?: React.MouseEventHandler<HTMLButtonElement> | null;
   renderDropDown?: ReactElement<any> | null;
   className?: string;
+  colors?: {
+    normal: string;
+    active: string
+  }
 };

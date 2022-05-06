@@ -17,6 +17,10 @@ const IconButton = ({
   onClick = null,
   dropDownOptions,
   renderDropDown = null,
+  colors = {
+    normal: '#706f82',
+    active: '#fff'
+  },
   className,
 }: IconButtonProps) => {
   // Ref
@@ -107,6 +111,7 @@ const IconButton = ({
         size={size}
         variant={variant}
         disabled={disabled}
+        colors={colors}
         isActiveDropdown={isActiveDropdown}
       >
         <Container onClick={disabled ? null : renderDropDown ? handleClickButton : onClick}>

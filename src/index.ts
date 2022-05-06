@@ -21,6 +21,9 @@ import InputText from "./components/inputs/InputText";
 import Select from "./components/inputs/Selector";
 import { ButtonGroup } from "./components/styled";
 
+// Layouts
+import {MarginContainer, PageContainer} from "./components/styled";
+
 // Icons
 import CloseIcon from "./assets/icons/close-icon.svg";
 import CopyIcon from "./assets/icons/copy-icon.svg";
@@ -54,8 +57,8 @@ export {
    *   Components
    * =-=-=-=-=-=-=-=
    */
-      // Display
-      Avatar,
+  // Display
+  Avatar,
   Loader,
   Table,
   ConnectionStateLabel,
@@ -79,6 +82,9 @@ export {
   Header,
   BrandImage,
   ZigsBalance,
+  // Layouts
+  PageContainer,
+  MarginContainer,
 
   /**
    * =-=-=-=-=-=-=-=
