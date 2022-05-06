@@ -24,6 +24,7 @@ export const Caption = styled.div`
   z-index: 2;
   position: relative;
   transition: color 0.2s linear;
+  color: #e1e9f0;
 `;
 
 export const ElementsContainer = styled.div`
@@ -133,6 +134,7 @@ export const Layout = styled.button<LayoutProps>`
       ${Container} {
         padding: 9px 18px;
         height: 30px;
+        min-width: 78px;
       }
       
 
@@ -261,7 +263,7 @@ export const Layout = styled.button<LayoutProps>`
     isLargeButton(size),
     `     
       ${Container} {
-        padding: 15px 31px;
+        padding: 15px 32px;
         height: 48px;
         min-width: 120px;
       }
@@ -325,6 +327,7 @@ export const Layout = styled.button<LayoutProps>`
       ${Container} {
         padding: 20px 36px;
         height: 60px;  
+        min-width: 130px;
       }
 
       ${styledIf(
@@ -511,6 +514,9 @@ export const Layout = styled.button<LayoutProps>`
         ${Container}{
           opacity: 0.33;
         }
+        ${Caption} {
+          color: #89899A;
+        }
       }  
 
       &:enabled {
@@ -537,24 +543,7 @@ export const Layout = styled.button<LayoutProps>`
             opacity: 1;
           }
         }
-      }
-      ${styledIf(
-        isGreyColor(color),
-        `            
-        ${Caption} {
-          color: #e1e9f0;
-        }
-      `,
-      )}  
-
-      ${styledIf(
-        isGreenColor(color),
-        `            
-        ${Caption} {
-          color: #26c4c1;
-        }
-      `,
-      )}  
+      } 
     `,
   )}
     
@@ -597,10 +586,18 @@ export const Layout = styled.button<LayoutProps>`
         }
         ${styledIf(
           isGreyColor(color),
-          `            
-        ${Caption} {
-          color: #89899a;
-        }
+          `  
+          
+        &[enabled] {
+           ${Caption}{
+            color: #89899A;
+          }
+        } 
+        &[disabled] {
+          ${Caption}{
+            color: #89899A;
+          }
+        }  
       `,
         )} 
 
