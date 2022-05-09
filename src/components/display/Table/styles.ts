@@ -206,5 +206,6 @@ export const ColumnsSelector = styled.div`
   > span {
     justify-content: center;
     display: flex;
+    font-weight: 400;
   }
 `;
