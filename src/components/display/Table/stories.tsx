@@ -12,7 +12,7 @@ import Button from "components/inputs/Button";
 import DateLabel from "./components/DateLabel";
 
 // Styles
-import { Actions, CheckIconStyled } from "./styles";
+import { Actions, CheckIconStyled, CloseIconStyled } from "./styles";
 import { dark } from "../../../theme";
 
 // Assets
@@ -116,12 +116,12 @@ export const Investors = Template.bind({});
 Investors.args = {
   columns: [
     {
-      Header: "User ID",
-      accessor: "userId",
-    },
-    {
       Header: "Email",
       accessor: "email",
+    },
+    {
+      Header: "User ID",
+      accessor: "userId",
     },
     {
       Header: "Investment",
@@ -162,8 +162,8 @@ Investors.args = {
   ],
   data: [
     {
-      userId: "5f886d29da8e9666b1684c9a",
       email: "tec**@zig**.com",
+      userId: "5f886d29da8e9666b1684c9a",
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
         <PriceLabel
@@ -175,7 +175,24 @@ Investors.args = {
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
       successFee: "10%",
-      feesInZig: <CheckIconStyled width="16" height="12" />  ,
+      feesInZig: <CheckIconStyled width="24" height="24" color={dark["neutral300"]}/>,
+      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
+    },
+    {
+      email: "tec**@zig**.com",
+      userId: "5f886d29da8e9666b1684c9a",
+      investment: <PriceLabel coin={"USDT"} value={"1250"} />,
+      pyd: (
+        <PriceLabel
+          coin={"USDT"}
+          value={"30.5"}
+          bottomElement={<PercentageIndicator value={-1} theme={dark} />}
+        />
+      ),
+      pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
+      totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
+      successFee: "10%",
+      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]}/>,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
     },
   ],
@@ -228,7 +245,13 @@ ExchangeOrders.args = {
       side: "Buy",
       type: "Limit",
       action: (
-          <Button caption={"Close"} variant={"secondary"} size={"small"} leftElement={<CloseIcon color={"#E1E9F0"} />} onClick={() => {}} />
+        <Button
+          caption={"Close"}
+          variant={"secondary"}
+          size={"small"}
+          leftElement={<CloseIcon color={"#E1E9F0"} />}
+          onClick={() => {}}
+        />
       ),
     },
     {
@@ -241,7 +264,13 @@ ExchangeOrders.args = {
       side: "Buy",
       type: "Limit",
       action: (
-          <Button caption={"Close"} variant={"secondary"} size={"small"} leftElement={<CloseIcon color={"#E1E9F0"} />} onClick={() => {}} />
+        <Button
+          caption={"Close"}
+          variant={"secondary"}
+          size={"small"}
+          leftElement={<CloseIcon color={"#E1E9F0"} />}
+          onClick={() => {}}
+        />
       ),
     },
     {
@@ -254,7 +283,13 @@ ExchangeOrders.args = {
       side: "Buy",
       type: "Limit",
       action: (
-          <Button caption={"Close"} variant={"secondary"} size={"small"} leftElement={<CloseIcon color={"#E1E9F0"} />} onClick={() => {}} />
+        <Button
+          caption={"Close"}
+          variant={"secondary"}
+          size={"small"}
+          leftElement={<CloseIcon color={"#E1E9F0"} />}
+          onClick={() => {}}
+        />
       ),
     },
   ],

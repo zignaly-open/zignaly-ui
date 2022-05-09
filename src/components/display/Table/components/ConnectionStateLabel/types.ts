@@ -1,3 +1,5 @@
+import Theme from "theme/theme";
+
 export const ConnectionStateLabelId = {
   CONNECTED: "connected",
   DISCONNECTED: "disconnected",
@@ -14,7 +16,7 @@ export const connectionStateName = {
   [ConnectionStateLabelId.SUSPENDED]: "Suspended",
 };
 
-export const connectionStateColor = (theme: any) => ({
+export const connectionStateColor = (theme: Theme) => ({
   [ConnectionStateLabelId.CONNECTED]: theme["greenGraph"],
   [ConnectionStateLabelId.DISCONNECTED]: theme["neutral400"],
   [ConnectionStateLabelId.HARD_DISCONNECT]: theme["redGraphOrError"],

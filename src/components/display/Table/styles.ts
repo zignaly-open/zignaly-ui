@@ -3,7 +3,8 @@ import styled from "styled-components";
 import { styledIf } from "utils/styled";
 
 // Assets
-import CheckIcon from "../../../assets/icons/check-icon.svg";
+import CheckIcon from "assets/icons/check-icon.svg";
+import CloseIcon from "assets/icons/close-icon.svg";
 
 export const Layout = styled.div``;
 
@@ -90,7 +91,7 @@ export const TableView = styled.table`
   }
 `;
 
-export const ThView = styled.th<{ isSorted?: boolean, isAlignRight?: boolean }>`
+export const ThView = styled.th<{ isSorted?: boolean; isAlignRight?: boolean }>`
   padding: 4px 22px;
   white-space: nowrap;
   background: transparent;
@@ -104,7 +105,7 @@ export const ThView = styled.th<{ isSorted?: boolean, isAlignRight?: boolean }>`
   &:last-child {
     border-radius: 0 0 5px 0;
   }
-  ${(props: any) => `
+  ${(props) => `
      ${styledIf(
        props.isSorted,
        `
@@ -116,14 +117,14 @@ export const ThView = styled.th<{ isSorted?: boolean, isAlignRight?: boolean }>`
     `,
      )}
      ${styledIf(
-        props.isAlignRight,
-          `
+       props.isAlignRight,
+       `
         text-align: right;
     `,
-          `
+       `
         text-align: center;
     `,
-  )}
+     )}
   `}
 `;
 
@@ -197,5 +198,9 @@ export const Actions = styled.div`
 `;
 
 export const CheckIconStyled = styled(CheckIcon)`
+  vertical-align: middle;
+`;
+
+export const CloseIconStyled = styled(CloseIcon)`
   vertical-align: middle;
 `;

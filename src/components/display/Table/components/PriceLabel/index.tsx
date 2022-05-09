@@ -8,6 +8,7 @@ import * as styled from "./styles";
 // Types
 import { PriceLabelProps } from "./types";
 import { BottomElementWrap } from "./styles";
+import Typography from "components/display/Typography";
 
 const PriceLabel = ({
   value = 0,
@@ -26,12 +27,12 @@ const PriceLabel = ({
         decimalScale={fiat ? 2 : undefined}
       />
       {!fiat && (
-        <styled.Coin variant={"body2"} color={"neutral400"}>
+        <styled.Coin weight="medium" variant={"body2"} color={"neutral400"}>
           {coin}
         </styled.Coin>
       )}
     </styled.Value>
-    {bottomElement && <BottomElementWrap>{bottomElement}</BottomElementWrap>}
+    {bottomElement && <BottomElementWrap><Typography variant="body1">{bottomElement}</Typography></BottomElementWrap>}
   </styled.Layout>
 );
 
