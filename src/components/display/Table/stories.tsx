@@ -228,11 +228,11 @@ Investors.args = {
       pyd: (
         <PriceLabel
           coin={"USDT"}
-          value={"37.5"}
+          value={"1.5"}
           bottomElement={<PercentageIndicator value={3} theme={dark} />}
         />
       ),
-      pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
+      pydTotal: <PriceLabel coin={"USDT"} value={"0.3313383838"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
       successFee: "10%",
       feesInZig: <CheckIconStyled width="24" height="24" color={dark["neutral300"]}/>,
@@ -245,11 +245,11 @@ Investors.args = {
       pyd: (
         <PriceLabel
           coin={"USDT"}
-          value={"30.5"}
+          value={"0.85"}
           bottomElement={<PercentageIndicator value={-1} theme={dark} />}
         />
       ),
-      pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
+      pydTotal: <PriceLabel coin={"USDT"} value={"1.58"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
       successFee: "10%",
       feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]}/>,
@@ -272,11 +272,11 @@ Investors.args = {
       pyd: (
         <PriceLabel
           coin={"USDT"}
-          value={"30.5"}
-          bottomElement={<PercentageIndicator value={-1} theme={dark} />}
+          value={"1929292"}
+          bottomElement={<PercentageIndicator value={-87} theme={dark} />}
         />
       ),
-      pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
+      pydTotal: <PriceLabel coin={"USDT"} value={"134581"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
       successFee: "10%",
       feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]}/>,
