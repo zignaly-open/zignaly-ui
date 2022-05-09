@@ -8,22 +8,17 @@ export const Layout = styled.div<{ fiat: boolean }>`
   ${(props) => `
      ${styledIf(
        props.fiat,
-          `
+       `
       margin-right: 19px;
     `,
-          `
+       `
       margin-right: 0;
     `,
-  )}
+     )}
   `}
-  
 `;
 
-export const Value = styled(Typography)`
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-`;
+export const Value = styled(Typography)``;
 
 export const Coin = styled(Typography)`
   margin: 0 4px;
@@ -32,7 +27,4 @@ export const Coin = styled(Typography)`
   text-align: left;
 `;
 
-export const BottomElementWrap = styled.div`
-  text-align: right;
-  margin-right: 30px;
-`;
+export const BottomElementWrap = styled.div``;
