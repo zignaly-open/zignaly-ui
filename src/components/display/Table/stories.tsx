@@ -16,7 +16,7 @@ import { Actions, CheckIconStyled, CloseIconStyled } from "./styles";
 import { dark } from "../../../theme";
 
 // Assets
-import CloseIcon from "assets/icons/close-icon.svg";
+import Typography from "../Typography";
 
 export default {
   title: "Display/Table",
@@ -32,35 +32,59 @@ export const MyCoins = Template.bind({});
 MyCoins.args = {
   columns: [
     {
-      Header: "Coin",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Coin"}
+        </Typography>
+      ),
       accessor: "coin",
     },
     {
-      Header: "Total Balance",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Total Balance"}
+        </Typography>
+      ),
       accessor: "totalBalance",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: "Available Balance",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Available Balance"}
+        </Typography>
+      ),
       accessor: "availableBalance",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: "Locked Balance",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Locked Balance"}
+        </Typography>
+      ),
       accessor: "lockedBalance",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: "Value BTC",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Value BTC"}
+        </Typography>
+      ),
       accessor: "valueInBtc",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: "Value in USD",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Value in USD"}
+        </Typography>
+      ),
       accessor: "valueInUsd",
       // @ts-ignore
       isAlignThRight: true,
@@ -116,47 +140,83 @@ export const Investors = Template.bind({});
 Investors.args = {
   columns: [
     {
-      Header: "Email",
-      accessor: "email",
-    },
-    {
-      Header: "User ID",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"User ID"}
+        </Typography>
+      ),
       accessor: "userId",
     },
     {
-      Header: "Investment",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Email"}
+        </Typography>
+      ),
+      accessor: "email",
+    },
+    {
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Investment"}
+        </Typography>
+      ),
       accessor: "investment",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: "P & L",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"P & L"}
+        </Typography>
+      ),
       accessor: "pyd",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: "P & L Total",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"P & L Total"}
+        </Typography>
+      ),
       accessor: "pydTotal",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: "Total Fees Paid",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Total Fees Paid"}
+        </Typography>
+      ),
       accessor: "totalFeesPaid",
       // @ts-ignore
       isAlignThRight: true,
     },
     {
-      Header: "Success Fee",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Success Fee"}
+        </Typography>
+      ),
       accessor: "successFee",
     },
     {
-      Header: "Fees in ZIG",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Fees in ZIG"}
+        </Typography>
+      ),
       accessor: "feesInZig",
     },
     {
-      Header: "Status",
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"Status"}
+        </Typography>
+      ),
       accessor: "status",
     },
   ],
@@ -193,7 +253,51 @@ Investors.args = {
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
       successFee: "10%",
       feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]}/>,
-      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
+      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.DISCONNECTED} />,
+    },
+
+    {
+      email: "tec**@zig**.com",
+      userId: "5f886d29da8e9666b1684c9a",
+      pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
+      totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
+      successFee: "10%",
+      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]}/>,
+      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.HARD_DISCONNECT} />,
+    },
+    {
+      email: "tec**@zig**.com",
+      userId: "5f886d29da8e9666b1684c9a",
+      investment: <PriceLabel coin={"USDT"} value={"1250"} />,
+      pyd: (
+        <PriceLabel
+          coin={"USDT"}
+          value={"30.5"}
+          bottomElement={<PercentageIndicator value={-1} theme={dark} />}
+        />
+      ),
+      pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
+      totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
+      successFee: "10%",
+      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]}/>,
+      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.SOFT_DISCONNECT} />,
+    },
+    {
+      email: "tec**@zig**.com",
+      userId: "5f886d29da8e9666b1684c9a",
+      investment: <PriceLabel coin={"USDT"} value={"1250"} />,
+      pyd: (
+        <PriceLabel
+          coin={"USDT"}
+          value={"30.5"}
+          bottomElement={<PercentageIndicator value={-1} theme={dark} />}
+        />
+      ),
+      pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
+      totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
+      successFee: "10%",
+      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]}/>,
+      status: <ConnectionStateLabel stateId={ConnectionStateLabelId.SUSPENDED} />,
     },
   ],
 };
@@ -244,53 +348,6 @@ ExchangeOrders.args = {
       entryPrice: "110.20",
       side: "Buy",
       type: "Limit",
-      action: (
-        <Button
-          caption={"Close"}
-          variant={"secondary"}
-          size={"small"}
-          leftElement={<CloseIcon color={"#E1E9F0"} />}
-          onClick={() => {}}
-        />
-      ),
-    },
-    {
-      date: <DateLabel date={new Date(1751567879291)} />,
-      orderId: "248495028471",
-      pair: "XML/USDT",
-      amount: 25,
-      status: "Open",
-      entryPrice: "21077.20",
-      side: "Buy",
-      type: "Limit",
-      action: (
-        <Button
-          caption={"Close"}
-          variant={"secondary"}
-          size={"small"}
-          leftElement={<CloseIcon color={"#E1E9F0"} />}
-          onClick={() => {}}
-        />
-      ),
-    },
-    {
-      date: <DateLabel date={new Date(1851567879091)} />,
-      orderId: "358495028471",
-      pair: "XML/USDT",
-      amount: 25,
-      status: "Open",
-      entryPrice: "3109.60",
-      side: "Buy",
-      type: "Limit",
-      action: (
-        <Button
-          caption={"Close"}
-          variant={"secondary"}
-          size={"small"}
-          leftElement={<CloseIcon color={"#E1E9F0"} />}
-          onClick={() => {}}
-        />
-      ),
     },
   ],
 };

@@ -4,8 +4,8 @@ export const StoryList = styled.div`
   display: flex;
   flex-direction: row;
   margin-top: 10px;
-  button {
-    margin: 0px 3px;
+  * {
+    position: relative;
   }
 `;
 

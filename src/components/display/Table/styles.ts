@@ -61,7 +61,7 @@ export const TableView = styled.table`
       padding: 12px 22px;
       white-space: nowrap;
       background: transparent;
-
+      height: 95px;
       &.action {
         text-align: right;
       }
