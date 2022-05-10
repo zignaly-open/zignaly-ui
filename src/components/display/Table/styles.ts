@@ -92,6 +92,7 @@ export const TableView = styled.table`
 `;
 
 export const ThView = styled.th<{ isSorted?: boolean; isAlignRight?: boolean }>`
+  color: #a9a9ba;
   padding: 4px 22px;
   white-space: nowrap;
   background: transparent;
@@ -203,4 +204,15 @@ export const CheckIconStyled = styled(CheckIcon)`
 
 export const CloseIconStyled = styled(CloseIcon)`
   vertical-align: middle;
+`;
+
+export const ColumnsSelector = styled.div`
+  padding: 20px 0 10px;
+  color: ${(props) => props.theme.neutral200};
+
+  > span {
+    justify-content: center;
+    display: flex;
+    font-weight: 400;
+  }
 `;

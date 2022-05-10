@@ -451,9 +451,6 @@ export const Layout = styled.button<LayoutProps>`
         ${Container}{
           opacity: 0.33;
         }
-        ${Caption} {
-          color: #89899A;
-        }
       }  
       
       &:enabled:active {

@@ -7,7 +7,16 @@ import ArrowBottomWhiteIcon from "assets/icons/arrow-bottom-icon-white.svg?url";
 import OptionsDotsIcon from "assets/icons/option-dots-icon.svg";
 
 // Styles
-import { Layout, OptionItem, OptionList, SortIcon, TableView, View, ThView } from "./styles";
+import {
+  Layout,
+  OptionItem,
+  OptionList,
+  SortIcon,
+  TableView,
+  View,
+  ThView,
+  ColumnsSelector,
+} from "./styles";
 
 // Components
 import IconButton from "components/inputs/IconButton";
@@ -71,6 +80,41 @@ const Table = ({
     onColumnHidden(column, false);
   };
 
+  const renderColumnsSelector = useCallback(() => {
+    return (
+      <ColumnsSelector>
+        <Typography>Show/Hide Columns</Typography>
+        <OptionList>
+          {columns.map((column: any, index) => {
+            const isDisabled =
+              hiddenColumns.length >= columns.length - 2 &&
+              !hiddenColumns.find((e) => e === column.accessor);
+
+            const isActive = !hiddenColumns.find((e) => e === column.accessor);
+
+            return (
+              <OptionItem key={`--options-container-${index.toString()}`}>
+                <CheckBox
+                  value={isActive}
+                  label={column.Header ?? ""}
+                  onChange={(isActive: boolean) => {
+                    toggleHideColumn(column.accessor, !isActive);
+                    if (!isActive) {
+                      hideColumn(column.accessor);
+                    } else {
+                      showColumn(column.accessor);
+                    }
+                  }}
+                  disabled={isDisabled}
+                />
+              </OptionItem>
+            );
+          })}
+        </OptionList>
+      </ColumnsSelector>
+    );
+  }, [columns, hiddenColumns]);
+
   return (
     <Layout>
       <View ref={tableRef}>
@@ -106,35 +150,7 @@ const Table = ({
                         componentOverflowRef: tableRef,
                         alignment: "right",
                       }}
-                      renderDropDown={
-                        <OptionList>
-                          {columns.map((column: any, index) => {
-                            const isDisabled =
-                              hiddenColumns.length >= columns.length - 2 &&
-                              !hiddenColumns.find((e) => e === column.accessor);
-
-                            const isActive = !hiddenColumns.find((e) => e === column.accessor);
-
-                            return (
-                              <OptionItem key={`--options-container-${index.toString()}`}>
-                                <CheckBox
-                                  value={isActive}
-                                  label={column.Header ?? ""}
-                                  onChange={(isActive: boolean) => {
-                                    toggleHideColumn(column.accessor, !isActive);
-                                    if (!isActive) {
-                                      hideColumn(column.accessor);
-                                    } else {
-                                      showColumn(column.accessor);
-                                    }
-                                  }}
-                                  disabled={isDisabled}
-                                />
-                              </OptionItem>
-                            );
-                          })}
-                        </OptionList>
-                      }
+                      renderDropDown={renderColumnsSelector()}
                     />
                   </div>
                 </th>
