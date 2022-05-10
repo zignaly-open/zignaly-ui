@@ -6,8 +6,8 @@
   "module": "lib/index.es.js",
   "scripts": {
     "storybook": "start-storybook -p 6006 -s ./src",
-    "prebuild:storybook": "npm run test:generate-output",
     "build:storybook": "build-storybook -c .storybook -o build/",
+    "build-storybook": "yarn test:generate-output && yarn build:storybook",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "test:generate-output-with-watch": "jest --json --outputFile=.jest-test-results.json --watch || true",
     "test": "jest -u",
