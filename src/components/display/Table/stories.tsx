@@ -100,8 +100,8 @@ MyCoins.args = {
       valueInUsd: <PriceLabel coin={"USD"} value={"3.200"} fiat />,
       action: (
         <Actions>
-          <Button caption={"Deposit"} variant={"secondary"} onClick={() => {}} />
-          <Button caption={"Withdraw"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
         </Actions>
       ),
     },
@@ -114,8 +114,8 @@ MyCoins.args = {
       valueInUsd: <PriceLabel coin={"USD"} value={"34,000"} fiat />,
       action: (
         <Actions>
-          <Button caption={"Deposit"} variant={"secondary"} onClick={() => {}} />
-          <Button caption={"Withdraw"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
         </Actions>
       ),
     },

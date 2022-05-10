@@ -22,7 +22,6 @@ export const Caption = styled.div`
   z-index: 2;
   position: relative;
   transition: color 0.2s linear;
-  color: #e1e9f0;
 `;
 
 export const ElementsContainer = styled.div`
@@ -129,12 +128,16 @@ export const Layout = styled.button<LayoutProps>`
     ${styledIf(
       isSmallButton(props.size),
       `
+      ${Caption}{
+        &.buttonsm{
+
+        }
+      }
       ${Container} {
         padding: 9px 18px;
         height: 30px;
         min-width: 76px;
       }
-      
 
       ${styledIf(
         props.withLeftElement,
@@ -194,7 +197,8 @@ export const Layout = styled.button<LayoutProps>`
     
   ${styledIf(
     isMediumButton(props.size),
-    `     
+    `    
+     
       ${Container} {
         padding: 11px 18px;
         min-width: 76px;
@@ -387,6 +391,9 @@ export const Layout = styled.button<LayoutProps>`
   ${styledIf(
     isPrimaryButton(props.variant),
     `
+      ${Caption} {
+        color: ${props.theme["neutral000"]}
+      }
       ${Container} {
         background: linear-gradient(289.8deg, #149CAD 0%, #4540C1 100%);
         transition: all 0.2s linear;
@@ -473,6 +480,9 @@ export const Layout = styled.button<LayoutProps>`
   ${styledIf(
     isSecondaryButton(props.variant),
     `
+      ${Caption} {
+        color: ${props.theme["neutral000"]}
+      }
       ${Container} {
         background: rgba(16, 18, 37, 0.3);
         transition: all 0.2s linear;
