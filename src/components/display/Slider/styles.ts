@@ -4,6 +4,9 @@ import Typography from "../Typography";
 
 export const Layout = styled.div`
   position: relative;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
 `;
 
 export const Bar = styled.div`
@@ -15,15 +18,18 @@ export const Bar = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  margin: 0 7px;
 `;
 
 export const DotContainer = styled.div<{ value: number }>`
   display: flex;
   justify-content: center;
   flex-direction: column;
+  align-items: center;
   position: absolute;
   left: ${(props) => props.value}%;
   top: -4px;
+  transform: translate(-50%, 0%);
 `;
 
 export const Dot = styled.div<{ value: number }>`
@@ -31,43 +37,12 @@ export const Dot = styled.div<{ value: number }>`
   border: 2px solid ${(props) => props.theme.neutral300};
   box-shadow: 0px 0px 0px 2px #191927;
   border-radius: 100px;
-  /* position: absolute; */
-  /* left: ${(props) => props.value}%; */
   width: 12px;
   height: 12px;
 `;
 
-const Label = styled(Typography)`
-  margin-top: 8px;
-
+export const Label = styled(Typography)`
   &.body1 {
     font-size: 13px;
   }
-`;
-
-export const StartLabel = styled(Label)`
-  position: absolute;
-  left: 0;
-  top: 8px;
-  transform: translate(-50%, 0%);
-`;
-
-export const EndLabel = styled(Label)`
-  position: absolute;
-  right: 0;
-  top: 8px;
-  transform: translate(50%, 0%);
-`;
-
-export const ValueLabel = styled(Label)<{ value: number }>`
-  padding: 0 12px;
-  margin-left: -12px;
-  background: inherit;
-  z-index: 12px;
-`;
-
-export const ValueLabelContainer = styled.div`
-  padding: 0 12px;
-  margin-left: -12px;
-  background: inherit;
 `;
