@@ -128,8 +128,20 @@ MyCoins.args = {
       valueInUsd: <PriceLabel symbol={"€"} coin={"EUR"} value={"400"} fiat />,
       action: (
         <Actions>
-          <Button caption={"Deposit"} variant={"secondary"} size={"small"} onClick={() => {}} />
-          <Button caption={"Withdraw"} variant={"secondary"} size={"small"} onClick={() => {}} />
+          <Button
+            caption={"Deposit"}
+            color="grey"
+            variant={"secondary"}
+            size={"small"}
+            onClick={() => {}}
+          />
+          <Button
+            caption={"Withdraw"}
+            color="grey"
+            variant={"secondary"}
+            size={"small"}
+            onClick={() => {}}
+          />
         </Actions>
       ),
     },
@@ -142,18 +154,18 @@ Investors.args = {
     {
       Header: (
         <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
-          {"User ID"}
-        </Typography>
-      ),
-      accessor: "userId",
-    },
-    {
-      Header: (
-        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
           {"Email"}
         </Typography>
       ),
       accessor: "email",
+    },
+    {
+      Header: (
+        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+          {"User ID"}
+        </Typography>
+      ),
+      accessor: "userId",
     },
     {
       Header: (
@@ -235,7 +247,7 @@ Investors.args = {
       pydTotal: <PriceLabel coin={"USDT"} value={"0.3313383838"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
       successFee: "10%",
-      feesInZig: <CheckIconStyled width="24" height="24" color={dark["neutral300"]}/>,
+      feesInZig: <CheckIconStyled width="24" height="24" color={dark["neutral300"]} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
     },
     {
@@ -252,7 +264,7 @@ Investors.args = {
       pydTotal: <PriceLabel coin={"USDT"} value={"1.58"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
       successFee: "10%",
-      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]}/>,
+      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.DISCONNECTED} />,
     },
 
@@ -262,7 +274,7 @@ Investors.args = {
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
       successFee: "10%",
-      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]}/>,
+      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.HARD_DISCONNECT} />,
     },
     {
@@ -279,7 +291,7 @@ Investors.args = {
       pydTotal: <PriceLabel coin={"USDT"} value={"134581"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
       successFee: "10%",
-      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]}/>,
+      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.SOFT_DISCONNECT} />,
     },
     {
@@ -296,7 +308,7 @@ Investors.args = {
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
       successFee: "10%",
-      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]}/>,
+      feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.SUSPENDED} />,
     },
   ],

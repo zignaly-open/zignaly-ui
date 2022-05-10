@@ -22,6 +22,7 @@ const PriceLabel = ({
       <NumberFormat
         prefix={fiat ? symbol : ""}
         value={value}
+        style={{ fontWeight: "500", fontSize: "15px" }}
         displayType={"text"}
         thousandSeparator={true}
         decimalScale={fiat ? 2 : undefined}
@@ -32,7 +33,11 @@ const PriceLabel = ({
         </styled.Coin>
       )}
     </styled.Value>
-    {bottomElement && <BottomElementWrap><Typography variant="body1">{bottomElement}</Typography></BottomElementWrap>}
+    {bottomElement && (
+      <BottomElementWrap>
+        <Typography variant="body1">{bottomElement}</Typography>
+      </BottomElementWrap>
+    )}
   </styled.Layout>
 );
 
