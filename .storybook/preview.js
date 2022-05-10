@@ -10,7 +10,6 @@ import { createGlobalStyle } from "styled-components";
 // Testing Results
 import { withTests } from "@storybook/addon-jest";
 import results from "../.jest-test-results.json";
-import theme from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -39,6 +38,7 @@ addDecorator(styledThemed);
 export const decorators = [
   withTests({
     results,
+    filesExt: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
   }),
   withDesign(),
 ];

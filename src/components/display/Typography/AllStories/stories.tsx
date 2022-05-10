@@ -36,7 +36,7 @@ export default {
     }
   },
   parameters: {
-    jest: ["test.tsx"],
+    jest: ["typography"],
   },
   decorators: [(story) => <div style={{ padding: "0.2rem" }}>{story()}</div>],
 } as ComponentMeta<typeof TextVariations>;

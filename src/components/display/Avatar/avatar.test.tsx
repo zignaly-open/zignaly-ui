@@ -41,6 +41,14 @@ describe("components/display/Avatar", () => {
       expect(tag).toBeVisible();
     });
 
+    it("Avatar with hash 2", () => {
+      const { container } = render(<Avatar hash="0xmyHash">Example Test</Avatar>);
+
+      const tag = container.querySelector("div");
+      expect(tag).toBeVisible();
+    });
+
+
     it("Avatar with image", () => {
       render(<Avatar image="image">Example Test</Avatar>);
 
