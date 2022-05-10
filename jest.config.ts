@@ -9,6 +9,7 @@ const config: Config.InitialOptions = {
     "\\.[jt]sx?$": "babel-jest",
     "\\.ts$": "ts-jest",
   },
+  setupFilesAfterEnv: ['<rootDir>/jest-setup.ts'],
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
   modulePathIgnorePatterns: ['node_modules', 'jest-test-results.json'],
   moduleNameMapper: {
