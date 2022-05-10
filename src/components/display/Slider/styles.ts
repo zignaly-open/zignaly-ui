@@ -32,7 +32,7 @@ export const DotContainer = styled.div<{ value: number }>`
   transform: translate(-50%, 0%);
 `;
 
-export const Dot = styled.div<{ value: number }>`
+export const Dot = styled.div`
   background: #ffffff;
   border: 2px solid ${(props) => props.theme.neutral300};
   box-shadow: 0px 0px 0px 2px #191927;

@@ -15,7 +15,7 @@ function SliderProgress({ className, value, max = 100 }: SliderProgressProps): R
       <Label>0%</Label>
       <Bar>
         <DotContainer value={normalizedValue}>
-          <Dot value={normalizedValue} />
+          <Dot />
           <Label>{value}%</Label>
         </DotContainer>
       </Bar>
