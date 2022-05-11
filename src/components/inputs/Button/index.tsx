@@ -56,14 +56,14 @@ function Button({
     >
       <styled.Container>
         <styled.ElementsContainer>
-          {leftElement && <styled.LeftElement>{renderLeftElement}</styled.LeftElement>}
-          {caption && <styled.Caption>{caption}</styled.Caption>}
-          {rightElement && <styled.RightElement>{renderRightElement}</styled.RightElement>}
+          {leftElement && <styled.LeftElement data-testid="button-left-element">{renderLeftElement}</styled.LeftElement>}
+          {caption && <styled.Caption data-testid="button-caption-element">{caption}</styled.Caption>}
+          {rightElement && <styled.RightElement data-testid="button-right-element">{renderRightElement}</styled.RightElement>}
         </styled.ElementsContainer>
       </styled.Container>
 
       {loading && (
-        <styled.LoaderContainer>
+        <styled.LoaderContainer data-testid="button-loader-element">
           <styled.ButtonLoader
             type={LoaderTypes.TAILSPIN}
             color="#9CA3AF"

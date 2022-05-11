@@ -11,6 +11,7 @@
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "test:generate-output-with-watch": "jest --json --outputFile=.jest-test-results.json --watch || true",
     "test": "jest -u",
+    "test:watch": "jest --watch",
     "build": "npm run clean && webpack --mode=production --node-env=production",
     "build:dev": "npm run clean && webpack",
     "clean": "rm -rf lib",

@@ -9,13 +9,13 @@ import { CoinSizes, CoinTypeProps } from "./types";
 
 const CoinIcon = ({ size = CoinSizes.MEDIUM, name, coin, className = "", }: CoinTypeProps) => (
   <Layout className={[size, className] as any} data-testid="coin-icon-view">
-      <object data={`https://res.cloudinary.com/zignaly/image/upload/c_scale,w_${
-          sizes[CoinSizes.MEDIUM]
-      },h_${sizes[CoinSizes.MEDIUM]},r_max/coins-binance/BTC`} type="image/jpg">
+      <object data-testid="coin-icon-object" data={`https://res.cloudinary.com/zignaly/image/upload/c_scale,w_${
+          sizes[size as CoinSizes]
+      },h_${sizes[size as CoinSizes]},r_max/coins-binance/${coin}`} type="image/jpg">
           <Image
               src={`https://res.cloudinary.com/zignaly/image/upload/c_scale,w_${
                   sizes[size as CoinSizes]
-              },h_${sizes[size as CoinSizes]},r_max/coins-binance/${coin}`}
+              },h_${sizes[size as CoinSizes]},r_max/coins-binance/BTC`}
               alt={name}
           />
       </object>
