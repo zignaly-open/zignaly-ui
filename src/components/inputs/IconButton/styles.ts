@@ -134,8 +134,10 @@ export const ViewPort = styled.button<LayoutProps>`
       isSmallButton(size),
       `
       ${Icon} {
-        width: 14px;
-        height: 14px;
+        svg {
+          width: 14px;
+          height: 14px;
+        }
       }
       
       ${Container} {
@@ -149,8 +151,10 @@ export const ViewPort = styled.button<LayoutProps>`
     isMediumButton(size),
     `     
       ${Icon} {
-        width: 14px;
-        height: 14px;
+        svg {
+          width: 14px;
+          height: 14px;
+        }
       }
       
       ${Container} {
@@ -164,8 +168,10 @@ export const ViewPort = styled.button<LayoutProps>`
     isLargeButton(size),
     `     
       ${Icon} {
-        width: 18px;
-        height: 18px;
+        svg {
+          width: 18px;
+          height: 18px;
+        }
       }
       
       ${Container} {
@@ -179,8 +185,10 @@ export const ViewPort = styled.button<LayoutProps>`
     isXLargeButton(size),
     `     
       ${Icon} {
-        width: 24px;
-        height: 24px;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
       }
       
       ${Container} {

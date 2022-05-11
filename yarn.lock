@@ -11674,6 +11674,11 @@ react-helmet-async@^1.0.7:
     react-fast-compare "^3.2.0"
     shallowequal "^1.1.0"
 
+react-hook-form@^7.31.1:
+  version "7.31.1"
+  resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.31.1.tgz#16c357dd366bc226172e6acbb5a1672873bbfb28"
+  integrity sha512-QjtjZ8r8KtEBWWpcXLyQordCraTFxILtyQpaz5KLLxN2YzcC+FZ9LLtOnNGuOnzZo9gCoB+viK3ZHV9Mb2htmQ==
+
 react-inspector@^5.1.0:
   version "5.1.1"
   resolved "https://registry.npmjs.org/react-inspector/-/react-inspector-5.1.1.tgz"
@@ -11826,6 +11831,11 @@ react-use@^17.3.2:
     throttle-debounce "^3.0.1"
     ts-easing "^0.2.0"
     tslib "^2.1.0"
+
+react-verification-code-input@^1.2.9:
+  version "1.2.9"
+  resolved "https://registry.yarnpkg.com/react-verification-code-input/-/react-verification-code-input-1.2.9.tgz#16051396f0c75752aab0cd9f37cb7be7084b98d0"
+  integrity sha512-Fg0B3SGGRoZtZFiQ/8FGSK5MQby9k5ssIUupPLvb8/U++Yxvc0T8ps/7CClLnvN+wowS5oL8xS7vqUTR9fRH6Q==
 
 react@^17.0.2:
   version "17.0.2"

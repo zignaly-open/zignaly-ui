@@ -45,12 +45,14 @@
     "@testing-library/react-hooks": "^7.0.2",
     "date-fns": "^2.28.0",
     "ethers": "^5.5.2",
+    "react-hook-form": "^7.31.1",
     "react-loader-spinner": "^6.0.0-0",
     "react-number-format": "^4.9.1",
     "react-portal": "^4.2.2",
     "react-spring": "^9.4.4",
     "react-table": "^7.7.0",
-    "react-use": "^17.3.2"
+    "react-use": "^17.3.2",
+    "react-verification-code-input": "^1.2.9"
   },
   "devDependencies": {
     "@babel/core": "^7.17.9",
@@ -115,8 +117,8 @@
     "webpack-cli": "^4.9.2"
   },
   "peerDependencies": {
+    "next": ">= 12",
     "react": ">= 16.14",
-    "react-dom": ">= 16.14",
-    "next": ">= 12"
+    "react-dom": ">= 16.14"
   }
 }
