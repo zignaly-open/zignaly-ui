@@ -19,6 +19,7 @@ import InputAmount from "./components/inputs/InputAmount";
 import TextButton from "./components/inputs/TextButton";
 import InputText from "./components/inputs/InputText";
 import Select from "./components/inputs/Selector";
+import InputCode from "./components/inputs/InputCode";
 import { ButtonGroup } from "./components/styled";
 
 // Layouts
@@ -78,6 +79,7 @@ export {
   InputText,
   Select,
   ButtonGroup,
+  InputCode,
   // Navigation
   Header,
   BrandImage,
