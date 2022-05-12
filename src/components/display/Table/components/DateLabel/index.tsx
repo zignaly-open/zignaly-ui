@@ -5,7 +5,7 @@ import { format } from "date-fns";
 // Styled Components
 import * as styled from "./styles";
 
-const DateLabel = ({ date = new Date() }) => (
+const DateLabel = ({ date }: {date: Date}) => (
   <styled.Layout>
     <styled.Value>{format(date, "p")}</styled.Value>
     <styled.Value>{format(date, "PP")}</styled.Value>

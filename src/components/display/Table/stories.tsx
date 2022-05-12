@@ -291,7 +291,7 @@ ExchangeOrders.args = {
   ],
   data: [
     {
-      date: <DateLabel date={new Date()} />,
+      date: <DateLabel date={new Date('December 2, 1997 20:10:00')} />,
       orderId: "138495028471",
       pair: "XML/USDT",
       amount: 25,
