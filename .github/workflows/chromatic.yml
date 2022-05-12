@@ -29,3 +29,4 @@ jobs:
         # Chromatic GitHub Action options
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+          autoAcceptChanges: true #Option ensures all incoming changes will be accepted as baselines. Additionally, you’ll maintain a clean develop branch
