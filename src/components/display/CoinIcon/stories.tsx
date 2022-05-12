@@ -28,6 +28,6 @@ const Template: ComponentStory<typeof CoinIcon> = (args) => <CoinIcon {...args} 
 export const CoinIconStory = Template.bind({});
 CoinIconStory.args = {
   name: "Ethereum",
-  size: CoinSizes.MEDIUM,
+  size: CoinSizes.LARGE,
   coin: "ETH",
 };
