@@ -8,11 +8,11 @@ import TextButton from "./";
 // Assets
 import CloseIcon from "assets/icons/close-icon.svg";
 import ArrowDown from "assets/icons/arrow-bottom-icon.svg";
-import OpenArrow from "assets/icons/open-arrow-icon.svg";
+import { dark } from "theme";
 
 const ICONS = {
-  ArrowDown: <ArrowDown width={13} height={8} color={"#E1E9F0"} />,
-  CloseIcon: <CloseIcon width={13} height={13} color={"#E1E9F0"} />,
+  ArrowDown: <ArrowDown height="20" width="20" color={"#E1E9F0"} />,
+  CloseIcon: <CloseIcon height="20" width="20" color={dark["links"]} />,
   NoIcon: null,
 };
 type Icons = typeof ICONS;
@@ -48,6 +48,14 @@ export default {
       control: { type: "text" },
       label: "Change Caption",
     },
+    disabled: {
+      options: [true, false],
+      control: { type: "radio" },
+    },
+    loading: {
+      options: [true, false],
+      control: { type: "radio" },
+    },
     underline: {
       options: [true, false],
       control: { type: "radio" },
@@ -56,6 +64,10 @@ export default {
       table: {
         disable: true,
       },
+    },
+    color: {
+      options: Object.keys(dark),
+      control: "select",
     },
   },
 } as ComponentMeta<typeof TextButton>;
@@ -78,5 +90,12 @@ PlainTextButton.args = {};
 export const LinkButton = Template.bind({});
 LinkButton.args = {
   href: "https://zignaly.com",
-  rightElement: <OpenArrow />,
+  rightElement: <CloseIcon />,
+  leftElement: <ArrowDown />,
+};
+
+export const LoadingButton = Template.bind({});
+LoadingButton.args = {
+  href: "https://zignaly.com",
+  loading: true,
 };
