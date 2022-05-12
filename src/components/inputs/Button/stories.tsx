@@ -10,8 +10,8 @@ import CloseIcon from "assets/icons/close-icon.svg";
 import ArrowDown from "assets/icons/arrow-bottom-icon.svg";
 
 const ICONS = {
-  ArrowDown: <ArrowDown width={13} height={8} color={"#E1E9F0"} />,
-  CloseIcon: <CloseIcon width={13} height={13} color={"#E1E9F0"} />,
+  ArrowDown: <ArrowDown color={"#E1E9F0"} />,
+  CloseIcon: <CloseIcon color={"#E1E9F0"} />,
   NoIcon: null,
 };
 type Icons = typeof ICONS;
@@ -53,11 +53,9 @@ export default {
       options: [true, false],
       control: { type: "radio" },
     },
-    icon: {
-      control: {
-        type: "select",
-      },
-      options: Object.keys(ICONS),
+    loading: {
+      options: [true, false],
+      control: { type: "radio" },
     },
     leftElement: {
       control: {
@@ -77,10 +75,9 @@ export default {
   },
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = ({ icon, leftElement, rightElement, ...args }) => {
+const Template: ComponentStory<typeof Button> = ({ leftElement, rightElement, ...args }) => {
   return (
     <Button
-      icon={renderIcon(icon as keyof Icons)}
       leftElement={renderIcon(leftElement as keyof Icons)}
       rightElement={renderIcon(rightElement as keyof Icons)}
       {...args}

@@ -4,10 +4,11 @@ import { useClickAway, useWindowSize } from "react-use";
 import { Portal } from "react-portal";
 
 // Styled Components
-import { Layout, ViewPort, Dropdown, Icon, Container } from "./styles";
+import { Layout, ViewPort, Dropdown, Icon, Container, ButtonLoader, IconContainer } from "./styles";
 
 // Types
 import { IconButtonProps, defaultDropDownOptions } from "./types";
+import { LoaderTypes } from "components/display/Loader";
 
 const IconButton = ({
   icon,
@@ -15,6 +16,7 @@ const IconButton = ({
   size = "medium",
   variant = "primary",
   onClick = null,
+  loading = false,
   dropDownOptions,
   renderDropDown = null,
   colors = {
@@ -110,12 +112,22 @@ const IconButton = ({
       <ViewPort
         size={size}
         variant={variant}
-        disabled={disabled}
         colors={colors}
+        disabled={disabled || loading}
         isActiveDropdown={isActiveDropdown}
       >
         <Container onClick={disabled ? null : renderDropDown ? handleClickButton : onClick}>
-          <Icon>{icon}</Icon>
+          {loading ? (
+            <ButtonLoader
+              type={LoaderTypes.TAILSPIN}
+              color="#9CA3AF"
+              ariaLabel="Loader"
+            />
+          ) : (
+            <IconContainer>
+              <Icon>{icon}</Icon>
+            </IconContainer>
+          )}
         </Container>
       </ViewPort>
       {isActiveDropdown &&

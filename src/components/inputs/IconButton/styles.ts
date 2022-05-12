@@ -1,4 +1,5 @@
 // Dependencies
+import Loader from "components/display/Loader";
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
 import { buttonSizes, buttonVariants, dropdownAlignment, dropdownPosition } from "./types";
@@ -23,6 +24,11 @@ export const Icon = styled.div`
   z-index: 2;
   position: relative;
   transition: color 0.2s linear;
+`;
+
+export const ButtonLoader = styled(Loader)`
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Container = styled.div<any>`
@@ -112,6 +118,8 @@ export const Layout = styled.div`
   display: inline-flex;
 `;
 
+export const IconContainer = styled.div``;
+
 export const ViewPort = styled.button<LayoutProps>`
   border-radius: 4px;
   border: none;
@@ -139,6 +147,11 @@ export const ViewPort = styled.button<LayoutProps>`
           height: 14px;
         }
       }
+
+      ${ButtonLoader}{
+        height: 15px;
+        width: 15px;
+      }
       
       ${Container} {
         width: 34px;
@@ -155,6 +168,11 @@ export const ViewPort = styled.button<LayoutProps>`
           width: 14px;
           height: 14px;
         }
+      }
+
+      ${ButtonLoader}{
+        height: 20px;
+        width: 20px;
       }
       
       ${Container} {
@@ -173,6 +191,11 @@ export const ViewPort = styled.button<LayoutProps>`
           height: 18px;
         }
       }
+
+      ${ButtonLoader}{
+        height: 25px;
+        width: 25px;
+      }
       
       ${Container} {
         width: 56px;
@@ -189,6 +212,11 @@ export const ViewPort = styled.button<LayoutProps>`
           width: 24px;
           height: 24px;
         }
+      }
+
+      ${ButtonLoader}{
+        height: 30px;
+        width: 30px;
       }
       
       ${Container} {
@@ -220,7 +248,9 @@ export const ViewPort = styled.button<LayoutProps>`
       }
             
       &[disabled] {
-        opacity: 0.33;
+        ${IconContainer}{
+          opacity: 0.33;
+        }
       } 
 
       &:enabled {
@@ -299,7 +329,9 @@ export const ViewPort = styled.button<LayoutProps>`
       }
             
       &[disabled] {
-        opacity: 0.33;
+        ${IconContainer}{
+          opacity: 0.33;
+        }
       } 
 
       &:enabled {
@@ -391,7 +423,9 @@ export const ViewPort = styled.button<LayoutProps>`
       }
             
       &[disabled] {
-        opacity: 0.33;
+        ${IconContainer}{
+          opacity: 0.33;
+        }
       } 
 
       &:enabled {
