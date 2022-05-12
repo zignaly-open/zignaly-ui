@@ -5,7 +5,7 @@ import { Text } from "../stories";
 import Typography from "..";
 
 export default {
-  title: "Display/Typography/All Stories",
+  title: "Display/Typography/AllStories",
   component: TextVariations,
   subcomponents: { Typography },
   argTypes: {

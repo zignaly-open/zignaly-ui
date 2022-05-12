@@ -26,7 +26,6 @@ describe("components/display/CoinIcon", () => {
             expect(etherCoinIconImage).toHaveAttribute('src', srcFallback);
             expect(etherCoinIconImage).toHaveAttribute('alt', 'Ethereum');
             expect(etherCoinIconImage).toBeVisible();
-            //TODO: see if put fireEvent.error or fireEvent.load with the jest function
         });
         it('should be rendered EtherCoinIconStory', () => {
             const {getByTestId} = render(<EtherCoinIconStory />);

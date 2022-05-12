@@ -1,11 +1,9 @@
 // Dependencies
-import { withDesign } from "storybook-addon-designs";
 import { useDarkMode } from "storybook-dark-mode";
 import { dark, light } from "../src/theme";
 import { addDecorator } from "@storybook/react";
 import { makeDecorator } from "@storybook/addons";
-import { ThemeProvider } from "styled-components";
-import { createGlobalStyle } from "styled-components";
+import { ThemeProvider, createGlobalStyle } from "styled-components";
 
 // Testing Results
 import { withTests } from "@storybook/addon-jest";
@@ -40,7 +38,6 @@ export const decorators = [
     results,
     filesExt: "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
   }),
-  withDesign(),
 ];
 
 export const parameters = {

@@ -10,7 +10,7 @@ const { NormalButton } = composeStories(stories);
 
 describe("inputs/Button", () => {
     describe("stories", () => {
-        it('should be rendered NormalButton checks props and styles', () => {
+        it('should be rendered NormalButton', () => {
             const {getByRole} = render(<NormalButton />);
             const NormalButtonRendered = getByRole('button');
             expect(NormalButtonRendered).toBeVisible();

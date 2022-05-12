@@ -13,7 +13,7 @@ const config: Config.InitialOptions = {
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json"],
   modulePathIgnorePatterns: ['node_modules', 'jest-test-results.json'],
   moduleNameMapper: {
-    '\\.svg(.*)$': '<rootDir>/__mocks__/svg.js',
+    '\\.svg(.*)$': '<rootDir>/__mocks__/svg.tsx',
     "^assets(.*)$": "<rootDir>/src/assets$1",
     "^components(.*)$": "<rootDir>/src/components$1",
     "^theme(.*)$": "<rootDir>/src/theme$1",
