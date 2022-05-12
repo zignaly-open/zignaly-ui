@@ -28,8 +28,8 @@ const Template: ComponentStory<typeof CoinIcon> = (args) => <CoinIcon {...args} 
 export const EtherCoinIconStory = Template.bind({});
 EtherCoinIconStory.args = {
   name: "Ethereum",
-  size: CoinSizes.MEDIUM,
-  coin: "ETH",
+  size: CoinSizes.LARGE,
+  coin: "BNB",
 };
 
 export const BitcoinCoinIconStory = Template.bind({});
@@ -42,6 +42,6 @@ BitcoinCoinIconStory.args = {
 export const TetherCoinIconStory = Template.bind({});
 TetherCoinIconStory.args = {
   name: "Tether",
-  size: CoinSizes.SMALL,
+  size: CoinSizes.LARGE,
   coin: "USDT",
 };
