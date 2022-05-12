@@ -51,7 +51,7 @@ MyCoins.args = {
       isAlignThRight: true,
     },
     {
-      Header: "Value BTC",
+      Header: "Value in BTC",
       accessor: "valueInBtc",
       // @ts-ignore
       isAlignThRight: true,
