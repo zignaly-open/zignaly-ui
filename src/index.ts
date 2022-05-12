@@ -109,7 +109,7 @@ export {
   LogoTwitterIcon,
   WalletIcon,
   OptionHorizontalDotsIcon,
-  EditPenIcon
+  EditPenIcon,
   /**
    * =-=-=-=-=-=-=-=
    *     Utils
