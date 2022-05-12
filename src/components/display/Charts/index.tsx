@@ -1,0 +1,127 @@
+/* eslint-disable multiline-ternary */
+import React, { useEffect, useMemo, useState } from "react";
+import { VictoryArea, VictoryAxis, VictoryChart, VictoryGroup, VictoryLine } from "victory";
+import { Layout } from "./styles";
+import { ChartInput, ChartsProps, largeStyle } from "./types";
+
+export const AreaChart = ({ data, variant, midLine }: ChartsProps) => {
+  const [gradientColor, setGradientColor] = useState<boolean>(false);
+  const firstTimestamp = data[0].y;
+  const lastTimeStamp = data[data.length - 1].y;
+
+  const positiveOrNegative = useMemo(() => {
+    if (firstTimestamp > lastTimeStamp) {
+      setGradientColor(false);
+    } else if (firstTimestamp <= lastTimeStamp) {
+      setGradientColor(true);
+    }
+  }, [gradientColor]);
+
+  useEffect(() => {
+    positiveOrNegative;
+  }, [data]);
+
+  return (
+    <Layout variant={variant}>
+      {GraphColor({ isGreen: gradientColor })}
+      {variant === "large"
+        ? LargeChart({ data: data, isGreen: gradientColor, midLine: midLine })
+        : SmallChart({ data: data, isGreen: gradientColor, midLine: midLine })}
+    </Layout>
+  );
+};
+
+const SmallChart = ({ data, isGreen, midLine }: ChartInput) => {
+  const strokeColor = isGreen ? "#18ED90" : "red";
+
+  return (
+    <VictoryGroup>
+      <VictoryArea
+        style={{
+          data: {
+            fill: "url(#gradient)",
+            strokeWidth: 1,
+            stroke: strokeColor,
+          },
+        }}
+        data={data}
+      ></VictoryArea>
+      {midLine && (
+        <VictoryLine
+          style={{
+            data: {
+              stroke: "grey",
+              strokeDasharray: 6,
+              strokeWidth: 2,
+              strokeOpacity: 0.7,
+            },
+          }}
+          x={0}
+          y={() => data[0].y}
+        ></VictoryLine>
+      )}
+    </VictoryGroup>
+  );
+};
+
+const LargeChart = ({ data, isGreen, midLine }: ChartInput) => {
+  const strokeColor = isGreen ? "#18ED90" : "red";
+
+  return (
+    <VictoryChart domainPadding={{ x: [0, -10], y: 5 }} domain={{ y: [0, 35] }}>
+      <VictoryAxis dependentAxis style={largeStyle} />
+      <VictoryArea
+        style={{
+          data: {
+            fill: "url(#gradient)",
+            strokeWidth: 1,
+            stroke: strokeColor,
+          },
+        }}
+        data={data}
+      />
+      <VictoryAxis style={largeStyle} />
+      {midLine && (
+        <VictoryLine
+          style={{
+            data: {
+              stroke: "grey",
+              strokeDasharray: 6,
+              strokeWidth: 2,
+              strokeOpacity: 0.7,
+            },
+          }}
+          x={0}
+          y={() => data[0].y}
+        ></VictoryLine>
+      )}
+    </VictoryChart>
+  );
+};
+
+const GraphColor = ({ isGreen }: { isGreen: boolean }) => {
+  return (
+    <div>
+      {isGreen ? (
+        <svg>
+          <defs>
+            <linearGradient id="gradient" x1="1%" y1="100%" x2="0%" y2="0%">
+              <stop offset="0%" stopColor="rgba(17, 27, 47, 0)" />
+              <stop offset="49%" stopColor="rgba(22, 41, 67, 0.5)" />
+              <stop offset="100%" stopColor="rgba(39, 110, 107, 1)" />
+            </linearGradient>
+          </defs>
+        </svg>
+      ) : (
+        <svg>
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="34%" stopColor="rgba(204, 57, 147, 0.25)" />
+              <stop offset="100%" stopColor="rgba(204, 57, 147, 0)" />
+            </linearGradient>
+          </defs>
+        </svg>
+      )}
+    </div>
+  );
+};
