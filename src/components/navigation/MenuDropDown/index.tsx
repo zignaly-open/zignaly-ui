@@ -1,5 +1,5 @@
 // Dependencies
-import React, {useCallback, useState} from "react";
+import React, {useCallback, useRef, useState} from "react";
 
 // Styles
 import {
@@ -18,12 +18,17 @@ import Typography from "components/display/Typography";
 
 // Utils
 import { MenuDropDownProps } from "./types";
+import {useClickAway} from "react-use";
 
 const MenuDropDown = ({
   title,
+  focused = false,
   secondaryTitle = null,
   children
 }: MenuDropDownProps) => {
+  // Refs
+  const menuRef = useRef(null);
+
   // Hooks
   const [isActiveDropDown, setActiveDropDown] = useState(false);
 
@@ -35,18 +40,23 @@ const MenuDropDown = ({
     setActiveDropDown((active) => !active);
   }, []);
 
+  useClickAway(menuRef, () => {
+    setActiveDropDown(false);
+  });
+
   return (
-    <Layout>
+    <Layout ref={menuRef}>
       <Button
+        focused={focused}
         center={!secondaryTitle}
         isActiveDropDown={isActiveDropDown}
         onClick={handleActiveDropDown}
       >
         <Field>
           {secondaryTitle && (
-            <Typography variant={'h5'} color={'neutral300'}>{secondaryTitle}</Typography>
+            <Typography variant={'h5'}>{secondaryTitle}</Typography>
           )}
-          <Typography variant={'h3'} color={'neutral300'}>{title}</Typography>
+          <Typography variant={'h3'}>{title}</Typography>
         </Field>
         <ArrowIcon>
           <ArrowBottomIcon />

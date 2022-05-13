@@ -17,6 +17,10 @@ export default {
       control: "text",
       defaultValue: null,
     },
+    focused: {
+      control: "boolean",
+      defaultValue: false,
+    },
   },
 } as ComponentMeta<typeof MenuDropDown>;
 

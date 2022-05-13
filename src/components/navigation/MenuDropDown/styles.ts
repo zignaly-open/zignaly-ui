@@ -36,20 +36,38 @@ export const ArrowIcon = styled.div`
   }
 `;
 
-export const Button = styled.div<{center?: boolean, isActiveDropDown: boolean}>`
+type ButtonProps = {
+  center?: boolean,
+  isActiveDropDown: boolean,
+  focused: boolean
+};
+
+export const Button = styled.div<ButtonProps>`
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 22px;
-  padding: 14px 30px;
+  padding: 14px 28px;
   justify-content: space-between;
   user-select: none;
   height: 56px;
   cursor: pointer;
   
-  ${({center, theme, isActiveDropDown}) => (`
+  ${({center, theme, isActiveDropDown, focused}) => (`
     background: ${theme.dropDownBackground};
     border: 1px solid #222249;
+    
+    ${styledIf(focused, `
+      border-bottom: 1px solid ${theme.secondary};
+      
+      span {
+        color: ${theme.secondary};
+      }
+    `, `
+      span {
+        color: ${theme.neutral300};
+      }
+    `)}
     
     ${styledIf(isActiveDropDown, `
       ${ArrowIcon} {
