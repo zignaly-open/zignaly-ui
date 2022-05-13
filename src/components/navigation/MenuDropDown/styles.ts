@@ -10,6 +10,16 @@ export const Field = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
+  overflow: hidden;
+    
+  span {
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    display: block;
+  }
+  
 `;
 
 export const ArrowIcon = styled.div`

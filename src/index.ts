@@ -47,6 +47,7 @@ import EditPenIcon from "./assets/icons/edit-pen-icon.svg";
 
 // Navigation
 import Header from "./components/navigation/Header";
+import MenuDropDown from './components/navigation/MenuDropDown';
 import ZigsBalance from "./components/navigation/Header/components/ZigsBalance";
 import BrandImage from "./components/navigation/Header/components/BrandImage";
 
@@ -87,6 +88,7 @@ export {
   Header,
   BrandImage,
   ZigsBalance,
+  MenuDropDown,
   PageContainer,
   MarginContainer,
   /**

@@ -12,7 +12,7 @@ export const ButtonGroup = styled.div`
 
 export const MarginContainer = styled.div`
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1430px;
   padding: 0 22px;
   width: 100%;
 `;
