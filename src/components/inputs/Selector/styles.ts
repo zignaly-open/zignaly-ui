@@ -22,7 +22,6 @@ export const Label = styled.label`
 
 export const Container = styled.div`
   width: 100%;
-  min-width: 404px;
   background: #0c0d21;
   border-radius: 4px;
   user-select: none;
@@ -120,6 +119,8 @@ export const Layout = styled.div<LayoutProps>`
   display: inline-flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
+  
   &[disabled] {
     ${Container} {
       opacity: 0.5;

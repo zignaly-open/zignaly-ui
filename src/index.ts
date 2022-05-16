@@ -47,6 +47,14 @@ import EditPenIcon from "./assets/icons/edit-pen-icon.svg";
 import SwapIcon from "./assets/icons/swap-icon.svg";
 import SwapVertIcon from "./assets/icons/swap-vert-icon.svg";
 
+import AvatarImage0 from './assets/images/avatars/avatar-0.svg';
+import AvatarImage1 from './assets/images/avatars/avatar-1.svg';
+import AvatarImage2 from './assets/images/avatars/avatar-2.svg';
+import AvatarImage3 from './assets/images/avatars/avatar-3.svg';
+import AvatarImage4 from './assets/images/avatars/avatar-4.svg';
+import AvatarImage5 from './assets/images/avatars/avatar-5.svg';
+import AvatarImage6 from './assets/images/avatars/avatar-6.svg';
+
 // Navigation
 import Header from "./components/navigation/Header";
 import MenuDropDown from './components/navigation/MenuDropDown';
@@ -117,6 +125,13 @@ export {
   EditPenIcon,
   SwapIcon,
   SwapVertIcon,
+  AvatarImage0,
+  AvatarImage1,
+  AvatarImage2,
+  AvatarImage3,
+  AvatarImage4,
+  AvatarImage5,
+  AvatarImage6,
   /**
    * =-=-=-=-=-=-=-=
    *     Utils
