@@ -18,7 +18,11 @@ export const Layout = styled.div<{ fiat: boolean }>`
   `}
 `;
 
-export const Value = styled(Typography)``;
+export const Value = styled.span`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+`;
 
 export const Coin = styled(Typography)`
   margin: 0 4px;
