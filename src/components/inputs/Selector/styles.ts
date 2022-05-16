@@ -100,7 +100,7 @@ export const Item = styled.li<ItemProps>`
 
 export const LeftElement = styled.div``;
 
-export const ItemCaption = styled.div``;
+export const ItemCaption = styled(Typography)``;
 
 export const LeftElementIcon = styled.img`
   width: 24px;
