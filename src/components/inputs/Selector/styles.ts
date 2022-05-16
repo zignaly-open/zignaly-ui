@@ -31,12 +31,16 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   transition: all 0.1s linear;
+  overflow: hidden;
 `;
+
 
 export const Value = styled(Typography)`
   font-style: normal;
   color: #ffffff;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 `;
 
 export const Placeholder = styled(Value)`
@@ -67,6 +71,32 @@ export const Menu = styled.ul`
   border: 1px solid #5a51f5;
   border-top: none;
   z-index: 10;
+
+  max-height: 250px;
+  overflow-x: hidden;
+
+  /* width */
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
 `;
 
 type ItemProps = {
@@ -99,7 +129,10 @@ export const Item = styled.li<ItemProps>`
 
 export const LeftElement = styled.div``;
 
-export const ItemCaption = styled(Typography)``;
+export const ItemCaption = styled(Typography)`
+  overflow: hidden;
+  text-overflow: ellipsis;
+`;
 
 export const LeftElementIcon = styled.img`
   width: 24px;
@@ -249,5 +282,7 @@ export const ItemContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  width: 100%;
 `;
