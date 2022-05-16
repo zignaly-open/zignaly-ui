@@ -110,7 +110,6 @@ function Select({
             return (
               <Item
                 key={`--${index.toString()}`}
-                isSelected={isSelectedOption}
                 onClick={() => handleClickItem(option, index)}
               >
                 <ItemContainer>
