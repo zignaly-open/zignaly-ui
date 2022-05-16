@@ -31,6 +31,10 @@ function Select({
   // Hooks
   const [isActiveMenu, setMenuActive] = useState(false);
 
+  /**
+   * @function handleClickItem():
+   * @description Handle select change form component.
+   */
   const handleClickItem = useCallback(
     (value: OptionItem) => {
       onChange(value);
@@ -45,14 +49,14 @@ function Select({
 
   return (
     <styled.Layout
-      className={className}
       size={size}
-      isActiveMenu={isActiveMenu}
-      disabled={disabled}
-      ref={selectorRef}
-      collapsed={mode === "collapsed" && !isActiveMenu}
-      fullWidth={fullWidth}
       name={name}
+      ref={selectorRef}
+      disabled={disabled}
+      className={className}
+      fullWidth={fullWidth}
+      isActiveMenu={isActiveMenu}
+      collapsed={mode === "collapsed" && !isActiveMenu}
     >
       {label && <styled.Label htmlFor={name}>{label}</styled.Label>}
       <styled.Container onClick={() => setMenuActive(!isActiveMenu)}>

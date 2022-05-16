@@ -21,7 +21,6 @@ export const Label = styled.label`
 
 export const Container = styled.div`
   width: 100%;
-  min-width: 404px;
   background: #0c0d21;
   border-radius: 4px;
   user-select: none;
@@ -66,6 +65,7 @@ export const Menu = styled.ul`
   opacity: 0;
   border: 2px solid #5a51f5;
   border-top: none;
+  z-index: 10;
 `;
 
 type ItemProps = {
