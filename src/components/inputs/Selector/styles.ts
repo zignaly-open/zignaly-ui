@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
 import { SelectSizes } from "./types";
+import Typography from "../../display/Typography";
 
 const isSmallSelect = (size: SelectSizes) => size === SelectSizes.SMALL;
 
@@ -10,18 +11,20 @@ const isNormalSelect = (size: SelectSizes) => size === SelectSizes.NORMAL;
 const isLargeSelect = (size: SelectSizes) => size === SelectSizes.LARGE;
 
 export const Label = styled.label`
-  color: #a9a9ba;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 20px;
   letter-spacing: 0.5px;
   margin-bottom: 4px;
+  
+  ${({theme}) => (`
+    color: ${theme['neutral200']};
+  `)}
 `;
 
 export const Container = styled.div`
   width: 100%;
-  background: #0c0d21;
   border-radius: 4px;
   user-select: none;
   cursor: pointer;
@@ -30,16 +33,25 @@ export const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   transition: all 0.1s linear;
+  box-shadow: 0 4px 6px -2px #00000061;
+  
+  ${({theme}) => (`
+    background-color: ${theme['dropDownBackground']};
+  `)}
 `;
 
-export const Value = styled.div`
-  font-style: normal;
-  color: #ffffff;
+export const Value = styled(Typography)`
   width: 100%;
+  
+  ${({theme}) => (`
+    color: ${theme['neutral100']};
+  `)}
 `;
 
 export const Placeholder = styled(Value)`
-  color: #919191;
+  ${({theme}) => (`
+    color: ${theme['neutral400']};
+  `)}
 `;
 
 export const Arrow = styled.img`
@@ -47,13 +59,20 @@ export const Arrow = styled.img`
   margin-right: 5px;
 `;
 
-export const ArrowContainer = styled.div``;
+export const ArrowContainer = styled.div`
+  transition: all 0.1s ease-in;
+  transform-origin: center;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const Menu = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background: #0c0d21;
   border-radius: 0 0 4px 4px;
   overflow: auto;
   position: absolute;
@@ -63,22 +82,34 @@ export const Menu = styled.ul`
   transition: opacity 0.1s linear;
   visibility: hidden;
   opacity: 0;
-  border: 2px solid #5a51f5;
   border-top: none;
   z-index: 10;
+  box-shadow: 0 4px 6px -2px #00000061;
+  
+  ${({theme}) => (`
+    background-color: ${theme['dropDownBackground']};
+  `)}
 `;
 
 type ItemProps = {
   empty?: boolean;
+  isSelected?: boolean;
 };
+
+export const ItemContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
 
 export const Item = styled.li<ItemProps>`
   display: flex;
   margin: 0;
   align-items: center;
   cursor: pointer;
+  justify-content: space-between;
 
-  ${({ empty }: any) => `
+  ${({ empty }: any) => `  
     ${styledIf(
       empty,
       `
@@ -101,7 +132,7 @@ export const Item = styled.li<ItemProps>`
 
 export const LeftElement = styled.div``;
 
-export const ItemCaption = styled.div``;
+export const ItemCaption = styled(Typography)``;
 
 export const LeftElementIcon = styled.img`
   width: 24px;
@@ -118,6 +149,7 @@ type LayoutProps = {
 };
 
 export const Layout = styled.div<LayoutProps>`
+  width: 100%;
   display: inline-flex;
   flex-direction: column;
   position: relative;
@@ -135,7 +167,6 @@ export const Layout = styled.div<LayoutProps>`
       `
       ${Menu} {
         border-radius: 0 0 4px 4px;
-        border: 2px solid #5A51F5;
         border-top: none;        
         visibility: visible;
         opacity: 1;
@@ -143,14 +174,11 @@ export const Layout = styled.div<LayoutProps>`
       
       ${Container} {
         border-radius: 4px 4px 0 0;
-        border: 2px solid #5A51F5;
         border-bottom: none;
       }
-    `,
-      `
-      ${Container} {
-        border: 2px solid transparent;
-        box-shadow: 0 0 0 1px #413BA0;
+      
+      ${ArrowContainer} {
+        transform: rotate(180deg);
       }
     `,
     )}
