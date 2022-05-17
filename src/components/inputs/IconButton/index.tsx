@@ -16,7 +16,6 @@ const IconButton = ({
   size = "medium",
   variant = "primary",
   onClick = null,
-  customSize = null,
   loading = false,
   dropDownOptions,
   renderDropDown = null,
@@ -114,7 +113,6 @@ const IconButton = ({
         size={size}
         variant={variant}
         colors={colors}
-        customSize={customSize}
         disabled={disabled || loading}
         isActiveDropdown={isActiveDropdown}
       >
