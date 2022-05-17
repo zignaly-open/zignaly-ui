@@ -45,8 +45,8 @@ export type IconButtonProps = {
   };
 
   customSize?: {
-    width: string;
-    height: string;
+    width: string | null;
+    height: string | null;
   } | null;
 
   loading?: boolean

@@ -143,9 +143,9 @@ export const ViewPort = styled.button<LayoutProps>`
 
   ${({ size, variant, isActiveDropdown, colors, customSize }: any) => `
   
-    ${styledIf(customSize, `
-      width: ${customSize.width ?? 'auto'} !important;
-      height: ${customSize.height ?? 'auto'} !important;
+    ${styledIf(!!customSize, `
+      width: ${customSize?.width ?? 'auto'} !important;
+      height: ${customSize?.height ?? 'auto'} !important;
     `)}
   
     ${styledIf(
