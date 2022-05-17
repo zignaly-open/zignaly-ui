@@ -44,6 +44,11 @@ export type IconButtonProps = {
     position?: keyof typeof dropdownPosition;
   };
 
+  customSize?: {
+    width: string;
+    height: string;
+  } | null;
+
   loading?: boolean
   onClick?: React.MouseEventHandler<HTMLButtonElement> | null;
   renderDropDown?: ReactElement<any> | null;

@@ -110,7 +110,11 @@ interface LayoutProps {
   colors: {
     normal: string;
     active: string;
-  }
+  },
+  customSize?: {
+    width: string;
+    height: string;
+  } | null;
 }
 
 export const Layout = styled.div`
@@ -137,7 +141,13 @@ export const ViewPort = styled.button<LayoutProps>`
     cursor: default;
   }
 
-  ${({ size, variant, isActiveDropdown, colors }: any) => `
+  ${({ size, variant, isActiveDropdown, colors, customSize }: any) => `
+  
+    ${styledIf(customSize, `
+      width: ${customSize.width ?? 'auto'} !important;
+      height: ${customSize.height ?? 'auto'} !important;
+    `)}
+  
     ${styledIf(
       isSmallButton(size),
       `
