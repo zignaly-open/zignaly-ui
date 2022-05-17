@@ -112,8 +112,8 @@ interface LayoutProps {
     active: string;
   },
   customSize?: {
-    width: string;
-    height: string;
+    width: string | null;
+    height: string | null;
   } | null;
 }
 
