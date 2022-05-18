@@ -10,7 +10,10 @@ import Typography from "components/display/Typography";
 export const Layout = styled.div`
   display: grid;
   grid-row: auto;
-  max-width: 80px;
+  justify-content: end;
+`;
+
+export const Container = styled.div`
   text-align: center;
 `;
 

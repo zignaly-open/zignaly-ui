@@ -14,7 +14,9 @@ export default {
 } as ComponentMeta<typeof PercentageIndicator>;
 
 const Template: ComponentStory<typeof PercentageIndicator> = (args) => (
-  <PercentageIndicator {...args} />
+  <div style={{ display: "grid", justifyContent: "start" }}>
+    <PercentageIndicator {...args} />
+  </div>
 );
 
 export const Positive = Template.bind({});
@@ -42,7 +44,7 @@ NegativeUserDashboard.args = {
 
 export const PositiveUserDashboard = Template.bind({});
 PositiveUserDashboard.args = {
-  value: -50,
+  value: 50,
   theme: dark,
   subtitle: "2.2 years",
   withoutIcon: true,
