@@ -37,14 +37,18 @@ export const Container = styled.div`
 
 export const Value = styled(Typography)`
   font-style: normal;
-  color: #ffffff;
   width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
+  ${({theme}) => (`
+     color: ${theme['neutral200']};
+  `)}
 `;
 
 export const Placeholder = styled(Value)`
-  color: #919191;
+  ${({theme}) => (`
+     color: ${theme['neutral400']};
+  `)}
 `;
 
 export const Arrow = styled.img`
@@ -58,7 +62,6 @@ export const Menu = styled.ul`
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background: #0c0d21;
   border-radius: 0 0 4px 4px;
   overflow: auto;
   position: absolute;
@@ -68,12 +71,15 @@ export const Menu = styled.ul`
   transition: opacity 0.1s linear;
   visibility: hidden;
   opacity: 0;
-  border: 1px solid #5a51f5;
   border-top: none;
   z-index: 10;
-
+  
   max-height: 250px;
   overflow-x: hidden;
+  
+  ${({theme}) => (`
+    background: ${theme['neutral750']};
+  `)}
 
   /* width */
 
@@ -108,16 +114,16 @@ export const Item = styled.li<ItemProps>`
   margin: 0;
   align-items: center;
   cursor: pointer;
-  ${({ empty }: any) => `
+  ${({ empty, theme }: any) => `
     ${styledIf(empty, `
       text-align: center;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #fff;
+      color: ${theme['neutral500']};
     `,
           `
-      color: #fff;
+      color: ${theme['neutral200']};
       
       &:hover {
         background: #15162d;
@@ -164,7 +170,7 @@ export const Layout = styled.div<LayoutProps>`
     ${styledIf(props.isActiveMenu, `
       ${Menu} {
         border-radius: 0 0 4px 4px;
-        border: 1px solid #5A51F5;
+        border: 1px solid ${props.theme['highlighted']};;
         border-top: none;        
         visibility: visible;
         opacity: 1;
@@ -172,14 +178,14 @@ export const Layout = styled.div<LayoutProps>`
       
       ${Container} {
         border-radius: 4px 4px 0 0;
-        border: 1px solid #5A51F5;
+        border: 1px solid ${props.theme['highlighted']};
         border-bottom: none;
       }
     `,
     `
       ${Container} {
         border: 1px solid transparent;
-        box-shadow: 0 0 0 1px #35334A;
+        box-shadow: 0 0 0 1px ${props.theme['neutral600']};;
       }
     `,
   )}
