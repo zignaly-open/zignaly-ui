@@ -129,10 +129,10 @@ const Table = ({
                     isSorted={column.isSorted}
                     isAlignRight={column.isAlignThRight}
                   >
-                    <Typography color={"neutral200"} variant={"h4"} weight={"regular"}>
+                    <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
                       {column.render("Header")}
                     </Typography>
-                    {index < headerGroup.headers.length - 1 && (
+                    {index < headerGroup.headers.length && (
                       <SortIcon
                         isSorted={column.isSorted}
                         isSortedDesc={column.isSortedDesc}
@@ -168,7 +168,9 @@ const Table = ({
                       {...cell.getCellProps()}
                       key={`--table-row-cell-${index.toString()}`}
                     >
-                      <Typography color={"neutral100"}>{cell.render("Cell")}</Typography>
+                      <Typography variant="body2" weight="medium" color="neutral200">
+                        {cell.render("Cell")}
+                      </Typography>
                     </td>
                   ))}
                   {renderActionRow(row, index)}
