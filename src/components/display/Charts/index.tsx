@@ -1,5 +1,5 @@
 /* eslint-disable multiline-ternary */
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import { VictoryArea, VictoryAxis, VictoryChart, VictoryGroup, VictoryLine } from "victory";
 import { Layout } from "./styles";
 import { ChartInput, ChartsProps, largeStyle } from "./types";
@@ -9,7 +9,7 @@ export const AreaChart = ({ data, variant, midLine }: ChartsProps) => {
   const firstTimestamp = data[0].y;
   const lastTimeStamp = data[data.length - 1].y;
 
-  const positiveOrNegative = useMemo(() => {
+  const positiveOrNegative = useCallback(() => {
     if (firstTimestamp > lastTimeStamp) {
       setGradientColor(false);
     } else if (firstTimestamp <= lastTimeStamp) {
@@ -18,9 +18,8 @@ export const AreaChart = ({ data, variant, midLine }: ChartsProps) => {
   }, [gradientColor]);
 
   useEffect(() => {
-    positiveOrNegative;
+    positiveOrNegative();
   }, [data]);
-
   return (
     <Layout variant={variant}>
       {GraphColor({ isGreen: gradientColor })}
