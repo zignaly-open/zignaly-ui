@@ -179,7 +179,7 @@ export const Layout = styled.div<LayoutProps>`
     `
       ${Container} {
         border: 1px solid transparent;
-        box-shadow: 0 0 0 1px #413BA0;
+        box-shadow: 0 0 0 1px #35334A;
       }
     `,
   )}
