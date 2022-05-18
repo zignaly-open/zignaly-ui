@@ -91,7 +91,7 @@ export const DropDown = styled.div<any>`
   right: 0;
   position: absolute;
   width: 100%;
-  overflow: hidden;
+  overflow: auto;
 
   /* width */
   &::-webkit-scrollbar {

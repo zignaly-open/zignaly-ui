@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const defaultDropDownOptions = {
-  maxHeight: "20px",
+  maxHeight: "120px",
 };
 
 export type MenuDropDownProps = {
