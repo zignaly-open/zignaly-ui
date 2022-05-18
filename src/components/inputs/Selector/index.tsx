@@ -86,7 +86,7 @@ function Select({
                   )}
                 </LeftElement>
               )}
-              <Value variant={'body'}>{value.caption}</Value>
+              <Value variant={'body1'}>{value.caption}</Value>
             </>
           ) : (
             <Placeholder>{placeholder}</Placeholder>

@@ -10,7 +10,7 @@
     "build:storybook": "build-storybook -c .storybook -o build/",
     "test:generate-output": "jest --json --outputFile=.jest-test-results.json || true",
     "test": "jest -u",
-    "build": "npm run clean && webpack --mode=production --node-env=production",
+    "build": "webpack --mode=production --node-env=production",
     "build:dev": "npm run clean && webpack",
     "clean": "rm -rf lib",
     "copy-files": "cp -R src/assets lib/assets",
@@ -53,6 +53,7 @@
     "react-spring": "^9.4.4",
     "react-table": "^7.7.0",
     "react-use": "^17.3.2",
+    "react-verification-code-input": "^1.2.9",
     "victory": "^36.4.0"
   },
   "devDependencies": {
@@ -63,8 +64,6 @@
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
     "@metamask/jazzicon": "^2.0.0",
-    "@mui/material": "^5.6.0",
-    "@mui/styled-engine-sc": "^5.5.2",
     "@storybook/addon-actions": "^6.4.20",
     "@storybook/addon-essentials": "^6.4.20",
     "@storybook/addon-jest": "^6.4.21",
@@ -120,7 +119,6 @@
     "webpack-cli": "^4.9.2"
   },
   "peerDependencies": {
-    "@mui/material": ">= 5",
     "next": ">= 12",
     "react": ">= 16.14",
     "react-dom": ">= 16.14"
