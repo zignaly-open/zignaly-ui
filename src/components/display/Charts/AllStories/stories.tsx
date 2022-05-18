@@ -5,7 +5,7 @@ import { AreaChart } from "..";
 import { ChartVariations } from "../types";
 
 export default {
-  title: "Display/Charts/All Stories",
+  title: "Display/Charts/AllStories",
   component: AreaChart,
   argTypes: {
     variant: {
