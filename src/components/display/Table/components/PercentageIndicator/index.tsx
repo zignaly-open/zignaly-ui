@@ -41,7 +41,7 @@ const PercentageIndicator = ({
           </styled.Value>
         </div>
         {dashboardType === "user" && (
-          <styled.Subtitle variant="body1" color="neutral400">
+          <styled.Subtitle variant="body2" color="neutral400">
             {subtitle}
           </styled.Subtitle>
         )}
