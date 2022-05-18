@@ -27,6 +27,7 @@ export const ArrowIcon = styled.div`
   transform-origin: center;
   width: 28px;
   height: 28px;
+  
   svg {
     ${(props: any) => (`
       fill: ${props.theme.neutral300};
@@ -84,16 +85,39 @@ export const Button = styled.div<ButtonProps>`
 `;
 
 
-export const DropDown = styled.div`
+export const DropDown = styled.div<any>`
   top: 100%;
   left: 0;
   right: 0;
   position: absolute;
-  min-height: 100px;
   width: 100%;
+  overflow: hidden;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
   
   ${(props: any) => (`
     background: ${props.theme.dropDownBackground};
+    max-height: ${props.maxHeight ?? '200px'};
   `)}
 
   box-shadow: 0px 5px 11px rgba(11, 13, 26, 0.25);

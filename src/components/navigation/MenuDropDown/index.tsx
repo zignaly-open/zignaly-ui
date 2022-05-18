@@ -1,5 +1,6 @@
 // Dependencies
 import React, {useCallback, useRef, useState} from "react";
+import {useClickAway} from "react-use";
 
 // Styles
 import {
@@ -18,15 +19,22 @@ import Typography from "components/display/Typography";
 
 // Utils
 import { MenuDropDownProps } from "./types";
-import {useClickAway} from "react-use";
+
+// Types
+import {defaultDropDownOptions} from './types';
 
 const MenuDropDown = ({
   title,
   focused = false,
   secondaryTitle = null,
-  children
+  children,
+  dropDownOptions,
 }: MenuDropDownProps) => {
-  // Refs
+  // Ref
+  const options = {
+    ...defaultDropDownOptions,
+    ...dropDownOptions,
+  };
   const menuRef = useRef(null);
 
   // Hooks
@@ -63,7 +71,7 @@ const MenuDropDown = ({
         </ArrowIcon>
       </Button>
       {isActiveDropDown && (
-        <DropDown>
+        <DropDown maxHeight={options.maxHeight}>
           {children}
         </DropDown>
       )}
