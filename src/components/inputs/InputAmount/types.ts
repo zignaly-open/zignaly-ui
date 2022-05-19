@@ -14,7 +14,7 @@ export interface InputAmountProps {
   value: BigNumber;
   onChange: Function;
   onBlur?: ChangeEventHandler<HTMLInputElement>;
-  disabled: boolean;
+  disabled?: boolean;
   tokens?: TokenItem[];
   error?: string | null;
   initialTokenIndex?: number;
