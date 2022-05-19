@@ -14,6 +14,7 @@ export interface TableProps {
   defaultHiddenColumns?: string[];
   onColumnHidden?: (column: string, isHidden: boolean) => void;
   hideOptionsButton: boolean;
+  isUserTable: boolean;
 }
 
 export interface UserTableData {
@@ -37,6 +38,7 @@ export const createUserTable = ({
 }: UserTableData) => {
   return {
     hideOptionsButton: true,
+    isUserTable: true,
     columns: [
       {
         Header: "My Current Value",

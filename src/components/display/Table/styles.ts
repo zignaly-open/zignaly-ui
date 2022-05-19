@@ -34,7 +34,7 @@ export const View = styled.div`
   }
 `;
 
-export const TableView = styled.table`
+export const TableView = styled.table<{ isUserTable: boolean }>`
   border-spacing: 0;
   overflow: hidden;
   width: 100%;
@@ -42,7 +42,6 @@ export const TableView = styled.table`
   background: rgba(19, 18, 37, 0.4);
   thead {
     height: 56px;
-
     user-select: none;
     background: #06061a;
     box-shadow: 0 0 10px #16192b;
@@ -70,12 +69,21 @@ export const TableView = styled.table`
     border: 0;
     border-bottom: 1px solid #252339;
     background: transparent;
-    img {
-      vertical-align: initial;
-    }
+    text-align: center;
     :last-child {
       border-right: 0;
     }
+    ${(props) =>
+      `${styledIf(
+        props.isUserTable,
+        `:first-child {
+          border-right: 1px solid #252339;
+        }`,
+      )}`}
+  }
+
+  th {
+    text-align: center;
   }
 
   tr {

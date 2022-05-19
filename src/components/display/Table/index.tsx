@@ -31,6 +31,7 @@ const Table = ({
   onColumnHidden = () => {},
   defaultHiddenColumns,
   hideOptionsButton,
+  isUserTable,
 }: TableProps) => {
   // Refs
   const tableRef = useRef(null);
@@ -118,7 +119,7 @@ const Table = ({
   return (
     <Layout>
       <View ref={tableRef}>
-        <TableView {...getTableProps()}>
+        <TableView isUserTable={isUserTable} {...getTableProps()}>
           <thead>
             {headerGroups.map((headerGroup: any, index: number) => (
               <tr {...headerGroup.getHeaderGroupProps()} key={`--table-head-${index.toString()}`}>

@@ -1,6 +1,12 @@
 /* eslint-disable multiline-ternary */
 import React, { useEffect, useState, useCallback } from "react";
-import { VictoryArea, VictoryAxis, VictoryChart, VictoryGroup, VictoryLine } from "victory";
+import {
+  VictoryArea,
+  VictoryAxis,
+  VictoryChart,
+  VictoryGroup,
+  VictoryLine,
+} from "victory";
 import { Layout } from "./styles";
 import { ChartInput, ChartsProps, largeStyle } from "./types";
 
