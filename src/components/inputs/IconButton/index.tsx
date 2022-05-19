@@ -24,6 +24,7 @@ const IconButton = ({
     active: '#fff'
   },
   className,
+  type,
 }: IconButtonProps) => {
   // Ref
   const options = {
@@ -111,6 +112,7 @@ const IconButton = ({
     <Layout ref={layoutRef} className={className}>
       <ViewPort
         size={size}
+        type={type}
         variant={variant}
         colors={colors}
         disabled={disabled || loading}
