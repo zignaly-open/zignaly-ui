@@ -3,7 +3,6 @@ import React, { useRef, useCallback, useState } from "react";
 import { useSortBy, useTable } from "react-table";
 
 // Assets
-import ArrowBottomWhiteIcon from "assets/icons/arrow-bottom-icon-white.svg?url";
 import OptionsDotsIcon from "assets/icons/option-dots-icon.svg";
 
 // Styles
@@ -31,6 +30,7 @@ const Table = ({
   data = [],
   onColumnHidden = () => {},
   defaultHiddenColumns,
+  hideOptionsButton,
 }: TableProps) => {
   // Refs
   const tableRef = useRef(null);
@@ -129,29 +129,32 @@ const Table = ({
                     isSorted={column.isSorted}
                     isAlignRight={column.isAlignThRight}
                   >
-                    <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
-                      {column.render("Header")}
-                    </Typography>
+                    <div style={{ display: "grid" }}>
+                      <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+                        {column.render("Header")}
+                      </Typography>
+                      <Typography color={"neutral400"} variant={"h5"} weight={"regular"}>
+                        {column.render("Footer")}
+                      </Typography>
+                    </div>
                     {index < headerGroup.headers.length && (
-                      <SortIcon
-                        isSorted={column.isSorted}
-                        isSortedDesc={column.isSortedDesc}
-                        src={ArrowBottomWhiteIcon}
-                      />
+                      <SortIcon isSorted={column.isSorted} isSortedDesc={column.isSortedDesc} />
                     )}
                   </ThView>
                 ))}
                 <th role={"row"}>
                   <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                    <IconButton
-                      variant={"flat"}
-                      icon={<OptionsDotsIcon />}
-                      dropDownOptions={{
-                        componentOverflowRef: tableRef,
-                        alignment: "right",
-                      }}
-                      renderDropDown={renderColumnsSelector()}
-                    />
+                    {!hideOptionsButton && (
+                      <IconButton
+                        variant={"flat"}
+                        icon={<OptionsDotsIcon />}
+                        dropDownOptions={{
+                          componentOverflowRef: tableRef,
+                          alignment: "right",
+                        }}
+                        renderDropDown={renderColumnsSelector()}
+                      />
+                    )}
                   </div>
                 </th>
               </tr>

@@ -35,6 +35,7 @@ const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
  */
 export const MyCoins = Template.bind({});
 MyCoins.args = {
+  hideOptionsButton: false,
   columns: [
     {
       Header: "Coin",
@@ -136,6 +137,7 @@ MyCoins.args = {
 
 export const Investors = Template.bind({});
 Investors.args = {
+  hideOptionsButton: false,
   columns: [
     {
       Header: "Email",
@@ -277,36 +279,35 @@ Investors.args = {
 };
 
 export const UserDashBoard = Template.bind({});
-UserDashBoard.args = 
-createUserTable({
-    summary: { profit: 100, totalValue: 10, theme: dark },
-    serviceName: {
-      heading: "The Golden Eagle",
-      subtitle: "by Barry Silvername",
-      cryptoName: "Poly",
-      cryptoAlt: "PolyChain",
-    },
-    chart: {
-      data: [
-        { x: "Jul 1", y: 10 },
-        { x: "Jul 2", y: 15 },
-        { x: "Jul 3", y: 23 },
-        { x: "Jul 4", y: 15 },
-        { x: "Jul 5", y: 17 },
-        { x: "Jul 6", y: 20 },
-        { x: "Jul 7", y: 25 },
-      ],
-      variant: "small",
-    },
-    dailyAvg: { value: -10, theme: dark },
-    oneMonth: { value: 10, theme: dark },
-    threeMonths: { value: 10, theme: dark },
-    all: { value: 10, theme: dark },
-  });
-
+UserDashBoard.args = createUserTable({
+  summary: { profit: 100, totalValue: 10, theme: dark },
+  serviceName: {
+    heading: "The Golden Eagle",
+    subtitle: "by Barry Silvername",
+    cryptoName: "Poly",
+    cryptoAlt: "PolyChain",
+  },
+  chart: {
+    data: [
+      { x: "Jul 1", y: 10 },
+      { x: "Jul 2", y: 15 },
+      { x: "Jul 3", y: 23 },
+      { x: "Jul 4", y: 15 },
+      { x: "Jul 5", y: 17 },
+      { x: "Jul 6", y: 20 },
+      { x: "Jul 7", y: 25 },
+    ],
+    variant: "small",
+  },
+  dailyAvg: { value: -10, theme: dark },
+  oneMonth: { value: 10, theme: dark },
+  threeMonths: { value: 10, theme: dark },
+  all: { value: 10, theme: dark },
+});
 
 export const ExchangeOrders = Template.bind({});
 ExchangeOrders.args = {
+  hideOptionsButton: false,
   columns: [
     {
       Header: "Date",

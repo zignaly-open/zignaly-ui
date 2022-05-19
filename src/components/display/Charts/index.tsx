@@ -22,10 +22,10 @@ export const AreaChart = ({ data, variant, midLine }: ChartsProps) => {
   }, [data]);
   return (
     <Layout variant={variant}>
-      {GraphColor({ isGreen: gradientColor })}
       {variant === "large"
         ? LargeChart({ data: data, isGreen: gradientColor, midLine: midLine })
         : SmallChart({ data: data, isGreen: gradientColor, midLine: midLine })}
+      {GraphColor({ isGreen: gradientColor })}
     </Layout>
   );
 };
@@ -100,7 +100,7 @@ const LargeChart = ({ data, isGreen, midLine }: ChartInput) => {
 
 const GraphColor = ({ isGreen }: { isGreen: boolean }) => {
   return (
-    <div>
+    <div style={{ width: 0, height: 0 }}>
       {isGreen ? (
         <svg>
           <defs>

@@ -5,6 +5,7 @@ import { styledIf } from "utils/styled";
 // Assets
 import CheckIcon from "assets/icons/check-icon.svg";
 import CloseIcon from "assets/icons/close-icon.svg";
+import ArrowBottomIcon from "assets/icons/arrow-bottom-icon.svg";
 
 export const Layout = styled.div``;
 
@@ -40,6 +41,8 @@ export const TableView = styled.table`
 
   background: rgba(19, 18, 37, 0.4);
   thead {
+    height: 56px;
+
     user-select: none;
     background: #06061a;
     box-shadow: 0 0 10px #16192b;
@@ -51,7 +54,6 @@ export const TableView = styled.table`
   tbody {
     td {
       letter-spacing: 0;
-      text-align: center;
       color: #f3f4f6;
       padding: 12px 22px;
       white-space: nowrap;
@@ -125,8 +127,9 @@ export const ThView = styled.th<{ isSorted?: boolean; isAlignRight?: boolean }>`
   `}
 `;
 
-export const SortIcon = styled.img<{ isSorted?: boolean; isSortedDesc?: boolean }>`
+export const SortIcon = styled(ArrowBottomIcon)<{ isSorted?: boolean; isSortedDesc?: boolean }>`
   margin-left: 6px;
+  color: #f3f4f6;
 
   ${(props) => `
      ${styledIf(
@@ -136,7 +139,7 @@ export const SortIcon = styled.img<{ isSorted?: boolean; isSortedDesc?: boolean 
         visibility: visible;;
     `,
        `
-        visibility: hidden;
+        display: none;
     `,
      )}
      ${styledIf(
@@ -148,7 +151,7 @@ export const SortIcon = styled.img<{ isSorted?: boolean; isSortedDesc?: boolean 
       transform: rotate(0deg);
     `,
      )}
-  `}
+  `};
 `;
 
 export const OptionList = styled.ul`

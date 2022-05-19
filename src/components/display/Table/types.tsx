@@ -13,6 +13,7 @@ export interface TableProps {
   data: Object[];
   defaultHiddenColumns?: string[];
   onColumnHidden?: (column: string, isHidden: boolean) => void;
+  hideOptionsButton: boolean;
 }
 
 export interface UserTableData {
@@ -35,14 +36,21 @@ export const createUserTable = ({
   all,
 }: UserTableData) => {
   return {
+    hideOptionsButton: true,
     columns: [
       {
         Header: "My Current Value",
         accessor: "summary",
+        Footer: "Returns",
       },
       {
         Header: "Service Name",
         accessor: "serviceName",
+        Footer: (
+          <div>
+            <div>{"Manager"}</div> <div>{"Base currency"}</div>
+          </div>
+        ),
       },
       {
         Header: "Since Invested",
@@ -62,11 +70,60 @@ export const createUserTable = ({
       },
       {
         Header: "All",
-        subtitle: "Age",
         accessor: "all",
+        Footer: "Age",
       },
     ],
     data: [
+      {
+        summary: (
+          <BalanceSummary
+            totalValue={summary.totalValue}
+            profit={summary.profit}
+            theme={summary.theme}
+          ></BalanceSummary>
+        ),
+
+        serviceName: (
+          <ServiceName
+            heading={serviceName.heading}
+            subtitle={serviceName.subtitle}
+            cryptoName={serviceName.cryptoName}
+            cryptoAlt={serviceName.cryptoAlt}
+          ></ServiceName>
+        ),
+        chart: <AreaChart variant={chart.variant} data={chart.data}></AreaChart>,
+        dailyAvg: (
+          <PercentageIndicator
+            dashboardType="user"
+            value={dailyAvg.value}
+            theme={dailyAvg.theme}
+          ></PercentageIndicator>
+        ),
+
+        oneMonth: (
+          <PercentageIndicator
+            dashboardType="user"
+            value={oneMonth.value}
+            theme={oneMonth.theme}
+          ></PercentageIndicator>
+        ),
+        threeMonths: (
+          <PercentageIndicator
+            dashboardType="user"
+            value={threeMonths.value}
+            theme={threeMonths.theme}
+          ></PercentageIndicator>
+        ),
+        all: (
+          <PercentageIndicator
+            dashboardType="user"
+            value={all.value}
+            theme={all.theme}
+            subtitle="2.2 years"
+          ></PercentageIndicator>
+        ),
+      },
       {
         summary: (
           <BalanceSummary
