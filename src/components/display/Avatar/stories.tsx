@@ -22,7 +22,7 @@ export default {
     },
   },
   parameters: {
-    jest: ["test.tsx"],
+    jest: ["avatar"],
   },
 } as ComponentMeta<typeof Avatar>;
 
@@ -37,7 +37,7 @@ Image.args = {
     "https://64.media.tumblr.com/ef4e0c2294d9e304e339f19307953e7f/6c205b8b5946f8a9-7c/s250x400/9d66b8e486071ecabe8db5afdfb879a038cc79d5.png",
 };
 Image.parameters = {
-  jest: ["test.ts"],
+  jest: ["avatar"],
 };
 
 // With Metamask
@@ -47,6 +47,7 @@ Metamask.args = {
   size: AvatarSizes.MEDIUM,
   image: "",
 };
+//TODO: hay que darle nombre al fichero tsx o no funciona (pensar por que) la pena, se puede hacer que simplemente en chromatic se genere para que se pueda ver
 Metamask.parameters = {
-  jest: ["test.ts"],
+  jest: ["avatar"],
 };
