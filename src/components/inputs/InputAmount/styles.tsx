@@ -3,6 +3,12 @@ import styled from "styled-components";
 import { dark } from "theme";
 import { styledIf } from "utils/styled";
 
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+`;
+
 export const InputContainer = styled.div`
   border: 1px solid #35334a;
   padding: 8px 18px;
@@ -13,6 +19,7 @@ export const InputContainer = styled.div`
   margin-top: 4px;
   gap: 22px;
   margin-bottom: 16px;
+  width: 100%;
 `;
 
 export const TokenImage = styled.img`
@@ -31,7 +38,7 @@ export const InputValue = styled.input`
   line-height: 24px;
   letter-spacing: 0.55px;
   width: 100%;
-  font-family: "Avenir Next",sans-serif;
+  font-family: "Avenir Next", sans-serif;
 `;
 
 export const BalanceContainer = styled.div`
@@ -88,9 +95,13 @@ export const Selector = styled.div``;
 type LayoutProps = {
   withError: boolean;
   disabled: boolean;
+  fullWidth?: boolean;
 };
 
 export const Layout = styled.div`
+  display: flex;
+  flex-direction: column;
+
   ${(props: LayoutProps) => `
     ${styledIf(
       props.withError,
@@ -121,5 +132,16 @@ export const Layout = styled.div`
       }
     `,
     )}
+    
+    ${styledIf(
+      props.fullWidth,
+      `
+      width: 100%;
+      `,
+    )}
   `}
+`;
+
+export const Unit = styled.div`
+  margin: 10px 0 0 24px;
 `;

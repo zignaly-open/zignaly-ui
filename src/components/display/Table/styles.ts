@@ -5,6 +5,7 @@ import { styledIf } from "utils/styled";
 // Assets
 import CheckIcon from "assets/icons/check-icon.svg";
 import CloseIcon from "assets/icons/close-icon.svg";
+import ArrowBottomIcon from "assets/icons/arrow-bottom-icon.svg";
 
 export const Layout = styled.div``;
 
@@ -38,7 +39,6 @@ export const TableView = styled.table`
   overflow: hidden;
   width: 100%;
 
-  font-family: "Avenir", sans-serif;
   background: rgba(19, 18, 37, 0.4);
   thead {
     user-select: none;
@@ -51,10 +51,6 @@ export const TableView = styled.table`
 
   tbody {
     td {
-      font-size: 14px;
-      font-style: normal;
-      font-weight: 600;
-      line-height: 20px;
       letter-spacing: 0;
       text-align: center;
       color: #f3f4f6;
@@ -129,8 +125,9 @@ export const ThView = styled.th<{ isSorted?: boolean; isAlignRight?: boolean }>`
   `}
 `;
 
-export const SortIcon = styled.img<{ isSorted?: boolean; isSortedDesc?: boolean }>`
+export const SortIcon = styled(ArrowBottomIcon)<{ isSorted?: boolean; isSortedDesc?: boolean }>`
   margin-left: 6px;
+  color: #f3f4f6;
 
   ${(props) => `
      ${styledIf(
@@ -152,7 +149,7 @@ export const SortIcon = styled.img<{ isSorted?: boolean; isSortedDesc?: boolean 
       transform: rotate(0deg);
     `,
      )}
-  `}
+  `};
 `;
 
 export const OptionList = styled.ul`
@@ -213,6 +210,5 @@ export const ColumnsSelector = styled.div`
   > span {
     justify-content: center;
     display: flex;
-    font-weight: 400;
   }
 `;

@@ -15,6 +15,8 @@ import {
   BalanceValue,
   MaxButton,
   Side,
+  Unit,
+  Wrapper,
 } from "./styles";
 
 // Components
@@ -24,6 +26,7 @@ import ErrorMessage from "components/display/ErrorMessage";
 // Types
 import { InputAmountProps, TokenItem } from "./types";
 import Typography from "components/display/Typography";
+import { changeEvent } from "utils/event";
 
 function InputAmount(
   {
@@ -36,6 +39,8 @@ function InputAmount(
     label = "Amount to Withdraw",
     value = BigNumber.from(0),
     name,
+    fullWidth,
+    placeholder,
   }: InputAmountProps,
   inputRef: React.Ref<any>,
 ) {
@@ -67,7 +72,8 @@ function InputAmount(
       const value = e.target.value;
 
       if (value === "") {
-        onChange(BigNumber.from(0));
+        // onChange(BigNumber.from(0));
+        onChange(e, { value, token: selectedToken });
         setInputValue(value);
         return;
       }
@@ -102,7 +108,7 @@ function InputAmount(
     (token: TokenItem) => {
       setSelectedToken(token);
 
-      onChange({
+      onChange(changeEvent(inputValue), {
         value,
         token,
       });
@@ -119,47 +125,49 @@ function InputAmount(
       const newValue = BigNumber.from(selectedToken.balance);
       const number = utils.formatUnits(newValue);
       setInputValue(number);
-      const e = {
-        target: {
-          value: number,
-          name,
-        },
-        type: "change",
-      };
-      onChange(e, { value: newValue, token: selectedToken });
+      onChange(changeEvent(number), { value: newValue, token: selectedToken });
     }
   }, [disabled, onChange, selectedToken]);
 
   return (
-    <Layout withError={!!error} disabled={disabled}>
+    <Layout withError={!!error} disabled={disabled} fullWidth={fullWidth}>
       <Typography variant="h3" weight="regular" color="neutral200">
         {label}
       </Typography>
-      <InputContainer>
-        <Side>
-          {selectedToken && tokens.length < 2 && <TokenImage src={selectedToken.image} />}
-          <InputValue
-            ref={inputRef}
-            value={inputValue}
-            type={"text"}
-            placeholder={"0.0"}
-            onChange={handleTextChange}
-            onBlur={onBlur}
-            disabled={disabled}
-            name={name}
-          />
-          {selectedToken && tokens && <MaxButton onClick={onClickMaxValue}>Max</MaxButton>}
-        </Side>
-        {tokens && tokens.length > 2 && (
+      <Wrapper>
+        <InputContainer>
           <Side>
-            <TokenSelector
-              value={selectedToken}
-              tokens={tokens}
-              onSelectToken={handleChangeToken}
+            {selectedToken?.image && tokens.length < 2 && <TokenImage src={selectedToken.image} />}
+            <InputValue
+              ref={inputRef}
+              value={inputValue}
+              type={"text"}
+              placeholder={placeholder || "0.0"}
+              onChange={handleTextChange}
+              onBlur={onBlur}
+              disabled={disabled}
+              name={name}
             />
+            {selectedToken && tokens && <MaxButton onClick={onClickMaxValue}>Max</MaxButton>}
           </Side>
+          {tokens?.length > 2 && (
+            <Side>
+              <TokenSelector
+                value={selectedToken}
+                tokens={tokens}
+                onSelectToken={handleChangeToken}
+              />
+            </Side>
+          )}
+        </InputContainer>
+        {tokens?.length === 1 && selectedToken?.name && (
+          <Unit>
+            <Typography color="neutral300" variant="h1">
+              {selectedToken.name}
+            </Typography>
+          </Unit>
         )}
-      </InputContainer>
+      </Wrapper>
 
       {/* Show Balance of the Input */}
       {selectedToken && selectedToken.balance && (

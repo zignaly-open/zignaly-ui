@@ -3,7 +3,6 @@ import React, { useRef, useCallback, useState } from "react";
 import { useSortBy, useTable } from "react-table";
 
 // Assets
-import ArrowBottomWhiteIcon from "assets/icons/arrow-bottom-icon-white.svg?url";
 import OptionsDotsIcon from "assets/icons/option-dots-icon.svg";
 
 // Styles
@@ -129,15 +128,11 @@ const Table = ({
                     isSorted={column.isSorted}
                     isAlignRight={column.isAlignThRight}
                   >
-                    <Typography color={"neutral200"} variant={"h4"} weight={"regular"}>
+                    <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
                       {column.render("Header")}
                     </Typography>
-                    {index < headerGroup.headers.length - 1 && (
-                      <SortIcon
-                        isSorted={column.isSorted}
-                        isSortedDesc={column.isSortedDesc}
-                        src={ArrowBottomWhiteIcon}
-                      />
+                    {index < headerGroup.headers.length && (
+                      <SortIcon isSorted={column.isSorted} isSortedDesc={column.isSortedDesc} />
                     )}
                   </ThView>
                 ))}
@@ -168,7 +163,9 @@ const Table = ({
                       {...cell.getCellProps()}
                       key={`--table-row-cell-${index.toString()}`}
                     >
-                      <Typography color={"neutral100"}>{cell.render("Cell")}</Typography>
+                      <Typography variant="body2" weight="medium" color="neutral200">
+                        {cell.render("Cell")}
+                      </Typography>
                     </td>
                   ))}
                   {renderActionRow(row, index)}

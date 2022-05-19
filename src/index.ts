@@ -11,6 +11,7 @@ import Typography from "./components/display/Typography";
 import ZigWalletIndicator from "./components/display/ZigWalletIndicator";
 import CoinLabel from "./components/display/Table/components/CoinLabel";
 import SliderProgress from "./components/display/Slider";
+import Toaster from "./components/display/Toaster";
 
 // Inputs
 import Button from "./components/inputs/Button";
@@ -30,6 +31,9 @@ import EyeOpenIcon from "./assets/icons/eye-open-icon.svg";
 import EyeClosedIcon from "./assets/icons/eye-closed-icon.svg";
 import OptionDotsIcon from "./assets/icons/option-dots-icon.svg";
 import ArrowBottomIcon from "./assets/icons/arrow-bottom-icon.svg";
+import ArrowUpIcon from "./assets/icons/arrow-up-icon.svg";
+import ArrowLeftIcon from "./assets/icons/arrow-left-icon.svg";
+import ArrowRightIcon from "./assets/icons/arrow-right-icon.svg";
 import UserIcon from "./assets/icons/user-icon.svg";
 import CheckIcon from "./assets/icons/check-icon.svg";
 import LogoDiscordIcon from "./assets/icons/discord-logo-icon.svg";
@@ -74,6 +78,7 @@ export {
   ZigWalletIndicator,
   CoinLabel,
   SliderProgress,
+  Toaster,
   // Inputs
   Button,
   CheckBox,
@@ -102,6 +107,9 @@ export {
   EyeClosedIcon,
   OptionDotsIcon,
   ArrowBottomIcon,
+  ArrowUpIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
   UserIcon,
   CheckIcon,
   LogoDiscordIcon,
