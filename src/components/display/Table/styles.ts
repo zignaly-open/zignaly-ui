@@ -75,11 +75,13 @@ export const TableView = styled.table<{ isUserTable: boolean }>`
     }
     ${(props) =>
       `${styledIf(
-        props.isUserTable,
-        `:first-child {
-          border-right: 1px solid #252339;
-        }`,
-      )}`}
+          props.isUserTable,
+          `:first-child {
+            border-right: 1px solid #252339;
+          }`,
+        )
+      }
+    `}
   }
 
   th {
@@ -101,11 +103,7 @@ export const ThView = styled.th<{ isSorted?: boolean; isAlignRight?: boolean }>`
   padding: 4px 22px;
   white-space: nowrap;
   background: transparent;
-  align-items: center;
   margin: 0;
-  img {
-    vertical-align: initial;
-  }
   &:first-child {
     border-radius: 0 0 0 5px;
   }
@@ -136,9 +134,9 @@ export const ThView = styled.th<{ isSorted?: boolean; isAlignRight?: boolean }>`
 `;
 
 export const SortIcon = styled(ArrowBottomIcon)<{ isSorted?: boolean; isSortedDesc?: boolean }>`
-  margin-left: 6px;
   color: #f3f4f6;
-
+  padding: 0px;
+  
   ${(props) => `
      ${styledIf(
        props.isSorted,
@@ -147,7 +145,8 @@ export const SortIcon = styled(ArrowBottomIcon)<{ isSorted?: boolean; isSortedDe
         visibility: visible;;
     `,
        `
-        display: none;
+
+        opacity: 0;
     `,
      )}
      ${styledIf(

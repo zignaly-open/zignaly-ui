@@ -43,7 +43,11 @@ export const createUserTable = ({
       {
         Header: "My Current Value",
         accessor: "summary",
-        Footer: "Returns",
+        Footer: (
+          <div>
+            <div>{"Returns"}</div>
+          </div>
+        ),
       },
       {
         Header: "Service Name",
@@ -73,7 +77,11 @@ export const createUserTable = ({
       {
         Header: "All",
         accessor: "all",
-        Footer: "Age",
+        Footer: (
+          <div>
+            <div>{"Age"}</div>
+          </div>
+        ),
       },
     ],
     data: [

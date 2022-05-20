@@ -1,12 +1,6 @@
 /* eslint-disable multiline-ternary */
 import React, { useEffect, useState, useCallback } from "react";
-import {
-  VictoryArea,
-  VictoryAxis,
-  VictoryChart,
-  VictoryGroup,
-  VictoryLine,
-} from "victory";
+import { VictoryArea, VictoryAxis, VictoryChart, VictoryGroup, VictoryLine } from "victory";
 import { Layout } from "./styles";
 import { ChartInput, ChartsProps, largeStyle } from "./types";
 
@@ -27,12 +21,14 @@ export const AreaChart = ({ data, variant, midLine }: ChartsProps) => {
     positiveOrNegative();
   }, [data]);
   return (
-    <Layout variant={variant}>
-      {variant === "large"
-        ? LargeChart({ data: data, isGreen: gradientColor, midLine: midLine })
-        : SmallChart({ data: data, isGreen: gradientColor, midLine: midLine })}
-      {GraphColor({ isGreen: gradientColor })}
-    </Layout>
+    <div>
+      <Layout variant={variant}>
+        {variant === "large"
+          ? LargeChart({ data: data, isGreen: gradientColor, midLine: midLine })
+          : SmallChart({ data: data, isGreen: gradientColor, midLine: midLine })}
+        {GraphColor({ isGreen: gradientColor })}
+      </Layout>
+    </div>
   );
 };
 
@@ -45,7 +41,7 @@ const SmallChart = ({ data, isGreen, midLine }: ChartInput) => {
         style={{
           data: {
             fill: "url(#gradient)",
-            strokeWidth: 1,
+            strokeWidth: 4,
             stroke: strokeColor,
           },
         }}
@@ -79,7 +75,7 @@ const LargeChart = ({ data, isGreen, midLine }: ChartInput) => {
         style={{
           data: {
             fill: "url(#gradient)",
-            strokeWidth: 1,
+            strokeWidth: 3,
             stroke: strokeColor,
           },
         }}

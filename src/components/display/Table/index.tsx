@@ -24,6 +24,7 @@ import Typography from "components/display/Typography";
 
 // Types
 import { TableProps } from "./types";
+import { dark } from "theme";
 
 const Table = ({
   columns = [],
@@ -130,17 +131,31 @@ const Table = ({
                     isSorted={column.isSorted}
                     isAlignRight={column.isAlignThRight}
                   >
-                    <div style={{ display: "grid" }}>
-                      <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
-                        {column.render("Header")}
-                      </Typography>
-                      <Typography color={"neutral400"} variant={"h5"} weight={"regular"}>
-                        {column.render("Footer")}
-                      </Typography>
+                    <div
+                      style={{
+                        display: "flex",
+                        flexDirection: "row",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <div>
+                        <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
+                          {column.render("Header")}
+                        </Typography>
+                        <Typography color={"neutral400"} variant={"h5"} weight={"regular"}>
+                          {column.render("Footer")}
+                        </Typography>
+                      </div>
+                      <div>
+                        {index < headerGroup.headers.length && (
+                          <SortIcon
+                            color={dark["neutral200"]}
+                            isSorted={column.isSorted}
+                            isSortedDesc={column.isSortedDesc}
+                          />
+                        )}
+                      </div>
                     </div>
-                    {index < headerGroup.headers.length && (
-                      <SortIcon isSorted={column.isSorted} isSortedDesc={column.isSortedDesc} />
-                    )}
                   </ThView>
                 ))}
                 <th role={"row"}>
@@ -148,7 +163,7 @@ const Table = ({
                     {!hideOptionsButton && (
                       <IconButton
                         variant={"flat"}
-                        icon={<OptionsDotsIcon />}
+                        icon={<OptionsDotsIcon color={dark["neutral200"]} />}
                         dropDownOptions={{
                           componentOverflowRef: tableRef,
                           alignment: "right",

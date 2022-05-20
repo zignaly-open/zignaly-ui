@@ -14,8 +14,8 @@ export const Layout = styled.div<{ variant: keyof typeof ChartVariations }>`
     ${styledIf(
       props.variant === "small",
       `
-        height: 120px;
-        width: auto;
+      height: 100px;
+      width: auto;
         `,
     )}
     `}
