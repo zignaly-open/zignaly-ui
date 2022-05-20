@@ -1,5 +1,5 @@
 // Dependencies
-import React, {useCallback, useMemo, useEffect, useRef, useState} from "react";
+import React, {useCallback, useMemo, useEffect, useRef, useState, useImperativeHandle} from "react";
 import { useClickAway, useWindowSize } from "react-use";
 import { Portal } from "react-portal";
 
@@ -24,7 +24,7 @@ const IconButton = ({
     active: '#fff'
   },
   className,
-}: IconButtonProps) => {
+}: IconButtonProps, innerRef: any) => {
   // Ref
   const options = {
     ...defaultDropDownOptions,
@@ -55,6 +55,12 @@ const IconButton = ({
       }
     }
   });
+
+  useImperativeHandle(innerRef, () => ({
+    setIsDropDownActive: (isActive) => {
+      setDropdownActive(isActive);
+    }
+  }));
 
   useEffect(() => {
     if (layoutRef && layoutRef.current && options.position === "absolute") {
@@ -141,4 +147,4 @@ const IconButton = ({
   );
 };
 
-export default IconButton;
+export default React.forwardRef(IconButton);
