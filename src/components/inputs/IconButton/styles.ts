@@ -61,6 +61,7 @@ export const Dropdown = styled.div<DropdownProps>`
 
   &::-webkit-scrollbar {
     width: 6px;
+    height: 6px;
   }
 
   /* Track */
@@ -84,7 +85,7 @@ export const Dropdown = styled.div<DropdownProps>`
     width: ${width ?? "auto"};
     z-index: ${zIndex ?? 10};
     max-height: ${maxHeight ?? '222px'};
-    overflow: hidden;
+    overflow: auto;
     
     ${styledIf(
       position === "static",
