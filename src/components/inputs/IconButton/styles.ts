@@ -84,8 +84,11 @@ export const Dropdown = styled.div<DropdownProps>`
   ${({ alignment, width, position, maxHeight, zIndex }) => `
     width: ${width ?? "auto"};
     z-index: ${zIndex ?? 10};
-    max-height: ${maxHeight ?? '222px'};
-    overflow: auto;
+    
+    ${styledIf(maxHeight, `
+      max-height: ${maxHeight};
+      overflow: auto;
+    `)}
     
     ${styledIf(
       position === "static",
