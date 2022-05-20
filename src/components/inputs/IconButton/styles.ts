@@ -48,6 +48,7 @@ type DropdownProps = {
   width?: number | string | any;
   position?: keyof typeof dropdownPosition | any;
   zIndex?: number;
+  maxHeight?: string | number | any;
 };
 
 export const Dropdown = styled.div<DropdownProps>`
@@ -58,9 +59,32 @@ export const Dropdown = styled.div<DropdownProps>`
   opacity: 0;
   position: absolute;
 
-  ${({ alignment, width, position, zIndex }) => `
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  ${({ alignment, width, position, maxHeight, zIndex }) => `
     width: ${width ?? "auto"};
     z-index: ${zIndex ?? 10};
+    max-height: ${maxHeight ?? '222px'};
+    overflow: hidden;
     
     ${styledIf(
       position === "static",

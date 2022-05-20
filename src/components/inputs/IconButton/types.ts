@@ -29,6 +29,7 @@ export const defaultDropDownOptions = {
   alignment: "left",
   position: "absolute",
   zIndex: 10,
+  maxHeight: '220px'
 };
 
 export type IconButtonProps = {

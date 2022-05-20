@@ -100,6 +100,7 @@ const IconButton = ({
         alignment={options.alignment}
         position={options.position}
         zIndex={options.zIndex}
+        maxHeight={options.maxHeight}
       >
         {renderDropDown}
       </Dropdown>
