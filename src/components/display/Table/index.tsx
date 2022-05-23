@@ -15,6 +15,9 @@ import {
   View,
   ThView,
   ColumnsSelector,
+  HeaderRow,
+  TextContainer,
+  IconContainer,
 } from "./styles";
 
 // Components
@@ -116,7 +119,6 @@ const Table = ({
       </ColumnsSelector>
     );
   }, [columns, hiddenColumns]);
-
   return (
     <Layout>
       <View ref={tableRef}>
@@ -129,33 +131,28 @@ const Table = ({
                     {...column.getHeaderProps(column.getSortByToggleProps())}
                     key={`--table-head-row-${index.toString()}`}
                     isSorted={column.isSorted}
-                    isAlignRight={column.isAlignThRight}
                   >
-                    <div
-                      style={{
-                        display: "flex",
-                        flexDirection: "row",
-                        justifyContent: "center",
-                      }}
-                    >
-                      <div>
+                    <HeaderRow>
+                      <TextContainer>
                         <Typography color={"neutral200"} variant={"body2"} weight={"regular"}>
                           {column.render("Header")}
                         </Typography>
                         <Typography color={"neutral400"} variant={"h5"} weight={"regular"}>
                           {column.render("Footer")}
                         </Typography>
-                      </div>
-                      <div>
+                      </TextContainer>
+                      <IconContainer>
                         {index < headerGroup.headers.length && (
                           <SortIcon
                             color={dark["neutral200"]}
                             isSorted={column.isSorted}
                             isSortedDesc={column.isSortedDesc}
+                            width={24}
+                            height={24}
                           />
                         )}
-                      </div>
-                    </div>
+                      </IconContainer>
+                    </HeaderRow>
                   </ThView>
                 ))}
                 <th role={"row"}>

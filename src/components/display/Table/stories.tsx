@@ -19,6 +19,7 @@ import { dark } from "../../../theme";
 // Utils
 import { sortByPointDecimal } from "../../../utils/numbers";
 import { createUserTable } from "./types";
+import Typography from "../Typography";
 
 export default {
   title: "Display/Table",
@@ -190,8 +191,16 @@ Investors.args = {
   ],
   data: [
     {
-      email: "tec**@zig**.com",
-      userId: "5f886d29da8e9666b1684c9a",
+      email: (
+        <Typography color="neutral100" variant="body2">
+          tec**@zig**.com
+        </Typography>
+      ),
+      userId: (
+        <Typography color="neutral200" variant="h5">
+          5f886d29da8e9666b1684c9a
+        </Typography>
+      ),
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
         <PriceLabel
@@ -202,13 +211,25 @@ Investors.args = {
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
-      successFee: "10%",
+      successFee: (
+        <Typography color="neutral100" variant="body1">
+          10%
+        </Typography>
+      ),
       feesInZig: <CheckIconStyled width="24" height="24" color={dark["neutral300"]} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.CONNECTED} />,
     },
     {
-      email: "tec**@zig**.com",
-      userId: "5f886d29da8e9666b1684c9a",
+      email: (
+        <Typography color="neutral100" variant="body2">
+          tec**@zig**.com
+        </Typography>
+      ),
+      userId: (
+        <Typography color="neutral200" variant="h5">
+          5f886d29da8e9666b1684c9a
+        </Typography>
+      ),
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
         <PriceLabel
@@ -219,14 +240,26 @@ Investors.args = {
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"23.68586856858"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"71813"} />,
-      successFee: "10%",
+      successFee: (
+        <Typography color="neutral100" variant="body1">
+          10%
+        </Typography>
+      ),
       feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.DISCONNECTED} />,
     },
 
     {
-      email: "tec**@zig**.com",
-      userId: "5f886d29da8e9666b1684c9a",
+      email: (
+        <Typography color="neutral100" variant="body2">
+          tec**@zig**.com
+        </Typography>
+      ),
+      userId: (
+        <Typography color="neutral200" variant="h5">
+          5f886d29da8e9666b1684c9a
+        </Typography>
+      ),
       investment: <PriceLabel coin={"USDT"} value={"3468"} />,
       pyd: (
         <PriceLabel
@@ -237,13 +270,25 @@ Investors.args = {
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"0.347347"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"09864"} />,
-      successFee: "10%",
+      successFee: (
+        <Typography color="neutral100" variant="body1">
+          10%
+        </Typography>
+      ),
       feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.HARD_DISCONNECT} />,
     },
     {
-      email: "tec**@zig**.com",
-      userId: "5f886d29da8e9666b1684c9a",
+      email: (
+        <Typography color="neutral100" variant="body2">
+          tec**@zig**.com
+        </Typography>
+      ),
+      userId: (
+        <Typography color="neutral200" variant="h5">
+          5f886d29da8e9666b1684c9a
+        </Typography>
+      ),
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
         <PriceLabel
@@ -254,13 +299,25 @@ Investors.args = {
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"134581"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
-      successFee: "10%",
+      successFee: (
+        <Typography color="neutral100" variant="body1">
+          10%
+        </Typography>
+      ),
       feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.SOFT_DISCONNECT} />,
     },
     {
-      email: "tec**@zig**.com",
-      userId: "5f886d29da8e9666b1684c9a",
+      email: (
+        <Typography color="neutral100" variant="body2">
+          tec**@zig**.com
+        </Typography>
+      ),
+      userId: (
+        <Typography color="neutral200" variant="h5">
+          5f886d29da8e9666b1684c9a
+        </Typography>
+      ),
       investment: <PriceLabel coin={"USDT"} value={"1250"} />,
       pyd: (
         <PriceLabel
@@ -271,7 +328,11 @@ Investors.args = {
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
       totalFeesPaid: <PriceLabel coin={"USDT"} value={"218"} />,
-      successFee: "10%",
+      successFee: (
+        <Typography color="neutral100" variant="body1">
+          10%
+        </Typography>
+      ),
       feesInZig: <CloseIconStyled width="24" height="24" color={dark["neutral300"]} />,
       status: <ConnectionStateLabel stateId={ConnectionStateLabelId.SUSPENDED} />,
     },
