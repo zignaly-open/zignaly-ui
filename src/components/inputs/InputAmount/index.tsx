@@ -160,7 +160,7 @@ function InputAmount(
             </Side>
           )}
         </InputContainer>
-        {tokens?.length === 1 && selectedToken?.name && (
+        {tokens?.length === 1 && !selectedToken?.image && (
           <Unit>
             <Typography color="neutral300" variant="h1">
               {selectedToken.name}
