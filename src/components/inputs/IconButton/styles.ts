@@ -3,6 +3,7 @@ import Loader from "components/display/Loader";
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
 import { buttonSizes, buttonVariants, dropdownAlignment, dropdownPosition } from "./types";
+import React from "react";
 
 const isPrimaryButton = (variant: keyof typeof buttonVariants) =>
   variant === buttonVariants.primary;
@@ -135,6 +136,7 @@ interface LayoutProps {
   size: keyof typeof buttonSizes;
   variant: keyof typeof buttonVariants;
   isActiveDropdown: boolean;
+  type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
   colors: {
     normal: string;
     active: string;

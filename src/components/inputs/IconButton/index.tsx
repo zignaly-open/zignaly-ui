@@ -24,6 +24,7 @@ const IconButton = ({
     active: '#fff'
   },
   className,
+  type,
 }: IconButtonProps, innerRef: any) => {
   // Ref
   const options = {
@@ -117,6 +118,7 @@ const IconButton = ({
   return (
     <Layout ref={layoutRef} className={className}>
       <ViewPort
+        type={type}
         size={size}
         variant={variant}
         colors={colors}
