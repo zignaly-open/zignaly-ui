@@ -57,7 +57,7 @@ const IconButton = ({
   });
 
   useImperativeHandle(innerRef, () => ({
-    setIsDropDownActive: (isActive) => {
+    setIsDropDownActive: (isActive: boolean) => {
       setDropdownActive(isActive);
     }
   }));
