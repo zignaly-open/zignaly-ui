@@ -435,7 +435,6 @@ export const ViewPort = styled.button<LayoutProps>`
       }
      
       &:enabled:focus:focus-visible {
-        background: linear-gradient(289.8deg, #149CAD 0%, #4540C1 100%);
       
         ${Container} {
           border: 1px solid white;
@@ -478,35 +477,22 @@ export const ViewPort = styled.button<LayoutProps>`
       }
       
       &:enabled:active {
-        padding: 2px;
-        background: linear-gradient(289.8deg, #149CAD 0%, #4540C1 100%);
-        
+        transition: all 0.21 linear;
         ${Container} {
-          border: none;
-          background: #040618;
-          
-          &:before {
-            opacity: 1;
-          }
-        }
-        
-        ${Icon} {
-          top: 0px;
-          left: 0px;
-        }
+          border: 1px solid white;
       }
             
       ${Icon} {
-        color: #9CA3AF;
-        letter-spacing: 2px;
+        top: 0;
+        right: 0;
       }
     `,
   )}  
   
   ${Icon} {
     svg {
-      fill: ${props.colors.normal};
-      stroke: ${props.colors.normal};
+      fill: #706f82;
+      stroke: #706f82;
     }
   }
   
@@ -524,8 +510,8 @@ export const ViewPort = styled.button<LayoutProps>`
       
       ${Icon} {
         svg {
-          fill: ${props.colors.active};
-          stroke: ${props.colors.active};
+          fill: #fff;
+          stroke: #fff;
         }
       }
        
