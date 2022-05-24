@@ -3,6 +3,7 @@ import Loader from "components/display/Loader";
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
 import { buttonSizes, buttonVariants, dropdownAlignment, dropdownPosition } from "./types";
+import React from "react";
 
 const isPrimaryButton = (variant: keyof typeof buttonVariants) =>
   variant === buttonVariants.primary;
@@ -48,6 +49,7 @@ type DropdownProps = {
   width?: number | string | any;
   position?: keyof typeof dropdownPosition | any;
   zIndex?: number;
+  maxHeight?: string | number | any;
 };
 
 export const Dropdown = styled.div<DropdownProps>`
@@ -58,9 +60,36 @@ export const Dropdown = styled.div<DropdownProps>`
   opacity: 0;
   position: absolute;
 
-  ${({ alignment, width, position, zIndex }) => `
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.10);
+    border-radius: 12px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.15);
+  }
+  
+  ${({ alignment, width, position, maxHeight, zIndex }) => `
     width: ${width ?? "auto"};
     z-index: ${zIndex ?? 10};
+    
+    ${styledIf(maxHeight, `
+      max-height: ${maxHeight};
+      overflow: auto;
+    `)}
     
     ${styledIf(
       position === "static",
@@ -107,6 +136,11 @@ interface LayoutProps {
   size: keyof typeof buttonSizes;
   variant: keyof typeof buttonVariants;
   isActiveDropdown: boolean;
+  type?: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
+  colors: {
+    normal: string;
+    active: string;
+  }
 }
 
 export const Layout = styled.div`
@@ -133,13 +167,15 @@ export const ViewPort = styled.button<LayoutProps>`
     cursor: default;
   }
 
-  ${({ size, variant, isActiveDropdown }: any) => `
+  ${({ size, variant, isActiveDropdown, colors }: any) => `
     ${styledIf(
       isSmallButton(size),
       `
       ${Icon} {
-        width: 14px;
-        height: 14px;
+        svg {
+          width: 14px;
+          height: 14px;
+        }
       }
 
       ${ButtonLoader}{
@@ -158,8 +194,10 @@ export const ViewPort = styled.button<LayoutProps>`
     isMediumButton(size),
     `     
       ${Icon} {
-        width: 14px;
-        height: 14px;
+        svg {
+          width: 14px;
+          height: 14px;
+        }
       }
 
       ${ButtonLoader}{
@@ -178,8 +216,10 @@ export const ViewPort = styled.button<LayoutProps>`
     isLargeButton(size),
     `     
       ${Icon} {
-        width: 18px;
-        height: 18px;
+        svg {
+          width: 18px;
+          height: 18px;
+        }
       }
 
       ${ButtonLoader}{
@@ -198,8 +238,10 @@ export const ViewPort = styled.button<LayoutProps>`
     isXLargeButton(size),
     `     
       ${Icon} {
-        width: 24px;
-        height: 24px;
+        svg {
+          width: 24px;
+          height: 24px;
+        }
       }
 
       ${ButtonLoader}{
@@ -461,6 +503,13 @@ export const ViewPort = styled.button<LayoutProps>`
     `,
   )}  
   
+  ${Icon} {
+    svg {
+      fill: ${colors.normal};
+      stroke: ${colors.normal};
+    }
+  }
+  
   ${styledIf(
     isActiveDropdown,
     ` 
@@ -472,7 +521,14 @@ export const ViewPort = styled.button<LayoutProps>`
         padding: 2px;
         background: #12152c;
       }
- 
+      
+      ${Icon} {
+        svg {
+          fill: ${colors.active};
+          stroke: ${colors.active};
+        }
+      }
+       
       ${Container} {
         background: #12152c;
         
@@ -480,7 +536,7 @@ export const ViewPort = styled.button<LayoutProps>`
           opacity: 0 !important;
         }
       }
-    `,
+    `
   )}
   `}
 `;

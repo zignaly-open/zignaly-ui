@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useCallback, useMemo, useEffect, useRef, useState } from "react";
+import React, {useCallback, useMemo, useEffect, useRef, useState, useImperativeHandle} from "react";
 import { useClickAway, useWindowSize } from "react-use";
 import { Portal } from "react-portal";
 
@@ -19,9 +19,13 @@ const IconButton = ({
   loading = false,
   dropDownOptions,
   renderDropDown = null,
+  colors = {
+    normal: '#706f82',
+    active: '#fff'
+  },
   className,
   type,
-}: IconButtonProps) => {
+}: IconButtonProps, innerRef: any) => {
   // Ref
   const options = {
     ...defaultDropDownOptions,
@@ -52,6 +56,12 @@ const IconButton = ({
       }
     }
   });
+
+  useImperativeHandle(innerRef, () => ({
+    setIsDropDownActive: (isActive: boolean) => {
+      setDropdownActive(isActive);
+    }
+  }));
 
   useEffect(() => {
     if (layoutRef && layoutRef.current && options.position === "absolute") {
@@ -97,6 +107,7 @@ const IconButton = ({
         alignment={options.alignment}
         position={options.position}
         zIndex={options.zIndex}
+        maxHeight={options.maxHeight}
       >
         {renderDropDown}
       </Dropdown>
@@ -107,9 +118,10 @@ const IconButton = ({
   return (
     <Layout ref={layoutRef} className={className}>
       <ViewPort
-        size={size}
         type={type}
+        size={size}
         variant={variant}
+        colors={colors}
         disabled={disabled || loading}
         isActiveDropdown={isActiveDropdown}
       >
@@ -119,7 +131,7 @@ const IconButton = ({
               type={LoaderTypes.TAILSPIN}
               color="#9CA3AF"
               ariaLabel="Loader"
-            ></ButtonLoader>
+            />
           ) : (
             <IconContainer>
               <Icon>{icon}</Icon>
@@ -137,4 +149,4 @@ const IconButton = ({
   );
 };
 
-export default IconButton;
+export default React.forwardRef(IconButton);
