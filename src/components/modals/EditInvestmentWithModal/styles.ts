@@ -23,8 +23,8 @@ export const PendingTransaction = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 12px 24px;
-  margin: 42px 0;
-  
+  margin: 32px 0 42px;
+
   ${({theme}) => (`
     gap: 22px;
     border: 1px solid ${theme['yellow']};
@@ -37,4 +37,49 @@ export const PendingTransaction = styled.div`
       fill: ${theme['yellow']};
     }
   `)}
+`;
+
+export const Field = styled.div`
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  user-select: none;
+  gap: 42px;
+`;
+
+export const Row = styled.div`
+
+  ${({theme}) => (`
+    &:first-child {
+      border-right: 1px solid ${theme['neutral500']};
+    }
+  `)}
+;
+`;
+
+export const AmountInvested = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+`;
+
+export const TokenValue = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const TokenImage = styled.img`
+  width: 36px;
+  height: 36px;
+`;
+
+export const Actions = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 56px;
+  gap: 32px;
 `;
