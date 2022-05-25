@@ -30,7 +30,6 @@ import ArrowRightIcon from 'assets/icons/arrow-right-icon.svg';
 
 // Props
 import {EditInvestmentWithModalProps} from "./types";
-import Theme from "../../../theme/theme";
 
 function EditInvestmentWithModal({
   investorName,
@@ -41,10 +40,10 @@ function EditInvestmentWithModal({
   coin = {
     image: BTCIcon,
     name: 'BTC'
-  }
+  },
 }: EditInvestmentWithModalProps) {
   // Hooks
-  const theme: Theme = useTheme();
+  const theme: any = useTheme();
 
   return (
     <ModalContainer title={'Edit Investment with'}>
