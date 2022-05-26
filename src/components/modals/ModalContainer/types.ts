@@ -7,4 +7,5 @@ export type ModalContainerProps = {
   customHeaderAction?: null | React.ReactElement;
   open?: boolean;
   onClose?: () => void;
+  onGoBack?: any;
 }

@@ -7,11 +7,13 @@ import {
   Header,
   Title,
   Body,
-  CloseButton,
+  HeaderButton,
+  Inline,
 } from './styles';
 
 // Assets
 import CloseIcon from "assets/icons/close-icon.svg";
+import ArrowLeftIcon from "assets/icons/arrow-left-icon.svg";
 
 // Types
 import {
@@ -23,13 +25,14 @@ function ModalContainer({
   children,
   title = null,
   customHeaderAction = null,
+  onGoBack = null,
 }: ModalContainerProps) {
   const renderHeaderAction = useMemo(
     () =>
       !customHeaderAction ? (
-        <CloseButton onClick={onClose}>
+        <HeaderButton onClick={onClose}>
           <CloseIcon />
-        </CloseButton>
+        </HeaderButton>
       ) : (
         customHeaderAction
       ),
@@ -39,7 +42,14 @@ function ModalContainer({
   return (
     <Layout>
       <Header>
-        <Title>{title}</Title>
+        <Inline>
+          {onGoBack && typeof onGoBack === 'function' && (
+            <HeaderButton onClick={onGoBack}>
+              <ArrowLeftIcon color={'#fff'} />
+            </HeaderButton>
+          )}
+          <Title>{title}</Title>
+        </Inline>
         {renderHeaderAction}
       </Header>
       <Body>{children}</Body>

@@ -11,3 +11,8 @@ export type EditInvestmentWithModalProps = {
   amountInvested: number | string | any;
   coin?: CoinProps;
 }
+
+export const viewsIds = {
+  EDIT_INVESTMENT: 'edit-investment',
+  PENDING_TRANSACTIONS: 'pending-transactions'
+};

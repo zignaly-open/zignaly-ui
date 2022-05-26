@@ -1,7 +1,6 @@
 // Dependencies
 import styled from 'styled-components';
 import Typography from "../../display/Typography";
-import IconButton from "../../inputs/IconButton";
 
 const getWidth = (width: "fullscreen" | "large" | "small" | number): number => {
   if (typeof width === "number") return width;
@@ -24,6 +23,7 @@ export const Layout = styled.div`
     border: 1px solid ${theme['neutral600']};
     border-radius: 16px;
     padding: 40px;
+    
   `};
 `;
 
@@ -67,15 +67,25 @@ export const Header = styled.div`
   margin-bottom: 14px;
 `;
 
-export const CloseButton = styled.button`
+export const HeaderButton = styled.button`
   border: 0;
   background: transparent;
   border: none;
   cursor: pointer;
   
-  svg { 
-    fill: #fff;
-    width: 22px;
-    height: 22px;
-  }
+  ${({theme}) => (`
+    svg { 
+      fill: ${theme['neutral500']};
+      width: 26px;
+      height: 26px;
+    }
+  `)}
+`;
+
+export const Inline = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
 `;

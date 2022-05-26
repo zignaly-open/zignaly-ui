@@ -24,6 +24,7 @@ export const PendingTransaction = styled.div`
   align-items: center;
   padding: 12px 24px;
   margin: 32px 0 42px;
+  justify-content: space-between;
 
   ${({theme}) => (`
     gap: 22px;
@@ -82,4 +83,10 @@ export const Actions = styled.div`
   justify-content: center;
   margin-top: 56px;
   gap: 32px;
+`;
+
+export const Inline = styled.div`
+  display: flex;
+  gap: 12px;
+  align-items: center;
 `;

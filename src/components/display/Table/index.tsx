@@ -36,6 +36,7 @@ const Table = ({
   defaultHiddenColumns,
   hideOptionsButton,
   isUserTable,
+
 }: TableProps) => {
   // Refs
   const tableRef = useRef(null);
@@ -155,9 +156,9 @@ const Table = ({
                     </HeaderRow>
                   </ThView>
                 ))}
-                <th role={"row"}>
-                  <div style={{ display: "flex", justifyContent: "flex-end" }}>
-                    {!hideOptionsButton && (
+                {hideOptionsButton && (
+                  <th role={"row"}>
+                    <div style={{ display: "flex", justifyContent: "flex-end", paddingRight: '10px' }}>
                       <IconButton
                         variant={"flat"}
                         icon={<OptionsDotsIcon color={dark["neutral200"]} />}
@@ -167,9 +168,9 @@ const Table = ({
                         }}
                         renderDropDown={renderColumnsSelector()}
                       />
-                    )}
-                  </div>
-                </th>
+                    </div>
+                  </th>
+                )}
               </tr>
             ))}
           </thead>
