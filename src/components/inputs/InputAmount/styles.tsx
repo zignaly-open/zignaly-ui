@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import { dark } from "theme";
 import { styledIf } from "utils/styled";
+import Typography from "../../display/Typography";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -45,22 +46,11 @@ export const BalanceContainer = styled.div`
   margin-bottom: 16px;
 `;
 
-export const BalanceLabel = styled.span`
-  padding-right: 4px;
-  color: #9ca3af;
-  letter-spacing: 1px;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
+export const BalanceLabel = styled(Typography).attrs({variant: 'h3'})`
+  margin-right: 4px;
 `;
 
-export const BalanceValue = styled.span`
-  color: #f3f4f6;
-  letter-spacing: 1px;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
-`;
+export const BalanceValue = styled(Typography).attrs({variant: 'h3'})``;
 
 export const MaxButton = styled.div`
   border: 1px solid #35334a;

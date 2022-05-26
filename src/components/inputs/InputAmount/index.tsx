@@ -172,8 +172,8 @@ function InputAmount(
       {/* Show Balance of the Input */}
       {selectedToken && selectedToken.balance && (
         <BalanceContainer>
-          <BalanceLabel>Balance:</BalanceLabel>
-          <BalanceValue>
+          <BalanceLabel color={'neutral200'}>Balance:</BalanceLabel>
+          <BalanceValue color={'neutral000'}>
             <NumberFormat
               value={utils.formatUnits(selectedToken.balance)}
               displayType={"text"}

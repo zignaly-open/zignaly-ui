@@ -15,7 +15,8 @@ import {
   TokenImage,
   TokenValue,
   Actions,
-  Inline
+  Inline,
+  InputContainer
 } from './styles';
 import Avatar from "../../display/Avatar";
 import ModalContainer from "../ModalContainer";
@@ -25,6 +26,7 @@ import Button from "../../inputs/Button";
 import Table from "../../display/Table";
 import DateLabel from "../../display/Table/components/DateLabel";
 import PriceLabel from "../../display/Table/components/PriceLabel";
+import InputAmount from "../../inputs/InputAmount";
 
 // Assets
 import RefreshIcon from 'assets/icons/refresh-icon.svg';
@@ -32,6 +34,9 @@ import BTCIcon from 'assets/icons/coins/btc.svg?url';
 import PlusIcon from 'assets/icons/plus-icon.svg';
 import ArrowRightIcon from 'assets/icons/arrow-right-icon.svg';
 import ArrowLeftIcon from 'assets/icons/arrow-left-icon.svg';
+
+// Utils
+import {BigNumber} from 'ethers';
 
 // Props
 import {EditInvestmentWithModalProps, viewsIds} from "./types";
@@ -43,6 +48,7 @@ function EditInvestmentWithModal({
   pendingTransaction = null,
   amountInvested = 0,
   coin = {
+    id: 'btc',
     image: BTCIcon,
     name: 'BTC'
   },
@@ -50,6 +56,7 @@ function EditInvestmentWithModal({
   // Hooks
   const theme: any = useTheme();
   const [currentState, setCurrentState] = useState(viewsIds.EDIT_INVESTMENT);
+  const [isInputEnabled, setInputEnabled] = useState(false);
 
   if (currentState === viewsIds.PENDING_TRANSACTIONS) {
     return (
@@ -158,17 +165,39 @@ function EditInvestmentWithModal({
         </Row>
       </Field>
 
+      {isInputEnabled && (
+        <InputContainer>
+          <InputAmount
+            label={'Amount to Invest:'}
+            tokens={[
+              {
+                id: coin.id,
+                name: coin.name,
+                image: coin.image,
+                balance: 1000000,
+              }
+            ]}
+            value={BigNumber.from('0')}
+            onChange={() => {}}
+          />
+        </InputContainer>
+      )}
+
+
       <Actions>
-        <TextButton
-          leftElement={(
-            <PlusIcon
-              width={'22px'}
-              height={'22px'}
-              color={theme['links']}
-            />
-          )}
-          caption={'Invest more'}
-        />
+        {!isInputEnabled && (
+          <TextButton
+            onClick={() => setInputEnabled(true)}
+            leftElement={(
+              <PlusIcon
+                width={'22px'}
+                height={'22px'}
+                color={theme['links']}
+              />
+            )}
+            caption={'Invest more'}
+          />
+        )}
         <Button
           size={'large'}
           caption={'Add to Investment'}

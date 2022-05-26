@@ -1,4 +1,5 @@
 type CoinProps = {
+  id: string;
   image: string;
   name: string;
 }

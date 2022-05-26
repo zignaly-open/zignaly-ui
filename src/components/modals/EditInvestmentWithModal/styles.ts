@@ -90,3 +90,7 @@ export const Inline = styled.div`
   gap: 12px;
   align-items: center;
 `;
+
+export const InputContainer = styled.div`
+  margin-top: 68px;
+`;
