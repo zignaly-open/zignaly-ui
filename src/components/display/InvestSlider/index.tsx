@@ -52,10 +52,10 @@ const InvestSlider = ({
   return (
     <Layout style={style} className={className}>
       <TextContainer>
-        <Label variant="body1" weight="demibold" color="neutral200">
+        <Label variant="body2" weight="demibold" color="neutral200">
           Reinvest
         </Label>
-        <Label variant="body1" weight="demibold" color="highlighted">
+        <Label variant="body2" weight="demibold" color="highlighted">
           {value}%
         </Label>
       </TextContainer>
@@ -68,10 +68,10 @@ const InvestSlider = ({
         </DotContainer>
       </Bar>
       <TextContainer>
-        <Label variant="body1" weight="demibold" color="neutral200">
+        <Label variant="body2" weight="demibold" color="neutral200">
           Withdraw
         </Label>
-        <Label variant="body1" weight="demibold" color="highlighted">
+        <Label variant="body2" weight="demibold" color="highlighted">
           {100 - value}%
         </Label>
       </TextContainer>

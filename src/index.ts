@@ -62,6 +62,9 @@ import { dark, light } from "./theme";
 import { createUserTable } from "components/display/Table/types";
 import ProgressSlider from "components/display/ProgressSlider";
 import InvestSlider from "components/display/InvestSlider";
+import { ServiceName } from "components/display/Table/components/ServiceName";
+import { BalanceSummary } from "components/display/Table/components/BalanceSummary";
+import { AreaChart } from "components/display/Charts";
 
 export {
   /**
@@ -70,6 +73,9 @@ export {
    * =-=-=-=-=-=-=-=
    */
   // Display
+  ServiceName,
+  BalanceSummary,
+  AreaChart,
   Avatar,
   Loader,
   Table,
