@@ -7,6 +7,7 @@ import { ServiceName } from "./components/ServiceName";
 import { AreaChart } from "../Charts";
 import React from "react";
 import PercentageIndicator from "./components/PercentageIndicator";
+import Select from "components/inputs/Selector";
 
 export interface TableProps {
   columns: any[];
@@ -26,6 +27,73 @@ export interface UserTableData {
   threeMonths: PercentageIndicatorProps;
   all: PercentageIndicatorProps;
 }
+
+export const createMarketPlaceTableHeader = () => {
+  const selectorComponent = () => {
+    return <Select placeholder={"1 Year"} onChange={undefined} options={[]}></Select>;
+  };
+  return [
+    {
+      Header: "Service Name",
+      Footer: (
+        <div>
+          <div>{"Manager/Base Currency"}</div>
+        </div>
+      ),
+      accessor: "serviceName",
+    },
+    {
+      Header: "Assets In Pool",
+      Footer: (
+        <div>
+          <div>{"# Of Investors"}</div>
+        </div>
+      ),
+      accessor: "assetsInPool",
+    },
+    {
+      Header: selectorComponent,
+      accessor: "selectYear",
+    },
+    {
+      Header: "Last 30 Days",
+      accessor: "last30Days",
+    },
+  ];
+};
+
+interface MarketPlaceTableProps {
+  serviceName: {
+    heading: string;
+    subtitle: string;
+    cryptoName: string;
+    cryptoAlt: string;
+  };
+  assetsInPool: {
+    totalValue: number;
+    logo: any;
+    numberOfInvestors: number;
+  };
+  last30Days: ChartsProps;
+}
+
+export const createMarketPlaceTableBody = ({ serviceName, assetsInPool, last30Days }: MarketPlaceTableProps) => {
+  return [
+    {
+      serviceName: (
+        <ServiceName
+          heading={serviceName.heading}
+          subtitle={serviceName.subtitle}
+          cryptoName={serviceName.cryptoName}
+          cryptoAlt={serviceName.cryptoAlt}
+        ></ServiceName>
+      ),
+      assetsInPool: (
+        
+      ),
+    },
+  ];
+};
 
 export const createUserTable = ({
   summary,

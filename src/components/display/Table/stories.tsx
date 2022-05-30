@@ -18,7 +18,7 @@ import { dark } from "../../../theme";
 
 // Utils
 import { sortByPointDecimal } from "../../../utils/numbers";
-import { createUserTable } from "./types";
+import {createMarketPlaceTableHeader, createUserTable } from "./types";
 import Typography from "../Typography";
 
 export default {
@@ -365,6 +365,12 @@ UserDashBoard.args = createUserTable({
   threeMonths: { value: 10, theme: dark },
   all: { value: 10, theme: dark },
 });
+
+export const MarketPlaceTabel = Template.bind({});
+MarketPlaceTabel.args = {
+  hideOptionsButton: true,
+  columns: createMarketPlaceTableHeader()
+};
 
 export const ExchangeOrders = Template.bind({});
 ExchangeOrders.args = {
