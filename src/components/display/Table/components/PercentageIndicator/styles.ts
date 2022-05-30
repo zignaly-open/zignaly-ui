@@ -26,6 +26,13 @@ export const Value = styled(Typography)<{ isPositive: boolean }>`
   `}
 `;
 
+export const Row = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
 export const Subtitle = styled(Typography)`
   display: inline;
   line-height: 20px !important;

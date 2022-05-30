@@ -6,4 +6,5 @@ export interface PercentageIndicatorProps {
   withoutIcon?: boolean;
   dashboardType?: "user" | "investor";
   subtitle?: string;
+  showTrophy?: boolean
 }

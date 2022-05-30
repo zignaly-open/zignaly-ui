@@ -8,6 +8,8 @@ import { AreaChart } from "../Charts";
 import React from "react";
 import PercentageIndicator from "./components/PercentageIndicator";
 import Select from "components/inputs/Selector";
+import { AssetsInPool } from "./components/AssetsInPool";
+import { dark } from "theme";
 
 export interface TableProps {
   columns: any[];
@@ -52,12 +54,12 @@ export const createMarketPlaceTableHeader = () => {
       accessor: "assetsInPool",
     },
     {
-      Header: selectorComponent,
-      accessor: "selectYear",
+      Header: "Last 30 Days",
+      accessor: "chart",
     },
     {
-      Header: "Last 30 Days",
-      accessor: "last30Days",
+      Header: "One Year",
+      accessor: "oneYear",
     },
   ];
 };
@@ -70,14 +72,22 @@ interface MarketPlaceTableProps {
     cryptoAlt: string;
   };
   assetsInPool: {
-    totalValue: number;
-    logo: any;
+    assetsValue: number;
     numberOfInvestors: number;
   };
-  last30Days: ChartsProps;
+  chart: ChartsProps;
+  oneYear: {
+    value: number;
+    subtitle: string;
+  };
 }
 
-export const createMarketPlaceTableBody = ({ serviceName, assetsInPool, last30Days }: MarketPlaceTableProps) => {
+export const createMarketPlaceTableBody = ({
+  serviceName,
+  assetsInPool,
+  chart,
+  oneYear,
+}: MarketPlaceTableProps) => {
   return [
     {
       serviceName: (
@@ -89,7 +99,20 @@ export const createMarketPlaceTableBody = ({ serviceName, assetsInPool, last30Da
         ></ServiceName>
       ),
       assetsInPool: (
-        
+        <AssetsInPool
+          assetsValue={assetsInPool.assetsValue}
+          numberOfInvestors={assetsInPool.numberOfInvestors}
+        ></AssetsInPool>
+      ),
+      chart: <AreaChart variant={chart.variant} data={chart.data}></AreaChart>,
+      oneYear: (
+        <PercentageIndicator
+          dashboardType="user"
+          showTrophy={true}
+          value={oneYear.value}
+          theme={dark}
+          subtitle="2.2 years"
+        ></PercentageIndicator>
       ),
     },
   ];
