@@ -1,7 +1,7 @@
 // Dependencies
 import React from "react";
 import NumberFormat from "react-number-format";
-import {useTheme} from "styled-components";
+import { useTheme } from "styled-components";
 
 // Styled Components
 import * as styled from "./styles";
@@ -16,6 +16,7 @@ const PercentageIndicator = ({
   value = 0,
   subtitle = "",
   dashboardType = "investor",
+  showTrophy,
 }: PercentageIndicatorProps) => {
   const isPositiveValue = isPositive(value);
   const theme: any = useTheme();
@@ -45,19 +46,18 @@ const PercentageIndicator = ({
             />
             %
           </styled.Value>
-          {dashboardType == "marketplace" && (
+          {showTrophy && (
             <styled.TropyContainer>
               <Trophy width={24} height={24}></Trophy>
               <Gap gap={2}></Gap>
             </styled.TropyContainer>
           )}
         </styled.Row>
-        {dashboardType === "user" ||
-          (dashboardType === "marketplace" && (
-            <styled.Subtitle variant="body2" color="neutral400">
-              {subtitle}
-            </styled.Subtitle>
-          ))}
+        {dashboardType !== "investor" && (
+          <styled.Subtitle variant="body2" color="neutral400">
+            {subtitle}
+          </styled.Subtitle>
+        )}
       </styled.Container>
     </styled.Layout>
   );

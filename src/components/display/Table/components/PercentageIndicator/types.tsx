@@ -5,4 +5,5 @@ export interface PercentageIndicatorProps {
   theme: theme;
   dashboardType?: "user" | "investor" | "marketplace";
   subtitle?: string;
+  showTrophy?: boolean;
 }

@@ -36,6 +36,7 @@ const Table = ({
   defaultHiddenColumns,
   hideOptionsButton,
   isUserTable,
+  maxWidth,
 }: TableProps) => {
   // Refs
   const tableRef = useRef(null);
@@ -120,7 +121,7 @@ const Table = ({
     );
   }, [columns, hiddenColumns]);
   return (
-    <Layout>
+    <Layout maxWidth={maxWidth}>
       <View ref={tableRef}>
         <TableView isUserTable={isUserTable} {...getTableProps()}>
           <thead>

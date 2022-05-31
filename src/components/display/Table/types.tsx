@@ -7,10 +7,9 @@ import { ServiceName } from "./components/ServiceName";
 import { AreaChart } from "../Charts";
 import React from "react";
 import PercentageIndicator from "./components/PercentageIndicator";
-import Select from "components/inputs/Selector";
 import { dark } from "theme";
 import AssetsInPool from "./components/AssetsInPool";
-import InvestButton from "./components/InvestButton";
+import InvestColumn from "./components/InvestColumn";
 
 export interface TableProps {
   columns: any[];
@@ -19,6 +18,7 @@ export interface TableProps {
   onColumnHidden?: (column: string, isHidden: boolean) => void;
   hideOptionsButton: boolean;
   isUserTable: boolean;
+  maxWidth?: number;
 }
 
 export interface UserTableData {
@@ -98,25 +98,25 @@ export const createMarketPlaceTableBody = ({
           subtitle={serviceName.subtitle}
           cryptoName={serviceName.cryptoName}
           cryptoAlt={serviceName.cryptoAlt}
-        ></ServiceName>
+        />
       ),
       assetsInPool: (
         <AssetsInPool
           assetsValue={assetsInPool.assetsValue}
           numberOfInvestors={assetsInPool.numberOfInvestors}
-        ></AssetsInPool>
+        />
       ),
-      chart: <AreaChart variant={chart.variant} data={chart.data}></AreaChart>,
+      chart: <AreaChart variant={chart.variant} data={chart.data} />,
       oneYear: (
         <PercentageIndicator
           dashboardType="marketplace"
           value={oneYear.value}
           theme={dark}
           subtitle="2.2 years"
-        ></PercentageIndicator>
+          showTrophy={true}
+        />
       ),
-      riskScore: "...",
-      invest: <InvestButton isInvested={true}></InvestButton>,
+      invest: <InvestColumn type="invested" />,
     },
     {
       serviceName: (
@@ -125,7 +125,7 @@ export const createMarketPlaceTableBody = ({
           subtitle={serviceName.subtitle}
           cryptoName={serviceName.cryptoName}
           cryptoAlt={serviceName.cryptoAlt}
-        ></ServiceName>
+        />
       ),
       assetsInPool: (
         <AssetsInPool
@@ -133,17 +133,94 @@ export const createMarketPlaceTableBody = ({
           numberOfInvestors={assetsInPool.numberOfInvestors}
         ></AssetsInPool>
       ),
-      chart: <AreaChart variant={chart.variant} data={chart.data}></AreaChart>,
+      chart: <AreaChart variant={chart.variant} data={chart.data} />,
       oneYear: (
         <PercentageIndicator
           dashboardType="marketplace"
           value={oneYear.value}
           theme={dark}
           subtitle="2.2 years"
-        ></PercentageIndicator>
+        />
       ),
-      riskScore: "...",
-      invest: <InvestButton isInvested={false}></InvestButton>,
+      invest: <InvestColumn type="liquidated" />,
+    },
+    {
+      serviceName: (
+        <ServiceName
+          heading={serviceName.heading}
+          subtitle={serviceName.subtitle}
+          cryptoName={serviceName.cryptoName}
+          cryptoAlt={serviceName.cryptoAlt}
+        />
+      ),
+      assetsInPool: (
+        <AssetsInPool
+          assetsValue={assetsInPool.assetsValue}
+          numberOfInvestors={assetsInPool.numberOfInvestors}
+        ></AssetsInPool>
+      ),
+      chart: <AreaChart variant={chart.variant} data={chart.data} />,
+      oneYear: (
+        <PercentageIndicator
+          dashboardType="marketplace"
+          value={oneYear.value}
+          theme={dark}
+          subtitle="2.2 years"
+        />
+      ),
+      invest: <InvestColumn type="notInvested" />,
+    },
+    {
+      serviceName: (
+        <ServiceName
+          heading={serviceName.heading}
+          subtitle={serviceName.subtitle}
+          cryptoName={serviceName.cryptoName}
+          cryptoAlt={serviceName.cryptoAlt}
+        />
+      ),
+      assetsInPool: (
+        <AssetsInPool
+          assetsValue={assetsInPool.assetsValue}
+          numberOfInvestors={assetsInPool.numberOfInvestors}
+        ></AssetsInPool>
+      ),
+      chart: <AreaChart variant={chart.variant} data={chart.data} />,
+      oneYear: (
+        <PercentageIndicator
+          dashboardType="marketplace"
+          value={oneYear.value}
+          theme={dark}
+          subtitle="2.2 years"
+        />
+      ),
+      invest: <InvestColumn type="notInvestedAllAccounts" />,
+    },
+    {
+      serviceName: (
+        <ServiceName
+          heading={serviceName.heading}
+          subtitle={serviceName.subtitle}
+          cryptoName={serviceName.cryptoName}
+          cryptoAlt={serviceName.cryptoAlt}
+        />
+      ),
+      assetsInPool: (
+        <AssetsInPool
+          assetsValue={assetsInPool.assetsValue}
+          numberOfInvestors={assetsInPool.numberOfInvestors}
+        ></AssetsInPool>
+      ),
+      chart: <AreaChart variant={chart.variant} data={chart.data} />,
+      oneYear: (
+        <PercentageIndicator
+          dashboardType="marketplace"
+          value={oneYear.value}
+          theme={dark}
+          subtitle="2.2 years"
+        />
+      ),
+      invest: <InvestColumn type="investedSeeAll" />,
     },
   ];
 };

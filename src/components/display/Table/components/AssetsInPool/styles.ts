@@ -7,7 +7,7 @@ export const Row = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: start;
-  text-align: center;
+  text-align: start;
 `;
 
 export const Column = styled.div`
