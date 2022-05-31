@@ -193,7 +193,6 @@ function EditInvestmentWithModal({
               value={Number(getValues("withdrawPercentageValue"))}
               initialValue={Number(getValues("withdrawPercentageValue"))}
               onChange={({ reinvest, withdraw }: { reinvest: string; withdraw: string }) => {
-                console.log(reinvest);
                 setValue("reinvestPercentageValue", reinvest.toString());
                 setValue("withdrawPercentageValue", withdraw.toString());
               }}
