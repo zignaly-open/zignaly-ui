@@ -14,5 +14,4 @@ export const Service = Template.bind({});
 Service.args = {
   numberOfInvestors: 100,
   assetsValue: 20000000,
-  icon: <WhaleIcon />,
 };
