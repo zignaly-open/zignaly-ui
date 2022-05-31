@@ -8,8 +8,9 @@ import { AreaChart } from "../Charts";
 import React from "react";
 import PercentageIndicator from "./components/PercentageIndicator";
 import Select from "components/inputs/Selector";
-import { AssetsInPool } from "./components/AssetsInPool";
 import { dark } from "theme";
+import AssetsInPool from "./components/AssetsInPool";
+import InvestButton from "./components/InvestButton";
 
 export interface TableProps {
   columns: any[];
@@ -31,9 +32,6 @@ export interface UserTableData {
 }
 
 export const createMarketPlaceTableHeader = () => {
-  const selectorComponent = () => {
-    return <Select placeholder={"1 Year"} onChange={undefined} options={[]}></Select>;
-  };
   return [
     {
       Header: "Service Name",
@@ -54,12 +52,16 @@ export const createMarketPlaceTableHeader = () => {
       accessor: "assetsInPool",
     },
     {
-      Header: "Last 30 Days",
+      Header: "1 year",
+      accessor: "oneYear",
+    },
+    {
+      Header: "1 month",
       accessor: "chart",
     },
     {
-      Header: "One Year",
-      accessor: "oneYear",
+      Header: "",
+      accessor: "invest",
     },
   ];
 };
@@ -107,13 +109,41 @@ export const createMarketPlaceTableBody = ({
       chart: <AreaChart variant={chart.variant} data={chart.data}></AreaChart>,
       oneYear: (
         <PercentageIndicator
-          dashboardType="user"
-          showTrophy={true}
+          dashboardType="marketplace"
           value={oneYear.value}
           theme={dark}
           subtitle="2.2 years"
         ></PercentageIndicator>
       ),
+      riskScore: "...",
+      invest: <InvestButton isInvested={true}></InvestButton>,
+    },
+    {
+      serviceName: (
+        <ServiceName
+          heading={serviceName.heading}
+          subtitle={serviceName.subtitle}
+          cryptoName={serviceName.cryptoName}
+          cryptoAlt={serviceName.cryptoAlt}
+        ></ServiceName>
+      ),
+      assetsInPool: (
+        <AssetsInPool
+          assetsValue={assetsInPool.assetsValue}
+          numberOfInvestors={assetsInPool.numberOfInvestors}
+        ></AssetsInPool>
+      ),
+      chart: <AreaChart variant={chart.variant} data={chart.data}></AreaChart>,
+      oneYear: (
+        <PercentageIndicator
+          dashboardType="marketplace"
+          value={oneYear.value}
+          theme={dark}
+          subtitle="2.2 years"
+        ></PercentageIndicator>
+      ),
+      riskScore: "...",
+      invest: <InvestButton isInvested={false}></InvestButton>,
     },
   ];
 };

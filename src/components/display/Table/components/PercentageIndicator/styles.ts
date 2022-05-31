@@ -17,6 +17,14 @@ export const Container = styled.div`
   text-align: center;
 `;
 
+export const TropyContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5px;
+`;
+
 export const Value = styled(Typography)<{ isPositive: boolean }>`
   display: inline;
   ${(props) => `

@@ -38,7 +38,6 @@ NegativeUserDashboard.args = {
   value: -50,
   subtitle: "2.2 years",
   theme: dark,
-  withoutIcon: true,
   dashboardType: "user",
 };
 
@@ -47,6 +46,5 @@ PositiveUserDashboard.args = {
   value: 50,
   theme: dark,
   subtitle: "2.2 years",
-  withoutIcon: true,
   dashboardType: "user",
 };

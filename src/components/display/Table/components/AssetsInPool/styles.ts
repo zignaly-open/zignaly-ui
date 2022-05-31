@@ -1,3 +1,5 @@
+
+   
 import styled from "styled-components";
 
 export const Row = styled.div`
@@ -5,7 +7,7 @@ export const Row = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: start;
-  text-align: start;
+  text-align: center;
 `;
 
 export const Column = styled.div`

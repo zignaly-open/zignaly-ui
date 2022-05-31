@@ -6,20 +6,29 @@ import { isPositive } from "utils/numbers";
 import { Layout, Profit, TotalValue } from "./styles";
 import { BalanceSummaryProps } from "./types";
 import PencileIcon from "assets/icons/pencil-icon.svg";
+import Typography from "components/display/Typography";
 
-export const BalanceSummary = ({ totalValue, profit }: BalanceSummaryProps) => {
+export const BalanceSummary = ({
+  totalValue,
+  profit,
+  dashboardType = "investor",
+}: BalanceSummaryProps) => {
   const isPositiveProfit = isPositive(profit);
   const isEqual = profit === 0 ? true : false;
   return (
     <Layout isPositive={isPositiveProfit} isEqual={isEqual}>
-      <TotalValue>
-        {"$"}
-        <NumberFormat
-          value={String(totalValue).replaceAll("-", "")}
-          displayType={"text"}
-          thousandSeparator={true}
-        />
-      </TotalValue>
+      {dashboardType === "marketplace" ? (
+        <Typography>Invested</Typography>
+      ) : (
+        <TotalValue>
+          {"$"}
+          <NumberFormat
+            value={String(totalValue).replaceAll("-", "")}
+            displayType={"text"}
+            thousandSeparator={true}
+          />
+        </TotalValue>
+      )}
       <Profit variant="body2">
         {isEqual ? "+" : isPositiveProfit ? "+" : "-"}
         <NumberFormat

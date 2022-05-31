@@ -16,7 +16,6 @@ const PercentageIndicator = ({
   subtitle = "",
   theme,
   dashboardType = "investor",
-  showTrophy,
 }: PercentageIndicatorProps) => {
   const isPositiveValue = isPositive(value);
   return (
@@ -44,26 +43,19 @@ const PercentageIndicator = ({
             />
             %
           </styled.Value>
-          {showTrophy && <Gap gap={5}></Gap>}
-          {showTrophy && (
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                flexDirection: "column",
-              }}
-            >
+          {dashboardType == "marketplace" && (
+            <styled.TropyContainer>
               <Trophy width={24} height={24}></Trophy>
               <Gap gap={2}></Gap>
-            </div>
+            </styled.TropyContainer>
           )}
         </styled.Row>
-        {dashboardType === "user" && (
-          <styled.Subtitle variant="body2" color="neutral400">
-            {subtitle}
-          </styled.Subtitle>
-        )}
+        {dashboardType === "user" ||
+          (dashboardType === "marketplace" && (
+            <styled.Subtitle variant="body2" color="neutral400">
+              {subtitle}
+            </styled.Subtitle>
+          ))}
       </styled.Container>
     </styled.Layout>
   );
