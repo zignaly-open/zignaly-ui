@@ -65,6 +65,7 @@ import InvestSlider from "components/display/InvestSlider";
 import { ServiceName } from "components/display/Table/components/ServiceName";
 import { BalanceSummary } from "components/display/Table/components/BalanceSummary";
 import { AreaChart } from "components/display/Charts";
+import { sortByPointDecimal } from "./utils/numbers";
 
 export {
   /**
@@ -143,4 +144,5 @@ export {
   ThemeProvider,
   dark,
   light,
+  sortByPointDecimal,
 };
