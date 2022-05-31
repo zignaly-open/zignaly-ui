@@ -1,4 +1,5 @@
 // Dependencies
+// @ts-nocheck
 import React, { useCallback, useState, useEffect } from "react";
 import NumberFormat from "react-number-format";
 import { parseUnits } from "@ethersproject/units";
@@ -169,7 +170,6 @@ function InputAmount(
         )}
       </Wrapper>
 
-      {/* Show Balance of the Input */}
       {selectedToken && selectedToken.balance && (
         <BalanceContainer>
           <BalanceLabel variant="body2">Balance:</BalanceLabel>
