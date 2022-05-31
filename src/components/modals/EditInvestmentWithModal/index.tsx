@@ -1,6 +1,8 @@
 // Dependencies
-import React, {useState} from 'react';
-import {useTheme} from "styled-components";
+import React, { useState } from "react";
+import { useTheme } from "styled-components";
+import { useForm } from "react-hook-form";
+import NumberFormat from "react-number-format";
 
 // Components
 import {
@@ -16,8 +18,9 @@ import {
   TokenValue,
   Actions,
   Inline,
-  InputContainer
-} from './styles';
+  Form,
+  InputContainer,
+} from "./styles";
 import Avatar from "../../display/Avatar";
 import ModalContainer from "../ModalContainer";
 import Typography from "../../display/Typography";
@@ -29,40 +32,55 @@ import PriceLabel from "../../display/Table/components/PriceLabel";
 import InputAmount from "../../inputs/InputAmount";
 
 // Assets
-import RefreshIcon from 'assets/icons/refresh-icon.svg';
-import BTCIcon from 'assets/icons/coins/btc.svg?url';
-import PlusIcon from 'assets/icons/plus-icon.svg';
-import ArrowRightIcon from 'assets/icons/arrow-right-icon.svg';
-import ArrowLeftIcon from 'assets/icons/arrow-left-icon.svg';
+import RefreshIcon from "assets/icons/refresh-icon.svg";
+import BTCIcon from "assets/icons/coins/btc.svg?url";
+import PlusIcon from "assets/icons/plus-icon.svg";
+import ArrowRightIcon from "assets/icons/arrow-right-icon.svg";
+import ArrowLeftIcon from "assets/icons/arrow-left-icon.svg";
+import InvestSlider from "../../display/InvestSlider";
 
 // Utils
-import {BigNumber} from 'ethers';
+import { BigNumber, utils } from "ethers";
 
 // Props
-import {EditInvestmentWithModalProps, viewsIds} from "./types";
+import { EditInvestmentFormProps, EditInvestmentWithModalProps, viewsIds } from "./types";
 
 function EditInvestmentWithModal({
   investorName,
   investorPictureUrl,
   investorSuccessFee,
   pendingTransaction = null,
-  amountInvested = 0,
+
+  amountInvested = BigNumber.from("0"),
+  reinvestPercentage = "20",
+  withdrawPercentage = "20",
   coin = {
-    id: 'btc',
+    id: "btc",
     image: BTCIcon,
-    name: 'BTC'
+    name: "BTC",
+    balance: BigNumber.from("1000000000000000000000000"),
   },
+  onAmountSubmit = () => {},
 }: EditInvestmentWithModalProps) {
   // Hooks
   const theme: any = useTheme();
   const [currentState, setCurrentState] = useState(viewsIds.EDIT_INVESTMENT);
   const [isInputEnabled, setInputEnabled] = useState(false);
 
+  // Form
+  const { getValues, setValue, handleSubmit } = useForm<EditInvestmentFormProps>({
+    defaultValues: {
+      moreInvestmentValue: BigNumber.from("0"),
+      reinvestPercentageValue: reinvestPercentage,
+      withdrawPercentageValue: withdrawPercentage,
+    },
+  });
+
   if (currentState === viewsIds.PENDING_TRANSACTIONS) {
     return (
       <ModalContainer
         onGoBack={() => setCurrentState(viewsIds.EDIT_INVESTMENT)}
-        title={'Edit Investment with'}
+        title={"Edit Investment with"}
       >
         <Table
           columns={[
@@ -81,21 +99,21 @@ function EditInvestmentWithModal({
             {
               Header: "Status",
               accessor: "status",
-            }
+            },
           ]}
           data={[
             {
               date: <DateLabel date={new Date()} />,
-              amount: <PriceLabel value={10000} coin={'USDT'} />,
-              type: 'Investment',
-              status: 'Processing in 24 hrs',
+              amount: <PriceLabel value={10000} coin={"USDT"} />,
+              type: "Investment",
+              status: "Processing in 24 hrs",
               action: (
                 <TextButton
-                  caption={'Cancel'}
+                  caption={"Cancel"}
                   onClick={() => setCurrentState(viewsIds.PENDING_TRANSACTIONS)}
                 />
               ),
-            }
+            },
           ]}
           hideOptionsButton={false}
           isUserTable={true}
@@ -103,16 +121,10 @@ function EditInvestmentWithModal({
 
         <Actions>
           <Button
-            leftElement={(
-              <ArrowLeftIcon
-                color={'#fff'}
-                width={'20px'}
-                height={'20px'}
-              />
-            )}
+            leftElement={<ArrowLeftIcon color={"#fff"} width={"20px"} height={"20px"} />}
             onClick={() => setCurrentState(viewsIds.EDIT_INVESTMENT)}
-            size={'large'}
-            caption={'Back'}
+            size={"large"}
+            caption={"Back"}
           />
         </Actions>
       </ModalContainer>
@@ -120,99 +132,113 @@ function EditInvestmentWithModal({
   }
 
   return (
-    <ModalContainer title={'Edit Investment with'}>
+    <ModalContainer title={"Edit Investment with"}>
+      {/* Investor Details */}
       <Investor>
-        <Avatar size={'x-large'} image={investorPictureUrl} />
+        <Avatar size={"x-large"} image={investorPictureUrl} />
         <InvestorData>
-          <InvestorName variant={'h1'} color={'neutral000'}>{investorName}</InvestorName>
-          <InvestorSuccessFee variant={'body2'} color={'neutral300'}>{investorSuccessFee}% Success fee</InvestorSuccessFee>
+          <InvestorName variant={"h1"} color={"neutral000"}>
+            {investorName}
+          </InvestorName>
+          <InvestorSuccessFee variant={"body2"} color={"neutral300"}>
+            {investorSuccessFee}% Success fee
+          </InvestorSuccessFee>
         </InvestorData>
       </Investor>
+
+      {/* Pending Transactions View */}
       {pendingTransaction && (
         <PendingTransaction>
           <Inline>
             <RefreshIcon />
-            <Typography variant={'body1'} color={'yellow'}>You have {pendingTransaction} pending transaction</Typography>
+            <Typography variant={"body1"} color={"yellow"}>
+              You have {pendingTransaction} pending transaction
+            </Typography>
           </Inline>
           <div>
             <TextButton
-              rightElement={(
-                <ArrowRightIcon
-                  width={'22px'}
-                  height={'22px'}
-                  color={theme['links']}
-                />
-              )}
-              caption={'View'}
+              rightElement={
+                <ArrowRightIcon width={"22px"} height={"22px"} color={theme["links"]} />
+              }
+              caption={"View"}
               onClick={() => setCurrentState(viewsIds.PENDING_TRANSACTIONS)}
             />
           </div>
         </PendingTransaction>
       )}
-      <Field>
-        <Row>
-          <Typography variant={'inputm'}>Amount Invested</Typography>
-          <AmountInvested>
-            <TokenImage src={coin.image} />
-            <TokenValue>
-              <Typography variant={'bigNumber'} color={'neutral100'}>{amountInvested}</Typography>
-              <Typography variant={'h3'} color={'neutral400'}>{coin.name}</Typography>
-            </TokenValue>
-          </AmountInvested>
-        </Row>
-        <Row>
-          Input Here
-        </Row>
-      </Field>
 
-      {isInputEnabled && (
-        <InputContainer>
-          <InputAmount
-            label={'Amount to Invest:'}
-            tokens={[
-              {
-                id: coin.id,
-                name: coin.name,
-                image: coin.image,
-                balance: 1000000,
-              }
-            ]}
-            value={BigNumber.from('0')}
-            onChange={() => {}}
-          />
-        </InputContainer>
-      )}
+      {/* Form */}
+      <Form onSubmit={handleSubmit(onAmountSubmit)}>
+        <Field>
+          <Row>
+            <Typography variant={"inputm"}>Amount Invested</Typography>
+            <AmountInvested>
+              <TokenImage src={coin.image} />
+              <TokenValue>
+                <Typography variant={"bigNumber"} color={"neutral100"}>
+                  <NumberFormat
+                    value={utils.formatUnits((amountInvested || "0").toString())}
+                    displayType={"text"}
+                    thousandSeparator={true}
+                  />
+                </Typography>
+                <Typography variant={"h3"} color={"neutral400"}>
+                  {coin.name}
+                </Typography>
+              </TokenValue>
+            </AmountInvested>
+          </Row>
+          <Row>
+            <InvestSlider
+              value={Number(getValues("withdrawPercentageValue"))}
+              initialValue={Number(getValues("withdrawPercentageValue"))}
+              onChange={({ reinvest, withdraw }: { reinvest: string; withdraw: string }) => {
+                setValue("reinvestPercentageValue", reinvest.toString());
+                setValue("withdrawPercentageValue", withdraw.toString());
+              }}
+            />
+          </Row>
+        </Field>
 
-
-      <Actions>
-        {!isInputEnabled && (
-          <TextButton
-            onClick={() => setInputEnabled(true)}
-            leftElement={(
-              <PlusIcon
-                width={'22px'}
-                height={'22px'}
-                color={theme['links']}
-              />
-            )}
-            caption={'Invest more'}
-          />
+        {isInputEnabled && (
+          <InputContainer>
+            <InputAmount
+              label={"Amount to Invest:"}
+              tokens={[
+                {
+                  id: coin.id,
+                  name: coin.name,
+                  image: coin.image,
+                  balance: coin.balance,
+                },
+              ]}
+              value={getValues("moreInvestmentValue")}
+              onChange={({ target: { value } }: any) => {
+                setValue("moreInvestmentValue", value);
+              }}
+            />
+          </InputContainer>
         )}
-        <Button
-          size={'large'}
-          caption={'Add to Investment'}
-        />
-        <TextButton
-          rightElement={(
-            <ArrowRightIcon
-              width={'22px'}
-              height={'22px'}
-              color={theme['links']}
+
+        <Actions>
+          {!isInputEnabled && (
+            <TextButton
+              onClick={() => setInputEnabled(true)}
+              leftElement={<PlusIcon width={"22px"} height={"22px"} color={theme["links"]} />}
+              caption={"Invest more"}
             />
           )}
-          caption={'Withdraw Investment'}
-        />
-      </Actions>
+          <Button
+            size={"large"}
+            type={"submit"}
+            caption={isInputEnabled ? "Add to Investment" : "Save and Close"}
+          />
+          <TextButton
+            rightElement={<ArrowRightIcon width={"22px"} height={"22px"} color={theme["links"]} />}
+            caption={"Withdraw Investment"}
+          />
+        </Actions>
+      </Form>
     </ModalContainer>
   );
 }

@@ -22,10 +22,10 @@ import {
 // Components
 import TokenSelector from "./components/TokenSelector";
 import ErrorMessage from "components/display/ErrorMessage";
+import Typography from "components/display/Typography";
 
 // Types
 import { InputAmountProps, TokenItem } from "./types";
-import Typography from "components/display/Typography";
 import { changeEvent } from "utils/event";
 
 function InputAmount(
@@ -131,7 +131,7 @@ function InputAmount(
 
   return (
     <Layout withError={!!error} disabled={disabled} fullWidth={fullWidth}>
-      <Typography variant="h3" weight="regular" color="neutral200">
+      <Typography weight="regular" color="neutral200">
         {label}
       </Typography>
       <Wrapper>
@@ -160,7 +160,7 @@ function InputAmount(
             </Side>
           )}
         </InputContainer>
-        {tokens?.length === 1 && selectedToken?.name && (
+        {tokens?.length === 1 && !selectedToken?.image && (
           <Unit>
             <Typography color="neutral300" variant="h1">
               {selectedToken.name}
@@ -172,8 +172,8 @@ function InputAmount(
       {/* Show Balance of the Input */}
       {selectedToken && selectedToken.balance && (
         <BalanceContainer>
-          <BalanceLabel color={'neutral200'}>Balance:</BalanceLabel>
-          <BalanceValue color={'neutral000'}>
+          <BalanceLabel variant="body2">Balance:</BalanceLabel>
+          <BalanceValue variant="body2">
             <NumberFormat
               value={utils.formatUnits(selectedToken.balance)}
               displayType={"text"}

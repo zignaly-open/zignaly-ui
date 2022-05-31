@@ -1,5 +1,5 @@
 // Dependencies
-import styled from 'styled-components';
+import styled from "styled-components";
 import Typography from "../../display/Typography";
 
 export const Investor = styled.div`
@@ -26,35 +26,34 @@ export const PendingTransaction = styled.div`
   margin: 32px 0 42px;
   justify-content: space-between;
 
-  ${({theme}) => (`
+  ${({ theme }) => `
     gap: 22px;
-    border: 1px solid ${theme['yellow']};
-    background: ${theme['neutral700']};
+    border: 1px solid ${theme["yellow"]};
+    background: ${theme["neutral700"]};
     border-radius: 5px;
     
     svg {
       width: 14px;
       height: 14px;
-      fill: ${theme['yellow']};
+      fill: ${theme["yellow"]};
     }
-  `)}
+  `}
 `;
 
 export const Field = styled.div`
   display: grid;
-  grid-template-columns: 0.5fr 1fr;
+  grid-template-columns: 0.8fr 1fr;
   user-select: none;
   gap: 42px;
+  align-items: center;
 `;
 
 export const Row = styled.div`
-
-  ${({theme}) => (`
+  ${({ theme }) => `
     &:first-child {
-      border-right: 1px solid ${theme['neutral500']};
+      border-right: 1px solid ${theme["neutral500"]};
     }
-  `)}
-;
+  `};
 `;
 
 export const AmountInvested = styled.div`
@@ -94,3 +93,5 @@ export const Inline = styled.div`
 export const InputContainer = styled.div`
   margin-top: 68px;
 `;
+
+export const Form = styled.form``;

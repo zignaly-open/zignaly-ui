@@ -1,8 +1,8 @@
 // Dependencies
+import Typography from "components/display/Typography";
 import styled from "styled-components";
 import { dark } from "theme";
 import { styledIf } from "utils/styled";
-import Typography from "../../display/Typography";
 
 export const Wrapper = styled.div`
   display: flex;
@@ -18,8 +18,8 @@ export const InputContainer = styled.div`
   align-items: center;
   background: rgba(16, 18, 37, 0.7);
   margin-top: 4px;
+  margin-bottom: 8px;
   gap: 22px;
-  margin-bottom: 16px;
   width: 100%;
 `;
 
@@ -46,11 +46,16 @@ export const BalanceContainer = styled.div`
   margin-bottom: 16px;
 `;
 
-export const BalanceLabel = styled(Typography).attrs({variant: 'h3'})`
-  margin-right: 4px;
+export const BalanceLabel = styled(Typography)`
+  padding-right: 4px;
+  font-weight: 600;
+  color: ${({ theme }) => theme.neutral200};
 `;
 
-export const BalanceValue = styled(Typography).attrs({variant: 'h3'})``;
+export const BalanceValue = styled(Typography)`
+  color: ${({ theme }) => theme.neutral000};
+  font-weight: 600;
+`;
 
 export const MaxButton = styled.div`
   border: 1px solid #35334a;

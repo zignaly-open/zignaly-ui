@@ -10,8 +10,13 @@ import PriceLabel from "./components/display/Table/components/PriceLabel";
 import Typography from "./components/display/Typography";
 import ZigWalletIndicator from "./components/display/ZigWalletIndicator";
 import CoinLabel from "./components/display/Table/components/CoinLabel";
-import SliderProgress from "./components/display/Slider";
 import Toaster from "./components/display/Toaster";
+import ProgressSlider from "components/display/ProgressSlider";
+import InvestSlider from "components/display/InvestSlider";
+import { createUserTable } from "components/display/Table/types";
+import { ServiceName } from "components/display/Table/components/ServiceName";
+import { BalanceSummary } from "components/display/Table/components/BalanceSummary";
+import { AreaChart } from "components/display/Charts";
 
 // Inputs
 import Button from "./components/inputs/Button";
@@ -60,10 +65,6 @@ import BrandImage from "./components/navigation/Header/components/BrandImage";
 // Utils
 import ThemeProvider from "./utils/ThemeProvider";
 import { dark, light } from "./theme";
-import { createUserTable } from "components/display/Table/types";
-import { ServiceName } from "components/display/Table/components/ServiceName";
-import { BalanceSummary } from "components/display/Table/components/BalanceSummary";
-import { AreaChart } from "components/display/Charts";
 
 export {
   /**
@@ -87,7 +88,8 @@ export {
   ErrorMessage,
   ZigWalletIndicator,
   CoinLabel,
-  SliderProgress,
+  ProgressSlider,
+  InvestSlider,
   Toaster,
   // Inputs
   Button,
