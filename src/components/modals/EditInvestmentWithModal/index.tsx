@@ -62,6 +62,7 @@ function EditInvestmentWithModal({
     balance: BigNumber.from("1000000000000000000000000"),
   },
   onAmountSubmit = () => {},
+  onClickWithdrawInvestment = () => {},
 }: EditInvestmentWithModalProps) {
   // Hooks
   const theme: any = useTheme();
@@ -248,6 +249,7 @@ function EditInvestmentWithModal({
           />
           <TextButton
             rightElement={<ArrowRightIcon width={"22px"} height={"22px"} color={theme["links"]} />}
+            onClick={onClickWithdrawInvestment}
             caption={"Withdraw Investment"}
           />
         </Actions>
