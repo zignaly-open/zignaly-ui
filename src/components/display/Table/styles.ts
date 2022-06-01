@@ -56,13 +56,13 @@ export const View = styled.div`
   }
 `;
 
-export const TableView = styled.table<{ isUserTable: boolean, hasFooter?: boolean }>`
+export const TableView = styled.table<{ isUserTable: boolean; hasFooter?: boolean }>`
   border-spacing: 0;
   overflow: hidden;
   width: 100%;
 
-  background: rgba(19, 18, 37, 0.4);
   thead {
+    background: rgba(19, 18, 37, 0.4);
     height: 56px;
     user-select: none;
     background: #06061a;
@@ -73,6 +73,7 @@ export const TableView = styled.table<{ isUserTable: boolean, hasFooter?: boolea
   }
 
   tbody {
+    background: rgba(19, 18, 37, 0.4);
     td {
       letter-spacing: 0;
       color: #f3f4f6;
@@ -85,7 +86,7 @@ export const TableView = styled.table<{ isUserTable: boolean, hasFooter?: boolea
       }
     }
   }
-  
+
   tfoot {
     tr {
       &:first-child {
@@ -137,7 +138,6 @@ export const TableView = styled.table<{ isUserTable: boolean, hasFooter?: boolea
       }
     }
   }
-
 `;
 
 export const ThView = styled.th<{ isSorted?: boolean; isAlignRight?: boolean }>`

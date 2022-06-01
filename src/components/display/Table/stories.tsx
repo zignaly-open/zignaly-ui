@@ -24,6 +24,7 @@ import Typography from "../Typography";
 export default {
   title: "Display/Table",
   component: Table,
+  decorators: [(story) => <div style={{ paddingBottom: "2rem" }}>{story()}</div>],
 } as ComponentMeta<typeof Table>;
 
 const Template: ComponentStory<typeof Table> = (args) => <Table {...args} />;
@@ -39,10 +40,10 @@ MyCoins.args = {
   initialState: {
     sortBy: [
       {
-        id: 'totalBalance',
-        desc: false
-      }
-    ]
+        id: "totalBalance",
+        desc: false,
+      },
+    ],
   },
   columns: [
     {
@@ -112,10 +113,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -126,10 +127,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -140,10 +141,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -154,10 +155,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -168,10 +169,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -182,10 +183,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -196,10 +197,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -210,10 +211,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -224,10 +225,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -238,10 +239,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -252,23 +253,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
-      ),
-    },    {
-      coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
-      totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
-      availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
-      lockedBalance: <PriceLabel coin={"BTC"} value={"50.18389"} />,
-      valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
-      valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
-      action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -279,10 +267,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -293,10 +281,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -307,10 +295,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -321,10 +309,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -335,10 +323,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -349,10 +337,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -363,10 +351,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -377,23 +365,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
-      ),
-    },    {
-      coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
-      totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
-      availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
-      lockedBalance: <PriceLabel coin={"BTC"} value={"50.18389"} />,
-      valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
-      valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
-      action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -404,10 +379,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -418,10 +393,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -432,10 +407,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -446,10 +421,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -460,23 +435,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
-      ),
-    },    {
-      coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
-      totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
-      availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
-      lockedBalance: <PriceLabel coin={"BTC"} value={"50.18389"} />,
-      valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
-      valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
-      action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -487,10 +449,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -501,10 +463,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -515,10 +477,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -529,10 +491,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -543,10 +505,10 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
@@ -557,12 +519,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -570,12 +533,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -583,12 +547,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -596,12 +561,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -609,12 +575,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -622,12 +589,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -635,12 +603,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -648,12 +617,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -661,12 +631,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -674,12 +645,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -687,12 +659,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -700,12 +673,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -713,12 +687,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -726,12 +701,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -739,12 +715,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -752,12 +729,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -765,12 +743,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -778,12 +757,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -791,12 +771,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -804,12 +785,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -817,12 +799,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -830,12 +813,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -843,12 +827,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -856,12 +841,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -869,12 +855,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -882,12 +869,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -895,12 +883,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -908,12 +897,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -921,12 +911,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -934,12 +925,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -947,12 +939,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -960,12 +953,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -973,12 +967,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -986,12 +981,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -999,12 +995,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1012,12 +1009,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1025,12 +1023,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1038,12 +1037,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1051,12 +1051,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1064,12 +1065,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1077,12 +1079,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1090,12 +1093,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1103,12 +1107,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1116,12 +1121,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1129,12 +1135,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1142,12 +1149,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1155,12 +1163,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1168,12 +1177,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1181,12 +1191,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1194,12 +1205,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1207,12 +1219,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1220,12 +1233,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1233,12 +1247,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1246,12 +1261,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1259,12 +1275,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1272,12 +1289,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1285,12 +1303,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1298,12 +1317,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1311,12 +1331,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1324,12 +1345,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1337,12 +1359,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1350,12 +1373,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1363,12 +1387,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1376,12 +1401,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1389,12 +1415,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1402,12 +1429,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1415,12 +1443,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1428,12 +1457,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1441,12 +1471,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1454,12 +1485,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1467,12 +1499,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1480,12 +1513,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1493,12 +1527,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1506,12 +1541,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1519,12 +1555,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1532,12 +1569,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1545,12 +1583,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1558,12 +1597,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1571,12 +1611,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1584,12 +1625,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1597,12 +1639,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1610,12 +1653,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1623,12 +1667,13 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
-    },    {
+    },
+    {
       coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
       totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
       availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
@@ -1636,10 +1681,52 @@ MyCoins.args = {
       valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
       valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
       action: (
-          <Actions>
-            <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
-            <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
-          </Actions>
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
+      ),
+    },
+    {
+      coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
+      totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
+      availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
+      lockedBalance: <PriceLabel coin={"BTC"} value={"50.18389"} />,
+      valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
+      valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
+      action: (
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
+      ),
+    },
+    {
+      coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
+      totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
+      availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
+      lockedBalance: <PriceLabel coin={"BTC"} value={"50.18389"} />,
+      valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
+      valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
+      action: (
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
+      ),
+    },
+    {
+      coin: <CoinLabel coin={"BTC"} name={"Bitcoin"} />,
+      totalBalance: <PriceLabel coin={"BTC"} value={"18.20435"} />,
+      availableBalance: <PriceLabel coin={"BTC"} value={"6.7352"} />,
+      lockedBalance: <PriceLabel coin={"BTC"} value={"50.18389"} />,
+      valueInBtc: <PriceLabel coin={"BTC"} value={"7.382324"} />,
+      valueInUsd: <PriceLabel coin={"USD"} value={"54000"} fiat />,
+      action: (
+        <Actions>
+          <Button caption={"Deposit"} size={"small"} variant={"secondary"} onClick={() => {}} />
+          <Button caption={"Withdraw"} size={"small"} variant={"secondary"} onClick={() => {}} />
+        </Actions>
       ),
     },
     {
