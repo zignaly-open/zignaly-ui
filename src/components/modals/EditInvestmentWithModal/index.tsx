@@ -79,6 +79,7 @@ function EditInvestmentWithModal({
   if (currentState === viewsIds.PENDING_TRANSACTIONS) {
     return (
       <ModalContainer
+        width={784}
         onGoBack={() => setCurrentState(viewsIds.EDIT_INVESTMENT)}
         title={"Edit Investment with"}
       >
@@ -175,7 +176,11 @@ function EditInvestmentWithModal({
             <AmountInvested>
               <TokenImage src={coin.image} />
               <TokenValue>
-                <Typography variant={"bigNumber"} color={"neutral100"}>
+                <Typography
+                  variant={"bigNumber"}
+                  className={"investmentAmount"}
+                  color={"neutral100"}
+                >
                   <NumberFormat
                     value={utils.formatUnits((amountInvested || "0").toString())}
                     displayType={"text"}
@@ -190,6 +195,7 @@ function EditInvestmentWithModal({
           </Row>
           <Row>
             <InvestSlider
+              label={"What to do with profits:"}
               value={Number(getValues("withdrawPercentageValue"))}
               initialValue={Number(getValues("withdrawPercentageValue"))}
               onChange={({ reinvest, withdraw }: { reinvest: string; withdraw: string }) => {

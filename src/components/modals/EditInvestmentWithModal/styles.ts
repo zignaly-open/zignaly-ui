@@ -68,11 +68,15 @@ export const TokenValue = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+
+  .investmentAmount {
+    font-size: 18px;
+  }
 `;
 
 export const TokenImage = styled.img`
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
 `;
 
 export const Actions = styled.div`

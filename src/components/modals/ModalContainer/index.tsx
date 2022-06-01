@@ -1,26 +1,18 @@
 // Dependencies
-import React, {useMemo} from 'react';
+import React, { useMemo } from "react";
 
 // Styled Components
-import {
-  Layout,
-  Header,
-  Title,
-  Body,
-  HeaderButton,
-  Inline,
-} from './styles';
+import { Layout, Header, Title, Body, HeaderButton, Inline } from "./styles";
 
 // Assets
 import CloseIcon from "assets/icons/close-icon.svg";
 import ArrowLeftIcon from "assets/icons/arrow-left-icon.svg";
 
 // Types
-import {
-  ModalContainerProps
-} from './types';
+import { ModalContainerProps } from "./types";
 
 function ModalContainer({
+  width = "large",
   onClose,
   children,
   title = null,
@@ -36,16 +28,16 @@ function ModalContainer({
       ) : (
         customHeaderAction
       ),
-    [customHeaderAction]
+    [customHeaderAction],
   );
 
   return (
-    <Layout>
+    <Layout width={width}>
       <Header>
         <Inline>
-          {onGoBack && typeof onGoBack === 'function' && (
+          {onGoBack && typeof onGoBack === "function" && (
             <HeaderButton onClick={onGoBack}>
-              <ArrowLeftIcon color={'#fff'} />
+              <ArrowLeftIcon color={"#fff"} />
             </HeaderButton>
           )}
           <Title>{title}</Title>

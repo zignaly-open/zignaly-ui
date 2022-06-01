@@ -1,5 +1,5 @@
 // Dependencies
-import styled from 'styled-components';
+import styled from "styled-components";
 import Typography from "../../display/Typography";
 
 const getWidth = (width: "fullscreen" | "large" | "small" | number): number => {
@@ -17,17 +17,7 @@ type ModalContainerProps = {
   padding?: string;
 };
 
-export const Layout = styled.div`
-  ${({ theme }: any) => `
-    background-color: ${theme['neutral750']};
-    border: 1px solid ${theme['neutral600']};
-    border-radius: 16px;
-    padding: 40px;
-    
-  `};
-`;
-
-export const ModalContainer = styled.div<ModalContainerProps>`
+export const Layout = styled.div<any>`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,14 +62,14 @@ export const HeaderButton = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  
-  ${({theme}) => (`
+
+  ${({ theme }) => `
     svg { 
-      fill: ${theme['neutral500']};
+      fill: ${theme["neutral500"]};
       width: 26px;
       height: 26px;
     }
-  `)}
+  `}
 `;
 
 export const Inline = styled.div`

@@ -12,17 +12,20 @@ import {
   Line,
   PercentContainer,
   TextContainer,
+  Header,
 } from "./styles";
 import { InvestSliderProps, SliderTypes } from "./types";
+import Typography from "../Typography";
 
 const InvestSlider = ({
+  label,
   className,
   max = 100,
   min = 0,
   style,
   initialValue = 30,
   onChange = () => {},
-  type = "withdraw",
+  type = null,
 }: InvestSliderProps) => {
   const [value, setValue] = useState<number>(
     initialValue ? ((initialValue - min) / (max - min)) * 100 : 0,
@@ -64,35 +67,6 @@ const InvestSlider = ({
       withdraw: 100 - value,
     });
   }, [value]);
-
-  return (
-    <Layout style={style} className={className}>
-      <TextContainer>
-        <Label variant="body2" weight="demibold" color="neutral200">
-          Reinvest
-        </Label>
-        <Label variant="body2" weight="demibold" color="highlighted">
-          {value}%
-        </Label>
-      </TextContainer>
-      <Bar ref={sliderRef}>
-        <Line variant="left" />
-        <Line variant="middle" />
-        <Line variant="right" />
-        <DotContainer onMouseDown={() => setEnabled(true)} value={value}>
-          <Dot />
-        </DotContainer>
-      </Bar>
-      <TextContainer>
-        <Label variant="body2" weight="demibold" color="neutral200">
-          Withdraw
-        </Label>
-        <Label variant="body2" weight="demibold" color="highlighted">
-          {100 - value}%
-        </Label>
-      </TextContainer>
-    </Layout>
-  );
 
   const DepositSlider = () => {
     return (
@@ -164,7 +138,43 @@ const InvestSlider = ({
         return <DepositSlider />;
       }
       default:
-        return <></>;
+        return (
+          <>
+            {label && (
+              <Header>
+                <Typography variant={"inputm"} color={"neutral200"}>
+                  {label}
+                </Typography>
+              </Header>
+            )}
+            <Layout style={style} className={className}>
+              <TextContainer>
+                <Label variant="body2" weight="demibold" color="neutral200">
+                  Reinvest
+                </Label>
+                <Label variant="body2" weight="demibold" color="highlighted">
+                  {value}%
+                </Label>
+              </TextContainer>
+              <Bar ref={sliderRef}>
+                <Line variant="left" />
+                <Line variant="middle" />
+                <Line variant="right" />
+                <DotContainer onMouseDown={() => setEnabled(true)} value={value}>
+                  <Dot />
+                </DotContainer>
+              </Bar>
+              <TextContainer>
+                <Label variant="body2" weight="demibold" color="neutral200">
+                  Withdraw
+                </Label>
+                <Label variant="body2" weight="demibold" color="highlighted">
+                  {100 - value}%
+                </Label>
+              </TextContainer>
+            </Layout>
+          </>
+        );
     }
   };
 
