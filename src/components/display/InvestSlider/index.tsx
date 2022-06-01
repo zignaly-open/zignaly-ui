@@ -31,7 +31,6 @@ const InvestSlider = ({
     initialValue ? ((initialValue - min) / (max - min)) * 100 : 0,
   );
   const [enabled, setEnabled] = useState<boolean>(false);
-
   const sliderRef = React.useRef<HTMLDivElement>(null);
 
   useEffect(() => {

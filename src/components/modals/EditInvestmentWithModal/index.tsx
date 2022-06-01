@@ -1,5 +1,6 @@
 // Dependencies
-import React, { useState } from "react";
+// @ts-nocheck
+import React, { useState, useMemo } from "react";
 import { useTheme } from "styled-components";
 import { useForm } from "react-hook-form";
 import NumberFormat from "react-number-format";
@@ -49,7 +50,7 @@ function EditInvestmentWithModal({
   investorName,
   investorPictureUrl,
   investorSuccessFee,
-  pendingTransaction = null,
+  pendingTransactions = 0,
 
   amountInvested = BigNumber.from("0"),
   reinvestPercentage = "20",
@@ -132,6 +133,30 @@ function EditInvestmentWithModal({
     );
   }
 
+  const renderPendingTransactions = useMemo(
+    () =>
+      pendingTransactions > 0 ? (
+        <PendingTransaction>
+          <Inline>
+            <RefreshIcon />
+            <Typography variant={"body1"} color={"yellow"}>
+              You have {pendingTransactions} pending transaction
+            </Typography>
+          </Inline>
+          <div>
+            <TextButton
+              rightElement={
+                <ArrowRightIcon width={"22px"} height={"22px"} color={theme["links"]} />
+              }
+              caption={"View"}
+              onClick={() => setCurrentState(viewsIds.PENDING_TRANSACTIONS)}
+            />
+          </div>
+        </PendingTransaction>
+      ) : null,
+    [pendingTransactions],
+  );
+
   return (
     <ModalContainer title={"Edit Investment with"}>
       {/* Investor Details */}
@@ -148,25 +173,7 @@ function EditInvestmentWithModal({
       </Investor>
 
       {/* Pending Transactions View */}
-      {pendingTransaction && (
-        <PendingTransaction>
-          <Inline>
-            <RefreshIcon />
-            <Typography variant={"body1"} color={"yellow"}>
-              You have {pendingTransaction} pending transaction
-            </Typography>
-          </Inline>
-          <div>
-            <TextButton
-              rightElement={
-                <ArrowRightIcon width={"22px"} height={"22px"} color={theme["links"]} />
-              }
-              caption={"View"}
-              onClick={() => setCurrentState(viewsIds.PENDING_TRANSACTIONS)}
-            />
-          </div>
-        </PendingTransaction>
-      )}
+      {renderPendingTransactions}
 
       {/* Form */}
       <Form onSubmit={handleSubmit(onAmountSubmit)}>

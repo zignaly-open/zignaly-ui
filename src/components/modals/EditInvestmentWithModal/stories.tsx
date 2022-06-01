@@ -26,6 +26,6 @@ Default.args = {
   investorName: "The Golden Eagle",
   investorPictureUrl: "https://logodix.com/logo/2129091.png",
   investorSuccessFee: 20,
-  pendingTransaction: 4,
+  pendingTransactions: 0,
   amountInvested: BigNumber.from("2000"),
 };
