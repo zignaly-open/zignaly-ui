@@ -12,11 +12,6 @@ const getWidth = (width: "fullscreen" | "large" | "small" | number): number => {
   }
 };
 
-type ModalContainerProps = {
-  width?: "fullscreen" | "large" | "small" | number;
-  padding?: string;
-};
-
 export const Layout = styled.div<any>`
   display: flex;
   flex-direction: column;
