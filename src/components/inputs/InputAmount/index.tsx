@@ -109,7 +109,7 @@ function InputAmount(
     (token: TokenItem) => {
       setSelectedToken(token);
 
-      onChange(changeEvent(inputValue), {
+      onChange(changeEvent(name, inputValue), {
         value,
         token,
       });
@@ -126,7 +126,7 @@ function InputAmount(
       const newValue = BigNumber.from(selectedToken.balance);
       const number = utils.formatUnits(newValue);
       setInputValue(number);
-      onChange(changeEvent(number), { value: newValue, token: selectedToken });
+      onChange(changeEvent(name, number), { value: newValue, token: selectedToken });
     }
   }, [disabled, onChange, selectedToken]);
 
