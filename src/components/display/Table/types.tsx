@@ -11,7 +11,7 @@ import PercentageIndicator from "./components/PercentageIndicator";
 export const tableTypes = {
   basic: "basic",
   pagedWithData: "pagedWithData",
-  pagedWithOutData: "pagedWithOutData"
+  pagedWithOutData: "pagedWithOutData",
 };
 
 export interface TableBasicProps {
@@ -21,13 +21,13 @@ export interface TableBasicProps {
   onColumnHidden?: (column: string, isHidden: boolean) => void;
   hideOptionsButton: boolean;
   isUserTable: boolean;
-  initialState?: object,
-  isPagingWithAllData?: boolean,
-  hasFooter?: boolean,
+  initialState?: object;
+  isPagingWithAllData?: boolean;
+  hasFooter?: boolean;
 }
 
-export interface TableProps extends TableBasicProps{
-  type?: keyof typeof tableTypes
+export interface TableProps extends TableBasicProps {
+  type?: keyof typeof tableTypes;
 }
 
 export interface UserTableData {
@@ -99,13 +99,7 @@ export const createUserTable = ({
     ],
     data: [
       {
-        summary: (
-          <BalanceSummary
-            totalValue={summary.totalValue}
-            profit={summary.profit}
-            theme={summary.theme}
-          ></BalanceSummary>
-        ),
+        summary: <BalanceSummary totalValue={summary.totalValue} profit={summary.profit} />,
 
         serviceName: (
           <ServiceName
@@ -113,30 +107,22 @@ export const createUserTable = ({
             subtitle={serviceName.subtitle}
             cryptoName={serviceName.cryptoName}
             cryptoAlt={serviceName.cryptoAlt}
-          ></ServiceName>
+          />
         ),
-        chart: <AreaChart variant={chart.variant} data={chart.data}></AreaChart>,
+        chart: <AreaChart variant={chart.variant} data={chart.data} />,
         dailyAvg: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={dailyAvg.value}
-            theme={dailyAvg.theme}
-          ></PercentageIndicator>
+          <PercentageIndicator dashboardType="user" value={dailyAvg.value} theme={dailyAvg.theme} />
         ),
 
         oneMonth: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={oneMonth.value}
-            theme={oneMonth.theme}
-          ></PercentageIndicator>
+          <PercentageIndicator dashboardType="user" value={oneMonth.value} theme={oneMonth.theme} />
         ),
         threeMonths: (
           <PercentageIndicator
             dashboardType="user"
             value={threeMonths.value}
             theme={threeMonths.theme}
-          ></PercentageIndicator>
+          />
         ),
         all: (
           <PercentageIndicator
@@ -144,7 +130,7 @@ export const createUserTable = ({
             value={all.value}
             theme={all.theme}
             subtitle="2.2 years"
-          ></PercentageIndicator>
+          />
         ),
       },
       {
