@@ -7,6 +7,7 @@ export const Investor = styled.div`
   flex-direction: row;
   gap: 22px;
   align-items: center;
+  margin-bottom: 32px;
 `;
 
 export const InvestorData = styled.div`
@@ -23,7 +24,7 @@ export const PendingTransaction = styled.div`
   flex-direction: row;
   align-items: center;
   padding: 12px 24px;
-  margin: 32px 0 42px;
+  margin: 0 0 42px;
   justify-content: space-between;
 
   ${({ theme }) => `
