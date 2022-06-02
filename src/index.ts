@@ -11,6 +11,12 @@ import Typography from "./components/display/Typography";
 import ZigWalletIndicator from "./components/display/ZigWalletIndicator";
 import CoinLabel from "./components/display/Table/components/CoinLabel";
 import Toaster from "./components/display/Toaster";
+import ProgressSlider from "components/display/ProgressSlider";
+import InvestSlider from "components/display/InvestSlider";
+import { createUserTable } from "components/display/Table/types";
+import { ServiceName } from "components/display/Table/components/ServiceName";
+import { BalanceSummary } from "components/display/Table/components/BalanceSummary";
+import { AreaChart } from "components/display/Charts";
 
 // Inputs
 import Button from "./components/inputs/Button";
@@ -25,6 +31,9 @@ import { ButtonGroup } from "./components/styled";
 
 // Layouts
 import { MarginContainer, PageContainer } from "./components/styled";
+
+// Modals
+import EditInvestmentWithModal from "./components/modals/EditInvestmentWithModal";
 
 // Icons
 import CloseIcon from "./assets/icons/close-icon.svg";
@@ -59,12 +68,7 @@ import BrandImage from "./components/navigation/Header/components/BrandImage";
 // Utils
 import ThemeProvider from "./utils/ThemeProvider";
 import { dark, light } from "./theme";
-import { createUserTable } from "components/display/Table/types";
-import ProgressSlider from "components/display/ProgressSlider";
-import InvestSlider from "components/display/InvestSlider";
-import { ServiceName } from "components/display/Table/components/ServiceName";
-import { BalanceSummary } from "components/display/Table/components/BalanceSummary";
-import { AreaChart } from "components/display/Charts";
+import { sortByPointDecimal } from "./utils/numbers";
 
 export {
   /**
@@ -108,6 +112,8 @@ export {
   MenuDropDown,
   PageContainer,
   MarginContainer,
+  // Modals
+  EditInvestmentWithModal,
   /**
    * =-=-=-=-=-=-=-=
    *   Assets
@@ -143,4 +149,5 @@ export {
   ThemeProvider,
   dark,
   light,
+  sortByPointDecimal,
 };

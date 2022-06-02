@@ -12,5 +12,5 @@ const Template: ComponentStory<typeof AssetsInPool> = (args) => <AssetsInPool {.
 export const Service = Template.bind({});
 Service.args = {
   numberOfInvestors: 100,
-  assetsValue: 20000000000,
+  assetsValue: 20000000,
 };
