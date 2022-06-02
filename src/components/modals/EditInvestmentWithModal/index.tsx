@@ -238,7 +238,7 @@ function EditInvestmentWithModal({
           {!isInputEnabled && (
             <TextButton
               onClick={() => setInputEnabled(true)}
-              leftElement={<PlusIcon width={"22px"} height={"22px"} color={theme["links"]} />}
+              leftElement={<PlusIcon width={"22px"} height={"22px"} />}
               caption={"Invest more"}
             />
           )}
