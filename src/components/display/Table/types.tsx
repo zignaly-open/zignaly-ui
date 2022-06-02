@@ -110,28 +110,11 @@ export const createUserTable = ({
           />
         ),
         chart: <AreaChart variant={chart.variant} data={chart.data} />,
-        dailyAvg: (
-          <PercentageIndicator dashboardType="user" value={dailyAvg.value} theme={dailyAvg.theme} />
-        ),
+        dailyAvg: <PercentageIndicator dashboardType="user" value={dailyAvg.value} />,
 
-        oneMonth: (
-          <PercentageIndicator dashboardType="user" value={oneMonth.value} theme={oneMonth.theme} />
-        ),
-        threeMonths: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={threeMonths.value}
-            theme={threeMonths.theme}
-          />
-        ),
-        all: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={all.value}
-            theme={all.theme}
-            subtitle="2.2 years"
-          />
-        ),
+        oneMonth: <PercentageIndicator dashboardType="user" value={oneMonth.value} />,
+        threeMonths: <PercentageIndicator dashboardType="user" value={threeMonths.value} />,
+        all: <PercentageIndicator dashboardType="user" value={all.value} subtitle="2.2 years" />,
       },
       {
         summary: <BalanceSummary totalValue={summary.totalValue} profit={summary.profit} />,
@@ -145,28 +128,11 @@ export const createUserTable = ({
           />
         ),
         chart: <AreaChart variant={chart.variant} data={chart.data} />,
-        dailyAvg: (
-          <PercentageIndicator dashboardType="user" value={dailyAvg.value} theme={dailyAvg.theme} />
-        ),
+        dailyAvg: <PercentageIndicator dashboardType="user" value={dailyAvg.value} />,
 
-        oneMonth: (
-          <PercentageIndicator dashboardType="user" value={oneMonth.value} theme={oneMonth.theme} />
-        ),
-        threeMonths: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={threeMonths.value}
-            theme={threeMonths.theme}
-          />
-        ),
-        all: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={all.value}
-            theme={all.theme}
-            subtitle="2.2 years"
-          />
-        ),
+        oneMonth: <PercentageIndicator dashboardType="user" value={oneMonth.value} />,
+        threeMonths: <PercentageIndicator dashboardType="user" value={threeMonths.value} />,
+        all: <PercentageIndicator dashboardType="user" value={all.value} subtitle="2.2 years" />,
       },
     ],
   };
