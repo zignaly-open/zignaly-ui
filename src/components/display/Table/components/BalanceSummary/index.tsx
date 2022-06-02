@@ -44,7 +44,7 @@ export const BalanceSummary = ({
         />
       </Profit>
       <TextButton
-        leftElement={<PencilIcon color="#65647E" width={16} height={16} />}
+        leftElement={<PencilIcon width={16} height={16} />}
         caption="Edit"
         color={"links"}
         onClick={onClickEdit}

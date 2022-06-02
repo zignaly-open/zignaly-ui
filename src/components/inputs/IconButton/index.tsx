@@ -20,7 +20,7 @@ const IconButton = ({
   dropDownOptions,
   renderDropDown = null,
   colors = {
-    normal: '#706f82',
+    normal: '#A9A9BA',
     active: '#fff'
   },
   className,
