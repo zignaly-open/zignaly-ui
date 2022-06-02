@@ -159,7 +159,7 @@ function EditInvestmentWithModal({
   );
 
   return (
-    <ModalContainer title={"Edit Investment with"}>
+    <ModalContainer title={"Edit Investment with"} width={784}>
       {/* Investor Details */}
       <Investor>
         <Avatar size={"x-large"} image={investorPictureUrl} />
@@ -180,7 +180,7 @@ function EditInvestmentWithModal({
       <Form onSubmit={handleSubmit(onAmountSubmit)}>
         <Field>
           <Row>
-            <Typography variant={"inputm"}>Amount Invested</Typography>
+            <Typography variant={"labelm"}>Amount Invested</Typography>
             <AmountInvested>
               <TokenImage src={coin.image} />
               <TokenValue>
