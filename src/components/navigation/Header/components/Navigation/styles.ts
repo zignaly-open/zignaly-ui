@@ -8,7 +8,7 @@ export const Layout = styled.nav`
   user-select: none;
 
   a {
-    color: #706f82;
+    color: #706F82;
     font-weight: 500;
     font-size: 14px;
     line-height: 28px;

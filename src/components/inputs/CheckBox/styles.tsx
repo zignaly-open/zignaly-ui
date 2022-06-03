@@ -16,7 +16,7 @@ export const Box = styled.div`
   justify-content: center;
 
   background: #0c0d21;
-  border: 1px solid #706f82;
+  border: 1px solid #706F82;
   border-radius: 2.5px;
   position: relative;
 
@@ -50,13 +50,11 @@ export const Layout = styled.div<LayoutProps>`
       isActive,
       `
       ${Box} {
-        border-color: #706f82;
-        box-shadow: 0 0 0 1px #706f82;
-        color: #7682f7;
+        border-color: #706F82;
+        box-shadow: 0 0 0 1px #706F82;
       }
       ${Icon} {
         transform: scale(1);
-        color: #7682f7;
       }
     `,
     )}

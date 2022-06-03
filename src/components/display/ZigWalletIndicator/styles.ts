@@ -27,14 +27,14 @@ export const Level = styled.div`
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  color: #706f82;
+  color: #706F82;
 `;
 
 export const Token = styled.span`
   text-transform: uppercase;
   padding-left: 4px;
   line-height: 23px;
-  color: #706f82;
+  color: #706F82;
 `;
 
 export const Value = styled.div`

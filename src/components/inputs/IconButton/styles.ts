@@ -491,8 +491,8 @@ export const ViewPort = styled.button<LayoutProps>`
   
   ${Icon} {
     svg {
-      fill: #706f82;
-      stroke: #706f82;
+      fill: #706F82;
+      stroke: #706F82;
     }
   }
   
