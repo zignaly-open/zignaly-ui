@@ -44,7 +44,7 @@ const NotInvested = () => {
   return (
     <Row>
       <ButtonContainer>
-        <Button size="medium" caption={"Invest"} />
+        <Button size="medium" caption={"INVEST"} />
         <Typography variant="h5" color="neutral300">
           10% Success Fee
         </Typography>
@@ -57,7 +57,7 @@ const NotInvestedAllAccounts = () => {
   return (
     <Row>
       <ButtonContainer>
-        <Button size="medium" caption={"Invest"} />
+        <Button size="medium" caption={"INVEST"} />
         <Typography variant="h5" color="neutral300">
           10% Success Fee
         </Typography>
@@ -74,7 +74,7 @@ const NotInvestedAllAccounts = () => {
 const Invested = () => {
   return (
     <Row>
-      <BalanceSummary profit={100} theme={dark} dashboardType={"marketplace"} />
+      <BalanceSummary profit={100} dashboardType={"marketplace"} />
     </Row>
   );
 };
@@ -83,7 +83,7 @@ const InvestedSeeAll = () => {
   return (
     <Row>
       <Column>
-        <BalanceSummary profit={100} theme={dark} dashboardType={"marketplace"} />
+        <BalanceSummary profit={100} dashboardType={"marketplace"} />
         <Button
           variant="secondary"
           caption={"See All (4)"}
