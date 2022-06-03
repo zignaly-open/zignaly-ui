@@ -58,7 +58,7 @@ export const View = styled.div`
   }
 `;
 
-export const TableView = styled.table<{ isUserTable: boolean, hasFooter?: boolean }>`
+export const TableView = styled.table<{ isUserTable: boolean; hasFooter?: boolean }>`
   border-spacing: 0;
   overflow: hidden;
   width: 100%;
@@ -86,7 +86,7 @@ export const TableView = styled.table<{ isUserTable: boolean, hasFooter?: boolea
       }
     }
   }
-  
+
   tfoot {
     tr {
       &:first-child {
@@ -138,7 +138,6 @@ export const TableView = styled.table<{ isUserTable: boolean, hasFooter?: boolea
       }
     }
   }
-
 `;
 
 export const ThView = styled.th<{ isSorted?: boolean; isAlignRight?: boolean }>`
@@ -168,7 +167,7 @@ export const ThView = styled.th<{ isSorted?: boolean; isAlignRight?: boolean }>`
 
 export const SortIcon = styled(ArrowBottomIcon)<{ isSorted?: boolean; isSortedDesc?: boolean }>`
   color: #f3f4f6;
-  padding: 0px;
+  padding: 0;
 
   ${(props) => `
      ${styledIf(
