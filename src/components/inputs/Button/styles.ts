@@ -22,6 +22,7 @@ export const Caption = styled.div`
   z-index: 2;
   position: relative;
   transition: color 0.2s linear;
+  font-family: "Avenir Next", "Red Hat Text", sans-serif;
 `;
 
 export const ElementsContainer = styled.div`
