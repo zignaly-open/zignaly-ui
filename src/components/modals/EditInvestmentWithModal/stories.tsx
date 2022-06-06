@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Component
 import EditInvestmentWithModal from "./";
-import { EditInvestmentFormProps, viewsIds } from "./types";
+import { EditInvestmentFormProps } from "./types";
 import { BigNumber } from "ethers";
 import DateLabel from "../../display/Table/components/DateLabel";
 import PriceLabel from "../../display/Table/components/PriceLabel";

@@ -15,7 +15,6 @@ import {
   Field,
   Row,
   AmountInvested,
-  TokenImage,
   TokenValue,
   Actions,
   Inline,
@@ -28,13 +27,10 @@ import Typography from "../../display/Typography";
 import TextButton from "../../inputs/TextButton";
 import Button from "../../inputs/Button";
 import Table from "../../display/Table";
-import DateLabel from "../../display/Table/components/DateLabel";
-import PriceLabel from "../../display/Table/components/PriceLabel";
 import InputAmount from "../../inputs/InputAmount";
 
 // Assets
 import RefreshIcon from "assets/icons/refresh-icon.svg";
-import BTCIcon from "assets/icons/coins/btc.svg?url";
 import PlusIcon from "assets/icons/plus-icon.svg";
 import ArrowRightIcon from "assets/icons/arrow-right-icon.svg";
 import ArrowLeftIcon from "assets/icons/arrow-left-icon.svg";
