@@ -167,7 +167,7 @@ export const ThView = styled.th<{ isSorted?: boolean; isAlignRight?: boolean }>`
 
 export const SortIcon = styled(ArrowBottomIcon)<{ isSorted?: boolean; isSortedDesc?: boolean }>`
   color: #f3f4f6;
-  padding: 0px;
+  padding: 0;
 
   ${(props) => `
      ${styledIf(

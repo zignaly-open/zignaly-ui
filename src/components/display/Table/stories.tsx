@@ -1820,7 +1820,7 @@ Investors.args = {
         <PriceLabel
           coin={"USDT"}
           value={"37.5"}
-          bottomElement={<PercentageIndicator value={3} theme={dark} />}
+          bottomElement={<PercentageIndicator value={3} />}
         />
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
@@ -1849,7 +1849,7 @@ Investors.args = {
         <PriceLabel
           coin={"USDT"}
           value={"0.85"}
-          bottomElement={<PercentageIndicator value={-1} theme={dark} />}
+          bottomElement={<PercentageIndicator value={-1} />}
         />
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"23.68586856858"} />,
@@ -1879,7 +1879,7 @@ Investors.args = {
         <PriceLabel
           coin={"USDT"}
           value={"637956.523"}
-          bottomElement={<PercentageIndicator value={-3} theme={dark} />}
+          bottomElement={<PercentageIndicator value={-3} />}
         />
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"0.347347"} />,
@@ -1908,7 +1908,7 @@ Investors.args = {
         <PriceLabel
           coin={"USDT"}
           value={"1929292"}
-          bottomElement={<PercentageIndicator value={-87} theme={dark} />}
+          bottomElement={<PercentageIndicator value={-87} />}
         />
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"134581"} />,
@@ -1937,7 +1937,7 @@ Investors.args = {
         <PriceLabel
           coin={"USDT"}
           value={"30.5"}
-          bottomElement={<PercentageIndicator value={-1} theme={dark} />}
+          bottomElement={<PercentageIndicator value={-1} />}
         />
       ),
       pydTotal: <PriceLabel coin={"USDT"} value={"145"} />,
@@ -1955,7 +1955,7 @@ Investors.args = {
 
 export const UserDashBoard = Template.bind({});
 UserDashBoard.args = createUserTable({
-  summary: { profit: 100, totalValue: 10, theme: dark },
+  summary: { profit: 100, totalValue: 10 },
   serviceName: {
     heading: "The Golden Eagle",
     subtitle: "by Barry Silvername",
@@ -1974,10 +1974,10 @@ UserDashBoard.args = createUserTable({
     ],
     variant: "small",
   },
-  dailyAvg: { value: -10, theme: dark },
-  oneMonth: { value: 10, theme: dark },
-  threeMonths: { value: 10, theme: dark },
-  all: { value: 10, theme: dark },
+  dailyAvg: { value: -10 },
+  oneMonth: { value: 10 },
+  threeMonths: { value: 10 },
+  all: { value: 10 },
 });
 
 export const ExchangeOrders = Template.bind({});
