@@ -37,6 +37,7 @@ export const MyCoins = Template.bind({});
 MyCoins.args = {
   type: "pagedWithData",
   hideOptionsButton: false,
+  hasFooter: true,
   initialState: {
     sortBy: [
       {

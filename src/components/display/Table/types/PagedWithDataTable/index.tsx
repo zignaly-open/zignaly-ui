@@ -47,7 +47,7 @@ export default function PagedWithDataTable({
   hideOptionsButton,
   isUserTable,
   initialState = {},
-  hasFooter = false,
+  hasFooter = true,
 }: TableBasicProps) {
   // Refs
   const tableRef = useRef(null);
@@ -148,7 +148,7 @@ export default function PagedWithDataTable({
         <Typography>Show/Hide Columns</Typography>
         <OptionList>
           {columns.map((column: any, index) => {
-            
+
             const isDisabled =
               hiddenColumns.length >= columns.length - 2 &&
               !hiddenColumns.find((e) => e === column.accessor);
