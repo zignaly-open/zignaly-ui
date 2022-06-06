@@ -2,10 +2,13 @@
 import * as React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
+// Utils
+import { BigNumber } from "ethers";
+
 // Component
 import EditInvestmentWithModal from "./";
-import { EditInvestmentFormProps, viewsIds } from "./types";
-import { BigNumber } from "ethers";
+import { EditInvestmentFormProps } from "./types";
+
 import DateLabel from "../../display/Table/components/DateLabel";
 import PriceLabel from "../../display/Table/components/PriceLabel";
 import TextButton from "../../inputs/TextButton";

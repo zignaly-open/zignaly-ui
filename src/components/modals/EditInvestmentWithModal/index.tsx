@@ -15,7 +15,6 @@ import {
   Field,
   Row,
   AmountInvested,
-  TokenImage,
   TokenValue,
   Actions,
   Inline,
@@ -28,13 +27,10 @@ import Typography from "../../display/Typography";
 import TextButton from "../../inputs/TextButton";
 import Button from "../../inputs/Button";
 import Table from "../../display/Table";
-import DateLabel from "../../display/Table/components/DateLabel";
-import PriceLabel from "../../display/Table/components/PriceLabel";
 import InputAmount from "../../inputs/InputAmount";
 
 // Assets
 import RefreshIcon from "assets/icons/refresh-icon.svg";
-import BTCIcon from "assets/icons/coins/btc.svg?url";
 import PlusIcon from "assets/icons/plus-icon.svg";
 import ArrowRightIcon from "assets/icons/arrow-right-icon.svg";
 import ArrowLeftIcon from "assets/icons/arrow-left-icon.svg";
@@ -49,7 +45,7 @@ import CoinIcon from "../../display/CoinIcon";
 
 function EditInvestmentWithModal({
   investor,
-  pendingTransactions = 0,
+  pendingTransactions = [],
 
   amountInvested = BigNumber.from("0"),
   profitPercentage = "20",
@@ -72,6 +68,30 @@ function EditInvestmentWithModal({
       profitPercentageValue: profitPercentage,
     },
   });
+
+  const renderPendingTransactions = useMemo(
+    () =>
+      pendingTransactions.length > 0 ? (
+        <PendingTransaction>
+          <Inline>
+            <RefreshIcon />
+            <Typography variant={"body1"} color={"yellow"}>
+              You have {pendingTransactions.length} pending transaction
+            </Typography>
+          </Inline>
+          <div>
+            <TextButton
+              rightElement={
+                <ArrowRightIcon width={"22px"} height={"22px"} color={theme["links"]} />
+              }
+              caption={"View"}
+              onClick={() => setCurrentState(viewsIds.PENDING_TRANSACTIONS)}
+            />
+          </div>
+        </PendingTransaction>
+      ) : null,
+    [pendingTransactions],
+  );
 
   if (currentState === viewsIds.PENDING_TRANSACTIONS) {
     return (
@@ -116,30 +136,6 @@ function EditInvestmentWithModal({
       </ModalContainer>
     );
   }
-
-  const renderPendingTransactions = useMemo(
-    () =>
-      pendingTransactions.length > 0 ? (
-        <PendingTransaction>
-          <Inline>
-            <RefreshIcon />
-            <Typography variant={"body1"} color={"yellow"}>
-              You have {pendingTransactions.length} pending transaction
-            </Typography>
-          </Inline>
-          <div>
-            <TextButton
-              rightElement={
-                <ArrowRightIcon width={"22px"} height={"22px"} color={theme["links"]} />
-              }
-              caption={"View"}
-              onClick={() => setCurrentState(viewsIds.PENDING_TRANSACTIONS)}
-            />
-          </div>
-        </PendingTransaction>
-      ) : null,
-    [pendingTransactions],
-  );
 
   return (
     <ModalContainer title={"Edit Investment with"} width={784}>
@@ -203,8 +199,6 @@ function EditInvestmentWithModal({
               tokens={[
                 {
                   id: coin.id,
-                  name: coin.id,
-                  image: <CoinIcon name={coin.id} size={"small"} coin={coin.id} />,
                   balance: coin.balance,
                 },
               ]}

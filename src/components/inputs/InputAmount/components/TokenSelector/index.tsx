@@ -22,6 +22,7 @@ import CaretDownIcon from "assets/icons/caret-down-icon.svg?url";
 // Types
 import { TokenSelectorProps } from "./types";
 import { TokenItem } from "../../types";
+import CoinIcon from "../../../../display/CoinIcon";
 
 function TokenSelector({
   value,
@@ -52,8 +53,8 @@ function TokenSelector({
       <Container onClick={() => setMenuActive(!isActiveMenu)}>
         {value && (
           <ValueContainer>
-            {value.image && <Image src={value.image} alt={value.name} />}
-            <Value>{value.name}</Value>
+            {value.id && <CoinIcon coin={value.id} size={"small"} name={value.id} />}
+            <Value>{value.id.toUpperCase()}</Value>
           </ValueContainer>
         )}
         <ArrowContainer>
@@ -70,8 +71,8 @@ function TokenSelector({
                 setMenuActive(false);
               }}
             >
-              {token.image && <Image src={token.image} alt={token.name} />}
-              <Value>{token.name}</Value>
+              {token.id && <CoinIcon coin={token.id} size={"small"} name={token.id} />}
+              <Value>{token.id.toUpperCase()}</Value>
             </Item>
           ))}
       </Menu>
