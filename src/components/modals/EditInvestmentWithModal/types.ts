@@ -23,7 +23,7 @@ export type PendingTransactionsProps = {
 export type EditInvestmentWithModalProps = {
   coin: CoinProps;
   investor: InvestorProps;
-  profitPercentage: string;
+  profitPercentage: string | number;
   onAmountSubmit: Function | any;
   amountInvested: number | string | any;
   pendingTransactions: PendingTransactionsProps[];

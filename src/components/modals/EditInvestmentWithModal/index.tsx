@@ -183,8 +183,8 @@ function EditInvestmentWithModal({
           <Row>
             <InvestSlider
               label={"What to do with profits:"}
-              value={Number(getValues("withdrawPercentageValue"))}
-              initialValue={Number(getValues("withdrawPercentageValue"))}
+              value={Number(getValues("profitPercentageValue"))}
+              initialValue={Number(getValues("profitPercentageValue"))}
               onChange={({ withdraw }: { withdraw: string }) => {
                 setValue("profitPercentageValue", withdraw.toString());
               }}
