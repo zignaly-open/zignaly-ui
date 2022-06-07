@@ -7,7 +7,6 @@ import { useClickAway } from "react-use";
 import {
   Layout,
   Container,
-  Image,
   Value,
   ArrowContainer,
   ValueContainer,
