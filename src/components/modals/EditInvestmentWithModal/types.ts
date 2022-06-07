@@ -25,6 +25,7 @@ export type EditInvestmentWithModalProps = {
   investor: InvestorProps;
   profitPercentage: string | number;
   onAmountSubmit: Function | any;
+  onClickClose: Function | any;
   amountInvested: number | string | any;
   pendingTransactions: PendingTransactionsProps[];
 };

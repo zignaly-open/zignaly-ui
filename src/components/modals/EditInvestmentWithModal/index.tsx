@@ -138,7 +138,7 @@ function EditInvestmentWithModal({
   }
 
   return (
-    <ModalContainer title={"Edit Investment with"} width={784}>
+    <ModalContainer title={"Edit Investment with"} width={784} onClickClose={onClickClose}>
       {/* Investor Details */}
       <Investor>
         <Avatar size={"x-large"} image={investor.photoUrl} />
