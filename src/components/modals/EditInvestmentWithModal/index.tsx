@@ -45,6 +45,7 @@ import CoinIcon from "../../display/CoinIcon";
 
 function EditInvestmentWithModal({
   investor,
+  isLoading = false,
   pendingTransactions = [],
 
   amountInvested = BigNumber.from("0"),
@@ -221,6 +222,7 @@ function EditInvestmentWithModal({
           <Button
             size={"large"}
             type={"submit"}
+            loading={isLoading}
             caption={isInputEnabled ? "Add to Investment" : "Save and Close"}
           />
           <TextButton

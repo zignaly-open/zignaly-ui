@@ -23,6 +23,7 @@ export type PendingTransactionsProps = {
 export type EditInvestmentWithModalProps = {
   coin: CoinProps;
   investor: InvestorProps;
+  isLoading?: boolean;
   profitPercentage: string | number;
   onAmountSubmit: Function | any;
   onClickClose: Function | any;

@@ -34,6 +34,7 @@ Default.args = {
     successFee: 20,
     photoUrl: "https://logodix.com/logo/2129091.png",
   },
+  isLoading: false,
   profitPercentage: 50,
   pendingTransactions: [
     {
