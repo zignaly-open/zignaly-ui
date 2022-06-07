@@ -18,7 +18,7 @@ import { dark } from "../../../theme";
 
 // Utils
 import { sortByPointDecimal } from "../../../utils/numbers";
-import { createUserTable } from "./types";
+import { createMarketPlaceTableBody, createMarketPlaceTableHeader, createUserTable } from "./types";
 import Typography from "../Typography";
 
 export default {
@@ -52,26 +52,31 @@ MyCoins.args = {
     {
       Header: "Total Balance",
       accessor: "totalBalance",
+      // IS ONLY FOR TEST PURPOSES, use this function in real cases customSort as implemented in NEO
       sortType: sortByPointDecimal(),
     },
     {
       Header: "Available Balance",
       accessor: "availableBalance",
+      // IS ONLY FOR TEST PURPOSES, use this function in real cases customSort as implemented in NEO
       sortType: sortByPointDecimal(),
     },
     {
       Header: "Locked Balance",
       accessor: "lockedBalance",
+      // IS ONLY FOR TEST PURPOSES, use this function in real cases customSort as implemented in NEO
       sortType: sortByPointDecimal(),
     },
     {
       Header: "Value in BTC",
       accessor: "valueInBtc",
+      // IS ONLY FOR TEST PURPOSES, use this function in real cases customSort as implemented in NEO
       sortType: sortByPointDecimal(),
     },
     {
       Header: "Value in USD",
       accessor: "valueInUsd",
+      // IS ONLY FOR TEST PURPOSES, use this function in real cases customSort as implemented in NEO
       sortType: sortByPointDecimal(),
     },
   ],
@@ -1772,21 +1777,25 @@ Investors.args = {
     {
       Header: "Investment",
       accessor: "investment",
+      // IS ONLY FOR TEST PURPOSES, use this function in real cases customSort as implemented in NEO
       sortType: sortByPointDecimal(),
     },
     {
       Header: "P & L",
       accessor: "pyd",
+      // IS ONLY FOR TEST PURPOSES, use this function in real cases customSort as implemented in NEO
       sortType: sortByPointDecimal(),
     },
     {
       Header: "P & L Total",
       accessor: "pydTotal",
+      // IS ONLY FOR TEST PURPOSES, use this function in real cases customSort as implemented in NEO
       sortType: sortByPointDecimal(),
     },
     {
       Header: "Total Fees Paid",
       accessor: "totalFeesPaid",
+      // IS ONLY FOR TEST PURPOSES, use this function in real cases customSort as implemented in NEO
       sortType: sortByPointDecimal(),
     },
     {
@@ -1979,6 +1988,35 @@ UserDashBoard.args = createUserTable({
   all: { value: 10 },
 });
 
+export const MarketPlaceTabel = Template.bind({});
+MarketPlaceTabel.args = {
+  hideOptionsButton: true,
+  columns: createMarketPlaceTableHeader(),
+  data: createMarketPlaceTableBody({
+    serviceName: {
+      heading: "The Golden Eagle",
+      subtitle: "by Barry Silvername",
+      cryptoName: "Poly",
+      cryptoAlt: "PolyChain",
+    },
+    assetsInPool: { assetsValue: 1000000, numberOfInvestors: 200 },
+    chart: {
+      data: [
+        { x: "Jul 1", y: 10 },
+        { x: "Jul 2", y: 15 },
+        { x: "Jul 3", y: 23 },
+        { x: "Jul 4", y: 15 },
+        { x: "Jul 5", y: 17 },
+        { x: "Jul 6", y: 15 },
+        { x: "Jul 7", y: 5 },
+      ],
+      variant: "small",
+      midLine: true,
+    },
+    oneYear: { value: 100, subtitle: "Subtitle" },
+  }),
+};
+
 export const ExchangeOrders = Template.bind({});
 ExchangeOrders.args = {
   hideOptionsButton: false,
@@ -1998,6 +2036,7 @@ ExchangeOrders.args = {
     {
       Header: "Amount",
       accessor: "amount",
+      // IS ONLY FOR TEST PURPOSES, use this function in real cases customSort as implemented in NEO
       sortType: sortByPointDecimal(),
     },
     {
@@ -2007,6 +2046,7 @@ ExchangeOrders.args = {
     {
       Header: "Entry Price",
       accessor: "entryPrice",
+      // IS ONLY FOR TEST PURPOSES, use this function in real cases customSort as implemented in NEO
       sortType: sortByPointDecimal(),
     },
     {
