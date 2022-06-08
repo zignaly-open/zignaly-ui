@@ -93,33 +93,28 @@ const MyAccountDepositModal = ({
   };
 
   const ErrorAndQRCode = () => {
-    return (
-      <div>
-        {network !== undefined && network.depositEnable === true ? (
-          <div>
-            <Row gap={14}>
-              <ErrorMessage text={"Only send " + network?.name + " tokens to this address"} />
-              <TextButton
-                color="links"
-                caption={"Not Sure?"}
-                onClick={() => notSureOnClick()}
-              ></TextButton>
-            </Row>
-            <Gap gap={34}></Gap>
-            <QRCodeContainer>
-              <QRCodeCanvas width={400} height={400} value={network?.url ?? ""} />
-            </QRCodeContainer>
-          </div>
-        ) : (
-          <></>
-        )}
-        {network?.depositEnable === false ? (
-          <ErrorMessage text={"Deposit is not avaliable on this network"} />
-        ) : (
-          <></>
-        )}
-      </div>
-    );
+    if (network !== undefined && network.depositEnable === true) {
+      return (
+        <>
+          <Row gap={14}>
+            <ErrorMessage text={"Only send " + network?.name + " tokens to this address"} />
+            <TextButton
+              color="links"
+              caption={"Not Sure?"}
+              onClick={() => notSureOnClick()}
+            ></TextButton>
+          </Row>
+          <Gap gap={34}></Gap>
+          <QRCodeContainer>
+            <QRCodeCanvas width={400} height={400} value={network?.url ?? ""} />
+          </QRCodeContainer>
+        </>
+      );
+    } else if (network !== undefined && network.depositEnable === false) {
+      return <ErrorMessage text={"Deposit is not avaliable on this network"} />;
+    } else {
+      return null;
+    }
   };
 
   return (
