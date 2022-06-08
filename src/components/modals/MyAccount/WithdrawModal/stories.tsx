@@ -15,7 +15,7 @@ const coins = [
     caption: "ETH",
     leftElement: EthereumIcon,
     inOrders: 100,
-    balance: 10,
+    balance: 100000,
     avaliable: 0,
     depositAddress: "0138fbwuVB83ru",
     networks: [
@@ -44,7 +44,7 @@ const coins = [
     caption: "BTC",
     leftElement: BitcoinIcon,
     inOrders: 100,
-    balance: 10,
+    balance: 100000,
     avaliable: 0,
     depositAddress: "0138fbwuVB83ru",
     networks: [
@@ -82,7 +82,7 @@ const coins = [
     caption: "DOGE",
     leftElement: DogecoinIcon,
     inOrders: 100,
-    balance: 10,
+    balance: 100000,
     avaliable: 0,
     networks: [
       {

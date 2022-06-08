@@ -4,14 +4,15 @@ import Selector from "components/inputs/Selector";
 import { SelectSizes } from "components/inputs/Selector/types";
 import React, { useMemo, useState } from "react";
 import { Gap } from "utils/gap";
-import ModalContainer from "../ModalContainer";
-import { Column, QRCodeContainer, Row, SelectorContainer } from "./styles";
-import { NetworkOption, MyAccountDepositModalProps, CoinOption } from "./types";
+import ModalContainer from "../../ModalContainer";
+import { Column, QRCodeContainer, SelectorContainer } from "./styles";
 import CloneIcon from "assets/icons/clone-icon.svg";
 import { dark } from "theme";
-import { Error } from "components/display/ErrorMessage/stories";
 import TextButton from "components/inputs/TextButton";
 import { QRCodeCanvas } from "qrcode.react";
+import { CoinOption, MyAccountDepositModalProps, NetworkOption } from "../types";
+import ErrorMessage from "components/display/ErrorMessage";
+import { Row } from "utils/row";
 
 const MyAccountDepositModal = ({
   coins,
@@ -42,7 +43,7 @@ const MyAccountDepositModal = ({
             options={coins}
             maxHeight={60}
             transparent={true}
-          ></Selector>
+          />
         </SelectorContainer>
         <Column>
           <Typography variant="body1" color="neutral200" weight="medium">
@@ -86,7 +87,7 @@ const MyAccountDepositModal = ({
           options={coin?.networks ?? undefined}
           maxHeight={60}
           transparent={true}
-        ></Selector>
+        />
       </SelectorContainer>
     );
   };
@@ -97,7 +98,7 @@ const MyAccountDepositModal = ({
         {network !== undefined && network.depositEnable === true ? (
           <div>
             <Row gap={14}>
-              <Error text={"Only send " + network?.name + " tokens to this address"} />
+              <ErrorMessage text={"Only send " + network?.name + " tokens to this address"} />
               <TextButton
                 color="links"
                 caption={"Not Sure?"}
@@ -113,7 +114,7 @@ const MyAccountDepositModal = ({
           <></>
         )}
         {network?.depositEnable === false ? (
-          <Error text={"Deposit is not avaliable on this network"} />
+          <ErrorMessage text={"Deposit is not avaliable on this network"} />
         ) : (
           <></>
         )}

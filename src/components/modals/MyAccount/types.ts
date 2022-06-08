@@ -28,4 +28,6 @@ export interface MyAccountDepositModalProps {
 export interface MyAccountWithdrawModalProps {
   coins: CoinOption[];
   notSureOnClick?: Function;
+  addressOnChange?: Function;
+  amountOnChange?: Function;
 }
