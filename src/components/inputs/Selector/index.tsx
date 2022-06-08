@@ -37,6 +37,7 @@ function Select({
   disabled = false,
   placeholder = "Button",
   onChange = () => {},
+  height,
   size = SelectSizes.NORMAL,
 }: SelectProps): ReactElement {
   // Ref
@@ -65,6 +66,7 @@ function Select({
     <Layout
       size={size}
       name={name}
+      height={height}
       ref={selectorRef}
       disabled={disabled}
       className={className}

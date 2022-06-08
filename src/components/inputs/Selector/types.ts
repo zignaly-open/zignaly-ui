@@ -23,4 +23,5 @@ export type SelectProps = {
   mode?: "default" | "collapsed";
   initialSelectedIndex?: number | null;
   fullWidth?: boolean;
+  height?: number;
 };

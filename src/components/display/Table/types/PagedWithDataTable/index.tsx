@@ -148,7 +148,6 @@ export default function PagedWithDataTable({
         <Typography>Show/Hide Columns</Typography>
         <OptionList>
           {columns.map((column: any, index) => {
-
             const isDisabled =
               hiddenColumns.length >= columns.length - 2 &&
               !hiddenColumns.find((e) => e === column.accessor);
@@ -336,10 +335,11 @@ export default function PagedWithDataTable({
                           {pageSize}
                         </Typography>
                       }
+                      height={36}
                       onChange={(e: { caption: string }) => {
                         setPageSize(Number(e.caption));
                       }}
-                    ></Selector>
+                    />
                   </SelectorSizing>
                   <Typography variant="body1" weight="regular" color="neutral300">
                     items
