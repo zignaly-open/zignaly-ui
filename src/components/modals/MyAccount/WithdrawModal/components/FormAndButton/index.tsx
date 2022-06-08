@@ -86,12 +86,11 @@ const FormAndButton = ({
           onChange={(e: any) => {
             withdrawAmountChanged(e.target.value);
           }}
+          name={coin.caption}
           tokens={[
             {
-              id: coin.index,
-              name: coin.caption,
+              id: coin.caption,
               balance: ethers.utils.parseEther(coin.balance.toString()),
-              image: coin.leftElement,
             },
           ]}
         />
