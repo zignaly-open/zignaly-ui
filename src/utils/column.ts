@@ -2,10 +2,20 @@ import styled from "styled-components";
 
 export const Column = styled.div<{
   gap?: number;
-  justifyContent?: "end" | "center" | "start";
-  alignItems?: "end" | "center" | "start";
+  justifyContent?: "center" | "end" | "start";
+  alignItems?: "center" | "end" | "start";
+  textAlign?: "end" | "center" | "start";
+  height?: string;
+  flex?: number;
+  width?: string;
 }>`
-  align-items: ${(props) => `${props.alignItems}`};
-  justify-content: ${(props) => `${props.justifyContent}`};
-  gap: ${(props) => `${props.gap}`}px;
+  display: flex;
+  flex-direction: column;
+  flex: ${(props) => props.flex};
+  gap: ${(props) => props.gap}px;
+  justify-content: ${(props) => props.justifyContent};
+  align-items: ${(props) => props.alignItems};
+  text-align: ${(props) => `${props.textAlign}`};
+  height: ${(props) => `${props.height}`};
+  width: ${(props) => `${props.width}`};
 `;

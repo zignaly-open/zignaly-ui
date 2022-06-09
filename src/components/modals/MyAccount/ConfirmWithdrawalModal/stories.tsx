@@ -13,7 +13,8 @@ const Template: ComponentStory<typeof ConfirmWithdrawalModal> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  networkCaption: "ETH",
+  networkCaption: "ETH Mainnet",
+  coinName: "ETH",
   withdrawAddress: "0x64849239doj2dor555AAk9Hgjk931JjFp87144nBm87KDcP128",
   withdrawalAmount: 100000,
   netWorkFee: 10,

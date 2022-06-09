@@ -13,6 +13,7 @@ import { ConfirmWithdrawalModalProps } from "./types";
 
 const ConfirmWithdrawalModal = ({
   networkCaption,
+  coinName,
   withdrawAddress,
   onClickWithdraw = () => {},
   onGoBack = () => {},
@@ -23,7 +24,7 @@ const ConfirmWithdrawalModal = ({
     return (
       <Row gap={5} alignItems="center" justifyContent="center">
         <IconContainer marginRight={marginRight}>
-          <CoinIcon name={"Ethereum"} coin={networkCaption} />
+          <CoinIcon name={coinName} coin={coinName} />
         </IconContainer>
         <Typography variant="bigNumber" color="neutral100">
           <NumberFormat value={amount} thousandSeparator={true} displayType={"text"} />
@@ -40,14 +41,19 @@ const ConfirmWithdrawalModal = ({
         Please confirm the information is correct and submit your withdrawal.
       </Typography>
       <Gap gap={16} />
-      <InputText
-        leftSideElement={<CoinIcon name={"Ethereum"} coin={networkCaption} />}
-        label="Withdrawal Network"
-        readOnly={true}
-        value={networkCaption}
-        name={"Eth"}
-        withoutBorder={true}
-      />
+      <Column justifyContent="center">
+        <Typography variant="body1" color="neutral200" weight="regular">
+          Withdrawal Network
+        </Typography>
+        <Gap gap={5} />
+        <Row alignItems="center">
+          <CoinIcon name={coinName} coin={coinName} />
+          <Gap gap={11} />
+          <Typography variant="h2" color="neutral100" weight="medium">
+            {networkCaption}
+          </Typography>
+        </Row>
+      </Column>
       <Gap gap={12} />
       <InputText label="Withdraw to Address" readOnly={true} value={withdrawAddress} name={"Eth"} />
       <Gap gap={16} />
