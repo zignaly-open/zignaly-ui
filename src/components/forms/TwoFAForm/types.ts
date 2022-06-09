@@ -1,5 +1,5 @@
 export type TwoFAFormProps = {
   onSubmit: Function;
-  onReSendCode: () => void;
+  onReSendCode: Function;
   isLoading: boolean;
 };

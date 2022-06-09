@@ -1,5 +1,5 @@
 export type EmailVerifyFormProps = {
   onSubmit: Function;
-  onReSendCode: () => void;
+  onReSendCode: Function;
   isLoading: boolean;
 };
