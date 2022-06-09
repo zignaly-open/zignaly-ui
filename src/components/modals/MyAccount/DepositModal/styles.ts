@@ -1,12 +1,5 @@
 import styled from "styled-components";
 
-export const Row = styled.div<{ gap?: number; justifyContent?: "start" | "end" | "center" }>`
-  display: flex;
-  flex-direction: row;
-  justify-content: ${(props) => props.justifyContent};
-  gap: ${(props) => props.gap}px;
-`;
-
 export const SelectorContainer = styled.div<{ width: number }>`
   width: ${(props) => props.width}px;
 `;

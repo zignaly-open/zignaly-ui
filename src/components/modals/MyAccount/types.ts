@@ -24,3 +24,10 @@ export interface MyAccountDepositModalProps {
   coins: CoinOption[];
   notSureOnClick?: Function;
 }
+
+export interface MyAccountWithdrawModalProps {
+  coins: CoinOption[];
+  notSureOnClick?: Function;
+  addressOnChange?: Function;
+  amountOnChange?: Function;
+}

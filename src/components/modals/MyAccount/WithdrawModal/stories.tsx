@@ -1,7 +1,8 @@
 // Dependencies
 import * as React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import MyAccountDepositModal from ".";
+import MyAccountWithdrawModal from ".";
+
 
 // Assets
 import EthereumIcon from "assets/icons/coins/eth.svg?url";
@@ -14,7 +15,7 @@ const coins = [
     caption: "ETH",
     leftElement: EthereumIcon,
     inOrders: 100,
-    balance: 10,
+    balance: 100000,
     avaliable: 0,
     depositAddress: "0138fbwuVB83ru",
     networks: [
@@ -43,7 +44,7 @@ const coins = [
     caption: "BTC",
     leftElement: BitcoinIcon,
     inOrders: 100,
-    balance: 10,
+    balance: 100000,
     avaliable: 0,
     depositAddress: "0138fbwuVB83ru",
     networks: [
@@ -81,7 +82,7 @@ const coins = [
     caption: "DOGE",
     leftElement: DogecoinIcon,
     inOrders: 100,
-    balance: 10,
+    balance: 100000,
     avaliable: 0,
     networks: [
       {
@@ -114,12 +115,12 @@ const coins = [
 ];
 
 export default {
-  title: "Modals/MyAccountDepositModal",
-  component: MyAccountDepositModal,
-} as ComponentMeta<typeof MyAccountDepositModal>;
+  title: "Modals/MyAccount/WithdrawModal",
+  component: MyAccountWithdrawModal,
+} as ComponentMeta<typeof MyAccountWithdrawModal>;
 
-const Template: ComponentStory<typeof MyAccountDepositModal> = (args) => {
-  return <MyAccountDepositModal {...args} />;
+const Template: ComponentStory<typeof MyAccountWithdrawModal> = (args) => {
+  return <MyAccountWithdrawModal {...args} />;
 };
 
 export const Default = Template.bind({});

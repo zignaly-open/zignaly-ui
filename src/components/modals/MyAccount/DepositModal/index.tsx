@@ -4,14 +4,15 @@ import Selector from "components/inputs/Selector";
 import { SelectSizes } from "components/inputs/Selector/types";
 import React, { useMemo, useState } from "react";
 import { Gap } from "utils/gap";
-import ModalContainer from "../ModalContainer";
-import { Column, QRCodeContainer, Row, SelectorContainer } from "./styles";
-import { NetworkOption, MyAccountDepositModalProps, CoinOption } from "./types";
+import ModalContainer from "../../ModalContainer";
+import { Column, QRCodeContainer, SelectorContainer } from "./styles";
 import CloneIcon from "assets/icons/clone-icon.svg";
 import { dark } from "theme";
-import { Error } from "components/display/ErrorMessage/stories";
 import TextButton from "components/inputs/TextButton";
 import { QRCodeCanvas } from "qrcode.react";
+import { CoinOption, MyAccountDepositModalProps, NetworkOption } from "../types";
+import ErrorMessage from "components/display/ErrorMessage";
+import { Row } from "utils/row";
 
 const MyAccountDepositModal = ({
   coins,
@@ -42,7 +43,7 @@ const MyAccountDepositModal = ({
             options={coins}
             maxHeight={60}
             transparent={true}
-          ></Selector>
+          />
         </SelectorContainer>
         <Column>
           <Typography variant="body2" color="neutral200" weight="medium">
@@ -96,7 +97,7 @@ const MyAccountDepositModal = ({
       return (
         <div>
           <Row gap={14}>
-            <Error text={"Only send " + network?.name + " tokens to this address"} />
+            <ErrorMessage text={"Only send " + network?.name + " tokens to this address"} />
             <TextButton color="links" caption={"Not Sure?"} onClick={() => notSureOnClick()} />
           </Row>
           <Gap gap={28} />
@@ -108,7 +109,7 @@ const MyAccountDepositModal = ({
         </div>
       );
     } else if (network?.depositEnable === false) {
-      return <Error text={"Deposit is not avaliable on this network"} />;
+      return <ErrorMessage text={"Deposit is not avaliable on this network"} />;
     } else {
       return null;
     }
@@ -119,11 +120,11 @@ const MyAccountDepositModal = ({
       <Typography variant="body1" color="neutral200" weight="regular">
         Deposits may take up to 3 hours to reflect in your balance.
       </Typography>
-      <Gap gap={16} />
+      <Gap gap={16}></Gap>
       <CoinSelector />
-      <Gap gap={12} />
+      <Gap gap={12}></Gap>
       <NetworkSelector />
-      <Gap gap={12} />
+      <Gap gap={12}></Gap>
       <InputText
         label={"Deposit Address"}
         readOnly={true}
