@@ -45,23 +45,23 @@ const MyAccountDepositModal = ({
           ></Selector>
         </SelectorContainer>
         <Column>
-          <Typography variant="body1" color="neutral200" weight="medium">
+          <Typography variant="body2" color="neutral200" weight="medium">
             Balance:{" "}
-            <Typography variant="body1" color="neutral000" weight="medium">
+            <Typography variant="body2" color="neutral000" weight="medium">
               {coin?.balance ?? ""}{" "}
             </Typography>
             {coin?.caption ?? ""}
           </Typography>
-          <Typography variant="body1" color="neutral200" weight="medium">
+          <Typography variant="body2" color="neutral200" weight="medium">
             In Orders:{" "}
-            <Typography variant="body1" color="neutral000" weight="medium">
+            <Typography variant="body2" color="neutral000" weight="medium">
               {coin?.inOrders ?? ""}{" "}
             </Typography>
             {coin?.caption ?? ""}
           </Typography>
-          <Typography variant="body1" color="neutral200" weight="medium">
+          <Typography variant="body2" color="neutral200" weight="medium">
             Avaliable:{" "}
-            <Typography variant="body1" color="neutral000" weight="medium">
+            <Typography variant="body2" color="neutral000" weight="medium">
               {coin?.avaliable ?? ""}{" "}
             </Typography>
             {coin?.caption ?? ""}
@@ -75,7 +75,7 @@ const MyAccountDepositModal = ({
     return (
       <SelectorContainer width={672}>
         <Selector
-          label="Coin"
+          label="Network"
           placeholder={network?.caption ?? "Select a Network"}
           onChange={(e: NetworkOption) => {
             setNetwork(e);
@@ -86,57 +86,50 @@ const MyAccountDepositModal = ({
           options={coin?.networks ?? undefined}
           maxHeight={60}
           transparent={true}
-        ></Selector>
+        />
       </SelectorContainer>
     );
   };
 
   const ErrorAndQRCode = () => {
-    return (
-      <div>
-        {network !== undefined && network.depositEnable === true ? (
-          <div>
-            <Row gap={14}>
-              <Error text={"Only send " + network?.name + " tokens to this address"} />
-              <TextButton
-                color="links"
-                caption={"Not Sure?"}
-                onClick={() => notSureOnClick()}
-              ></TextButton>
-            </Row>
-            <Gap gap={34}></Gap>
+    if (network !== undefined && network.depositEnable === true) {
+      return (
+        <div>
+          <Row gap={14}>
+            <Error text={"Only send " + network?.name + " tokens to this address"} />
+            <TextButton color="links" caption={"Not Sure?"} onClick={() => notSureOnClick()} />
+          </Row>
+          <Gap gap={28} />
+          <Row justifyContent="center" gap={0}>
             <QRCodeContainer>
-              <QRCodeCanvas width={400} height={400} value={network?.url ?? ""} />
+              <QRCodeCanvas size={160} value={network?.url ?? "www.zignaly.com"} />
             </QRCodeContainer>
-          </div>
-        ) : (
-          <></>
-        )}
-        {network?.depositEnable === false ? (
-          <Error text={"Deposit is not avaliable on this network"} />
-        ) : (
-          <></>
-        )}
-      </div>
-    );
+          </Row>
+        </div>
+      );
+    } else if (network?.depositEnable === false) {
+      return <Error text={"Deposit is not avaliable on this network"} />;
+    } else {
+      return null;
+    }
   };
 
   return (
     <ModalContainer width={784} title="Deposit Crypto">
-      <Typography variant="body1" color="neutral200">
+      <Typography variant="body1" color="neutral200" weight="regular">
         Deposits may take up to 3 hours to reflect in your balance.
       </Typography>
-      <Gap gap={16}></Gap>
+      <Gap gap={16} />
       <CoinSelector />
-      <Gap gap={12}></Gap>
+      <Gap gap={12} />
       <NetworkSelector />
-      <Gap gap={12}></Gap>
+      <Gap gap={12} />
       <InputText
         label={"Deposit Address"}
         readOnly={true}
         value={depositAddress !== undefined ? depositAddress : undefined}
         placeholder={"Select a Network and Coin first"}
-        rightSideElement={<CloneIcon width={40} height={40} color={dark["neutral400"]} />}
+        rightSideElement={<CloneIcon width={40} height={40} color={dark["neutral300"]} />}
         onClickRightSideElement={() => copyAddress}
       />
       <ErrorAndQRCode />
