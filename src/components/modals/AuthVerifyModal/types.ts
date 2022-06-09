@@ -8,7 +8,6 @@ export type AuthVerifyModalProps = {
   isLoadingTwoFAVerifyInput?: boolean;
 
   // Handlers
-  onClickClose: Function;
   onReSendCode: Function;
   onTwoFactorSubmit: Function;
   onEmailSubmit: Function;
