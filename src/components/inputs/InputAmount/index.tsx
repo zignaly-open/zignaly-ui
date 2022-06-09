@@ -10,7 +10,6 @@ import {
   InputContainer,
   InputValue,
   Layout,
-  TokenImage,
   BalanceContainer,
   BalanceLabel,
   BalanceValue,
@@ -18,12 +17,14 @@ import {
   Side,
   Unit,
   Wrapper,
+  InputField,
 } from "./styles";
 
 // Components
 import TokenSelector from "./components/TokenSelector";
 import ErrorMessage from "components/display/ErrorMessage";
 import Typography from "components/display/Typography";
+import CoinIcon, { CoinSizes } from "../../display/CoinIcon";
 
 // Types
 import { InputAmountProps, TokenItem } from "./types";
@@ -42,6 +43,7 @@ function InputAmount(
     name,
     fullWidth,
     placeholder,
+    showUnit = false,
   }: InputAmountProps,
   inputRef: React.Ref<any>,
 ) {
@@ -138,17 +140,21 @@ function InputAmount(
       <Wrapper>
         <InputContainer>
           <Side>
-            {selectedToken?.image && tokens.length < 2 && <TokenImage src={selectedToken.image} />}
-            <InputValue
-              ref={inputRef}
-              value={inputValue}
-              type={"text"}
-              placeholder={placeholder || "0.0"}
-              onChange={handleTextChange}
-              onBlur={onBlur}
-              disabled={disabled}
-              name={name}
-            />
+            {selectedToken?.id && tokens.length < 2 && (
+              <CoinIcon name={selectedToken.id} size={CoinSizes.SMALL} coin={selectedToken.id} />
+            )}
+            <InputField>
+              <InputValue
+                ref={inputRef}
+                value={inputValue}
+                type={"text"}
+                placeholder={placeholder || "0.0"}
+                onChange={handleTextChange}
+                onBlur={onBlur}
+                disabled={disabled}
+                name={name}
+              />
+            </InputField>
             {selectedToken && tokens && <MaxButton onClick={onClickMaxValue}>Max</MaxButton>}
           </Side>
           {tokens?.length > 2 && (
@@ -161,10 +167,10 @@ function InputAmount(
             </Side>
           )}
         </InputContainer>
-        {tokens?.length === 1 && !selectedToken?.image && (
+        {tokens?.length === 1 && showUnit && (
           <Unit>
             <Typography color="neutral300" variant="h1">
-              {selectedToken.name}
+              {selectedToken.id.toUpperCase()}
             </Typography>
           </Unit>
         )}
@@ -177,7 +183,7 @@ function InputAmount(
             <NumberFormat
               value={utils.formatUnits(selectedToken.balance)}
               displayType={"text"}
-              suffix={selectedToken ? ` ${selectedToken.name}` : ""}
+              suffix={selectedToken ? ` ${selectedToken.id.toUpperCase()}` : ""}
               thousandSeparator={true}
             />
           </BalanceValue>

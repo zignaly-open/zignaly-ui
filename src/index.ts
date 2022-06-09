@@ -34,6 +34,7 @@ import { MarginContainer, PageContainer } from "./components/styled";
 
 // Modals
 import EditInvestmentWithModal from "./components/modals/EditInvestmentWithModal";
+import MessageModal from "./components/modals/MessageModal";
 
 // Icons
 import CloseIcon from "./assets/icons/close-icon.svg";
@@ -68,7 +69,7 @@ import BrandImage from "./components/navigation/Header/components/BrandImage";
 // Utils
 import ThemeProvider from "./utils/ThemeProvider";
 import { dark, light } from "./theme";
-import { sortByPointDecimal } from "./utils/numbers";
+import { customSort } from "./utils/numbers";
 
 export {
   /**
@@ -114,6 +115,7 @@ export {
   MarginContainer,
   // Modals
   EditInvestmentWithModal,
+  MessageModal,
   /**
    * =-=-=-=-=-=-=-=
    *   Assets
@@ -149,5 +151,5 @@ export {
   ThemeProvider,
   dark,
   light,
-  sortByPointDecimal,
+  customSort,
 };
