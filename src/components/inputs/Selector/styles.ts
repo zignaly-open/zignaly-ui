@@ -153,7 +153,8 @@ type LayoutProps = {
   collapsed: boolean;
   fullWidth?: boolean;
   name?: string;
-  height?: number;
+  maxHeight?: number;
+  transparent?: boolean;
 };
 
 export const Layout = styled.div<LayoutProps>`
@@ -268,8 +269,8 @@ export const Layout = styled.div<LayoutProps>`
       }
       
       ${LeftElementIcon} {
-        width: 40px;
-        height: 40px;
+        width: 36px;
+        height: 36px;
       }
       
       ${Value}, ${ItemCaption} {
@@ -294,8 +295,21 @@ export const Layout = styled.div<LayoutProps>`
       }
       `,
     )}
-  height: ${props.height}px;
-    `}
+    ${styledIf(
+      props.maxHeight,
+      `
+      ${Container} {
+        max-height: ${props.maxHeight}px;
+      }`,
+    )}
+    ${styledIf(
+      props.transparent,
+      `
+      ${Container} {
+        background: transparent;
+      }`,
+    )}
+  `}
 `;
 
 export const ItemContainer = styled.div`

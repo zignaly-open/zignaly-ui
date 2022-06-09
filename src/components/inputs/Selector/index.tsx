@@ -25,6 +25,8 @@ import CaretDownIcon from "assets/icons/caret-down-icon.svg?url";
 
 // Types
 import { OptionItem, SelectProps, SelectSizes } from "./types";
+import { dark } from "theme";
+import Typography from "components/display/Typography";
 
 function Select({
   name,
@@ -37,8 +39,9 @@ function Select({
   disabled = false,
   placeholder = "Button",
   onChange = () => {},
-  height,
   size = SelectSizes.NORMAL,
+  maxHeight,
+  transparent,
 }: SelectProps): ReactElement {
   // Ref
   const selectorRef = useRef(null);
@@ -66,15 +69,22 @@ function Select({
     <Layout
       size={size}
       name={name}
-      height={height}
       ref={selectorRef}
       disabled={disabled}
       className={className}
       fullWidth={fullWidth}
       isActiveMenu={isActiveMenu}
       collapsed={mode === "collapsed" && !isActiveMenu}
+      maxHeight={maxHeight}
+      transparent={transparent}
     >
-      {label && <Label htmlFor={name}>{label}</Label>}
+      {label && (
+        <Label htmlFor={name}>
+          <Typography variant="inputl" color="neutral200">
+            {label}
+          </Typography>
+        </Label>
+      )}
       <Container onClick={() => setMenuActive(!isActiveMenu)}>
         {mode !== "collapsed" &&
           (value ? (
@@ -94,7 +104,7 @@ function Select({
             <Placeholder>{placeholder}</Placeholder>
           ))}
         <ArrowContainer>
-          <Arrow src={CaretDownIcon} alt={label} />
+          <Arrow src={CaretDownIcon} alt={label} color={dark["neutral300"]} />
         </ArrowContainer>
       </Container>{" "}
       <Menu>

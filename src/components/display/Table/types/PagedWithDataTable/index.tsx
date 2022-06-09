@@ -335,7 +335,7 @@ export default function PagedWithDataTable({
                           {pageSize}
                         </Typography>
                       }
-                      height={36}
+                      maxHeight={36}
                       onChange={(e: { caption: string }) => {
                         setPageSize(Number(e.caption));
                       }}
