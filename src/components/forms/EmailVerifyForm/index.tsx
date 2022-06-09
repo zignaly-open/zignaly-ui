@@ -14,7 +14,7 @@ function EmailVerifyForm({ onSubmit, onReSendCode, isLoading }: EmailVerifyFormP
   return (
     <Layout>
       <Field>
-        <Typography variant={"body1"}>Enter your 2 Factor Authentication code</Typography>
+        <Typography variant={"body1"}>Enter the 6 digit code received by email</Typography>
         <InputCode fields={6} loading={isLoading} onComplete={onSubmit} />
         <Button
           type={"button"}

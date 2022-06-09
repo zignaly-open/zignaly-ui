@@ -14,7 +14,7 @@ function TwoFAForm({ onSubmit, onReSendCode, isLoading }: TwoFAFormProps) {
   return (
     <Layout>
       <Field>
-        <Typography variant={"body1"}>Enter the 6 digit code received by email</Typography>
+        <Typography variant={"body1"}>Enter your 2 Factor Authentication code</Typography>
         <InputCode fields={6} loading={isLoading} onComplete={onSubmit} />
         <Button
           type={"button"}
