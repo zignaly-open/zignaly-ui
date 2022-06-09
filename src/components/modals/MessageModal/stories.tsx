@@ -3,14 +3,14 @@ import * as React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 
 // Component
-import ErrorModal from "./";
+import MessageModal from "./";
 
 export default {
-  title: "Modals/ErrorModal",
-  component: ErrorModal,
-} as ComponentMeta<typeof ErrorModal>;
+  title: "Modals/MessageModal",
+  component: MessageModal,
+} as ComponentMeta<typeof MessageModal>;
 
-const Template: ComponentStory<typeof ErrorModal> = (args) => <ErrorModal {...args} />;
+const Template: ComponentStory<typeof MessageModal> = (args) => <MessageModal {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

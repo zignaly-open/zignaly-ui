@@ -12,15 +12,16 @@ import Typography from "../../display/Typography";
 import ModalContainer from "../ModalContainer";
 
 // Types
-import { ErrorModalTypesProps } from "./types";
+import { MessageModalTypesProps } from "./types";
 
-function ErrorModal({
+function MessageModal({
   title,
   description,
+  width = 400,
   onClickClose,
-}: ErrorModalTypesProps): React.ReactElement {
+}: MessageModalTypesProps): React.ReactElement {
   return (
-    <ModalContainer title={title} width={400} onClickClose={onClickClose}>
+    <ModalContainer title={title} width={width} onClickClose={onClickClose}>
       <Typography variant={"body1"}>{description}</Typography>
       <Actions>
         <Button variant={"primary"} caption={"OK"} size={"large"} onClick={onClickClose} />
@@ -29,4 +30,4 @@ function ErrorModal({
   );
 }
 
-export default ErrorModal;
+export default MessageModal;
