@@ -52,7 +52,7 @@ export const Header = styled.div`
   margin-bottom: 14px;
 `;
 
-export const HeaderButton = styled.button`
+export const HeaderButton = styled.button<any>`
   border: 0;
   padding: 0;
   margin: 0;
