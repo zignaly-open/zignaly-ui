@@ -2,17 +2,17 @@ import Typography from "components/display/Typography";
 import InputText from "components/inputs/InputText";
 import Selector from "components/inputs/Selector";
 import { SelectSizes } from "components/inputs/Selector/types";
-import React, { useMemo, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Gap } from "utils/gap";
 import ModalContainer from "../../ModalContainer";
-import { Column, QRCodeContainer, SelectorContainer } from "./styles";
+import { Column, SelectorContainer } from "./styles";
 import CloneIcon from "assets/icons/clone-icon.svg";
 import { dark } from "theme";
 import TextButton from "components/inputs/TextButton";
-import { QRCodeCanvas } from "qrcode.react";
 import { CoinOption, MyAccountDepositModalProps, NetworkOption } from "../types";
 import ErrorMessage from "components/display/ErrorMessage";
 import { Row } from "utils/row";
+import ZignalyQRCode from "components/display/ZignalyQRCode";
 
 const MyAccountDepositModal = ({
   coins,
@@ -22,7 +22,7 @@ const MyAccountDepositModal = ({
   const [network, setNetwork] = useState<NetworkOption>();
   const [depositAddress, setDepositAddress] = useState<string>("");
 
-  const copyAddress = useMemo(() => {
+  const copyAddress = useCallback(() => {
     navigator.clipboard.writeText(depositAddress);
   }, [depositAddress]);
 
@@ -95,18 +95,16 @@ const MyAccountDepositModal = ({
   const ErrorAndQRCode = () => {
     if (network !== undefined && network.depositEnable === true) {
       return (
-        <div>
+        <>
           <Row gap={14}>
             <ErrorMessage text={"Only send " + network?.name + " tokens to this address"} />
             <TextButton color="links" caption={"Not Sure?"} onClick={() => notSureOnClick()} />
           </Row>
           <Gap gap={28} />
           <Row justifyContent="center" gap={0}>
-            <QRCodeContainer>
-              <QRCodeCanvas size={160} value={network?.url ?? "www.zignaly.com"} />
-            </QRCodeContainer>
+            <ZignalyQRCode url={network?.url ?? "www.zignaly.com"} />
           </Row>
-        </div>
+        </>
       );
     } else if (network?.depositEnable === false) {
       return <ErrorMessage text={"Deposit is not avaliable on this network"} />;
