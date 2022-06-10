@@ -37,30 +37,35 @@ const FormAndButton = ({
     inputAmountOnChange(withdrawAmount);
   }, []);
 
-  const validateAmount = useCallback((withdrawAmount: number) => {
-    if (withdrawAmount <= 0) {
-      isValidAmount = false;
-    } else {
-      isValidAmount = true;
-    }
-  }, []);
+  const validateAmount = useCallback(
+    (withdrawAmount: number) => {
+      if (withdrawAmount <= 0) {
+        isValidAmount = false;
+      } else {
+        isValidAmount = true;
+      }
+    },
+    [withdrawAmount],
+  );
 
-  const validateWithdrawAddress = useCallback((withdrawAddress: string) => {
-    if (withdrawAddress === "") {
-      isValidAddress = false;
-    } else {
-      isValidAddress = true;
-    }
-  }, []);
+  const validateWithdrawAddress = useCallback(
+    (withdrawAddress: string) => {
+      if (withdrawAddress === "") {
+        isValidAddress = false;
+      } else {
+        isValidAddress = true;
+      }
+    },
+    [withdrawAddress],
+  );
 
-  const validateInput = () => {
-    console.log(isValidAmount);
+  const validateInput = useCallback(() => {
     if (isValidAddress && isValidAmount) {
       setIsValidInput(true);
     } else {
       setIsValidInput(false);
     }
-  };
+  }, [isValidAddress, isValidAmount]);
 
   if (network !== undefined && coin !== undefined) {
     return (
