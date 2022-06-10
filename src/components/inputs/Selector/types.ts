@@ -16,11 +16,13 @@ export type SelectProps = {
   size?: SelectSizes;
   disabled?: boolean;
   className?: string;
-  placeholder: string;
+  placeholder: string | React.ReactElement;
   onChange: any;
   options?: OptionItem[];
   value?: OptionItem | null;
   mode?: "default" | "collapsed";
   initialSelectedIndex?: number | null;
   fullWidth?: boolean;
+  maxHeight?: number;
+  transparent?: boolean;
 };

@@ -23,7 +23,7 @@ export const Layout = styled.div<any>`
 
   ${({ width, padding }: any) => `
     width: ${getWidth(width)}px;
-    padding: ${padding ?? "48px 56px"};
+    padding: ${padding ?? "40px 56px"};
   `};
   user-select: none;
 `;
@@ -52,7 +52,7 @@ export const Header = styled.div`
   margin-bottom: 14px;
 `;
 
-export const HeaderButton = styled.button`
+export const HeaderButton = styled.button<any>`
   border: 0;
   background: transparent;
   border: none;
