@@ -8,13 +8,14 @@ import { InputCodeProps } from "./types";
 // Styled Components
 import { Layout } from "./styles";
 
-function InputCode({ fields, loading, onComplete }: InputCodeProps) {
+function InputCode({ fields, loading, onComplete, autoFocus = true }: InputCodeProps) {
   return (
     <Layout>
       <ReactCodeInput
         className={"input-box"}
         fields={fields}
         loading={loading}
+        autoFocus={autoFocus}
         onComplete={onComplete}
       />
     </Layout>
