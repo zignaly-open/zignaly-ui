@@ -5,7 +5,7 @@ import { styledIf } from "utils/styled";
 
 export const InputValue = styled.input`
   padding-right: 22px;
-  background: transparent;
+  background: transparent !important;
   border: none;
   color: ${dark["neutral100"]};
   outline: none;
