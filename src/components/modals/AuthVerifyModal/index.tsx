@@ -46,7 +46,7 @@ function AuthVerifyModal({
             <TwoFAForm
               isLoading={isLoadingTwoFAVerifyInput}
               onSubmit={onTwoFactorSubmit}
-              requireAutoFocus={!isUnknownDevice}
+              requireAutoFocus={!!(isUnknownDevice && hasEmailVerified && ask2FA)}
             />
           ))}
       </Container>
