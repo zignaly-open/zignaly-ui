@@ -10,7 +10,6 @@ import InputCode from "../../inputs/InputCode";
 import { TwoFAFormProps } from "./types";
 
 function TwoFAForm({ onSubmit, isLoading, requireAutoFocus }: TwoFAFormProps) {
-  console.log(requireAutoFocus);
   return (
     <Layout>
       <Field>

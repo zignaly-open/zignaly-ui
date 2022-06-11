@@ -8,7 +8,7 @@ import { InputCodeProps } from "./types";
 // Styled Components
 import { Layout } from "./styles";
 
-function InputCode({ fields, loading, onComplete, autoFocus = true }: InputCodeProps) {
+function InputCode({ fields, loading, onComplete, autoFocus = false }: InputCodeProps) {
   return (
     <Layout>
       <ReactCodeInput
