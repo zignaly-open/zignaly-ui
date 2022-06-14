@@ -1,10 +1,12 @@
 // Dependencies
-import React from "react";
+import React, { useCallback } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 // Styled Components
 import { Layout, Field, Form, Action } from "./styles";
+
+// Components
 import InputText from "../../inputs/InputText";
 import Typography from "../../display/Typography";
 import Button from "../../inputs/Button";
@@ -29,10 +31,10 @@ function LoginForm({ onSubmit, isLoading, signUpURL, forgotPasswordURL }: LoginF
     resolver: yupResolver(LoginValidation),
   });
 
-  const formSubmit = (values: LoginFormInputProps, e: HTMLFormElement) => {
+  const formSubmit = useCallback((values: LoginFormInputProps, e: any) => {
     e.preventDefault();
     onSubmit(values);
-  };
+  }, []);
 
   return (
     <Layout>
