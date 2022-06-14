@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useCallback } from "react";
+import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
@@ -13,7 +13,7 @@ import Button from "../../inputs/Button";
 import TextButton from "../../inputs/TextButton";
 
 // Types
-import { LoginFormProps, LoginFormInputProps } from "./types";
+import { LoginFormProps } from "./types";
 
 // Validations
 import { LoginValidation } from "../../../utils/validations";
@@ -31,15 +31,10 @@ function LoginForm({ onSubmit, isLoading, signUpURL, forgotPasswordURL }: LoginF
     resolver: yupResolver(LoginValidation),
   });
 
-  const formSubmit = useCallback((values: LoginFormInputProps, e: any) => {
-    e.preventDefault();
-    onSubmit(values);
-  }, []);
-
   return (
     <Layout>
       <Typography variant={"h2"}>Log In</Typography>
-      <Form onSubmit={handleSubmit(formSubmit)}>
+      <Form onSubmit={handleSubmit(onSubmit)}>
         <Field>
           <Controller
             name="email"
