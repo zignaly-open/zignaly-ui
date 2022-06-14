@@ -11,12 +11,6 @@ const isNormalSelect = (size: SelectSizes) => size === SelectSizes.NORMAL;
 const isLargeSelect = (size: SelectSizes) => size === SelectSizes.LARGE;
 
 export const Label = styled.label`
-  color: #a9a9ba;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 20px;
-  letter-spacing: 0.5px;
   margin-bottom: 4px;
 `;
 
@@ -203,14 +197,7 @@ export const Layout = styled.div<LayoutProps>`
       ${LeftElementIcon} {
         width: 20px;
         height: 20px;
-      }
-      
-      ${Value}, ${ItemCaption} {
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
-        letter-spacing: 0.5px;
-      }      
+      }     
     
       ${Container}, ${Item} {
         padding: 7.67px 12.88px;
@@ -227,12 +214,6 @@ export const Layout = styled.div<LayoutProps>`
         height: 24px;
       }
       
-      ${Value}, ${ItemCaption} {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 20px;
-        letter-spacing: 0.5px;
-      }
     
       ${Container}, ${Item} {
         padding: 10px 13.86px;
@@ -260,13 +241,6 @@ export const Layout = styled.div<LayoutProps>`
       ${LeftElementIcon} {
         width: 36px;
         height: 36px;
-      }
-      
-      ${Value}, ${ItemCaption} {
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 2px;
       }
       
       ${Container}, ${Item} {
