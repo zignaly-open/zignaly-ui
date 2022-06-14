@@ -1,6 +1,6 @@
 // Dependencies
-import React, { useCallback } from "react";
-import { useForm, Controller, HTMLFormElement } from "react-hook-form";
+import React from "react";
+import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 // Styled Components
