@@ -12,7 +12,6 @@ import {
   Label,
   Value,
   Placeholder,
-  Arrow,
   LeftElement,
   ItemCaption,
   LeftElementIcon,
@@ -21,7 +20,7 @@ import {
 } from "./styles";
 
 // Assets
-import CaretDownIcon from "assets/icons/caret-down-icon.svg?url";
+import Arrow from "assets/icons/caret-down-icon.svg";
 
 // Types
 import { OptionItem, SelectProps, SelectSizes } from "./types";
@@ -104,7 +103,7 @@ function Select({
             <Placeholder>{placeholder}</Placeholder>
           ))}
         <ArrowContainer>
-          <Arrow src={CaretDownIcon} alt={label} color={dark["neutral300"]} />
+          <Arrow alt={label} width="28" height="28" color={dark["neutral300"]} />
         </ArrowContainer>
       </Container>{" "}
       <Menu>
