@@ -24,8 +24,10 @@ export const Form = styled.form`
 `;
 
 export const Action = styled.div`
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   gap: 22px;
   margin: 26px 0;
+  align-items: center;
+  justify-content: center;
 `;
