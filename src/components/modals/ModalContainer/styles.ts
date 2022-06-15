@@ -43,7 +43,6 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 18px 0;
   color: ${({ theme }) => theme.neutral200};
   padding: 0px 56px 56px 56px;
 `;
