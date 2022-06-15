@@ -84,7 +84,6 @@ function LoginForm({
         <Action>
           <Button
             type={"submit"}
-            onClick={onSubmit}
             variant={"primary"}
             caption={"LOG IN"}
             size={"large"}
