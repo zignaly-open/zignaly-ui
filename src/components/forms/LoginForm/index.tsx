@@ -2,7 +2,6 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { action } from "@storybook/addon-actions";
 
 // Styled Components
 import { Layout, Field, Form, Action } from "./styles";
