@@ -2,6 +2,7 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { action } from "@storybook/addon-actions";
 
 // Styled Components
 import { Layout, Field, Form, Action } from "./styles";
@@ -18,7 +19,12 @@ import { LoginFormProps } from "./types";
 // Validations
 import { LoginValidation } from "../../../utils/validations";
 
-function LoginForm({ onSubmit, isLoading, signUpURL, forgotPasswordURL }: LoginFormProps) {
+function LoginForm({
+  onSubmit,
+  isLoading,
+  signUpURL = null,
+  forgotPasswordURL = null,
+}: LoginFormProps) {
   const {
     handleSubmit,
     control,
@@ -60,10 +66,14 @@ function LoginForm({ onSubmit, isLoading, signUpURL, forgotPasswordURL }: LoginF
               <InputText
                 label={"Password:"}
                 type={"password"}
-                labelAction={{
-                  text: "Forgot password?",
-                  href: forgotPasswordURL,
-                }}
+                labelAction={
+                  forgotPasswordURL
+                    ? {
+                        text: "Forgot password?",
+                        href: forgotPasswordURL,
+                      }
+                    : null
+                }
                 value={field.value}
                 placeholder={""}
                 onChange={field.onChange}
@@ -81,7 +91,7 @@ function LoginForm({ onSubmit, isLoading, signUpURL, forgotPasswordURL }: LoginF
             size={"large"}
             loading={isLoading}
           />
-          <TextButton href={signUpURL} caption={"Sign up"} />
+          {signUpURL && <TextButton href={signUpURL} caption={"Sign up"} />}
         </Action>
       </Form>
     </Layout>

@@ -1,7 +1,7 @@
 export type LoginFormProps = {
   onSubmit: any;
-  signUpURL: string;
-  forgotPasswordURL: string;
+  signUpURL?: string | null;
+  forgotPasswordURL?: string | null;
   isLoading: boolean;
 };
 
