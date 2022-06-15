@@ -86,7 +86,7 @@ function LoginForm({
             type={"submit"}
             variant={"primary"}
             caption={"LOG IN"}
-            size={"large"}
+            size={"xlarge"}
             loading={isLoading}
           />
           {signUpURL && <TextButton href={signUpURL} caption={"Sign up"} />}
