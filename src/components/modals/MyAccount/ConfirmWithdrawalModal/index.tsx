@@ -19,6 +19,7 @@ const ConfirmWithdrawalModal = ({
   onGoBack = () => {},
   withdrawalAmount,
   netWorkFee,
+  onClickClose = () => {},
 }: ConfirmWithdrawalModalProps) => {
   const ZigAmount = ({ amount, marginRight }: { amount: number; marginRight: number }) => {
     return (
@@ -36,8 +37,8 @@ const ConfirmWithdrawalModal = ({
     );
   };
   return (
-    <ModalContainer width={784} title="Confirm Withdrawal">
-      <Typography variant="body1" color="neutral200">
+    <ModalContainer width={784} title="Confirm Withdrawal" onClickClose={onClickClose}>
+      <Typography variant="body1" color="neutral200" weight="regular">
         Please confirm the information is correct and submit your withdrawal.
       </Typography>
       <Gap gap={16} />
