@@ -179,7 +179,9 @@ function InputAmount(
 
       {selectedToken && selectedToken.balance && (
         <BalanceContainer>
-          <BalanceLabel variant="body2">{labelBalance}</BalanceLabel>
+          <BalanceLabel variant="body2" weight="medium">
+            {labelBalance}
+          </BalanceLabel>
           <BalanceValue variant="body2" weight="medium">
             <NumberFormat
               value={utils.formatUnits(selectedToken.balance)}

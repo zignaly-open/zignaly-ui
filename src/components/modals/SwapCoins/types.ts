@@ -1,6 +1,7 @@
 export interface AvaliableCoin {
   id: string;
   balance: string;
+  avaliableSwapPairs: AvaliableCoin[];
 }
 
 export interface Swap {

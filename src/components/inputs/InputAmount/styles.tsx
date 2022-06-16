@@ -48,7 +48,6 @@ export const BalanceContainer = styled.div`
 
 export const BalanceLabel = styled(Typography)`
   padding-right: 4px;
-  font-weight: 600;
   color: ${({ theme }) => theme.neutral200};
 `;
 

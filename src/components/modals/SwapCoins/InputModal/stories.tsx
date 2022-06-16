@@ -20,16 +20,37 @@ Default.args = {
   },
   avaliableCoins: [
     {
-      id: "btc",
+      id: "BTC",
       balance: "1000000000000000000",
+      avaliableSwapPairs: [{ id: "eth", balance: "1000000000000000000", avaliableSwapPairs: [] }],
     },
     {
-      id: "eth",
+      id: "ETH",
       balance: "1000000000000000000",
+      avaliableSwapPairs: [{ id: "eth", balance: "1000000000000000000", avaliableSwapPairs: [] }],
     },
     {
-      id: "doge",
+      id: "Doge",
       balance: "1000000000000000000",
+      avaliableSwapPairs: [
+        { id: "eth", balance: "1000000000000000000", avaliableSwapPairs: [] },
+        { id: "doge", balance: "1000000000000000000", avaliableSwapPairs: [] },
+      ],
+    },
+    {
+      id: "BTC",
+      balance: "1000000000000000000",
+      avaliableSwapPairs: [{ id: "eth", balance: "1000000000000000000", avaliableSwapPairs: [] }],
+    },
+    {
+      id: "ETH",
+      balance: "1000000000000000000",
+      avaliableSwapPairs: [{ id: "eth", balance: "1000000000000000000", avaliableSwapPairs: [] }],
+    },
+    {
+      id: "Poly",
+      balance: "1000000000000000000",
+      avaliableSwapPairs: [{ id: "eth", balance: "1000000000000000000", avaliableSwapPairs: [] }],
     },
   ],
 };

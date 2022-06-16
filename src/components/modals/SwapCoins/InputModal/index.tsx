@@ -2,10 +2,11 @@ import Button from "components/inputs/Button";
 import InputAmount from "components/inputs/InputAmount";
 import ModalContainer from "components/modals/ModalContainer";
 import React, { useState } from "react";
-import { InputModalProps, Swap } from "../types";
+import { AvaliableCoin, InputModalProps, Swap } from "../types";
 import { ButtonContainer, IconContainer } from "./styles";
 import SwapIcon from "assets/icons/swap-icon.svg";
 import { dark } from "theme";
+import { Gap } from "utils/gap";
 
 const InputModal = ({
   avaliableCoins,
@@ -13,14 +14,18 @@ const InputModal = ({
   onClickClose = () => {},
 }: InputModalProps) => {
   const [swapFrom, setSwapFrom] = useState<Swap>();
-  const [swapTo, setSwapTo] = useState<Swap>();
+  const [swapTo, setSwapTo] = useState<AvaliableCoin[]>();
 
   return (
     <ModalContainer title="Swap Coins" onClickClose={onClickClose}>
+      <Gap gap={9} />
       <InputAmount
         label={"Swap from"}
         value={""}
-        onChange={({ value, token }: Swap) => setSwapFrom({ token: token, value: value })}
+        onChange={({ value, token }: any) => {
+          console.log(value);
+          console.log(token);
+        }}
         tokens={avaliableCoins}
       />
       <IconContainer>
@@ -28,9 +33,9 @@ const InputModal = ({
       </IconContainer>
       <InputAmount
         label={"Swap to"}
-        value={""}
-        onChange={({ value, token }: Swap) => setSwapTo({ token: token, value: value })}
-        tokens={avaliableCoins}
+        value={"1"}
+        onChange={({ value, token }: Swap) => {}}
+        tokens={swapTo}
       />
       <ButtonContainer>
         <Button
