@@ -17,7 +17,7 @@ import {
   ItemCaption,
   LeftElementIcon,
   Container,
-  ItemContainer
+  ItemContainer,
 } from "./styles";
 
 // Assets
@@ -25,6 +25,8 @@ import CaretDownIcon from "assets/icons/caret-down-icon.svg?url";
 
 // Types
 import { OptionItem, SelectProps, SelectSizes } from "./types";
+import { dark } from "theme";
+import Typography from "components/display/Typography";
 
 function Select({
   name,
@@ -38,6 +40,8 @@ function Select({
   placeholder = "Button",
   onChange = () => {},
   size = SelectSizes.NORMAL,
+  maxHeight,
+  transparent,
 }: SelectProps): ReactElement {
   // Ref
   const selectorRef = useRef(null);
@@ -51,7 +55,7 @@ function Select({
    */
   const handleClickItem = useCallback(
     (value: OptionItem, index: number) => {
-      onChange({...value, index});
+      onChange({ ...value, index });
       setMenuActive(false);
     },
     [options],
@@ -71,8 +75,16 @@ function Select({
       fullWidth={fullWidth}
       isActiveMenu={isActiveMenu}
       collapsed={mode === "collapsed" && !isActiveMenu}
+      maxHeight={maxHeight}
+      transparent={transparent}
     >
-      {label && <Label htmlFor={name}>{label}</Label>}
+      {label && (
+        <Label htmlFor={name}>
+          <Typography variant="inputl" color="neutral200">
+            {label}
+          </Typography>
+        </Label>
+      )}
       <Container onClick={() => setMenuActive(!isActiveMenu)}>
         {mode !== "collapsed" &&
           (value ? (
@@ -86,15 +98,15 @@ function Select({
                   )}
                 </LeftElement>
               )}
-              <Value variant={'body1'}>{value.caption}</Value>
+              <Value variant={"body1"}>{value.caption}</Value>
             </>
           ) : (
             <Placeholder>{placeholder}</Placeholder>
           ))}
         <ArrowContainer>
-          <Arrow src={CaretDownIcon} alt={label} />
+          <Arrow src={CaretDownIcon} alt={label} color={dark["neutral300"]} />
         </ArrowContainer>
-      </Container>
+      </Container>{" "}
       <Menu>
         {!options.length ? (
           <Item empty={true}>
@@ -104,14 +116,10 @@ function Select({
           options.map((option: OptionItem, index: number) => {
             const isSelectedOption = !!(value && value.index === index);
 
-            if (isSelectedOption)
-              return null;
+            if (isSelectedOption) return null;
 
             return (
-              <Item
-                key={`--${index.toString()}`}
-                onClick={() => handleClickItem(option, index)}
-              >
+              <Item key={`--${index.toString()}`} onClick={() => handleClickItem(option, index)}>
                 <ItemContainer>
                   {option.leftElement && (
                     <LeftElement>
@@ -122,7 +130,7 @@ function Select({
                       )}
                     </LeftElement>
                   )}
-                  <ItemCaption variant={'body1'}>{option.caption}</ItemCaption>
+                  <ItemCaption variant={"body1"}>{option.caption}</ItemCaption>
                 </ItemContainer>
               </Item>
             );

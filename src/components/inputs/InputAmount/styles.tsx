@@ -1,4 +1,5 @@
 // Dependencies
+import Typography from "components/display/Typography";
 import styled from "styled-components";
 import { dark } from "theme";
 import { styledIf } from "utils/styled";
@@ -17,8 +18,8 @@ export const InputContainer = styled.div`
   align-items: center;
   background: rgba(16, 18, 37, 0.7);
   margin-top: 4px;
+  margin-bottom: 8px;
   gap: 22px;
-  margin-bottom: 16px;
   width: 100%;
 `;
 
@@ -34,8 +35,8 @@ export const InputValue = styled.input`
   color: ${dark["neutral100"]};
   outline: none;
   font-weight: 500;
-  font-size: 15px;
-  line-height: 24px;
+  font-size: 22px;
+  line-height: 36px;
   letter-spacing: 0.55px;
   width: 100%;
   font-family: "Avenir Next", sans-serif;
@@ -45,21 +46,14 @@ export const BalanceContainer = styled.div`
   margin-bottom: 16px;
 `;
 
-export const BalanceLabel = styled.span`
+export const BalanceLabel = styled(Typography)`
   padding-right: 4px;
-  color: #9ca3af;
-  letter-spacing: 1px;
   font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
+  color: ${({ theme }) => theme.neutral200};
 `;
 
-export const BalanceValue = styled.span`
-  color: #f3f4f6;
-  letter-spacing: 1px;
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
+export const BalanceValue = styled(Typography)`
+  color: ${({ theme }) => theme.neutral000};
 `;
 
 export const MaxButton = styled.div`
@@ -96,6 +90,7 @@ type LayoutProps = {
   withError: boolean;
   disabled: boolean;
   fullWidth?: boolean;
+  children: React.ReactNode[] | React.ReactNode;
 };
 
 export const Layout = styled.div`
@@ -144,4 +139,10 @@ export const Layout = styled.div`
 
 export const Unit = styled.div`
   margin: 10px 0 0 24px;
+`;
+
+export const InputField = styled.div`
+  display: flex;
+  flex: 1;
+  padding-left: 8px;
 `;

@@ -7,7 +7,9 @@ import CheckIcon from "assets/icons/check-icon.svg";
 import CloseIcon from "assets/icons/close-icon.svg";
 import ArrowBottomIcon from "assets/icons/arrow-bottom-icon.svg";
 
-export const Layout = styled.div``;
+export const Layout = styled.div<{maxWidth?: number }>`
+  max-width: ${(props) => props.maxWidth}px;
+`;
 
 export const TextContainer = styled.div`
   padding: 4px 24px;
@@ -56,13 +58,12 @@ export const View = styled.div`
   }
 `;
 
-export const TableView = styled.table<{ isUserTable: boolean }>`
+export const TableView = styled.table<{ isUserTable: boolean; hasFooter?: boolean }>`
   border-spacing: 0;
   overflow: hidden;
   width: 100%;
-
-  background: rgba(19, 18, 37, 0.4);
   thead {
+    background: rgba(19, 18, 37, 0.4);
     height: 56px;
     user-select: none;
     background: #06061a;
@@ -73,6 +74,7 @@ export const TableView = styled.table<{ isUserTable: boolean }>`
   }
 
   tbody {
+    background: rgba(19, 18, 37, 0.4);
     td {
       letter-spacing: 0;
       color: #f3f4f6;
@@ -82,6 +84,25 @@ export const TableView = styled.table<{ isUserTable: boolean }>`
       height: 95px;
       &.action {
         text-align: right;
+      }
+    }
+  }
+
+  tfoot {
+    tr {
+      &:first-child {
+        height: 0;
+        td {
+          height: 0;
+          border-top: 1px solid #252339;
+          border-bottom: 0;
+        }
+      }
+    }
+    tr:last-child {
+      td {
+        padding: 10px 0;
+        border-bottom: 0;
       }
     }
   }
@@ -108,12 +129,13 @@ export const TableView = styled.table<{ isUserTable: boolean }>`
   th {
     text-align: center;
   }
-
-  tr {
-    background: transparent;
-    :last-child {
-      td {
-        border-bottom: 0;
+  tbody {
+    tr {
+      background: transparent;
+      :last-child {
+        td {
+          border-bottom: 0;
+        }
       }
     }
   }
@@ -146,7 +168,7 @@ export const ThView = styled.th<{ isSorted?: boolean; isAlignRight?: boolean }>`
 
 export const SortIcon = styled(ArrowBottomIcon)<{ isSorted?: boolean; isSortedDesc?: boolean }>`
   color: #f3f4f6;
-  padding: 0px;
+  padding: 0;
 
   ${(props) => `
      ${styledIf(
@@ -163,10 +185,10 @@ export const SortIcon = styled(ArrowBottomIcon)<{ isSorted?: boolean; isSortedDe
      ${styledIf(
        props.isSortedDesc,
        `
-      transform: rotate(180deg);
+      transform: rotate(0deg);
     `,
        `
-      transform: rotate(0deg);
+      transform: rotate(180deg); 
     `,
      )}
   `};

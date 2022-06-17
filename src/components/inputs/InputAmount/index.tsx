@@ -1,4 +1,5 @@
 // Dependencies
+// @ts-nocheck
 import React, { useCallback, useState, useEffect } from "react";
 import NumberFormat from "react-number-format";
 import { parseUnits } from "@ethersproject/units";
@@ -9,7 +10,6 @@ import {
   InputContainer,
   InputValue,
   Layout,
-  TokenImage,
   BalanceContainer,
   BalanceLabel,
   BalanceValue,
@@ -17,15 +17,17 @@ import {
   Side,
   Unit,
   Wrapper,
+  InputField,
 } from "./styles";
 
 // Components
 import TokenSelector from "./components/TokenSelector";
 import ErrorMessage from "components/display/ErrorMessage";
+import Typography from "components/display/Typography";
+import CoinIcon, { CoinSizes } from "../../display/CoinIcon";
 
 // Types
 import { InputAmountProps, TokenItem } from "./types";
-import Typography from "components/display/Typography";
 import { changeEvent } from "utils/event";
 
 function InputAmount(
@@ -37,10 +39,12 @@ function InputAmount(
     disabled = false,
     initialTokenIndex = 0,
     label = "Amount to Withdraw",
+    labelBalance = "Balance:",
     value = BigNumber.from(0),
     name,
     fullWidth,
     placeholder,
+    showUnit = false,
   }: InputAmountProps,
   inputRef: React.Ref<any>,
 ) {
@@ -108,7 +112,7 @@ function InputAmount(
     (token: TokenItem) => {
       setSelectedToken(token);
 
-      onChange(changeEvent(inputValue), {
+      onChange(changeEvent(name, inputValue), {
         value,
         token,
       });
@@ -125,29 +129,33 @@ function InputAmount(
       const newValue = BigNumber.from(selectedToken.balance);
       const number = utils.formatUnits(newValue);
       setInputValue(number);
-      onChange(changeEvent(number), { value: newValue, token: selectedToken });
+      onChange(changeEvent(name, number), { value: newValue, token: selectedToken });
     }
   }, [disabled, onChange, selectedToken]);
 
   return (
     <Layout withError={!!error} disabled={disabled} fullWidth={fullWidth}>
-      <Typography variant="h3" weight="regular" color="neutral200">
+      <Typography weight="regular" color="neutral200">
         {label}
       </Typography>
       <Wrapper>
         <InputContainer>
           <Side>
-            {selectedToken?.image && tokens.length < 2 && <TokenImage src={selectedToken.image} />}
-            <InputValue
-              ref={inputRef}
-              value={inputValue}
-              type={"text"}
-              placeholder={placeholder || "0.0"}
-              onChange={handleTextChange}
-              onBlur={onBlur}
-              disabled={disabled}
-              name={name}
-            />
+            {selectedToken?.id && tokens.length < 2 && (
+              <CoinIcon name={selectedToken.id} size={CoinSizes.SMALL} coin={selectedToken.id} />
+            )}
+            <InputField>
+              <InputValue
+                ref={inputRef}
+                value={inputValue}
+                type={"text"}
+                placeholder={placeholder || "0.0"}
+                onChange={handleTextChange}
+                onBlur={onBlur}
+                disabled={disabled}
+                name={name}
+              />
+            </InputField>
             {selectedToken && tokens && <MaxButton onClick={onClickMaxValue}>Max</MaxButton>}
           </Side>
           {tokens?.length > 2 && (
@@ -160,24 +168,23 @@ function InputAmount(
             </Side>
           )}
         </InputContainer>
-        {tokens?.length === 1 && selectedToken?.name && (
+        {tokens?.length === 1 && showUnit && (
           <Unit>
             <Typography color="neutral300" variant="h1">
-              {selectedToken.name}
+              {selectedToken.id.toUpperCase()}
             </Typography>
           </Unit>
         )}
       </Wrapper>
 
-      {/* Show Balance of the Input */}
       {selectedToken && selectedToken.balance && (
         <BalanceContainer>
-          <BalanceLabel>Balance:</BalanceLabel>
-          <BalanceValue>
+          <BalanceLabel variant="body2">{labelBalance}</BalanceLabel>
+          <BalanceValue variant="body2" weight="medium">
             <NumberFormat
               value={utils.formatUnits(selectedToken.balance)}
               displayType={"text"}
-              suffix={selectedToken ? ` ${selectedToken.name}` : ""}
+              suffix={selectedToken ? ` ${selectedToken.id.toUpperCase()}` : ""}
               thousandSeparator={true}
             />
           </BalanceValue>

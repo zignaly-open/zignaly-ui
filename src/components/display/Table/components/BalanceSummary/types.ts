@@ -1,7 +1,6 @@
-import Theme from "theme/theme";
-
 export interface BalanceSummaryProps {
-  totalValue: number;
+  totalValue?: number;
   profit: number;
-  theme: Theme;
+  onClickEdit?: any;
+  dashboardType?: "user" | "investor" | "marketplace";
 }

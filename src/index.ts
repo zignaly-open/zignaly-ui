@@ -10,8 +10,13 @@ import PriceLabel from "./components/display/Table/components/PriceLabel";
 import Typography from "./components/display/Typography";
 import ZigWalletIndicator from "./components/display/ZigWalletIndicator";
 import CoinLabel from "./components/display/Table/components/CoinLabel";
-import SliderProgress from "./components/display/Slider";
 import Toaster from "./components/display/Toaster";
+import ProgressSlider from "components/display/ProgressSlider";
+import InvestSlider from "components/display/InvestSlider";
+import { createUserTable } from "components/display/Table/types";
+import { ServiceName } from "components/display/Table/components/ServiceName";
+import { BalanceSummary } from "components/display/Table/components/BalanceSummary";
+import { AreaChart } from "components/display/Charts";
 
 // Inputs
 import Button from "./components/inputs/Button";
@@ -26,6 +31,17 @@ import { ButtonGroup } from "./components/styled";
 
 // Layouts
 import { MarginContainer, PageContainer } from "./components/styled";
+
+// Modals
+import EditInvestmentWithModal from "./components/modals/EditInvestmentWithModal";
+import MessageModal from "./components/modals/MessageModal";
+import AuthVerifyModal from "./components/modals/AuthVerifyModal";
+import MinBalanceModal from "./components/modals/MinBalanceModal";
+import DepositModal from "./components/modals/MyAccount/DepositModal";
+import WithdrawModal from "./components/modals/MyAccount/WithdrawModal";
+
+// Forms
+import LoginForm from "./components/forms/LoginForm";
 
 // Icons
 import CloseIcon from "./assets/icons/close-icon.svg";
@@ -60,10 +76,7 @@ import BrandImage from "./components/navigation/Header/components/BrandImage";
 // Utils
 import ThemeProvider from "./utils/ThemeProvider";
 import { dark, light } from "./theme";
-import { createUserTable } from "components/display/Table/types";
-import { ServiceName } from "components/display/Table/components/ServiceName";
-import { BalanceSummary } from "components/display/Table/components/BalanceSummary";
-import { AreaChart } from "components/display/Charts";
+import { customSort } from "./utils/numbers";
 
 export {
   /**
@@ -87,7 +100,8 @@ export {
   ErrorMessage,
   ZigWalletIndicator,
   CoinLabel,
-  SliderProgress,
+  ProgressSlider,
+  InvestSlider,
   Toaster,
   // Inputs
   Button,
@@ -106,6 +120,15 @@ export {
   MenuDropDown,
   PageContainer,
   MarginContainer,
+  // Modals
+  EditInvestmentWithModal,
+  MessageModal,
+  AuthVerifyModal,
+  DepositModal,
+  WithdrawModal,
+  MinBalanceModal,
+  // Forms
+  LoginForm,
   /**
    * =-=-=-=-=-=-=-=
    *   Assets
@@ -141,4 +164,5 @@ export {
   ThemeProvider,
   dark,
   light,
+  customSort,
 };

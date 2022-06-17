@@ -7,14 +7,30 @@ import { ServiceName } from "./components/ServiceName";
 import { AreaChart } from "../Charts";
 import React from "react";
 import PercentageIndicator from "./components/PercentageIndicator";
+import AssetsInPool from "./components/AssetsInPool";
+import InvestColumn from "./components/InvestColumn";
 
-export interface TableProps {
+export const tableTypes = {
+  basic: "basic",
+  pagedWithData: "pagedWithData",
+  pagedWithOutData: "pagedWithOutData",
+};
+
+export interface TableBasicProps {
   columns: any[];
   data: Object[];
   defaultHiddenColumns?: string[];
   onColumnHidden?: (column: string, isHidden: boolean) => void;
   hideOptionsButton: boolean;
   isUserTable: boolean;
+  maxWidth?: number;
+  initialState?: object;
+  isPagingWithAllData?: boolean;
+  hasFooter?: boolean;
+}
+
+export interface TableProps extends TableBasicProps {
+  type?: keyof typeof tableTypes;
 }
 
 export interface UserTableData {
@@ -26,6 +42,195 @@ export interface UserTableData {
   threeMonths: PercentageIndicatorProps;
   all: PercentageIndicatorProps;
 }
+
+export const createMarketPlaceTableHeader = () => {
+  return [
+    {
+      Header: "Service Name",
+      Footer: (
+        <div>
+          <div>{"Manager/Base Currency"}</div>
+        </div>
+      ),
+      accessor: "serviceName",
+    },
+    {
+      Header: "Assets In Pool",
+      Footer: (
+        <div>
+          <div>{"# Of Investors"}</div>
+        </div>
+      ),
+      accessor: "assetsInPool",
+    },
+    {
+      Header: "1 year",
+      accessor: "oneYear",
+    },
+    {
+      Header: "1 month",
+      accessor: "chart",
+    },
+    {
+      Header: "",
+      accessor: "invest",
+    },
+  ];
+};
+
+interface MarketPlaceTableProps {
+  serviceName: {
+    heading: string;
+    subtitle: string;
+    cryptoName: string;
+    cryptoAlt: string;
+  };
+  assetsInPool: {
+    assetsValue: number;
+    numberOfInvestors: number;
+  };
+  chart: ChartsProps;
+  oneYear: {
+    value: number;
+    subtitle: string;
+  };
+}
+
+export const createMarketPlaceTableBody = ({
+  serviceName,
+  assetsInPool,
+  chart,
+  oneYear,
+}: MarketPlaceTableProps) => {
+  return [
+    {
+      serviceName: (
+        <ServiceName
+          heading={serviceName.heading}
+          subtitle={serviceName.subtitle}
+          cryptoName={serviceName.cryptoName}
+          cryptoAlt={serviceName.cryptoAlt}
+        />
+      ),
+      assetsInPool: (
+        <AssetsInPool
+          assetsValue={assetsInPool.assetsValue}
+          numberOfInvestors={assetsInPool.numberOfInvestors}
+        />
+      ),
+      chart: <AreaChart variant={chart.variant} data={chart.data} />,
+      oneYear: (
+        <PercentageIndicator
+          dashboardType="marketplace"
+          value={oneYear.value}
+          subtitle="2.2 years"
+          showTrophy={true}
+        />
+      ),
+      invest: <InvestColumn type="invested" />,
+    },
+    {
+      serviceName: (
+        <ServiceName
+          heading={serviceName.heading}
+          subtitle={serviceName.subtitle}
+          cryptoName={serviceName.cryptoName}
+          cryptoAlt={serviceName.cryptoAlt}
+        />
+      ),
+      assetsInPool: (
+        <AssetsInPool
+          assetsValue={assetsInPool.assetsValue}
+          numberOfInvestors={assetsInPool.numberOfInvestors}
+        ></AssetsInPool>
+      ),
+      chart: <AreaChart variant={chart.variant} data={chart.data} />,
+      oneYear: (
+        <PercentageIndicator
+          dashboardType="marketplace"
+          value={oneYear.value}
+          subtitle="2.2 years"
+        />
+      ),
+      invest: <InvestColumn type="liquidated" />,
+    },
+    {
+      serviceName: (
+        <ServiceName
+          heading={serviceName.heading}
+          subtitle={serviceName.subtitle}
+          cryptoName={serviceName.cryptoName}
+          cryptoAlt={serviceName.cryptoAlt}
+        />
+      ),
+      assetsInPool: (
+        <AssetsInPool
+          assetsValue={assetsInPool.assetsValue}
+          numberOfInvestors={assetsInPool.numberOfInvestors}
+        ></AssetsInPool>
+      ),
+      chart: <AreaChart variant={chart.variant} data={chart.data} />,
+      oneYear: (
+        <PercentageIndicator
+          dashboardType="marketplace"
+          value={oneYear.value}
+          subtitle="2.2 years"
+        />
+      ),
+      invest: <InvestColumn type="notInvested" />,
+    },
+    {
+      serviceName: (
+        <ServiceName
+          heading={serviceName.heading}
+          subtitle={serviceName.subtitle}
+          cryptoName={serviceName.cryptoName}
+          cryptoAlt={serviceName.cryptoAlt}
+        />
+      ),
+      assetsInPool: (
+        <AssetsInPool
+          assetsValue={assetsInPool.assetsValue}
+          numberOfInvestors={assetsInPool.numberOfInvestors}
+        ></AssetsInPool>
+      ),
+      chart: <AreaChart variant={chart.variant} data={chart.data} />,
+      oneYear: (
+        <PercentageIndicator
+          dashboardType="marketplace"
+          value={oneYear.value}
+          subtitle="2.2 years"
+        />
+      ),
+      invest: <InvestColumn type="notInvestedAllAccounts" />,
+    },
+    {
+      serviceName: (
+        <ServiceName
+          heading={serviceName.heading}
+          subtitle={serviceName.subtitle}
+          cryptoName={serviceName.cryptoName}
+          cryptoAlt={serviceName.cryptoAlt}
+        />
+      ),
+      assetsInPool: (
+        <AssetsInPool
+          assetsValue={assetsInPool.assetsValue}
+          numberOfInvestors={assetsInPool.numberOfInvestors}
+        ></AssetsInPool>
+      ),
+      chart: <AreaChart variant={chart.variant} data={chart.data} />,
+      oneYear: (
+        <PercentageIndicator
+          dashboardType="marketplace"
+          value={oneYear.value}
+          subtitle="2.2 years"
+        />
+      ),
+      invest: <InvestColumn type="investedSeeAll" />,
+    },
+  ];
+};
 
 export const createUserTable = ({
   summary,
@@ -43,7 +248,7 @@ export const createUserTable = ({
       {
         Header: "My Current Value",
         accessor: "summary",
-        Footer: (
+        headerWithFooter: (
           <div>
             <div>{"Returns"}</div>
           </div>
@@ -52,7 +257,7 @@ export const createUserTable = ({
       {
         Header: "Service Name",
         accessor: "serviceName",
-        Footer: (
+        headerWithFooter: (
           <div>
             <div>{"Manager"}</div> <div>{"Base currency"}</div>
           </div>
@@ -77,7 +282,7 @@ export const createUserTable = ({
       {
         Header: "All",
         accessor: "all",
-        Footer: (
+        headerWithFooter: (
           <div>
             <div>{"Age"}</div>
           </div>
@@ -86,13 +291,7 @@ export const createUserTable = ({
     ],
     data: [
       {
-        summary: (
-          <BalanceSummary
-            totalValue={summary.totalValue}
-            profit={summary.profit}
-            theme={summary.theme}
-          ></BalanceSummary>
-        ),
+        summary: <BalanceSummary totalValue={summary.totalValue} profit={summary.profit} />,
 
         serviceName: (
           <ServiceName
@@ -100,48 +299,17 @@ export const createUserTable = ({
             subtitle={serviceName.subtitle}
             cryptoName={serviceName.cryptoName}
             cryptoAlt={serviceName.cryptoAlt}
-          ></ServiceName>
+          />
         ),
-        chart: <AreaChart variant={chart.variant} data={chart.data}></AreaChart>,
-        dailyAvg: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={dailyAvg.value}
-            theme={dailyAvg.theme}
-          ></PercentageIndicator>
-        ),
+        chart: <AreaChart variant={chart.variant} data={chart.data} />,
+        dailyAvg: <PercentageIndicator dashboardType="user" value={dailyAvg.value} />,
 
-        oneMonth: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={oneMonth.value}
-            theme={oneMonth.theme}
-          ></PercentageIndicator>
-        ),
-        threeMonths: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={threeMonths.value}
-            theme={threeMonths.theme}
-          ></PercentageIndicator>
-        ),
-        all: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={all.value}
-            theme={all.theme}
-            subtitle="2.2 years"
-          ></PercentageIndicator>
-        ),
+        oneMonth: <PercentageIndicator dashboardType="user" value={oneMonth.value} />,
+        threeMonths: <PercentageIndicator dashboardType="user" value={threeMonths.value} />,
+        all: <PercentageIndicator dashboardType="user" value={all.value} subtitle="2.2 years" />,
       },
       {
-        summary: (
-          <BalanceSummary
-            totalValue={summary.totalValue}
-            profit={summary.profit}
-            theme={summary.theme}
-          ></BalanceSummary>
-        ),
+        summary: <BalanceSummary totalValue={summary.totalValue} profit={summary.profit} />,
 
         serviceName: (
           <ServiceName
@@ -149,39 +317,14 @@ export const createUserTable = ({
             subtitle={serviceName.subtitle}
             cryptoName={serviceName.cryptoName}
             cryptoAlt={serviceName.cryptoAlt}
-          ></ServiceName>
+          />
         ),
-        chart: <AreaChart variant={chart.variant} data={chart.data}></AreaChart>,
-        dailyAvg: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={dailyAvg.value}
-            theme={dailyAvg.theme}
-          ></PercentageIndicator>
-        ),
+        chart: <AreaChart variant={chart.variant} data={chart.data} />,
+        dailyAvg: <PercentageIndicator dashboardType="user" value={dailyAvg.value} />,
 
-        oneMonth: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={oneMonth.value}
-            theme={oneMonth.theme}
-          ></PercentageIndicator>
-        ),
-        threeMonths: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={threeMonths.value}
-            theme={threeMonths.theme}
-          ></PercentageIndicator>
-        ),
-        all: (
-          <PercentageIndicator
-            dashboardType="user"
-            value={all.value}
-            theme={all.theme}
-            subtitle="2.2 years"
-          ></PercentageIndicator>
-        ),
+        oneMonth: <PercentageIndicator dashboardType="user" value={oneMonth.value} />,
+        threeMonths: <PercentageIndicator dashboardType="user" value={threeMonths.value} />,
+        all: <PercentageIndicator dashboardType="user" value={all.value} subtitle="2.2 years" />,
       },
     ],
   };

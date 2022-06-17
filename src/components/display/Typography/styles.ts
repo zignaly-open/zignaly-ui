@@ -15,6 +15,7 @@ const getWeight = (weight: string) => {
 export const Layout = styled.h1<{ color: string; underline: boolean; weight: string }>`
   font-family: "Avenir next", "Red Hat Text", sans-serif;
   margin: 0;
+  padding: 0;
   font-weight: 500;
 
   &.h1 {
@@ -104,6 +105,13 @@ export const Layout = styled.h1<{ color: string; underline: boolean; weight: str
     font-size: 13px;
     line-height: 18px;
     font-weight: 400;
+    letter-spacing: 0.55px;
+  }
+
+  &.labelm {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 24px;
     letter-spacing: 0.55px;
   }
 

@@ -1,17 +1,15 @@
-import { BigNumber } from "ethers";
+import { BigNumberish } from "ethers";
 import { ChangeEventHandler } from "react";
 
 export type TokenItem = {
-  id: string | number;
-  name: string;
-  /** Token icon. If no icon is provided, its name will be showed on the right side */
-  image?: string;
-  balance: string | number;
+  id: string;
+  balance: string | number | BigNumberish;
 };
 
 export interface InputAmountProps {
   label: string;
-  value: BigNumber;
+  labelBalance?: string;
+  value: BigNumberish;
   onChange: Function;
   onBlur?: ChangeEventHandler<HTMLInputElement>;
   disabled?: boolean;
@@ -21,4 +19,5 @@ export interface InputAmountProps {
   name?: string;
   fullWidth?: boolean;
   placeholder?: string;
+  showUnit?: boolean;
 }
