@@ -3,7 +3,10 @@ import Typography from "components/display/Typography";
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
 
-export const Icon = styled.img`
+// Assets
+import CheckmarkIcon from "assets/icons/checkmark-active-icon.svg";
+
+export const Icon = styled(CheckmarkIcon)`
   width: 10px;
   height: 10px;
   position: relative;
