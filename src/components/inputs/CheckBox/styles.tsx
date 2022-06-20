@@ -1,4 +1,5 @@
 // Dependencies
+import Typography from "components/display/Typography";
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
 
@@ -25,12 +26,8 @@ export const Box = styled.div`
   overflow: hidden;
 `;
 
-export const Label = styled.span`
-  color: #ffffff;
+export const Label = styled(Typography).attrs({ color: "neutral300" })`
   font-weight: 400;
-  font-size: 13px;
-  line-height: 20px;
-  letter-spacing: 0.33px;
   margin: 0 12px;
 `;
 
