@@ -1,7 +1,7 @@
 import Typography from "components/display/Typography";
 import CheckBox from "components/inputs/CheckBox";
 import InputText from "components/inputs/InputText";
-import React from "react";
+import React, { useState } from "react";
 import { Controller, useFormContext } from "react-hook-form";
 import { Gap } from "utils/gap";
 import { CheckBoxContainer, Layout } from "./styles";
@@ -15,8 +15,12 @@ const APISettings = ({
   futures = false,
   whitelistIps = "",
 }: APISettingsProps) => {
-  const { register, control, watch } = useFormContext();
-  const restrictIp = watch("restrictIp");
+  const { register, control } = useFormContext();
+  const [restrictIp, setRestrictIp] = useState(Boolean(whitelistIps));
+
+  const onRestrictChange = () => {
+    setRestrictIp(!restrictIp);
+  };
 
   return (
     <Layout>
@@ -59,19 +63,12 @@ const APISettings = ({
         Restrict IP:
       </Typography>
       <Gap gap={8} />
-      <CheckBox label="Unrestricted" />
+      <CheckBox label="Unrestricted" value={!restrictIp} onChange={onRestrictChange} />
       <Gap gap={12} />
-      <Controller
-        control={control}
-        name="restrictIp"
-        defaultValue={whitelistIps}
-        render={({ field: { onChange, value } }) => (
-          <CheckBox
-            onChange={onChange}
-            value={value}
-            label="Restrict access to trusted IPs only (recommended)"
-          />
-        )}
+      <CheckBox
+        onChange={onRestrictChange}
+        value={restrictIp}
+        label="Restrict access to trusted IPs only (recommended)"
       />
       {restrictIp && (
         <>

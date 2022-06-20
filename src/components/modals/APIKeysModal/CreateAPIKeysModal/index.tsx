@@ -33,7 +33,6 @@ function CreateAPIKeysModal({
   } = methods;
 
   const onFormSubmit = useCallback((data: any) => {
-    console.log(data);
     setName(data.name);
   }, []);
 

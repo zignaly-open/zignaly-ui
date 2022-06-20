@@ -8,12 +8,6 @@ import EditAPIKeysModal from ".";
 export default {
   title: "Modals/API Keys/EditAPIKeysModal",
   component: EditAPIKeysModal,
-  // argTypes: {
-  //   settings: {
-  //     control: "Object",
-  //     options: ["large", "small"],
-  //   },
-  // },
 } as ComponentMeta<typeof EditAPIKeysModal>;
 
 const Template: ComponentStory<typeof EditAPIKeysModal> = (args) => <EditAPIKeysModal {...args} />;
@@ -23,7 +17,6 @@ Default.args = {
   name: "API 1",
   apikey: "4kj4iddd9sadddd000a0a0a0",
   settings: {
-    read: true,
     spot: false,
     margin: true,
     futures: false,
