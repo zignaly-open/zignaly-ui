@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { styledIf } from "utils/styled";
 
 export const Container = styled.div`
-  background: #0c0d21;
   user-select: none;
   cursor: pointer;
   display: flex;

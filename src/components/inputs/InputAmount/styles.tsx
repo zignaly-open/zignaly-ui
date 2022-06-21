@@ -26,6 +26,7 @@ export const InputContainer = styled.div`
 export const TokenImage = styled.img`
   max-width: 33px;
   margin-right: 20px;
+  background: transparent;
 `;
 
 export const InputValue = styled.input`
@@ -44,6 +45,7 @@ export const InputValue = styled.input`
 
 export const BalanceContainer = styled.div`
   margin-bottom: 16px;
+  background: transparent;
 `;
 
 export const BalanceLabel = styled(Typography)`

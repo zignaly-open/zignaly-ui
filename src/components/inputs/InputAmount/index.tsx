@@ -77,7 +77,7 @@ function InputAmount(
 
       if (value === "") {
         // onChange(BigNumber.from(0));
-        onChange(e, { value, token: selectedToken });
+        onChange(e, { value: value, token: selectedToken });
         setInputValue(value);
         return;
       }
