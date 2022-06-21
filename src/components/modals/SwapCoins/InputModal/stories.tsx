@@ -14,22 +14,60 @@ const Template: ComponentStory<typeof InputModal> = (args) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  continueButtonOnClick: ({ token, value }: Swap) => {
-    console.log(token);
-    console.log(value);
+  continueButtonOnClick: ({ swapFrom, swapTo }: { swapFrom: Swap; swapTo: Swap }) => {
+    console.log(swapFrom);
+    console.log(swapTo);
   },
   avaliableCoins: [
     {
-      id: "btc",
+      id: "BTC",
       balance: "1000000000000000000",
+      avaliableSwapPairs: [
+        { id: "ETH", balance: "10000000000000" },
+        { id: "BTC", balance: "10000000000000" },
+        { id: "Poly", balance: "1000000000000" },
+        { id: "Doge", balance: "1000000000000000000" },
+      ],
     },
     {
-      id: "eth",
+      id: "ETH",
       balance: "1000000000000000000",
+      avaliableSwapPairs: [
+        { id: "ETH", balance: "10000000000000" },
+        { id: "BTC", balance: "10000000000000" },
+        { id: "Poly", balance: "1000000000000" },
+        { id: "Doge", balance: "1000000000000000000" },
+      ],
     },
     {
-      id: "doge",
+      id: "Doge",
       balance: "1000000000000000000",
+      avaliableSwapPairs: [
+        { id: "ETH", balance: "10000000000000" },
+        { id: "BTC", balance: "10000000000000" },
+        { id: "Poly", balance: "1000000000000" },
+        { id: "Doge", balance: "1000000000000000000" },
+      ],
+    },
+    {
+      id: "Matic",
+      balance: "1000000000000000000",
+      avaliableSwapPairs: [
+        { id: "ETH", balance: "10000000000000" },
+        { id: "BTC", balance: "10000000000000" },
+        { id: "Poly", balance: "1000000000000" },
+        { id: "Doge", balance: "1000000000000000000" },
+      ],
+    },
+    {
+      id: "Poly",
+      balance: "1000000000000000000",
+      avaliableSwapPairs: [
+        { id: "ETH", balance: "10000000000000" },
+        { id: "BTC", balance: "10000000000000" },
+        { id: "Poly", balance: "1000000000000" },
+        { id: "Doge", balance: "1000000000000000000" },
+      ],
     },
   ],
 };

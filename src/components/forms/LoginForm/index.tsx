@@ -38,7 +38,9 @@ function LoginForm({
 
   return (
     <Layout>
-      <Typography variant={"h2"}>Log In</Typography>
+      <Typography variant={"h2"} color="neutral100">
+        Log In
+      </Typography>
       <Form onSubmit={handleSubmit(onSubmit)}>
         <Field>
           <Controller
@@ -84,10 +86,9 @@ function LoginForm({
         <Action>
           <Button
             type={"submit"}
-            onClick={onSubmit}
             variant={"primary"}
             caption={"LOG IN"}
-            size={"large"}
+            size={"xlarge"}
             loading={isLoading}
           />
           {signUpURL && <TextButton href={signUpURL} caption={"Sign up"} />}
