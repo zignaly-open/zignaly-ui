@@ -7,9 +7,38 @@ import { Row } from "utils/row";
 import SwapIcon from "assets/icons/swap-icon.svg";
 import { dark } from "theme";
 import { Gap } from "utils/gap";
-import { Line } from "./styles";
+import { IconContainer, Line } from "./styles";
+import { AmountContainer } from "components/modals/styles";
+import NumberFormat from "react-number-format";
+import Button from "components/inputs/Button";
+import { ConfirmSwapModalProps } from "./types";
 
-const ConfirmSwapModal = () => {
+const ConfirmSwapModal = ({
+  swapTo,
+  swapFrom,
+  swapRate,
+  swapNowOnClick = () => {},
+}: ConfirmSwapModalProps) => {
+  const ZigAmount = ({ marginRight }: { marginRight: number }) => {
+    return (
+      <Row gap={5} alignItems="center" justifyContent="center">
+        <IconContainer marginRight={marginRight}>
+          <CoinIcon name={swapTo.token.id} coin={swapTo.token.id} />
+        </IconContainer>
+        <Typography variant="bigNumber" color="neutral100">
+          <NumberFormat
+            value={swapTo.value.toString()}
+            thousandSeparator={true}
+            displayType={"text"}
+          />
+        </Typography>
+        <Typography variant="h3" color="neutral400">
+          {swapTo.token.id}
+        </Typography>
+      </Row>
+    );
+  };
+
   const ToFromSwap = () => {
     return (
       <Column width="510px" justifyContent="center">
@@ -17,12 +46,12 @@ const ConfirmSwapModal = () => {
           <Column gap={16} flex={3} alignItems="start">
             <Typography variant="h2">From</Typography>
             <Row alignItems="center" justifyContent="center" textAlign="center" gap={8}>
-              <CoinIcon name={"ETH"} coin={"ETH"} />
+              <CoinIcon name={swapFrom.token.id} coin={swapFrom.token.id} />
               <Typography variant="h1" color="neutral100">
-                0.54920999
+                {swapFrom.value.toString()}
               </Typography>
               <Typography variant="h3" color="neutral400" weight="medium">
-                ETH
+                {swapFrom.token.id}
               </Typography>
             </Row>
           </Column>
@@ -32,9 +61,12 @@ const ConfirmSwapModal = () => {
           <Column gap={16} flex={4} alignItems="start">
             <Typography variant="h2">To</Typography>
             <Row alignItems="center" gap={8}>
-              <CoinIcon name={"USDT"} coin={"USDT"} />
+              <CoinIcon name={swapTo.token.id} coin={swapTo.token.id} />
               <Typography variant="h1" color="neutral100">
-                0.55555555
+                {swapTo.value.toString()}
+              </Typography>
+              <Typography variant="h3" color="neutral400" weight="medium">
+                {swapTo.token.id}
               </Typography>
             </Row>
           </Column>
@@ -47,7 +79,7 @@ const ConfirmSwapModal = () => {
             Rate:
           </Typography>
           <Typography variant="body1" weight="medium" color="neutral000">
-            1 ETH = 4640 USDT
+            1 ETH = {swapRate}
           </Typography>
         </Row>
       </Column>
@@ -57,7 +89,19 @@ const ConfirmSwapModal = () => {
   return (
     <ModalContainer title="Confirm Swap">
       <Column alignItems="center">
+        <Gap gap={9} />
         <ToFromSwap />
+        <Gap gap={48} />
+        <AmountContainer borderRadius={16} coloredBorder={true} height="120" width="510">
+          <Row gap={16} alignItems="center">
+            <Typography color="neutral300" variant="h2" weight="medium">
+              You’ll Receive:
+            </Typography>
+            <ZigAmount marginRight={4} />
+          </Row>
+        </AmountContainer>
+        <Gap gap={28} />
+        <Button size="xlarge" caption="Swap Now!" onClick={() => swapNowOnClick} />
       </Column>
     </ModalContainer>
   );

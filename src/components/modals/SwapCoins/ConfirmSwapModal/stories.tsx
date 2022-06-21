@@ -7,9 +7,19 @@ export default {
   component: ConfirmSwapModal,
 } as ComponentMeta<typeof ConfirmSwapModal>;
 
-const Template: ComponentStory<typeof ConfirmSwapModal> = () => {
-  return <ConfirmSwapModal  />;
+const Template: ComponentStory<typeof ConfirmSwapModal> = (args) => {
+  return <ConfirmSwapModal {...args} />;
 };
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  swapFrom: {
+    token: { id: "ETH", balance: "10000000000000", avaliableSwapPairs: [] },
+    value: "100",
+  },
+  swapTo: {
+    token: { id: "USDT", balance: "10000000000000", avaliableSwapPairs: [] },
+    value: "100",
+  },
+  swapRate: "1000",
+};
