@@ -18,8 +18,9 @@ Default.args = {
     console.log(swapFrom);
     console.log(swapTo);
   },
-  getSwapRate: ({ swapTo, swapFrom, value }) => {
-    console.log(swapTo, swapFrom, value);
+  getSwapRate: ({ swapTo, swapFrom }: { swapTo: Swap; swapFrom: Swap }) => {
+    console.log(swapTo, swapFrom);
+    return 100;
   },
   avaliableCoins: [
     {

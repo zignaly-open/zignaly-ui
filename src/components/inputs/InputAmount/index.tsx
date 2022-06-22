@@ -51,7 +51,7 @@ function InputAmount(
   inputRef: React.Ref<any>,
 ) {
   // Hooks
-  const [inputValue, setInputValue] = useState(value);
+  const [inputValue, setInputValue] = useState("");
   const [selectedToken, setSelectedToken] = useState(tokens[initialTokenIndex] ?? null);
 
   /** ================= *
@@ -149,7 +149,7 @@ function InputAmount(
             <InputField>
               <InputValue
                 ref={inputRef}
-                value={inputValue}
+                value={readOnly ? value : inputValue}
                 readOnly={readOnly}
                 type={"text"}
                 placeholder={placeholder || "0.0"}

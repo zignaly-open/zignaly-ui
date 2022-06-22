@@ -20,6 +20,6 @@ export interface InputAmountProps {
   fullWidth?: boolean;
   placeholder?: string;
   showUnit?: boolean;
-  readOnly: boolean;
-  showMaxButton: boolean;
+  readOnly?: boolean;
+  showMaxButton?: boolean;
 }

@@ -16,6 +16,12 @@ const InputModal = ({
 }: InputModalProps) => {
   const [swapFrom, setSwapFrom] = useState<Swap>();
   const [swapTo, setSwapTo] = useState<Swap>();
+  const [intervalId, setIntervalId] = useState<any>();
+  const rate = getSwapRate({ swapFrom: swapFrom, swapTo: swapTo });
+
+  const rateChanged = useCallback(() => {
+    setSwapTo({ value: rate });
+  }, [swapTo]);
 
   const swapFromChanged = useCallback(
     ({ token, value }: Swap) => {
@@ -25,10 +31,14 @@ const InputModal = ({
   );
 
   const swapToChanged = useCallback(
-    ({ token, }: Swap) => {
-      console.log(swapFrom);
-      const rate = getSwapRate({ swapTo: token, swapFrom: swapFrom, value: swapFrom?.value ?? 0 });
-      setSwapTo({ token: token, value: rate });
+    ({ token }: Swap) => {
+      clearInterval(intervalId);
+      setSwapTo({ token: token });
+      rateChanged();
+      const rateInterval = setInterval(() => {
+        rateChanged();
+      }, 5000);
+      setIntervalId(rateInterval);
     },
     [swapTo],
   );
@@ -49,12 +59,14 @@ const InputModal = ({
       </IconContainer>
       <InputAmount
         label={"Swap to"}
+        readOnly={true}
+        showMaxButton={false}
         value={swapTo?.value ?? ""}
         placeholder={"Amount to recieve"}
         onChange={(e: any, { token }: Swap) => {
           swapToChanged({ token: token });
         }}
-        tokens={swapFrom?.token.avaliableSwapPairs ?? avaliableCoins}
+        tokens={swapFrom?.token?.avaliableSwapPairs ?? avaliableCoins}
       />
       <ButtonContainer>
         <Button

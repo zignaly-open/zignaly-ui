@@ -8,7 +8,7 @@ export interface AvaliableCoin extends TokenItem {
 }
 
 export interface Swap {
-  token: AvaliableCoin;
+  token?: AvaliableCoin;
   value?: string | number | BigNumberish;
 }
 
