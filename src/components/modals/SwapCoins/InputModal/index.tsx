@@ -1,7 +1,7 @@
 import Button from "components/inputs/Button";
 import InputAmount from "components/inputs/InputAmount";
 import ModalContainer from "components/modals/ModalContainer";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import { InputModalProps, Swap } from "../types";
 import { ButtonContainer, IconContainer } from "./styles";
 import SwapIcon from "assets/icons/swap-icon.svg";
@@ -12,9 +12,13 @@ const InputModal = ({
   avaliableCoins,
   continueButtonOnClick = () => {},
   onClickClose = () => {},
+  getSwapRate = () => {},
 }: InputModalProps) => {
   const [swapFrom, setSwapFrom] = useState<Swap>();
   const [swapTo, setSwapTo] = useState<Swap>();
+  const [intervalId, setIntervalId] = useState<any>();
+
+  const rate = useMemo(() => getSwapRate({ swapFrom: swapFrom, swapTo: swapTo }), []);
 
   const swapFromChanged = useCallback(
     ({ token, value }: Swap) => {
@@ -24,8 +28,14 @@ const InputModal = ({
   );
 
   const swapToChanged = useCallback(
-    ({ token, value }: Swap) => {
-      setSwapTo({ token: token, value: value });
+    ({ token }: Swap) => {
+      clearInterval(intervalId);
+      setSwapTo({ token: token });
+      setSwapTo({ value: rate });
+      const rateInterval = setInterval(() => {
+        setSwapTo({ value: rate });
+      }, 5000);
+      setIntervalId(rateInterval);
     },
     [swapTo],
   );
@@ -46,11 +56,14 @@ const InputModal = ({
       </IconContainer>
       <InputAmount
         label={"Swap to"}
-        value={""}
-        onChange={(e: any, { value, token }: Swap) => {
-          swapToChanged({ token: token, value: value });
+        readOnly={true}
+        showMaxButton={false}
+        value={swapTo?.value ?? ""}
+        placeholder={"Amount to recieve"}
+        onChange={(e: any, { token }: Swap) => {
+          swapToChanged({ token: token });
         }}
-        tokens={swapFrom?.token.avaliableSwapPairs ?? avaliableCoins}
+        tokens={swapFrom?.token?.avaliableSwapPairs ?? avaliableCoins}
       />
       <ButtonContainer>
         <Button

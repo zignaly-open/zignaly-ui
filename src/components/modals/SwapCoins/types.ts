@@ -8,12 +8,13 @@ export interface AvaliableCoin extends TokenItem {
 }
 
 export interface Swap {
-  token: AvaliableCoin;
-  value: string | number | BigNumberish;
+  token?: AvaliableCoin;
+  value?: string | number | BigNumberish;
 }
 
 export interface InputModalProps {
   avaliableCoins: AvaliableCoin[];
   continueButtonOnClick: any;
   onClickClose: any;
+  getSwapRate: Function;
 }
