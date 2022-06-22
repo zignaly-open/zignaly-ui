@@ -5,4 +5,5 @@ export interface ConfirmSwapModalProps {
   swapFrom: Swap;
   swapRate: string;
   swapNowOnClick: Function;
+  getSwapRate: Function;
 }
