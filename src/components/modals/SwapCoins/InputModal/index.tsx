@@ -1,7 +1,7 @@
 import Button from "components/inputs/Button";
 import InputAmount from "components/inputs/InputAmount";
 import ModalContainer from "components/modals/ModalContainer";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { InputModalProps, Swap } from "../types";
 import { ButtonContainer, IconContainer } from "./styles";
 import SwapIcon from "assets/icons/swap-icon.svg";
@@ -17,11 +17,8 @@ const InputModal = ({
   const [swapFrom, setSwapFrom] = useState<Swap>();
   const [swapTo, setSwapTo] = useState<Swap>();
   const [intervalId, setIntervalId] = useState<any>();
-  const rate = getSwapRate({ swapFrom: swapFrom, swapTo: swapTo });
 
-  const rateChanged = useCallback(() => {
-    setSwapTo({ value: rate });
-  }, [swapTo]);
+  const rate = useMemo(() => getSwapRate({ swapFrom: swapFrom, swapTo: swapTo }), []);
 
   const swapFromChanged = useCallback(
     ({ token, value }: Swap) => {
@@ -33,15 +30,18 @@ const InputModal = ({
   const swapToChanged = useCallback(
     ({ token }: Swap) => {
       clearInterval(intervalId);
-      setSwapTo({ token: token });
-      rateChanged();
+      setSwapTo({ token: token, value: rate });
       const rateInterval = setInterval(() => {
-        rateChanged();
+        setSwapTo({ value: rate });
       }, 5000);
       setIntervalId(rateInterval);
     },
     [swapTo],
   );
+
+  useEffect(() => {
+    clearInterval(intervalId);
+  }, []);
 
   return (
     <ModalContainer title="Swap Coins" onClickClose={onClickClose}>

@@ -51,7 +51,7 @@ function InputAmount(
   inputRef: React.Ref<any>,
 ) {
   // Hooks
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(value);
   const [selectedToken, setSelectedToken] = useState(tokens[initialTokenIndex] ?? null);
 
   /** ================= *
