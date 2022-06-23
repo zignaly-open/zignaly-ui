@@ -1,7 +1,7 @@
 import Button from "components/inputs/Button";
 import InputAmount from "components/inputs/InputAmount";
 import ModalContainer from "components/modals/ModalContainer";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { InputModalProps, Swap } from "../types";
 import { ButtonContainer, IconContainer } from "./styles";
 import SwapIcon from "assets/icons/swap-icon.svg";
@@ -30,8 +30,7 @@ const InputModal = ({
   const swapToChanged = useCallback(
     ({ token }: Swap) => {
       clearInterval(intervalId);
-      setSwapTo({ token: token });
-      setSwapTo({ value: rate });
+      setSwapTo({ token: token, value: rate });
       const rateInterval = setInterval(() => {
         setSwapTo({ value: rate });
       }, 5000);
@@ -39,6 +38,10 @@ const InputModal = ({
     },
     [swapTo],
   );
+
+  useEffect(() => {
+    clearInterval(intervalId);
+  }, []);
 
   return (
     <ModalContainer title="Swap Coins" onClickClose={onClickClose}>

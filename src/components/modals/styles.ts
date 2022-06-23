@@ -2,13 +2,12 @@
 import styled from "styled-components";
 import { styledIf } from "utils/styled";
 
-export const Actions = styled.div`
+export const Actions = styled.div<{ align?: string }>`
+  display: flex;
   width: 100%;
-  display: grid;
-  grid-row-gap: 22px;
-  grid-column-gap: 22px;
-  grid-template-columns: repeat(${(props: any) => props.columns}, minmax(0%, 100%));
-  margin-top: 26px;
+  gap: 22px;
+  margin-top: 56px;
+  justify-content: ${({ align }) => align || "center"};
 `;
 
 export const AmountContainer = styled.div<{
