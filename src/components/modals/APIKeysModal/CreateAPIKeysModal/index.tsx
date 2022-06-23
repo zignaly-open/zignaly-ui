@@ -37,7 +37,6 @@ function CreateAPIKeysModal({
   }, []);
 
   const onFinalSubmit = useCallback((data: any) => {
-    console.log(data);
     onSubmit(data);
   }, []);
 

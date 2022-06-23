@@ -22,4 +22,7 @@ Default.args = {
     futures: false,
     whitelistIps: "172.11.08.1 172.11.08.2",
   },
+  onSubmit: (values) => {
+    console.log(values);
+  },
 };

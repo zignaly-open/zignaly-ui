@@ -15,4 +15,8 @@ const Template: ComponentStory<typeof CreateAPIKeysModal> = (args) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  onSubmit: (values) => {
+    console.log(values);
+  },
+};

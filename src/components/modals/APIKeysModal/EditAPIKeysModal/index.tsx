@@ -33,7 +33,6 @@ function EditAPIKeysModal({
   } = methods;
 
   const onFormSubmit = useCallback((data: any) => {
-    console.log(data);
     onSubmit(data);
   }, []);
 
