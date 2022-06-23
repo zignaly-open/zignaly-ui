@@ -78,7 +78,7 @@ WithMultipleTokens.args = {
   tokens: [
     {
       id: "btc",
-      balance: "1000000000000000000",
+      balance: "100000000000000000000",
     },
     {
       id: "eth",
