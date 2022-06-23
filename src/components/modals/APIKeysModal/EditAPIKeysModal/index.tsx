@@ -39,7 +39,7 @@ function EditAPIKeysModal({
 
   return (
     <ModalContainer title="Edit API Key Settings" width="small" onClickClose={onClickClose}>
-      <Gap gap={16}></Gap>
+      <Gap gap={16} />
       <FormProvider {...methods}>
         <form noValidate onSubmit={handleSubmit(onFormSubmit)}>
           <InputText
@@ -49,7 +49,7 @@ function EditAPIKeysModal({
             })}
             defaultValue={name}
           />
-          <Gap gap={12}></Gap>
+          <Gap gap={12} />
           <InputText
             label="API Key:"
             {...register("apikey", {
@@ -57,7 +57,7 @@ function EditAPIKeysModal({
             })}
             defaultValue={apikey}
           />
-          <Gap gap={16}></Gap>
+          <Gap gap={16} />
           <Typography variant="h3" weight="regular" color="neutral200">
             API Secret (only visible on key generation. If lost, you will have to generate a new
             API)

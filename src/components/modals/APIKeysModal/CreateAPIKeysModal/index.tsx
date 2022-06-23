@@ -52,7 +52,7 @@ function CreateAPIKeysModal({
           Save your secret in a safe place. After closing this window, you won’t have access your
           secret anymore and will have to create a new API key.
         </Typography>
-        <Gap gap={16}></Gap>
+        <Gap gap={16} />
         <FormProvider {...methods}>
           <form noValidate onSubmit={handleSubmit(onFinalSubmit)}>
             <InputText
@@ -84,7 +84,7 @@ function CreateAPIKeysModal({
       <Typography variant="body1" color="neutral200" weight="regular">
         Create a new API key to connect to your trading platform.
       </Typography>
-      <Gap gap={16}></Gap>
+      <Gap gap={16} />
       <form noValidate onSubmit={handleSubmit(onFormSubmit)}>
         <InputText
           label="Name:"
