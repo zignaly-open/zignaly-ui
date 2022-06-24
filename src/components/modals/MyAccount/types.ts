@@ -16,7 +16,7 @@ export interface NetworkOption extends OptionItem {
   leftElement?: any;
   name: string;
   depositAddress?: string;
-  depositMemo?: string
+  depositMemo?: string;
   depositEnable: boolean;
   url: string;
 }
@@ -34,4 +34,5 @@ export interface MyAccountWithdrawModalProps {
   amountOnChange?: Function;
   onClickClose?: Function;
   onSubmit?: any;
+  isLoading: boolean;
 }
