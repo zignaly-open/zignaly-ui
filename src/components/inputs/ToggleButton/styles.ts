@@ -38,7 +38,7 @@ export const ToggleUncheck = styled(ToggleCommonProperties)`
 
 export const ToggleContainer = styled.div``;
 
-export const Toggle = styled.div<{ checked?: boolean; size: "small" | "large" }>`
+export const Toggle = styled.div<{ checked?: boolean; size: "small" | "large" | "medium" }>`
   touch-action: pan-x;
   display: inline-block;
   position: relative;
@@ -87,7 +87,7 @@ export const Toggle = styled.div<{ checked?: boolean; size: "small" | "large" }>
       ` ${ToggleCircle} {
       transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
       position: absolute;
-      top: 15%;
+      top: 17%;
       bottom: 10%;
       left: 4px;
       width: 16px;
@@ -100,6 +100,31 @@ export const Toggle = styled.div<{ checked?: boolean; size: "small" | "large" }>
     ${ToggleContainer} {
       width: 48px;
       height: 24px;
+      padding: 0;
+      border-radius: 30px;
+      transition: all 0.2s ease;
+    }
+    `,
+    )}
+
+    ${styledIf(
+      props.size === "medium",
+      ` ${ToggleCircle} {
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+      position: absolute;
+      top: 12%;
+      bottom: 10%;
+      left: 4px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      box-sizing: border-box;
+      transition: all 0.25s ease;
+    }
+    ${ToggleContainer} {
+      width: 64px;
+      height: 32px;
       padding: 0;
       border-radius: 30px;
       transition: all 0.2s ease;
@@ -129,6 +154,13 @@ export const Toggle = styled.div<{ checked?: boolean; size: "small" | "large" }>
       `
       ${ToggleCircle}{
       left: 60px;
+    }`,
+    )}
+    ${styledIf(
+      props.size === "medium",
+      `
+      ${ToggleCircle}{
+      left: 36px;
     }`,
     )}
     ${styledIf(

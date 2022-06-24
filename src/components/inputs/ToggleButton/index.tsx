@@ -44,7 +44,7 @@ function ToggleButton({
     );
   };
 
-  const SmallSize = () => {
+  const SmallOrMediumSize = () => {
     return (
       <styled.Toggle size={size} onClick={handleClickToggle} checked={isChecked}>
         <styled.ToggleContainer>
@@ -57,8 +57,8 @@ function ToggleButton({
     );
   };
 
-  if (size === "small") {
-    return <SmallSize />;
+  if (size === "small" || size === "medium") {
+    return <SmallOrMediumSize />;
   } else if (size === "large") {
     return <LargeSize />;
   } else {
