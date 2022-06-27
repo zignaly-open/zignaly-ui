@@ -2,6 +2,7 @@ import Typography from "components/display/Typography";
 import Button from "components/inputs/Button";
 import ModalContainer from "components/modals/ModalContainer";
 import React from "react";
+import { Column } from "utils/column";
 import { Gap } from "utils/gap";
 
 const ConfirmTransferCoinsModal = ({
@@ -19,11 +20,13 @@ const ConfirmTransferCoinsModal = ({
         Deposits & Withdrawals page for the latest status.
       </Typography>
       <Gap gap={28} />
-      <Button
-        caption="View Deposits & Withdrawals"
-        size="xlarge"
-        onClick={() => viewDAndWOnClick}
-      />
+      <Column width="319px">
+        <Button
+          caption="View Deposits & Withdrawals"
+          size="xlarge"
+          onClick={() => viewDAndWOnClick}
+        />
+      </Column>
     </ModalContainer>
   );
 };
