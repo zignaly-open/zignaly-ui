@@ -21,6 +21,12 @@ export interface NetworkOption extends OptionItem {
   url: string;
 }
 
+export interface AccountOption extends OptionItem {
+  caption: string;
+  index: number;
+  leftElement?: any;
+}
+
 export interface MyAccountDepositModalProps {
   coins: CoinOption[];
   notSureOnClick?: Function;
