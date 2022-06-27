@@ -26,6 +26,12 @@ const Template: ComponentStory<typeof ToggleButton> = (args) => <ToggleButton {.
 
 export const LargeToggleButton = Template.bind({});
 
-export const SmallToggleButton = Template.bind({
+export const SmallToggleButton = Template.bind({});
+SmallToggleButton.args = {
   size: "small",
-});
+};
+
+export const MediumToggleButton = Template.bind({});
+MediumToggleButton.args = {
+  size: "medium",
+};
