@@ -28,7 +28,7 @@ export const Layout = styled.div<any>`
   user-select: none;
 `;
 
-export const Title = styled(Typography).attrs({ variant: "h1", color: "neutral100" })`
+export const Title = styled(Typography)`
   display: flex;
   justify-content: space-between;
 `;
@@ -39,7 +39,6 @@ export const Body = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  color: ${({ theme }) => theme.neutral200};
 `;
 
 export const Header = styled.div`

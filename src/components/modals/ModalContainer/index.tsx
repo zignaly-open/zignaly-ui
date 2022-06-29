@@ -41,7 +41,9 @@ function ModalContainer({
               <ArrowLeftIcon color={"#fff"} />
             </HeaderButton>
           )}
-          <Title>{title}</Title>
+          <Title variant="h1" color="neutral100">
+            {title}
+          </Title>
         </Inline>
         {renderHeaderAction}
       </Header>
