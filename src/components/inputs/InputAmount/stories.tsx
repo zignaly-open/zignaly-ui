@@ -72,13 +72,14 @@ OnlyOneTokenWithUnit.args = {
 export const WithMultipleTokens = Template.bind({});
 WithMultipleTokens.args = {
   label: "Amount to Withdraw",
-  onChange: ({ value, token }: any) => {
+  onChange: (e: any, { value, token }: any) => {
+    console.log(e);
     console.log({ value, token });
   },
   tokens: [
     {
       id: "btc",
-      balance: "1000000000000000000",
+      balance: "100000000000000000000",
     },
     {
       id: "eth",
@@ -133,4 +134,27 @@ Disabled.args = {
     },
   ],
   disabled: true,
+};
+
+export const ReadOnly = Template.bind({});
+ReadOnly.args = {
+  label: "Swap to",
+  onChange: () => {},
+  readOnly: true,
+  value: 100,
+  showMaxButton: false,
+  tokens: [
+    {
+      id: "btc",
+      balance: "1000000000000000000",
+    },
+    {
+      id: "eth",
+      balance: "1000000000000000000",
+    },
+    {
+      id: "doge",
+      balance: "1000000000000000000",
+    },
+  ],
 };

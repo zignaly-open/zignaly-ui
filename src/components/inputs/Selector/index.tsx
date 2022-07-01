@@ -12,7 +12,6 @@ import {
   Label,
   Value,
   Placeholder,
-  Arrow,
   LeftElement,
   ItemCaption,
   LeftElementIcon,
@@ -21,7 +20,7 @@ import {
 } from "./styles";
 
 // Assets
-import CaretDownIcon from "assets/icons/caret-down-icon.svg?url";
+import Arrow from "assets/icons/caret-down-icon.svg";
 
 // Types
 import { OptionItem, SelectProps, SelectSizes } from "./types";
@@ -42,12 +41,13 @@ function Select({
   size = SelectSizes.NORMAL,
   maxHeight,
   transparent,
+  isMenuActive = false,
 }: SelectProps): ReactElement {
   // Ref
   const selectorRef = useRef(null);
 
   // Hooks
-  const [isActiveMenu, setMenuActive] = useState(false);
+  const [isActiveMenu, setMenuActive] = useState(isMenuActive);
 
   /**
    * @function handleClickItem():
@@ -98,13 +98,15 @@ function Select({
                   )}
                 </LeftElement>
               )}
-              <Value variant={"body1"}>{value.caption}</Value>
+              <Value variant={"body1"} color="neutral100" weight="medium">
+                {value.caption}
+              </Value>
             </>
           ) : (
-            <Placeholder>{placeholder}</Placeholder>
+            <Placeholder variant="inputl">{placeholder}</Placeholder>
           ))}
         <ArrowContainer>
-          <Arrow src={CaretDownIcon} alt={label} color={dark["neutral300"]} />
+          <Arrow alt={label} width="28" height="28" color={dark["neutral300"]} />
         </ArrowContainer>
       </Container>{" "}
       <Menu>
@@ -130,7 +132,9 @@ function Select({
                       )}
                     </LeftElement>
                   )}
-                  <ItemCaption variant={"body1"}>{option.caption}</ItemCaption>
+                  <ItemCaption variant={"body1"} color="neutral100" weight="medium">
+                    {option.caption}
+                  </ItemCaption>
                 </ItemContainer>
               </Item>
             );
