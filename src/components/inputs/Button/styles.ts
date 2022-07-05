@@ -139,6 +139,7 @@ export const Layout = styled.button<LayoutProps>`
       ${Container} {
         height: 30px;
         min-width: 76px;
+        padding: 9px 18px;
       }
 
       ${styledIf(
@@ -202,6 +203,7 @@ export const Layout = styled.button<LayoutProps>`
     `    
      
       ${Container} {
+        padding: 11px 18px;
         min-width: 76px;
         height: 36px; 
       }
@@ -266,6 +268,7 @@ export const Layout = styled.button<LayoutProps>`
     isLargeButton(props.size),
     `     
       ${Container} {
+        padding: 15px 32px;
         height: 48px;
         min-width: 110px;
       }
@@ -327,6 +330,7 @@ export const Layout = styled.button<LayoutProps>`
     isXLargeButton(props.size),
     `     
       ${Container} {
+        padding: 20px 36px;
         height: 60px;  
         min-width: 127px;
       }
