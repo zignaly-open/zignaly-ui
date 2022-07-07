@@ -38,7 +38,6 @@ import AuthVerifyModal from "components/modals/AuthVerifyModal";
 import MinBalanceModal from "components/modals/MinBalanceModal";
 import DepositModal from "components/modals/MyAccount/DepositModal";
 import WithdrawModal from "components/modals/MyAccount/WithdrawModal";
-import ModalContainer from "components/modals/ModalContainer";
 import ConnectWalletModal from "components/modals/ZigRaffle/ConnectWallet";
 
 // Forms
@@ -67,6 +66,7 @@ import OptionHorizontalDotsIcon from "assets/icons/horizontal-three-dots-icon.sv
 import EditPenIcon from "assets/icons/edit-pen-icon.svg";
 import SwapIcon from "assets/icons/swap-icon.svg";
 import SwapVertIcon from "assets/icons/swap-vert-icon.svg";
+import ErrorAlertIcon from "assets/icons/error-alert-icon.svg";
 
 // Navigation
 import Header from "components/navigation/Header";
@@ -113,7 +113,6 @@ export {
   ProgressSlider,
   InvestSlider,
   Toaster,
-  ModalContainer,
   // Inputs
   Button,
   CheckBox,
@@ -168,6 +167,7 @@ export {
   EditPenIcon,
   SwapIcon,
   SwapVertIcon,
+  ErrorAlertIcon,
   /**
    * =-=-=-=-=-=-=-=
    *     Utils
