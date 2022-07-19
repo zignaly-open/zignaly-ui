@@ -29,4 +29,6 @@ export interface InputTextProps {
   rightSideElement?: ReactElement | null;
   labelAction?: LabelActionProps | null;
   withoutBorder?: boolean;
+  minHeight?: number;
+  maxHeight?: number;
 }
