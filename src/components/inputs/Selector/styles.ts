@@ -26,6 +26,7 @@ export const Container = styled.div`
   justify-content: space-between;
   transition: all 0.1s linear;
   overflow: hidden;
+  box-sizing: border-box;
 `;
 
 export const Value = styled(Typography)`
@@ -156,7 +157,6 @@ export const Layout = styled.div<LayoutProps>`
   display: inline-flex;
   flex-direction: column;
   position: relative;
-  width: 100%;
 
   &[disabled] {
     ${Container} {

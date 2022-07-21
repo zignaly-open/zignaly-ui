@@ -1,35 +1,35 @@
 // Display
-import Avatar from "components/display/Avatar";
-import ErrorMessage from "components/display/ErrorMessage";
-import Loader from "components/display/Loader";
-import Table from "components/display/Table";
-import ConnectionStateLabel from "components/display/Table/components/ConnectionStateLabel";
-import DateLabel from "components/display/Table/components/DateLabel";
-import PercentageIndicator from "components/display/Table/components/PercentageIndicator";
-import PriceLabel from "components/display/Table/components/PriceLabel";
-import Typography from "components/display/Typography";
-import ZigWalletIndicator from "components/display/ZigWalletIndicator";
-import CoinLabel from "components/display/Table/components/CoinLabel";
-import Toaster from "components/display/Toaster";
-import ProgressSlider from "components/display/ProgressSlider";
-import InvestSlider from "components/display/InvestSlider";
-import { ServiceName } from "components/display/Table/components/ServiceName";
-import { BalanceSummary } from "components/display/Table/components/BalanceSummary";
-import { AreaChart } from "components/display/Charts";
+import Avatar from "./components/display/Avatar";
+import ErrorMessage from "./components/display/ErrorMessage";
+import Loader from "./components/display/Loader";
+import Table from "./components/display/Table";
+import ConnectionStateLabel from "./components/display/Table/components/ConnectionStateLabel";
+import DateLabel from "./components/display/Table/components/DateLabel";
+import PercentageIndicator from "./components/display/Table/components/PercentageIndicator";
+import PriceLabel from "./components/display/Table/components/PriceLabel";
+import Typography from "./components/display/Typography";
+import ZigWalletIndicator from "./components/display/ZigWalletIndicator";
+import CoinLabel from "./components/display/Table/components/CoinLabel";
+import Toaster from "./components/display/Toaster";
+import ProgressSlider from "./components/display/ProgressSlider";
+import InvestSlider from "./components/display/InvestSlider";
+import { ServiceName } from "./components/display/Table/components/ServiceName";
+import { BalanceSummary } from "./components/display/Table/components/BalanceSummary";
+import { AreaChart } from "./components/display/Charts";
 
 // Inputs
-import Button from "components/inputs/Button";
-import CheckBox from "components/inputs/CheckBox";
-import IconButton from "components/inputs/IconButton";
-import InputAmount from "components/inputs/InputAmount";
-import TextButton from "components/inputs/TextButton";
-import InputText from "components/inputs/InputText";
-import Select from "components/inputs/Selector";
-import InputCode from "components/inputs/InputCode";
-import { ButtonGroup } from "components/styled";
+import Button from "./components/inputs/Button";
+import CheckBox from "./components/inputs/CheckBox";
+import IconButton from "./components/inputs/IconButton";
+import InputAmount from "./components/inputs/InputAmount";
+import TextButton from "./components/inputs/TextButton";
+import InputText from "./components/inputs/InputText";
+import Select from "./components/inputs/Selector";
+import InputCode from "./components/inputs/InputCode";
+import { ButtonGroup } from "./components/styled";
 
 // Layouts
-import { MarginContainer, PageContainer } from "components/styled";
+import { MarginContainer, PageContainer } from "./components/styled";
 
 // Modals
 import EditInvestmentWithModal from "components/modals/EditInvestmentWithModal";
@@ -41,7 +41,7 @@ import WithdrawModal from "components/modals/MyAccount/WithdrawModal";
 import ConnectWalletModal from "components/modals/ZigRaffle/ConnectWallet";
 
 // Forms
-import LoginForm from "components/forms/LoginForm";
+import LoginForm from "./components/forms/LoginForm";
 
 // Icons
 import CloseIcon from "assets/icons/close-icon.svg";
@@ -69,21 +69,21 @@ import SwapVertIcon from "assets/icons/swap-vert-icon.svg";
 import ErrorAlertIcon from "assets/icons/error-alert-icon.svg";
 
 // Navigation
-import Header from "components/navigation/Header";
-import MenuDropDown from "components/navigation/MenuDropDown";
-import ZigsBalance from "components/navigation/Header/components/ZigsBalance";
-import BrandImage from "components/navigation/Header/components/BrandImage";
+import Header from "./components/navigation/Header";
+import MenuDropDown from "./components/navigation/MenuDropDown";
+import ZigsBalance from "./components/navigation/Header/components/ZigsBalance";
+import BrandImage from "./components/navigation/Header/components/BrandImage";
 
 // Utils
-import ThemeProvider from "utils/ThemeProvider";
 import { dark, light } from "theme";
+import ThemeProvider from "utils/ThemeProvider";
 import { customSort } from "utils/numbers";
 import {
   createMarketPlaceTableBodyObject,
   createMarketPlaceTableHeader,
   createUserTableDataObject,
   createUserTableHeader,
-} from "components/display/Table/types";
+} from "./components/display/Table/types";
 
 export {
   /**
