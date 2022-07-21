@@ -1,6 +1,6 @@
 // Dependencies
 // @ts-nocheck
-import React, { useCallback, useState, useEffect, useMemo } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import NumberFormat from "react-number-format";
 import { parseUnits } from "@ethersproject/units";
 import { BigNumber, utils } from "ethers";
@@ -136,11 +136,6 @@ function InputAmount(
     }
   }, [disabled, onChange, selectedToken]);
 
-  const renderCustomIcon = useMemo(
-    () => (typeof customCoinIcon === "object" ? customCoinIcon : null),
-    [customCoinIcon],
-  );
-
   return (
     <Layout withError={!!error} disabled={disabled} fullWidth={fullWidth}>
       <Typography weight="regular" color="neutral200">
@@ -152,7 +147,7 @@ function InputAmount(
             {selectedToken?.id && tokens.length < 2 && (
               <>
                 {customCoinIcon ? (
-                  <>{renderCustomIcon}</>
+                  customCoinIcon
                 ) : (
                   <CoinIcon
                     name={selectedToken.id}
