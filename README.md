@@ -12,15 +12,15 @@ To start the project, the following will be necessary:
 
 ##### If you using NPM:
 ```
-git clone https://github.com/zignaly-open/react-component-library
-git checkout develop
+git clone https://github.com/zignaly-open/zignaly-ui.git
+git checkout develop 
 npm install
 npm run storybook
 ```
 
 #### If you using Yarn:
 ```
-git clone https://github.com/zignaly-open/react-component-library
+git clone https://github.com/zignaly-open/zignaly-ui.git
 git checkout develop
 yarn
 yarn storybook
